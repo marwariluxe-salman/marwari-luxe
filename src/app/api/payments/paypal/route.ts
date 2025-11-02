@@ -62,10 +62,14 @@ export async function POST(request: NextRequest) {
       throw new Error(`PayPal order creation failed: ${orderData.message}`);
     }
 
+    const approvalUrl = Array.isArray(orderData.links)
+      ? orderData.links.find((link: { rel?: string; href?: string }) => link.rel === 'approve')?.href
+      : undefined;
+
     return NextResponse.json({
       success: true,
       paypalOrderId: orderData.id,
-      approvalUrl: orderData.links.find((link: any) => link.rel === 'approve')?.href,
+      approvalUrl,
     });
 
   } catch (error) {

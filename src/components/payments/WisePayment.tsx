@@ -1,9 +1,20 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
+interface PaymentData {
+  transactionId: string;
+  email?: string;
+  amount: number;
+  fee?: number;
+  sourceCurrency?: string;
+  targetCurrency?: string;
+  status?: string;
+  gateway?: string;
+}
+
 interface WisePaymentProps {
   amount: number;
-  onPaymentSuccess: (paymentData: any) => void;
+  onPaymentSuccess: (paymentData: PaymentData) => void;
   onPaymentError: (error: string) => void;
   isLoading: boolean;
   setIsLoading: (loading: boolean) => void;
@@ -20,8 +31,6 @@ const WisePayment: React.FC<WisePaymentProps> = ({
     email: '',
     sourceCurrency: 'USD',
     targetCurrency: 'USD',
-    recipientType: 'email',
-    bankAccount: '',
     reference: ''
   });
 
@@ -36,20 +45,20 @@ const WisePayment: React.FC<WisePaymentProps> = ({
     { code: 'INR', name: 'Indian Rupee', flag: '🇮🇳' },
   ];
 
-  const calculateFee = () => {
+  const calculateFee = (): number => {
     // Wise typically charges 0.35% - 2% fee
     const feePercentage = 0.5; // 0.5% for demo
     return (amount * feePercentage) / 100;
   };
 
-  const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = (field: string, value: string): void => {
     setWiseData(prev => ({
       ...prev,
       [field]: value
     }));
   };
 
-  const handleWisePayment = async () => {
+  const handleWisePayment = async (): Promise<void> => {
     // Basic validation
     if (!wiseData.email.trim()) {
       onPaymentError('Email is required for Wise transfer');
@@ -68,7 +77,7 @@ const WisePayment: React.FC<WisePaymentProps> = ({
       
       // In real implementation, this would use Wise API
       // For demo, we'll simulate successful transfer
-      const paymentData = {
+      const paymentData: PaymentData = {
         transactionId: `WISE_${Date.now()}`,
         email: wiseData.email,
         amount: amount,
@@ -80,8 +89,9 @@ const WisePayment: React.FC<WisePaymentProps> = ({
       };
       
       onPaymentSuccess(paymentData);
-    } catch (error) {
-      onPaymentError('Wise transfer failed. Please try again.');
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Wise transfer failed. Please try again.';
+      onPaymentError(message);
     } finally {
       setIsLoading(false);
     }

@@ -1,9 +1,19 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
+interface PaymentData {
+  transactionId: string;
+  email?: string;
+  amount: number;
+  currency?: string;
+  status?: string;
+  gateway?: string;
+  accountBalance?: number;
+}
+
 interface PayPalPaymentProps {
   amount: number;
-  onPaymentSuccess: (paymentData: any) => void;
+  onPaymentSuccess: (paymentData: PaymentData) => void;
   onPaymentError: (error: string) => void;
   isLoading: boolean;
   setIsLoading: (loading: boolean) => void;
@@ -52,7 +62,8 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
         // Show inline error instead of calling onPaymentError
         setLocalError('Login failed! For demo mode, please use password "demo123" with any email address.');
       }
-    } catch (error) {
+    } catch (err: unknown) {
+      console.error('PayPal login error:', err);
       setLocalError('PayPal login failed. Please try again.');
     } finally {
       setIsLoading(false);
@@ -84,8 +95,9 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
         onPaymentError('Insufficient PayPal balance. Please add funds or use a linked card.');
         setPaymentStep('confirm');
       }
-    } catch (error) {
-      onPaymentError('PayPal payment failed. Please try again.');
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'PayPal payment failed. Please try again.';
+      onPaymentError(message);
       setPaymentStep('confirm');
     } finally {
       setIsLoading(false);

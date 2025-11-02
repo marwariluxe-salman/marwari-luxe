@@ -4,12 +4,12 @@ import Script from 'next/script';
 
 interface SEOStructuredDataProps {
   type: 'Organization' | 'Product' | 'Article' | 'WebPage' | 'Store';
-  data: Record<string, any>;
+  data: Record<string, unknown>;
 }
 
 const SEOStructuredData = ({ type, data }: SEOStructuredDataProps) => {
   const generateStructuredData = () => {
-    const baseData: any = {
+    const baseData: Record<string, unknown> = {
       "@context": "https://schema.org",
       "@type": type,
       ...data

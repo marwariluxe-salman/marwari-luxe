@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
+interface PaymentData {
+  transactionId: string;
+  email?: string;
+  amount: number;
+  currency?: string;
+  status?: string;
+  gateway?: string;
+}
+
 interface StripePaymentProps {
   amount: number;
-  onPaymentSuccess: (paymentData: any) => void;
+  onPaymentSuccess: (paymentData: PaymentData) => void;
   onPaymentError: (error: string) => void;
   isLoading: boolean;
   setIsLoading: (loading: boolean) => void;
@@ -101,8 +110,9 @@ const StripePayment: React.FC<StripePaymentProps> = ({
       };
       
       onPaymentSuccess(paymentData);
-    } catch (error) {
-      onPaymentError('Stripe payment failed. Please try again.');
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Stripe payment failed. Please try again.';
+      onPaymentError(message);
     } finally {
       setIsLoading(false);
     }

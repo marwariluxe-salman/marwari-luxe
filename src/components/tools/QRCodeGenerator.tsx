@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const QRCodeGenerator = () => {
   const [text, setText] = useState('');
@@ -19,7 +20,7 @@ const QRCodeGenerator = () => {
   const [wifiPassword, setWifiPassword] = useState('');
   const [wifiSecurity, setWifiSecurity] = useState<'WPA' | 'WEP' | 'nopass'>('WPA');
 
-  const generateQRCode = async () => {
+  const generateQRCode = async (): Promise<void> => {
     setIsLoading(true);
     
     let qrText = '';
@@ -58,7 +59,7 @@ const QRCodeGenerator = () => {
     setIsLoading(false);
   };
 
-  const downloadQRCode = () => {
+  const downloadQRCode = (): void => {
     if (!qrCode) return;
     
     const link = document.createElement('a');
@@ -69,7 +70,7 @@ const QRCodeGenerator = () => {
     document.body.removeChild(link);
   };
 
-  const reset = () => {
+  const reset = (): void => {
     setText('');
     setUrl('');
     setEmail('');
@@ -209,7 +210,7 @@ const QRCodeGenerator = () => {
     }
   };
 
-  const isFormValid = () => {
+  const isFormValid = (): boolean => {
     switch (qrType) {
       case 'text':
         return text.trim() !== '';
@@ -251,16 +252,16 @@ const QRCodeGenerator = () => {
                 QR Code Type
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                {[
+                {([
                   { value: 'text', label: 'Text', icon: '📝' },
                   { value: 'url', label: 'URL', icon: '🔗' },
                   { value: 'email', label: 'Email', icon: '📧' },
                   { value: 'phone', label: 'Phone', icon: '📞' },
                   { value: 'wifi', label: 'WiFi', icon: '📶' },
-                ].map((type) => (
+                ] as const).map((type) => (
                   <button
                     key={type.value}
-                    onClick={() => setQrType(type.value as any)}
+                    onClick={() => setQrType(type.value as 'text' | 'url' | 'email' | 'phone' | 'wifi')}
                     className={`p-3 rounded-lg border-2 transition-colors text-center ${
                       qrType === type.value
                         ? 'border-blue-500 bg-blue-50 text-blue-700'
@@ -325,12 +326,16 @@ const QRCodeGenerator = () => {
                 className="text-center"
               >
                 <div className="bg-white p-4 rounded-lg shadow-md mb-4">
-                  <img
-                    src={qrCode}
-                    alt="Generated QR Code"
-                    className="mx-auto"
-                    style={{ width: `${size}px`, height: `${size}px` }}
-                  />
+                  <div className="mx-auto" style={{ width: `${size}px`, height: `${size}px` }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={qrCode}
+                      alt="Generated QR Code"
+                      width={Number(size)}
+                      height={Number(size)}
+                      style={{ objectFit: 'contain' }}
+                    />
+                  </div>
                 </div>
                 <button
                   onClick={downloadQRCode}

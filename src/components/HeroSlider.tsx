@@ -1,0 +1,223 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
+import Image from 'next/image';
+
+const HeroSlider = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isHydrated, setIsHydrated] = useState(false);
+
+  const slides = [
+    {
+      id: 1,
+      title: 'Premium Health Supplements & Wellness Products',
+      subtitle: 'Discover scientifically-backed vitamins, minerals & supplements that transform your daily wellness routine. Shop 25+ premium products.',
+      image: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&h=600&fit=crop',
+      cta: 'Shop Health Supplements',
+      link: '/products',
+    },
+    {
+      id: 2,
+      title: 'Natural Anti-Aging Beauty Solutions',
+      subtitle: 'Embrace your natural glow with our expert-curated collection of organic skincare, anti-aging serums & cruelty-free beauty essentials.',
+      image: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&h=600&fit=crop',
+      cta: 'Explore Natural Beauty',
+      link: '/categories/beauty',
+    },
+    {
+      id: 3,
+      title: 'Health Calculators & Wellness Tools',
+      subtitle: 'Access 25+ powerful health calculators, BMI tools & fitness trackers to optimize your wellness journey with data-driven insights.',
+      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop',
+      cta: 'Try Wellness Tools',
+      link: '/tools',
+    },
+    {
+      id: 4,
+      title: 'Expert Health & Beauty Insights Blog',
+      subtitle: 'Read science-backed health advice, beauty tips & wellness guides from certified experts. 30+ comprehensive articles updated regularly.',
+      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop',
+      cta: 'Read Expert Blogs',
+      link: '/blogs',
+    },
+    {
+      id: 5,
+      title: 'Marwari Heritage Meets Modern Wellness',
+      subtitle: 'Experience timeless Ayurvedic wisdom combined with cutting-edge health innovation. Discover our heritage-inspired wellness philosophy.',
+      image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=600&fit=crop',
+      cta: 'Discover Our Story',
+      link: '/about',
+    },
+    // ADD YOUR CUSTOM SLIDES HERE:
+    // {
+    //   id: 6,
+    //   title: 'Your Custom Title',
+    //   subtitle: 'Your custom subtitle description',
+    //   image: '/your-custom-image.jpg', // Place image in public folder
+    //   cta: 'Your Button Text',
+    // },
+  ];
+
+  useEffect(() => {
+    setIsHydrated(true);
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
+  // Fix: Only render floating animation elements on client after mount
+  const [floatingPositions, setFloatingPositions] = useState<{left: number; top: number; duration: number; delay: number}[]>([]);
+
+  useEffect(() => {
+    if (isHydrated) {
+      const positions = Array.from({ length: 6 }).map(() => ({
+        left: Math.random() * 100,
+        top: Math.random() * 100,
+        duration: 3 + Math.random() * 2,
+        delay: Math.random() * 2,
+      }));
+      setFloatingPositions(positions);
+    }
+  }, [isHydrated]);
+
+  return (
+    <div className="relative h-screen overflow-hidden safe-area-inset-top">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentSlide}
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.7 }}
+          className="absolute inset-0"
+        >
+          {/* Background Image with Overlay */}
+          <div className="absolute inset-0">
+            <Image
+              src={slides[currentSlide].image}
+              alt={slides[currentSlide].title}
+              fill
+              priority={currentSlide === 0}
+              className="object-cover"
+              sizes="100vw"
+              quality={75}
+            />
+            <div className="absolute inset-0 bg-black/40" />
+          </div>
+
+          {/* Content */}
+          <div className="relative z-10 flex items-center justify-center h-full px-4 sm:px-6 lg:px-8">
+            <div className="text-center text-white max-w-4xl mx-auto">
+              <motion.h1
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 mobile-text-3xl"
+              >
+                {slides[currentSlide].title}
+              </motion.h1>
+              <motion.p
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+                className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-200 mobile-text-lg px-2"
+              >
+                {slides[currentSlide].subtitle}
+              </motion.p>
+              <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+              >
+                <Link
+                  href={slides[currentSlide].link}
+                  className="mobile-btn bg-purple-600 hover:bg-purple-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 inline-block"
+                >
+                  {slides[currentSlide].cta}
+                </Link>
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Navigation Arrows */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-purple-400 transition-colors z-20 p-2 rounded-full bg-black/20 backdrop-blur-sm"
+        aria-label="Previous slide"
+      >
+        <ChevronLeftIcon className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12" />
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-purple-400 transition-colors z-20 p-2 rounded-full bg-black/20 backdrop-blur-sm"
+        aria-label="Next slide"
+      >
+        <ChevronRightIcon className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12" />
+      </button>
+
+      {/* Dots Indicator */}
+      <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20 safe-area-inset-bottom">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 min-h-[48px] min-w-[48px] flex items-center justify-center ${
+              index === currentSlide ? 'bg-purple-500' : 'bg-white/50 hover:bg-white/75'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          >
+            <span className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+              index === currentSlide ? 'bg-purple-500 w-6 sm:w-8' : 'bg-white/50'
+            }`} />
+          </button>
+        ))}
+      </div>
+
+      {/* Floating Animation Elements (client-only) */}
+      {isHydrated && floatingPositions.length > 0 && (
+        <div className="absolute inset-0 pointer-events-none">
+          {floatingPositions.map((pos, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-purple-400/30 rounded-full"
+              style={{
+                left: `${pos.left}%`,
+                top: `${pos.top}%`,
+              }}
+              animate={{
+                y: [-20, 20],
+                opacity: [0.3, 0.8, 0.3],
+              }}
+              transition={{
+                duration: pos.duration,
+                repeat: Infinity,
+                delay: pos.delay,
+              }}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default HeroSlider;

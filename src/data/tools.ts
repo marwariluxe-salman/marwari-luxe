@@ -1,0 +1,195 @@
+import { Tool } from '@/types';
+
+export const tools: Tool[] = [
+  // Health Tools (10)
+  {
+    id: 'health-tool-001',
+    title: 'BMI Calculator',
+    description: 'Calculate your Body Mass Index to assess if you\'re in a healthy weight range.',
+    category: 'Health',
+    icon: '⚖️',
+    featured: true,
+  },
+  {
+    id: 'health-tool-002',
+    title: 'Calorie Calculator',
+    description: 'Determine your daily caloric needs based on your activity level and goals.',
+    category: 'Health',
+    icon: '🔥',
+    featured: true,
+  },
+  {
+    id: 'health-tool-003',
+    title: 'Water Intake Calculator',
+    description: 'Find out how much water you should drink daily for optimal hydration.',
+    category: 'Health',
+    icon: '💧',
+    featured: true,
+  },
+  {
+    id: 'health-tool-004',
+    title: 'Heart Rate Zone Calculator',
+    description: 'Calculate your target heart rate zones for different types of exercise.',
+    category: 'Health',
+    icon: '❤️',
+  },
+  {
+    id: 'health-tool-005',
+    title: 'Protein Requirement Calculator',
+    description: 'Determine your daily protein needs based on your lifestyle and fitness goals.',
+    category: 'Health',
+    icon: '🥩',
+  },
+  {
+    id: 'health-tool-006',
+    title: 'Sleep Cycle Calculator',
+    description: 'Find the optimal bedtime and wake-up time based on sleep cycles.',
+    category: 'Health',
+    icon: '😴',
+  },
+  {
+    id: 'health-tool-007',
+    title: 'Body Fat Percentage Calculator',
+    description: 'Estimate your body fat percentage using various measurement methods.',
+    category: 'Health',
+    icon: '📊',
+  },
+  {
+    id: 'health-tool-008',
+    title: 'Vitamin D Calculator',
+    description: 'Calculate recommended vitamin D intake based on your location and lifestyle.',
+    category: 'Health',
+    icon: '☀️',
+  },
+  {
+    id: 'health-tool-009',
+    title: 'Stress Level Assessment',
+    description: 'Evaluate your stress levels with our comprehensive assessment tool.',
+    category: 'Health',
+    icon: '🧘',
+  },
+  {
+    id: 'health-tool-010',
+    title: 'Macro Calculator',
+    description: 'Calculate your optimal macronutrient distribution for your goals.',
+    category: 'Health',
+    icon: '🍎',
+  },
+
+  // Beauty Tools (10)
+  {
+    id: 'beauty-tool-001',
+    title: 'Skin Type Analyzer',
+    description: 'Determine your skin type with our comprehensive questionnaire.',
+    category: 'Beauty',
+    icon: '✨',
+    featured: true,
+  },
+  {
+    id: 'beauty-tool-002',
+    title: 'Skincare Routine Builder',
+    description: 'Create a personalized skincare routine based on your skin type and concerns.',
+    category: 'Beauty',
+    icon: '🧴',
+    featured: true,
+  },
+  {
+    id: 'beauty-tool-003',
+    title: 'Hair Care Analyzer',
+    description: 'Get personalized hair care recommendations based on your hair type.',
+    category: 'Beauty',
+    icon: '💇',
+    featured: true,
+  },
+  {
+    id: 'beauty-tool-004',
+    title: 'Foundation Shade Finder',
+    description: 'Find your perfect foundation shade match across different brands.',
+    category: 'Beauty',
+    icon: '💄',
+  },
+  {
+    id: 'beauty-tool-005',
+    title: 'SPF Calculator',
+    description: 'Calculate how long you can stay in the sun based on your skin type and SPF.',
+    category: 'Beauty',
+    icon: '🌞',
+  },
+  {
+    id: 'beauty-tool-006',
+    title: 'Product Ingredient Checker',
+    description: 'Check if beauty products contain ingredients that might irritate your skin.',
+    category: 'Beauty',
+    icon: '🔍',
+  },
+  {
+    id: 'beauty-tool-007',
+    title: 'Face Shape Analyzer',
+    description: 'Determine your face shape and get personalized makeup and hairstyle tips.',
+    category: 'Beauty',
+    icon: '👤',
+  },
+  {
+    id: 'beauty-tool-008',
+    title: 'Color Palette Generator',
+    description: 'Find colors that complement your skin tone for makeup and clothing.',
+    category: 'Beauty',
+    icon: '🎨',
+  },
+  {
+    id: 'beauty-tool-009',
+    title: 'Anti-Aging Routine Planner',
+    description: 'Create an age-appropriate skincare routine with anti-aging focus.',
+    category: 'Beauty',
+    icon: '⏳',
+  },
+  {
+    id: 'beauty-tool-010',
+    title: 'Nail Health Analyzer',
+    description: 'Assess your nail health and get care recommendations.',
+    category: 'Beauty',
+    icon: '💅',
+  },
+
+  // General Tools (5)
+  {
+    id: 'general-tool-001',
+    title: 'Basic Calculator',
+    description: 'Perform basic mathematical calculations quickly and easily.',
+    category: 'General',
+    icon: '🧮',
+  },
+  {
+    id: 'general-tool-002',
+    title: 'QR Code Generator',
+    description: 'Generate QR codes for text, URLs, or contact information.',
+    category: 'General',
+    icon: '📱',
+  },
+  {
+    id: 'general-tool-003',
+    title: 'Plagiarism Checker',
+    description: 'Check your text for potential plagiarism against online sources.',
+    category: 'General',
+    icon: '📝',
+  },
+  {
+    id: 'general-tool-004',
+    title: 'Word Counter',
+    description: 'Count words, characters, and paragraphs in your text.',
+    category: 'General',
+    icon: '📄',
+  },
+  {
+    id: 'general-tool-005',
+    title: 'Unit Converter',
+    description: 'Convert between different units of measurement easily.',
+    category: 'General',
+    icon: '🔄',
+  },
+];
+
+export const featuredTools = tools.filter(tool => tool.featured);
+export const healthTools = tools.filter(tool => tool.category === 'Health');
+export const beautyTools = tools.filter(tool => tool.category === 'Beauty');
+export const generalTools = tools.filter(tool => tool.category === 'General');

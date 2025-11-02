@@ -19,158 +19,150 @@ const RefundPolicyPage = () => {
 
         {/* Header */}
         <div className="bg-white shadow-sm rounded-lg p-6 mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">Refund Policy</h1>
-          <p className="text-gray-600">Last updated: {new Date().toLocaleDateString()}</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">Refund, Resend and Returns Policy</h1>
+          <p className="text-gray-600">Last updated: {new Date().toLocaleDateString()} | Effective Date: January 1, 2024</p>
         </div>
 
         {/* Content */}
         <div className="bg-white shadow-sm rounded-lg p-6">
           <div className="prose prose-lg max-w-none">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Our Commitment</h2>
             <p className="text-gray-700 mb-6">
-              At Marwari Luxe, we are committed to your satisfaction. If you are not completely satisfied with your purchase, 
-              we offer a comprehensive return and refund policy to ensure your peace of mind.
+              As an affiliate marketer, Marwari Luxe does not directly sell products. We earn commissions by promoting products from third-party retailers. 
+              This refund policy outlines the process for handling disputes related to products purchased through our affiliate links.
             </p>
 
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Return Period</h2>
-            <div className="bg-purple-50 border-l-4 border-purple-400 p-4 mb-6">
-              <p className="text-purple-800 font-semibold">
-                📅 You have 30 days from the date of delivery to return most items for a full refund.
+            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+              <div className="flex">
+                <div className="flex-shrink-0">
+                  <svg className="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div className="ml-3">
+                  <p className="text-sm text-yellow-700">
+                    <strong>Important:</strong> All disputes must be opened with the original retailer. Marwari Luxe will assist customers in directing their complaints to the appropriate retailer.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Our Role as an Affiliate</h2>
+            <p className="text-gray-700 mb-6">
+              Marwari Luxe is an affiliate marketing website and does not directly handle product sales, shipping, or customer service. 
+              When you purchase products through our affiliate links, you are buying directly from the retailer. 
+              We earn a commission for referring customers to these retailers.
+            </p>
+
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Orders Delayed</h2>
+            <p className="text-gray-700 mb-4">
+              For delayed orders, please contact the original retailer directly. We recommend:
+            </p>
+            <ul className="list-disc pl-6 mb-6 text-gray-700">
+              <li>Tracking your order using the provided tracking number</li>
+              <li>Contacting the retailer's customer service department</li>
+              <li>Allowing adequate time for international shipping (7-30 business days for most products)</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">Special Cases:</h3>
+            <ul className="list-disc pl-6 mb-6 text-gray-700">
+              <li>USA shipments: Considered delayed after 45 days</li>
+              <li>Brazil shipments: Considered delayed after 110 days due to customs</li>
+              <li>Special shipping methods: May have different delivery timeframes</li>
+            </ul>
+
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Orders Not Received</h2>
+            <p className="text-gray-700 mb-4">
+              If your tracking information shows the order was delivered but you haven't received it:
+            </p>
+            <ul className="list-disc pl-6 mb-6 text-gray-700">
+              <li>Contact your local post office with the tracking number</li>
+              <li>Obtain a non-delivery certification from the post office if required</li>
+              <li>Check if the package was delivered to a neighbor or alternative address</li>
+              <li>Contact the retailer's customer service with all relevant documentation</li>
+            </ul>
+
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">3. Products Damaged</h2>
+            <p className="text-gray-700 mb-4">
+              If you receive a damaged product:
+            </p>
+            <ul className="list-disc pl-6 mb-6 text-gray-700">
+              <li>Document the damage with clear photos or videos</li>
+              <li>Contact the retailer within 30 days of delivery</li>
+              <li>Provide the order number and damage documentation</li>
+              <li>Follow the retailer's return process</li>
+            </ul>
+
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">4. Incorrect or Missing Products</h2>
+            <p className="text-gray-700 mb-4">
+              If you receive incorrect or missing items:
+            </p>
+            <ul className="list-disc pl-6 mb-6 text-gray-700">
+              <li>Contact the retailer immediately with your order details</li>
+              <li>Provide photos of the incorrect items received</li>
+              <li>Include screenshots of the original order confirmation</li>
+              <li>Follow the retailer's process for corrections</li>
+            </ul>
+
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. How Marwari Luxe Can Help</h2>
+            <p className="text-gray-700 mb-4">
+              While we don't handle the products directly, we're here to assist you:
+            </p>
+            <ul className="list-disc pl-6 mb-6 text-gray-700">
+              <li>Provide the original retailer's contact information</li>
+              <li>Help you locate your order details and tracking information</li>
+              <li>Guide you through the dispute process with the retailer</li>
+              <li>Offer general advice on international shipping and customs</li>
+            </ul>
+
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Important Information</h2>
+            
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">Force Majeure</h3>
+            <p className="text-gray-700 mb-4">
+              Neither Marwari Luxe nor the retailers are responsible for delays or issues caused by events beyond our control, 
+              including but not limited to: natural disasters, epidemics, customs delays, strikes, wars, or government restrictions.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">Return Process</h3>
+            <p className="text-gray-700 mb-4">
+              If a return is required:
+            </p>
+            <ul className="list-disc pl-6 mb-6 text-gray-700">
+              <li>Contact the retailer first to obtain return authorization</li>
+              <li>Follow the retailer's specific return instructions</li>
+              <li>Package items securely to prevent damage during return shipping</li>
+              <li>Keep all shipping documentation and receipts</li>
+              <li>Note that international return shipping can be expensive and time-consuming</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">Unacceptable Disputes</h3>
+            <p className="text-gray-700 mb-4">
+              The following disputes are typically not accepted by retailers:
+            </p>
+            <ul className="list-disc pl-6 mb-6 text-gray-700">
+              <li>Buyer's change of mind or personal preferences</li>
+              <li>Incorrect shipping addresses provided by the customer</li>
+              <li>Failure to clear customs in certain countries</li>
+              <li>Tracking information deleted by logistics companies</li>
+              <li>Products detained due to customs or import restrictions</li>
+            </ul>
+
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Contact Information</h2>
+            <p className="text-gray-700 mb-4">
+              For assistance with affiliate-related questions or to be directed to the appropriate retailer:
+            </p>
+            <div className="bg-gray-50 p-4 rounded-lg mb-6">
+              <p className="text-gray-700">
+                <strong>Email:</strong> support@marwariluxe.com<br/>
+                <strong>Phone:</strong> +1 (555) 123-4567<br/>
+                <strong>Response Time:</strong> Within 24-48 business hours
               </p>
             </div>
 
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Eligible Items for Return</h2>
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div className="bg-green-50 p-4 rounded-lg">
-                <h3 className="text-lg font-semibold text-green-800 mb-3">✅ Returnable Items</h3>
-                <ul className="list-disc pl-5 text-green-700 space-y-1">
-                  <li>Unopened beauty products in original packaging</li>
-                  <li>Health supplements with unbroken seals</li>
-                  <li>Accessories in new condition</li>
-                  <li>Defective or damaged items</li>
-                  <li>Items not as described</li>
-                </ul>
-              </div>
-              
-              <div className="bg-red-50 p-4 rounded-lg">
-                <h3 className="text-lg font-semibold text-red-800 mb-3">❌ Non-Returnable Items</h3>
-                <ul className="list-disc pl-5 text-red-700 space-y-1">
-                  <li>Opened or used beauty products</li>
-                  <li>Perishable health items</li>
-                  <li>Customized or personalized products</li>
-                  <li>Digital products or services</li>
-                  <li>Items purchased on final sale</li>
-                </ul>
-              </div>
-            </div>
-
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Return Conditions</h2>
-            <p className="text-gray-700 mb-4">To be eligible for a return, items must meet the following conditions:</p>
-            <ul className="list-disc pl-6 mb-6 text-gray-700">
-              <li>Items must be in original condition and packaging</li>
-              <li>All tags and labels must be attached</li>
-              <li>Items must be clean and free from damage</li>
-              <li>Original receipt or proof of purchase required</li>
-              <li>Return must be initiated within the 30-day return period</li>
-            </ul>
-
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">How to Return Items</h2>
-            <div className="bg-blue-50 p-6 rounded-lg mb-6">
-              <h3 className="text-lg font-semibold text-blue-800 mb-4">📦 Step-by-Step Return Process</h3>
-              <ol className="list-decimal pl-5 text-blue-700 space-y-2">
-                <li><strong>Contact Us:</strong> Email returns@marwariluxe.com or call +1 (555) 123-4567</li>
-                <li><strong>Provide Details:</strong> Include your order number and reason for return</li>
-                <li><strong>Receive Instructions:</strong> We'll send you a return authorization and shipping label</li>
-                <li><strong>Package Items:</strong> Securely package items in original packaging</li>
-                <li><strong>Ship Items:</strong> Use the provided shipping label and drop off at authorized location</li>
-                <li><strong>Track Return:</strong> Monitor your return using the tracking number provided</li>
-              </ol>
-            </div>
-
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Refund Processing</h2>
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">Processing Time</h3>
-            <ul className="list-disc pl-6 mb-4 text-gray-700">
-              <li><strong>Inspection:</strong> 2-3 business days after we receive your return</li>
-              <li><strong>Refund Processing:</strong> 3-5 business days after approval</li>
-              <li><strong>Bank Processing:</strong> 5-10 business days depending on your bank</li>
-            </ul>
-
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">Refund Method</h3>
-            <p className="text-gray-700 mb-6">
-              Refunds will be processed to the original payment method used for the purchase. If the original payment method 
-              is no longer available, we may issue store credit or arrange an alternative refund method.
-            </p>
-
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Exchanges</h2>
-            <p className="text-gray-700 mb-4">
-              We offer exchanges for the following situations:
-            </p>
-            <ul className="list-disc pl-6 mb-6 text-gray-700">
-              <li>Size exchanges for applicable products</li>
-              <li>Color variations (subject to availability)</li>
-              <li>Defective item replacements</li>
-              <li>Damaged during shipping</li>
-            </ul>
-
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Shipping Costs</h2>
-            <div className="grid md:grid-cols-2 gap-4 mb-6">
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h3 className="font-semibold text-gray-800 mb-2">🆓 Free Return Shipping</h3>
-                <ul className="text-sm text-gray-700 space-y-1">
-                  <li>• Defective items</li>
-                  <li>• Wrong item sent</li>
-                  <li>• Damaged during shipping</li>
-                  <li>• Our error</li>
-                </ul>
-              </div>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h3 className="font-semibold text-gray-800 mb-2">💰 Customer Pays Shipping</h3>
-                <ul className="text-sm text-gray-700 space-y-1">
-                  <li>• Change of mind</li>
-                  <li>• Size/color exchange</li>
-                  <li>• Customer error</li>
-                  <li>• Non-defective returns</li>
-                </ul>
-              </div>
-            </div>
-
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Special Circumstances</h2>
-            
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">Damaged or Defective Items</h3>
-            <p className="text-gray-700 mb-4">
-              If you receive a damaged or defective item, please contact us immediately. We will provide a prepaid return 
-              label and expedite your replacement or refund.
-            </p>
-
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">Late Returns</h3>
-            <p className="text-gray-700 mb-4">
-              Returns initiated after the 30-day period may be accepted at our discretion and may be subject to a restocking fee.
-            </p>
-
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">International Returns</h3>
-            <p className="text-gray-700 mb-6">
-              International customers are responsible for return shipping costs and any customs duties. Please contact our 
-              support team for specific instructions.
-            </p>
-
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Gift Returns</h2>
-            <p className="text-gray-700 mb-6">
-              Items purchased as gifts can be returned by the recipient. Refunds for gift purchases will be issued as store 
-              credit unless the original purchaser requests the refund.
-            </p>
-
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Contact Our Returns Team</h2>
-            <div className="bg-purple-50 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold text-purple-800 mb-4">📞 Need Help with Your Return?</h3>
-              <div className="text-purple-700">
-                <p className="mb-2"><strong>Email:</strong> returns@marwariluxe.com</p>
-                <p className="mb-2"><strong>Phone:</strong> +1 (555) 123-4567</p>
-                <p className="mb-2"><strong>Hours:</strong> Monday - Friday, 9 AM - 6 PM EST</p>
-                <p className="mb-4"><strong>Address:</strong> Marwari Luxe Returns Department<br/>123 Business Street, City, State 12345</p>
-                <p className="text-sm">
-                  <strong>Response Time:</strong> We respond to all return inquiries within 24 hours during business days.
-                </p>
-              </div>
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-4">
+              <p className="text-sm text-blue-700">
+                <strong>Note:</strong> This policy applies to purchases made through Marwari Luxe affiliate links. 
+                For products purchased directly from retailers, please refer to their individual refund policies.
+              </p>
             </div>
           </div>
         </div>

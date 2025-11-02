@@ -3,146 +3,94 @@ import Link from 'next/link';
 import { ArrowLeftIcon, ChevronDownIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
 
 const FAQPage = () => {
-  const faqCategories = [
+  const faqData = [
     {
-      title: "General Questions",
-      icon: "❓",
-      questions: [
-        {
-          question: "What is Marwari Luxe?",
-          answer: "Marwari Luxe is a premium health and beauty e-commerce platform offering high-quality products, educational content, and useful tools to enhance your wellness journey and natural beauty."
-        },
-        {
-          question: "How do I create an account?",
-          answer: "You can create an account by clicking the 'Sign Up' button on our website and filling out the required information. You can also checkout as a guest without creating an account."
-        },
-        {
-          question: "Is my personal information secure?",
-          answer: "Yes, we take your privacy seriously. All personal information is encrypted and stored securely. Please read our Privacy Policy for detailed information about how we protect your data."
-        },
-        {
-          question: "Do you offer international shipping?",
-          answer: "Currently, we ship to select international locations. Please check our shipping policy or contact customer service to confirm if we ship to your country."
-        }
-      ]
+      question: "How do I place an order?",
+      answer: "Simply browse our products, add items to your cart, and proceed to checkout. You can pay using various payment methods including credit cards and other secure options."
     },
     {
-      title: "Orders & Shipping",
-      icon: "📦",
-      questions: [
-        {
-          question: "How do I place an order?",
-          answer: "Simply browse our products, add items to your cart, and proceed to checkout. You can pay using various payment methods including credit cards, PayPal, and other secure options."
-        },
-        {
-          question: "What payment methods do you accept?",
-          answer: "We accept major credit cards (Visa, Mastercard, American Express), PayPal, Stripe, Wise, and bank transfers. All payments are processed securely through encrypted channels."
-        },
-        {
-          question: "How long does shipping take?",
-          answer: "Standard shipping typically takes 3-7 business days within the domestic region. Express shipping options are available for faster delivery. International shipping may take 7-21 business days depending on the destination."
-        },
-        {
-          question: "Can I track my order?",
-          answer: "Yes, once your order ships, you'll receive a tracking number via email. You can use this number to track your package on our website or the carrier's website."
-        },
-        {
-          question: "What if my order arrives damaged?",
-          answer: "If your order arrives damaged, please contact our customer service team immediately with photos of the damage. We'll arrange for a replacement or full refund at no cost to you."
-        }
-      ]
+      question: "What payment methods do you accept?",
+      answer: "We accept major credit cards (Visa, Mastercard, American Express) and bank transfers. All payments are processed securely through encrypted channels."
     },
     {
-      title: "Returns & Refunds",
-      icon: "🔄",
-      questions: [
-        {
-          question: "What is your return policy?",
-          answer: "We offer a 30-day return policy for most items. Products must be in original condition and packaging. Please see our detailed Refund Policy page for complete terms and conditions."
-        },
-        {
-          question: "How do I return an item?",
-          answer: "Contact our returns team at returns@marwariluxe.com with your order number. We'll provide you with return instructions and a prepaid shipping label if applicable."
-        },
-        {
-          question: "When will I receive my refund?",
-          answer: "Refunds are processed within 3-5 business days after we receive and inspect your returned item. The refund will appear in your original payment method within 5-10 business days."
-        },
-        {
-          question: "Can I exchange an item instead of returning it?",
-          answer: "Yes, we offer exchanges for size, color, or similar product variations subject to availability. Contact our customer service team to arrange an exchange."
-        }
-      ]
+      question: "How long does shipping take?",
+      answer: "Standard shipping typically takes 3-7 business days within the domestic region. Express shipping options are available for faster delivery. International shipping may take 7-21 business days depending on the destination."
     },
     {
-      title: "Products & Health",
-      icon: "🏥",
-      questions: [
-        {
-          question: "Are your products safe to use?",
-          answer: "All our products are sourced from reputable manufacturers and comply with relevant safety standards. However, individual reactions may vary. Always read product labels and consult healthcare professionals if you have concerns."
-        },
-        {
-          question: "Do you test products on animals?",
-          answer: "We are committed to cruelty-free practices. We do not test on animals and work with suppliers who share this commitment. Many of our products are certified cruelty-free."
-        },
-        {
-          question: "Can I use multiple products together?",
-          answer: "While many products can be used together, we recommend consulting the product instructions and possibly a healthcare professional for personalized advice, especially for health supplements."
-        },
-        {
-          question: "What if I have allergies or sensitivities?",
-          answer: "Always read ingredient lists carefully and perform patch tests for topical products. If you have known allergies, consult with a healthcare provider before trying new products."
-        },
-        {
-          question: "Do your health calculators provide medical advice?",
-          answer: "No, our health calculators and tools are for informational purposes only and should not replace professional medical advice. Always consult healthcare professionals for medical guidance."
-        }
-      ]
+      question: "Can I track my order?",
+      answer: "Yes, once your order ships, you'll receive a tracking number via email. You can use this number to track your package on our website or the carrier's website."
     },
     {
-      title: "Account & Technical",
-      icon: "⚙️",
-      questions: [
-        {
-          question: "I forgot my password. How do I reset it?",
-          answer: "Click the 'Forgot Password' link on the login page and enter your email address. You'll receive instructions to reset your password via email."
-        },
-        {
-          question: "How do I update my account information?",
-          answer: "Log into your account and go to the 'Account Settings' or 'Profile' section where you can update your personal information, shipping addresses, and preferences."
-        },
-        {
-          question: "Why can't I access certain features on mobile?",
-          answer: "Our website is optimized for mobile devices. If you're experiencing issues, try refreshing the page, clearing your browser cache, or updating your browser to the latest version."
-        },
-        {
-          question: "How do I unsubscribe from emails?",
-          answer: "You can unsubscribe by clicking the 'Unsubscribe' link at the bottom of any email we send, or by updating your email preferences in your account settings."
-        }
-      ]
+      question: "What if my order arrives damaged?",
+      answer: "If your order arrives damaged, please contact our customer service team immediately with photos of the damage. We'll arrange for a replacement or full refund at no cost to you."
     },
     {
-      title: "Business & Partnerships",
-      icon: "🤝",
-      questions: [
-        {
-          question: "Do you offer wholesale or bulk pricing?",
-          answer: "Yes, we offer special pricing for bulk orders and business customers. Please contact our business development team at business@marwariluxe.com for more information."
-        },
-        {
-          question: "Can I become an affiliate or partner?",
-          answer: "We have affiliate and partnership programs available. Please reach out to partnerships@marwariluxe.com with details about your proposal and audience."
-        },
-        {
-          question: "Do you accept product submissions from brands?",
-          answer: "We carefully curate our product selection. If you're a brand interested in partnering with us, please submit your proposal to brands@marwariluxe.com."
-        },
-        {
-          question: "How can I contact customer service?",
-          answer: "You can reach our customer service team via email at support@marwariluxe.com, phone at +1 (555) 123-4567, or through our contact form. We're available Monday-Friday, 9 AM-6 PM EST."
-        }
-      ]
+      question: "What is your return policy?",
+      answer: "We offer a 30-day return policy for most items. Products must be in original condition and packaging. Please see our detailed Refund Policy page for complete terms and conditions."
+    },
+    {
+      question: "How do I return an item?",
+      answer: "Contact our returns team at returns@marwariluxe.com with your order number. We'll provide you with return instructions and a prepaid shipping label if applicable."
+    },
+    {
+      question: "When will I receive my refund?",
+      answer: "Refunds are processed within 3-5 business days after we receive and inspect your returned item. The refund will appear in your original payment method within 5-10 business days."
+    },
+    {
+      question: "Can I exchange an item instead of returning it?",
+      answer: "Yes, we offer exchanges for size, color, or similar product variations subject to availability. Contact our customer service team to arrange an exchange."
+    },
+    {
+      question: "Are your products safe to use?",
+      answer: "All our products are sourced from reputable manufacturers and comply with relevant safety standards. However, individual reactions may vary. Always read product labels and consult healthcare professionals if you have concerns."
+    },
+    {
+      question: "Do you test products on animals?",
+      answer: "We are committed to cruelty-free practices. We do not test on animals and work with suppliers who share this commitment. Many of our products are certified cruelty-free."
+    },
+    {
+      question: "Can I use multiple products together?",
+      answer: "While many products can be used together, we recommend consulting the product instructions and possibly a healthcare professional for personalized advice, especially for health supplements."
+    },
+    {
+      question: "What if I have allergies or sensitivities?",
+      answer: "Always read ingredient lists carefully and perform patch tests for topical products. If you have known allergies, consult with a healthcare provider before trying new products."
+    },
+    {
+      question: "Do your health calculators provide medical advice?",
+      answer: "No, our health calculators and tools are for informational purposes only and should not replace professional medical advice. Always consult healthcare professionals for medical guidance."
+    },
+    {
+      question: "I forgot my password. How do I reset it?",
+      answer: "Click the 'Forgot Password' link on the login page and enter your email address. You'll receive instructions to reset your password via email."
+    },
+    {
+      question: "How do I update my account information?",
+      answer: "Log into your account and go to the 'Account Settings' or 'Profile' section where you can update your personal information, shipping addresses, and preferences."
+    },
+    {
+      question: "Why can't I access certain features on mobile?",
+      answer: "Our website is optimized for mobile devices. If you're experiencing issues, try refreshing the page, clearing your browser cache, or updating your browser to the latest version."
+    },
+    {
+      question: "How do I unsubscribe from emails?",
+      answer: "You can unsubscribe by clicking the 'Unsubscribe' link at the bottom of any email we send, or by updating your email preferences in your account settings."
+    },
+    {
+      question: "Do you offer wholesale or bulk pricing?",
+      answer: "Yes, we offer special pricing for bulk orders and business customers. Please contact our business development team at business@marwariluxe.com for more information."
+    },
+    {
+      question: "Can I become an affiliate or partner?",
+      answer: "We have affiliate and partnership programs available. Please reach out to partnerships@marwariluxe.com with details about your proposal and audience."
+    },
+    {
+      question: "Do you accept product submissions from brands?",
+      answer: "We carefully curate our product selection. If you're a brand interested in partnering with us, please submit your proposal to brands@marwariluxe.com."
+    },
+    {
+      question: "How can I contact customer service?",
+      answer: "You can reach our customer service team via email at support@marwariluxe.com, phone at +1 (555) 123-4567, or through our contact form. We're available Monday-Friday, 9 AM-6 PM EST."
     }
   ];
 
@@ -188,35 +136,18 @@ const FAQPage = () => {
 
         {/* FAQ Categories */}
         <div className="space-y-6">
-          {faqCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="bg-white shadow-sm rounded-lg">
-              {/* Category Header */}
-              <div className="bg-purple-50 px-6 py-4 border-b border-purple-100 rounded-t-lg">
-                <h2 className="text-xl font-semibold text-purple-800 flex items-center">
-                  <span className="text-2xl mr-3">{category.icon}</span>
-                  {category.title}
-                </h2>
-              </div>
-
-              {/* Questions */}
-              <div className="p-6">
-                <div className="space-y-4">
-                  {category.questions.map((faq, faqIndex) => (
-                    <details key={faqIndex} className="group border border-gray-200 rounded-lg">
-                      <summary className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 rounded-lg transition-colors">
-                        <h3 className="font-medium text-gray-900 pr-4">{faq.question}</h3>
-                        <ChevronDownIcon className="h-5 w-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0" />
-                      </summary>
-                      <div className="px-4 pb-4">
-                        <div className="pt-2 border-t border-gray-100">
-                          <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
-                        </div>
-                      </div>
-                    </details>
-                  ))}
+          {faqData.map((faq, index) => (
+            <details key={index} className="group border border-gray-200 rounded-lg">
+              <summary className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 rounded-lg transition-colors">
+                <h3 className="font-medium text-gray-900 pr-4">{faq.question}</h3>
+                <ChevronDownIcon className="h-5 w-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0" />
+              </summary>
+              <div className="px-4 pb-4">
+                <div className="pt-2 border-t border-gray-100">
+                  <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
                 </div>
               </div>
-            </div>
+            </details>
           ))}
         </div>
 

@@ -46,7 +46,7 @@ export default function Home() {
               "name": "Marwari Luxe",
               "image": "https://marwariluxe.com/marwari-logo.png",
               "description": "Premium health supplements, natural beauty products & wellness tools store",
-              "paymentAccepted": ["Credit Card", "PayPal", "Stripe", "Wise"],
+              "paymentAccepted": ["Credit Card"],
               "currenciesAccepted": "USD",
               "priceRange": "$15-$150"
             }

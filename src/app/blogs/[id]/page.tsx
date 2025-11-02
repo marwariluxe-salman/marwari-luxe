@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { blogs } from '@/data/blogs';
 import { Blog } from '@/types';
+import AdUnit from '@/components/AdUnit';
 
 const BlogPost = () => {
   const params = useParams();
@@ -139,14 +140,21 @@ const BlogPost = () => {
           {/* Main Content */}
           <div className="text-gray-800 leading-relaxed space-y-6">
             {/* Render content with proper formatting */}
-            <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ 
-              __html: blog.content
-                .replace(/\n\n/g, '</p><p>')
-                .replace(/^(.*)$/gm, '<p>$1</p>')
-                .replace(/## (.*?)\n/g, '<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">$1</h2>')
-                .replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" class="w-full h-64 md:h-80 object-cover rounded-lg shadow-lg my-8" />')
-                .replace(/<p><\/p>/g, '')
-            }} />
+            <div className="prose prose-lg max-w-none">
+              {blog.content
+                .split('\n\n')
+                .map((paragraph, index) => (
+                  <div key={index}>
+                    <p>{paragraph}</p>
+                    {/* Insert ad after the second paragraph */}
+                    {index === 1 && (
+                      <div className="my-8 text-center">
+                        <AdUnit slot="1234567890" />
+                      </div>
+                    )}
+                  </div>
+                ))}
+            </div>
             
             {/* Additional Content Sections
             <div className="space-y-8">

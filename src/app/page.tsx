@@ -29,28 +29,30 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Marwari Luxe - Premium Health & Beauty Products",
+    "description": "Shop premium health supplements, natural beauty products & wellness tools. Expert-curated collection for optimal health and beauty.",
+    "url": "https://marwariluxe.com",
+    "mainEntity": {
+      "@type": "Store",
+      "name": "Marwari Luxe",
+      "image": "https://marwariluxe.com/marwari-logo.png",
+      "description": "Premium health supplements, natural beauty products & wellness tools store",
+      "paymentAccepted": ["Credit Card"],
+      "currenciesAccepted": "USD",
+      "priceRange": "$15-$150"
+    }
+  };
+
   return (
     <div className="min-h-screen">
       {/* Structured Data for Homepage */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": "Marwari Luxe - Premium Health & Beauty Products",
-            "description": "Shop premium health supplements, natural beauty products & wellness tools. Expert-curated collection for optimal health and beauty.",
-            "url": "https://marwariluxe.com",
-            "mainEntity": {
-              "@type": "Store",
-              "name": "Marwari Luxe",
-              "image": "https://marwariluxe.com/marwari-logo.png",
-              "description": "Premium health supplements, natural beauty products & wellness tools store",
-              "paymentAccepted": ["Credit Card"],
-              "currenciesAccepted": "USD",
-              "priceRange": "$15-$150"
-            }
-          })
+          __html: JSON.stringify(structuredData),
         }}
       />
       

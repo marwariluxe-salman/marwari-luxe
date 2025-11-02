@@ -72,6 +72,26 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Marwari Luxe",
+    "url": "https://marwariluxe.com",
+    "logo": "https://marwariluxe.com/marwari-logo.png",
+    "description": "Premium health supplements, natural beauty products & wellness tools. Expert-curated collection for optimal health and beauty.",
+    "sameAs": [
+      "https://facebook.com/marwariluxe",
+      "https://instagram.com/marwariluxe",
+      "https://twitter.com/marwariluxe"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-555-123-4567",
+      "contactType": "customer service",
+      "email": "support@marwariluxe.com"
+    }
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -85,32 +105,23 @@ export default function RootLayout({
         <meta name="application-name" content="Marwari Luxe" />
         <meta name="msapplication-TileColor" content="#9333ea" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
+        <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXX" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="canonical" href="https://marwariluxe.com" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Marwari Luxe",
-            "url": "https://marwariluxe.com",
-            "logo": "https://marwariluxe.com/marwari-logo.png",
-            "description": "Premium health supplements, natural beauty products & wellness tools. Expert-curated collection for optimal health and beauty.",
-            "sameAs": [
-              "https://facebook.com/marwariluxe",
-              "https://instagram.com/marwariluxe",
-              "https://twitter.com/marwariluxe"
-            ],
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+1-555-123-4567",
-              "contactType": "customer service",
-              "email": "support@marwariluxe.com"
-            }
-          })}
-        </script>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX"
+          crossOrigin="anonymous"
+        ></script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
       </head>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased touch-manipulation`}

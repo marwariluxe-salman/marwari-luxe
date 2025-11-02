@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { allProducts } from '@/data/products';
 import { Product } from '@/types';
 import Image from 'next/image';
+import AdUnit from '@/components/AdUnit';
 
 const ProductDetail = () => {
   const params = useParams();
@@ -197,6 +198,16 @@ With thousands of satisfied customers worldwide, this product has established it
                   {demoSales.toLocaleString()} people bought this product
                 </span>
               </div>
+            </motion.div>
+
+            {/* Ad Unit */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="my-6"
+            >
+              <AdUnit slot="1234567891" />
             </motion.div>
 
             <motion.div

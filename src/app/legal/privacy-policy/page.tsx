@@ -124,9 +124,9 @@ const PrivacyPolicyPage = () => {
             </p>
             <div className="bg-gray-50 p-4 rounded-lg">
               <p className="text-gray-700">
-                <strong>Email:</strong> privacy@marwariluxe.com<br/>
-                <strong>Phone:</strong> +1 (555) 123-4567<br/>
-                <strong>Address:</strong> 123 Business Street, City, State 12345
+                <strong>Email:</strong> marwariluxe@gmail.com<br/>
+                {/* <strong>Phone:</strong> <br/>
+                <strong>Address:</strong> 123 Business Street, City, State 12345 */}
               </p>
             </div>
           </div>

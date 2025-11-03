@@ -8,6 +8,43 @@ import { blogs } from '@/data/blogs';
 import { Blog } from '@/types';
 import AdUnit from '@/components/AdUnit';
 
+// Function to render HTML content safely
+const renderHTMLContent = (content: string) => {
+  // Split content by double newlines to handle paragraphs
+  const paragraphs = content.split('\n\n');
+  
+  return (
+    <div className="space-y-6">
+      {paragraphs.map((paragraph, index) => {
+        // Check if paragraph contains HTML tags or markdown images
+        if (paragraph.includes('<br>') || paragraph.includes('<h1') || paragraph.includes('<img') || paragraph.includes('![')) {
+          // Replace <br> tags with actual line breaks
+          let processedContent = paragraph.replace(/<br\s*\/?>/g, '<br />');
+          
+          // Convert markdown image syntax ![alt](src) to HTML img tags
+          processedContent = processedContent.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="rounded-lg shadow-md my-4" style="max-width: 100%; height: auto;" />');
+          
+          // Create a unique key for dangerouslySetInnerHTML
+          return (
+            <div 
+              key={index} 
+              dangerouslySetInnerHTML={{ __html: processedContent }} 
+              className="text-gray-800 leading-relaxed"
+            />
+          );
+        } else {
+          // Regular paragraph without HTML
+          return (
+            <p key={index} className="text-gray-800 leading-relaxed">
+              {paragraph}
+            </p>
+          );
+        }
+      })}
+    </div>
+  );
+};
+
 const BlogPost = () => {
   const params = useParams();
   const [blog, setBlog] = useState<Blog | null>(null);
@@ -141,19 +178,7 @@ const BlogPost = () => {
           <div className="text-gray-800 leading-relaxed space-y-6">
             {/* Render content with proper formatting */}
             <div className="prose prose-lg max-w-none">
-              {blog.content
-                .split('\n\n')
-                .map((paragraph, index) => (
-                  <div key={index}>
-                    <p>{paragraph}</p>
-                    {/* Insert ad after the second paragraph */}
-                    {index === 1 && (
-                      <div className="my-8 text-center">
-                        <AdUnit slot="1234567890" />
-                      </div>
-                    )}
-                  </div>
-                ))}
+              {renderHTMLContent(blog.content)}
             </div>
             
             {/* Additional Content Sections

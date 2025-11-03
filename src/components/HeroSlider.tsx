@@ -78,10 +78,6 @@ const HeroSlider = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
-
   // Fix: Only render floating animation elements on client after mount
   const [floatingPositions, setFloatingPositions] = useState<{left: number; top: number; duration: number; delay: number}[]>([]);
 
@@ -97,8 +93,9 @@ const HeroSlider = () => {
     }
   }, [isHydrated]);
 
+  // Fix for image sizing - ensure full screen display
   return (
-    <div className="relative h-screen overflow-hidden safe-area-inset-top">
+    <div className="relative h-screen w-full overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}
@@ -106,30 +103,30 @@ const HeroSlider = () => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.7 }}
-          className="absolute inset-0"
+          className="absolute inset-0 w-full h-full"
         >
           {/* Background Image with Overlay */}
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 w-full h-full">
             <Image
               src={slides[currentSlide].image}
               alt={slides[currentSlide].title}
               fill
               priority={currentSlide === 0}
-              className="object-cover"
+              className="object-cover w-full h-full"
               sizes="100vw"
-              quality={75}
+              quality={85}
             />
             <div className="absolute inset-0 bg-black/40" />
           </div>
 
           {/* Content */}
-          <div className="relative z-10 flex items-center justify-center h-full px-4 sm:px-6 lg:px-8">
+          <div className="relative z-10 flex items-center justify-center h-full w-full px-4 sm:px-6 lg:px-8">
             <div className="text-center text-white max-w-4xl mx-auto">
               <motion.h1
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 mobile-text-3xl"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 mobile-text-3xl"
               >
                 {slides[currentSlide].title}
               </motion.h1>
@@ -137,7 +134,7 @@ const HeroSlider = () => {
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
-                className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-200 mobile-text-lg px-2"
+                className="text-base sm:text-lg md:text-xl mb-4 sm:mb-6 text-gray-200 mobile-text-lg px-2"
               >
                 {slides[currentSlide].subtitle}
               </motion.p>
@@ -148,7 +145,7 @@ const HeroSlider = () => {
               >
                 <Link
                   href={slides[currentSlide].link}
-                  className="mobile-btn bg-purple-600 hover:bg-purple-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 inline-block"
+                  className="mobile-btn bg-white/20 hover:bg-white/30 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 inline-block backdrop-blur-sm border border-white/30"
                 >
                   {slides[currentSlide].cta}
                 </Link>
@@ -158,39 +155,21 @@ const HeroSlider = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Navigation Arrows */}
+      {/* Navigation Arrows - Kept but without purple color */}
       <button
         onClick={prevSlide}
-        className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-purple-400 transition-colors z-20 p-2 rounded-full bg-black/20 backdrop-blur-sm"
+        className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-white/80 transition-colors z-20 p-1 sm:p-2 rounded-full bg-black/20 backdrop-blur-sm"
         aria-label="Previous slide"
       >
-        <ChevronLeftIcon className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12" />
+        <ChevronLeftIcon className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 text-white" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-purple-400 transition-colors z-20 p-2 rounded-full bg-black/20 backdrop-blur-sm"
+        className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-white/80 transition-colors z-20 p-1 sm:p-2 rounded-full bg-black/20 backdrop-blur-sm"
         aria-label="Next slide"
       >
-        <ChevronRightIcon className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12" />
+        <ChevronRightIcon className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 text-white" />
       </button>
-
-      {/* Dots Indicator */}
-      <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20 safe-area-inset-bottom">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 min-h-[48px] min-w-[48px] flex items-center justify-center ${
-              index === currentSlide ? 'bg-purple-500' : 'bg-white/50 hover:bg-white/75'
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          >
-            <span className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide ? 'bg-purple-500 w-6 sm:w-8' : 'bg-white/50'
-            }`} />
-          </button>
-        ))}
-      </div>
 
       {/* Floating Animation Elements (client-only) */}
       {isHydrated && floatingPositions.length > 0 && (
@@ -198,7 +177,7 @@ const HeroSlider = () => {
           {floatingPositions.map((pos, i) => (
             <motion.div
               key={i}
-              className="absolute w-2 h-2 bg-purple-400/30 rounded-full"
+              className="absolute w-1 h-1 sm:w-2 sm:h-2 bg-white/30 rounded-full"
               style={{
                 left: `${pos.left}%`,
                 top: `${pos.top}%`,
@@ -216,6 +195,20 @@ const HeroSlider = () => {
           ))}
         </div>
       )}
+
+      {/* Slide indicators */}
+      <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all ${
+              index === currentSlide ? 'bg-white scale-125' : 'bg-white/50'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
     </div>
   );
 };

@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { CartProvider } from '@/contexts/CartContext';
+import BackToTopButton from '@/components/BackToTopButton';
 
 const inter = Inter({
   variable: "--font-inter",
@@ -92,6 +93,9 @@ export default function RootLayout({
     }
   };
 
+  // Ensure consistent serialization of structured data to prevent hydration mismatches
+  const serializedStructuredData = JSON.stringify(structuredData);
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -115,16 +119,18 @@ export default function RootLayout({
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX"
           crossOrigin="anonymous"
+          suppressHydrationWarning
         ></script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData),
+            __html: serializedStructuredData,
           }}
+          suppressHydrationWarning
         />
       </head>
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} antialiased touch-manipulation`}
+        className={`${inter.variable} ${jetbrainsMono.variable} antialiased touch-manipulation w-full overflow-x-hidden`}
         suppressHydrationWarning
       >
         <CartProvider>
@@ -132,6 +138,8 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </CartProvider>
+        {/* Placing the button outside the CartProvider to ensure it renders */}
+        <BackToTopButton />
       </body>
     </html>
   );

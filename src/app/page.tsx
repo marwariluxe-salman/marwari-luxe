@@ -10,7 +10,7 @@ import AdSpace from '@/components/AdSpace';
 export const metadata: Metadata = {
   title: 'Marwari Luxe - Premium Health Supplements & Natural Beauty Products | Wellness Store',
   description: 'Shop premium health supplements, natural skincare products & wellness tools at Marwari Luxe. Expert-curated vitamins, anti-aging serums, protein powders & health calculators. Free shipping over $50.',
-  keywords: 'health supplements, natural beauty products, wellness tools, vitamins, skincare, protein powder, anti-aging serum, health calculator, organic skincare, premium supplements, immune support, weight management, hair care products, skin care routine, natural ingredients, wellness blog, fitness accessories, beauty essentials, marwari heritage wellness, cruelty-free beauty',
+  keywords: 'health supplements, natural beauty products, wellness tools, vitamins, skincare, protein powder, anti-aging serum, health calculator, organic skincare, premium supplements, immune support, weight management, hair care products, skin care routine, natural ingredients, wellness blog, fitness accessories, beauty essentials, marwari heritage wellness',
   openGraph: {
     title: 'Marwari Luxe - Premium Health Supplements & Natural Beauty Products',
     description: 'Shop expert-curated health supplements, natural beauty products & wellness tools. Free shipping over $50.',
@@ -47,7 +47,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen w-full overflow-x-hidden flex flex-col">
       {/* Structured Data for Homepage */}
       <script
         type="application/ld+json"
@@ -57,14 +57,22 @@ export default function Home() {
       />
       
       <HeroSlider />
-      <AdSpace size="banner" position="top" />
+      <div className="w-full max-w-7xl mx-auto px-4">
+        <AdSpace size="banner" position="top" />
+      </div>
       <IntroSection />
-      <AdSpace size="rectangle" position="middle" className="max-w-7xl mx-auto px-4" />
+      <div className="w-full max-w-7xl mx-auto px-4">
+        <AdSpace size="rectangle" position="middle" className="w-full" />
+      </div>
       <BlogSection />
       <ToolsSection />
-      <AdSpace size="banner" position="middle" className="max-w-7xl mx-auto px-4" />
+      <div className="w-full max-w-7xl mx-auto px-4">
+        <AdSpace size="banner" position="middle" className="w-full" />
+      </div>
       <ProductsSection />
-      <AdSpace size="rectangle" position="middle" className="max-w-7xl mx-auto px-4" />
+      <div className="w-full max-w-7xl mx-auto px-4">
+        <AdSpace size="rectangle" position="middle" className="w-full" />
+      </div>
       <NewsletterSection />
     </div>
   );

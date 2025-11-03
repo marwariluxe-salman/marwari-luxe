@@ -28,11 +28,36 @@ body {
   /* Enhanced mobile optimizations */
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  overscroll-behavior: contain;
+  overscroll-behavior: none; /* Changed from 'contain' to 'none' to prevent horizontal scrolling */
   user-select: none;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
   -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  touch-action: manipulation; /* Improve touch responsiveness */
+}
+
+/* Add this to prevent horizontal overflow on all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Prevent horizontal scrolling on the html element */
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  /* Fix for mobile viewport height issues */
+  height: -webkit-fill-available;
+  height: 100%;
+}
+
+/* Ensure the main container doesn't overflow */
+#__next {
+  overflow-x: hidden;
+  max-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Mobile optimization */
@@ -40,6 +65,8 @@ body {
   body {
     font-size: 16px; /* Prevent zoom on iOS */
     line-height: 1.5;
+    /* Fix for mobile browser address bar */
+    height: -webkit-fill-available;
   }
   
   /* Improve readability on small screens */
@@ -93,7 +120,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - vertical only */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -102,6 +129,11 @@ html {
   ::-webkit-scrollbar {
     width: 8px;
   }
+}
+
+/* Hide horizontal scrollbar */
+::-webkit-scrollbar:horizontal {
+  height: 0;
 }
 
 ::-webkit-scrollbar-track {
@@ -114,6 +146,35 @@ html {
 }
 
 ::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
+}
+
+/* Hide horizontal scrollbar for custom scrollbars */
+.custom-scrollbar::-webkit-scrollbar:horizontal {
+  height: 0;
+}
+
+/* Custom scrollbar improvements */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #9333ea #f1f1f1;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #9333ea;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #7c3aed;
 }
 
@@ -195,6 +256,7 @@ html {
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%; /* Ensure cards don't overflow */
 }
 
 @media (hover: hover) {
@@ -286,6 +348,13 @@ html {
   transition: all 0.2s ease;
   touch-action: manipulation;
   user-select: none;
+  width: 100%; /* Make buttons full width on mobile */
+}
+
+@media (min-width: 768px) {
+  .mobile-btn {
+    width: auto; /* Reset to auto width on larger screens */
+  }
 }
 
 .mobile-btn:active {
@@ -377,30 +446,6 @@ html {
   box-shadow: 0 0 0 2px #a855f7;
 }
 
-/* Custom scrollbar improvements */
-.custom-scrollbar {
-  scrollbar-width: thin;
-  scrollbar-color: #9333ea #f1f1f1;
-}
-
-.custom-scrollbar::-webkit-scrollbar {
-  width: 8px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 4px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #9333ea;
-  border-radius: 4px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #7c3aed;
-}
-
 /* Performance optimizations */
 .will-change-transform {
   will-change: transform;
@@ -474,4 +519,111 @@ html {
   .container-mobile {
     max-width: 1280px;
   }
+}
+
+/* Device-specific optimizations */
+/* iPhone X and newer */
+@supports (padding: max(0px)) {
+  .ios-top-padding {
+    padding-top: max(env(safe-area-inset-top), 12px);
+  }
+  
+  .ios-bottom-padding {
+    padding-bottom: max(env(safe-area-inset-bottom), 12px);
+  }
+}
+
+/* Android Chrome address bar fix */
+.android-fix {
+  height: 100vh;
+  height: -webkit-fill-available;
+}
+
+/* Prevent text selection on mobile */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Improved touch targets */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive images */
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fix for 100vh on mobile browsers */
+.fullscreen-height {
+  height: 100vh;
+  height: -webkit-fill-available;
+}
+
+/* Orientation change handling */
+@media (orientation: portrait) {
+  .landscape-only {
+    display: none;
+  }
+}
+
+@media (orientation: landscape) {
+  .portrait-only {
+    display: none;
+  }
+}
+
+/* Cross-browser compatibility fixes */
+/* Firefox scrollbar fix */
+@-moz-document url-prefix() {
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #9333ea #f1f1f1;
+  }
+}
+
+/* IE/Edge scrollbar fix */
+.custom-scrollbar {
+  -ms-overflow-style: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Flexbox fixes for older browsers */
+.flex-fix {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-fix-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.flex-fix-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }

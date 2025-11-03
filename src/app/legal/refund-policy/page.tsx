@@ -153,7 +153,7 @@ const RefundPolicyPage = () => {
             <div className="bg-gray-50 p-4 rounded-lg mb-6">
               <p className="text-gray-700">
                 <strong>Email:</strong> support@marwariluxe.com<br/>
-                <strong>Phone:</strong> +1 (555) 123-4567<br/>
+                {/* <strong>Phone:</strong> +1 (555) 123-4567<br/> */}
                 <strong>Response Time:</strong> Within 24-48 business hours
               </p>
             </div>

@@ -40,20 +40,20 @@ const AboutPageClient = () => {
     {
       name: "Salman Marwari",
       role: "Founder & CEO",
-      image: "https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762287754/Salman_Marwari_vvay4m.jpg",
+      image: "https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762293147/1_iqq4q6.jpg",
       description: "Salman Marwari is the Founder and CEO of Marwari Luxe, a trusted health and beauty platform. As a passionate health and beauty blogger, he creates research-based, easy-to-understand content on skincare, nutrition, and overall wellness. With years of experience in writing and digital health communication, Salman combines science and storytelling to help readers make smarter lifestyle choices. His vision is to build Marwari Luxe into a global brand that educates and inspires people to live healthier, more confident lives."
     },
     {
       name: "Dr. Sarfaraz Alam",
       role: "Chief Health Officer",
-      image: "https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762287754/Dr.sarfaraz_q3phhs.jpg", 
+      image: "https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762293147/2_k3mah0.jpg", 
       
       description: "Dr. Sarfaraz Alam is the Chief Health Officer at Marwari Luxe. He holds an MBBS degree with specialization in preventive medicine and nutrition. With over 10 years of medical practice, he ensures that all health-related content published on the platform follows accurate, evidence-based standards. His expertise bridges the gap between modern medicine and everyday wellness, making health information both credible and accessible for readers worldwide."
     },
     {
       name: "Dr. Farha Ali",
       role: "Beauty Specialist",
-      image: "https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762287754/Dr.farha_ali_vwcvfn.jpg",
+      image: "https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762293147/3_obup78.jpg",
       description: "Dr. Farha Ali serves as the Beauty Specialist at Marwari Luxe. She holds a Doctorate in Cosmetic Science and is certified in Advanced Skin and Hair Care Formulations. With her strong background in dermatology and aesthetic medicine, Dr. Farha helps translate complex beauty science into practical advice. Her insights guide readers toward safer, more effective skincare routines while promoting confidence through knowledge and self-care."
     }
   ];

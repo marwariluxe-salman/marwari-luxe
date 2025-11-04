@@ -38,22 +38,23 @@ const AboutPageClient = () => {
 
   const team = [
     {
-      name: "Sarah Johnson",
+      name: "Salman Marwari",
       role: "Founder & CEO",
-      image: "/images/team/sarah.jpg",
-      description: "Health & wellness expert with 15+ years experience in premium product curation."
+      image: "https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762287754/Salman_Marwari_vvay4m.jpg",
+      description: "Salman Marwari is the Founder and CEO of Marwari Luxe, a trusted health and beauty platform. As a passionate health and beauty blogger, he creates research-based, easy-to-understand content on skincare, nutrition, and overall wellness. With years of experience in writing and digital health communication, Salman combines science and storytelling to help readers make smarter lifestyle choices. His vision is to build Marwari Luxe into a global brand that educates and inspires people to live healthier, more confident lives."
     },
     {
-      name: "Dr. Michael Chen",
+      name: "Dr. Sarfaraz Alam",
       role: "Chief Health Officer",
-      image: "/images/team/michael.jpg", 
-      description: "Licensed physician specializing in preventive medicine and nutritional wellness."
+      image: "https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762287754/Dr.sarfaraz_q3phhs.jpg", 
+      
+      description: "Dr. Sarfaraz Alam is the Chief Health Officer at Marwari Luxe. He holds an MBBS degree with specialization in preventive medicine and nutrition. With over 10 years of medical practice, he ensures that all health-related content published on the platform follows accurate, evidence-based standards. His expertise bridges the gap between modern medicine and everyday wellness, making health information both credible and accessible for readers worldwide."
     },
     {
-      name: "Emma Rodriguez",
+      name: "Dr. Farha Ali",
       role: "Beauty Specialist",
-      image: "/images/team/emma.jpg",
-      description: "Certified cosmetologist with expertise in natural and organic beauty products."
+      image: "https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762287754/Dr.farha_ali_vwcvfn.jpg",
+      description: "Dr. Farha Ali serves as the Beauty Specialist at Marwari Luxe. She holds a Doctorate in Cosmetic Science and is certified in Advanced Skin and Hair Care Formulations. With her strong background in dermatology and aesthetic medicine, Dr. Farha helps translate complex beauty science into practical advice. Her insights guide readers toward safer, more effective skincare routines while promoting confidence through knowledge and self-care."
     }
   ];
 
@@ -85,9 +86,7 @@ const AboutPageClient = () => {
               About Marwari Luxe - Premium Health & Beauty Experts
             </h1>
             <p className="text-xl md:text-2xl text-purple-100 max-w-3xl mx-auto">
-              Your trusted partner in premium health supplements, natural beauty products, and wellness tools. 
-              Dedicated to enhancing your wellness journey with scientifically-backed, high-quality products 
-              that combine traditional Marwari heritage with modern innovation.
+              Marwari Luxe is a global health and beauty platform dedicated to helping people look and feel their best. We combine science-backed advice with practical tips on skincare, nutrition, and wellness. Our mission is to inspire confidence, self-care, and a healthier lifestyle for everyone.
             </p>
           </motion.div>
         </div>
@@ -107,24 +106,20 @@ const AboutPageClient = () => {
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  Founded in 2020, Marwari Luxe began as a passionate mission to make premium health supplements, 
-                  natural beauty products, and wellness tools accessible to health-conscious consumers worldwide. 
-                  Our founders recognized the growing need for a trusted e-commerce platform that combines 
-                  quality assurance, authentic ingredients, and exceptional customer service in the health and beauty industry.
+                  Founded in 2020, Marwari Luxe started as a bold vision to make premium health supplements, natural beauty essentials, and modern wellness tools accessible worldwide. Our mission was simple—build a trusted platform that blends authenticity, quality, and customer care in the ever-evolving health and beauty industry.
                 </p>
                 <p>
-                  What started as a carefully curated collection of handpicked wellness products has evolved into 
-                  a comprehensive online marketplace serving thousands of customers across 50+ countries. We believe 
-                  that everyone deserves access to premium health supplements, organic skincare products, and 
-                  evidence-based wellness tools that enhance natural beauty and support optimal health outcomes.
+                  What began as a handpicked collection of high-quality wellness products has grown into a global e-commerce brand serving thousands of loyal customers across 50+ countries. From organic skincare and herbal supplements to evidence-based wellness tools, every item we offer is carefully selected to support natural beauty and overall well-being.
                 </p>
                 <p>
-                  Today, Marwari Luxe continues expanding our global reach while maintaining unwavering commitment 
-                  to product quality, ingredient transparency, and customer satisfaction. Every health supplement, 
-                  beauty product, and wellness tool we offer is meticulously selected by our team of certified 
-                  health experts who understand the critical importance of purity, effectiveness, and safety 
-                  in wellness products.
+                  At Marwari Luxe, we proudly partner with CJ Dropshipping and top affiliate marketing networks, allowing us to bring an ever-expanding range of verified, high-quality brands to our customers. These partnerships ensure we deliver genuine products, smooth fulfillment, and competitive prices—without compromising on trust or transparency.
                 </p>
+                <p>Today, we continue to grow our reach while staying true to our core values: ingredient transparency, scientific integrity, and customer satisfaction. Every product on our platform is reviewed by our team of certified health and beauty experts who ensure that each formula meets our strict standards of safety, purity, and effectiveness.</p>
+
+                <p>Marwari Luxe is more than a brand—it’s a movement to help people look good, feel better, and live confidently with wellness backed by tradition and science.</p>
+
+                <p>Discover Marwari Luxe — your trusted source for premium health supplements, organic beauty, and wellness tools. Partnered with CJ Dropshipping & affiliates.</p>
+                <p>Marwari Luxe blends heritage and innovation to bring you premium health supplements, organic skincare, and wellness tools. As partners with CJ Dropshipping and leading affiliates, we deliver trusted, high-quality products designed to help you live healthier, look radiant, and feel your absolute best.</p>
               </div>
             </motion.div>
             
@@ -136,13 +131,15 @@ const AboutPageClient = () => {
             >
               <div className="bg-gradient-to-br from-purple-100 to-blue-100 rounded-2xl p-8 text-center">
                 <div className="text-6xl mb-4">🌟</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission – Empowering Global Wellness with Integrity</h3>
                 <p className="text-gray-700">
-                  To empower individuals on their wellness journey by providing access to 
-                  premium, authentic health and beauty products that enhance natural beauty 
-                  and promote overall well-being.
+                  At Marwari Luxe, our mission is simple — to make science-backed health and beauty accessible to everyone. We believe wellness should be transparent, effective, and rooted in trust. Every product we offer is carefully evaluated for quality, safety, and proven results.
+<br></br><br></br>
+Through our partnerships with CJ Dropshipping and leading affiliate programs, we ensure our customers receive premium wellness products at fair prices, delivered worldwide.
+<br></br><br></br>
+Our goal is to build a trusted global community where people can discover natural solutions that truly work — products that enhance health, boost confidence, and celebrate authentic beauty.
                 </p>
-              </div>
+         </div>
             </motion.div>
           </div>
         </div>
@@ -254,7 +251,22 @@ const AboutPageClient = () => {
                 className="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
               >
                 <div className="h-64 bg-gradient-to-br from-purple-200 to-blue-200 flex items-center justify-center">
-                  <div className="text-6xl">👤</div>
+                  {member.image ? (
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        const nextSibling = e.currentTarget.nextSibling;
+                        if (nextSibling && nextSibling instanceof HTMLElement) {
+                          nextSibling.style.display = 'flex';
+                        }
+                      }}
+                    />
+                  ) : (
+                    <div className="text-6xl">👤</div>
+                  )}
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-1">

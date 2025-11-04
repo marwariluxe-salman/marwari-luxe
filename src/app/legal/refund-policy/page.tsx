@@ -20,15 +20,16 @@ const RefundPolicyPage = () => {
         {/* Header */}
         <div className="bg-white shadow-sm rounded-lg p-6 mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Refund, Resend and Returns Policy</h1>
-          <p className="text-gray-600">Last updated: {new Date().toLocaleDateString()} | Effective Date: January 1, 2024</p>
+          <p className="text-gray-600">Last updated: {new Date().toLocaleDateString()}</p>
         </div>
 
         {/* Content */}
         <div className="bg-white shadow-sm rounded-lg p-6">
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-700 mb-6">
-              As an affiliate marketer, Marwari Luxe does not directly sell products. We earn commissions by promoting products from third-party retailers. 
-              This refund policy outlines the process for handling disputes related to products purchased through our affiliate links.
+              As an affiliate marketer, Marwari Luxe does not directly sell products. We earn commissions by promoting products from third-party retailers, 
+              specifically through our partnership with CJ Dropshipping. This refund policy outlines the process for handling disputes related to 
+              products purchased through our affiliate links.
             </p>
 
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
@@ -40,7 +41,7 @@ const RefundPolicyPage = () => {
                 </div>
                 <div className="ml-3">
                   <p className="text-sm text-yellow-700">
-                    <strong>Important:</strong> All disputes must be opened with the original retailer. Marwari Luxe will assist customers in directing their complaints to the appropriate retailer.
+                    <strong>Important:</strong> All disputes must be opened with CJ Dropshipping, our fulfillment partner. Marwari Luxe will assist customers in directing their complaints to the appropriate retailer.
                   </p>
                 </div>
               </div>
@@ -49,17 +50,29 @@ const RefundPolicyPage = () => {
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Our Role as an Affiliate</h2>
             <p className="text-gray-700 mb-6">
               Marwari Luxe is an affiliate marketing website and does not directly handle product sales, shipping, or customer service. 
-              When you purchase products through our affiliate links, you are buying directly from the retailer. 
-              We earn a commission for referring customers to these retailers.
+              When you purchase products through our affiliate links, you are buying directly from CJ Dropshipping, our trusted fulfillment partner. 
+              We earn a commission for referring customers to CJ Dropshipping.
             </p>
+
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Partnership with CJ Dropshipping</h2>
+            <div className="bg-purple-50 border-l-4 border-purple-400 p-6 mb-6">
+              <h3 className="text-xl font-semibold text-purple-800 mb-3">📦 Fulfillment by CJ Dropshipping</h3>
+              <ul className="list-disc pl-5 text-purple-700 space-y-2">
+                <li>All products are fulfilled and shipped directly by CJ Dropshipping</li>
+                <li>CJ Dropshipping handles all customer service inquiries related to orders</li>
+                <li>Product quality, shipping, and returns are managed by CJ Dropshipping</li>
+                <li>We receive commission for purchases made through our affiliate links</li>
+                <li>We do not have access to inventory or shipping logistics</li>
+              </ul>
+            </div>
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Orders Delayed</h2>
             <p className="text-gray-700 mb-4">
-              For delayed orders, please contact the original retailer directly. We recommend:
+              For delayed orders, please contact CJ Dropshipping directly. We recommend:
             </p>
             <ul className="list-disc pl-6 mb-6 text-gray-700">
               <li>Tracking your order using the provided tracking number</li>
-              <li>Contacting the retailer's customer service department</li>
+              <li>Contacting CJ Dropshipping customer service department</li>
               <li>Allowing adequate time for international shipping (7-30 business days for most products)</li>
             </ul>
 
@@ -78,7 +91,7 @@ const RefundPolicyPage = () => {
               <li>Contact your local post office with the tracking number</li>
               <li>Obtain a non-delivery certification from the post office if required</li>
               <li>Check if the package was delivered to a neighbor or alternative address</li>
-              <li>Contact the retailer's customer service with all relevant documentation</li>
+              <li>Contact CJ Dropshipping customer service with all relevant documentation</li>
             </ul>
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">3. Products Damaged</h2>
@@ -87,9 +100,9 @@ const RefundPolicyPage = () => {
             </p>
             <ul className="list-disc pl-6 mb-6 text-gray-700">
               <li>Document the damage with clear photos or videos</li>
-              <li>Contact the retailer within 30 days of delivery</li>
+              <li>Contact CJ Dropshipping within 30 days of delivery</li>
               <li>Provide the order number and damage documentation</li>
-              <li>Follow the retailer's return process</li>
+              <li>Follow CJ Dropshipping's return process</li>
             </ul>
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">4. Incorrect or Missing Products</h2>
@@ -97,20 +110,31 @@ const RefundPolicyPage = () => {
               If you receive incorrect or missing items:
             </p>
             <ul className="list-disc pl-6 mb-6 text-gray-700">
-              <li>Contact the retailer immediately with your order details</li>
+              <li>Contact CJ Dropshipping immediately with your order details</li>
               <li>Provide photos of the incorrect items received</li>
               <li>Include screenshots of the original order confirmation</li>
-              <li>Follow the retailer's process for corrections</li>
+              <li>Follow CJ Dropshipping's process for corrections</li>
             </ul>
 
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. How Marwari Luxe Can Help</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. Return Policy Through CJ Dropshipping</h2>
+            <p className="text-gray-700 mb-4">
+              CJ Dropshipping offers a standard 30-day return policy for most items:
+            </p>
+            <ul className="list-disc pl-6 mb-6 text-gray-700">
+              <li>Products must be in original condition and packaging</li>
+              <li>Contact CJ Dropshipping customer service to initiate a return</li>
+              <li>Follow their specific return instructions</li>
+              <li>Return shipping costs may apply depending on the reason for return</li>
+            </ul>
+
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">6. How Marwari Luxe Can Help</h2>
             <p className="text-gray-700 mb-4">
               While we don't handle the products directly, we're here to assist you:
             </p>
             <ul className="list-disc pl-6 mb-6 text-gray-700">
-              <li>Provide the original retailer's contact information</li>
+              <li>Provide CJ Dropshipping's contact information</li>
               <li>Help you locate your order details and tracking information</li>
-              <li>Guide you through the dispute process with the retailer</li>
+              <li>Guide you through the dispute process with CJ Dropshipping</li>
               <li>Offer general advice on international shipping and customs</li>
             </ul>
 
@@ -118,17 +142,17 @@ const RefundPolicyPage = () => {
             
             <h3 className="text-xl font-semibold text-gray-800 mb-3">Force Majeure</h3>
             <p className="text-gray-700 mb-4">
-              Neither Marwari Luxe nor the retailers are responsible for delays or issues caused by events beyond our control, 
+              Neither Marwari Luxe nor CJ Dropshipping are responsible for delays or issues caused by events beyond our control, 
               including but not limited to: natural disasters, epidemics, customs delays, strikes, wars, or government restrictions.
             </p>
 
             <h3 className="text-xl font-semibold text-gray-800 mb-3">Return Process</h3>
             <p className="text-gray-700 mb-4">
-              If a return is required:
+              If a return is required through CJ Dropshipping:
             </p>
             <ul className="list-disc pl-6 mb-6 text-gray-700">
-              <li>Contact the retailer first to obtain return authorization</li>
-              <li>Follow the retailer's specific return instructions</li>
+              <li>Contact CJ Dropshipping first to obtain return authorization</li>
+              <li>Follow their specific return instructions</li>
               <li>Package items securely to prevent damage during return shipping</li>
               <li>Keep all shipping documentation and receipts</li>
               <li>Note that international return shipping can be expensive and time-consuming</li>
@@ -136,7 +160,7 @@ const RefundPolicyPage = () => {
 
             <h3 className="text-xl font-semibold text-gray-800 mb-3">Unacceptable Disputes</h3>
             <p className="text-gray-700 mb-4">
-              The following disputes are typically not accepted by retailers:
+              The following disputes are typically not accepted by CJ Dropshipping:
             </p>
             <ul className="list-disc pl-6 mb-6 text-gray-700">
               <li>Buyer's change of mind or personal preferences</li>
@@ -148,20 +172,19 @@ const RefundPolicyPage = () => {
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Contact Information</h2>
             <p className="text-gray-700 mb-4">
-              For assistance with affiliate-related questions or to be directed to the appropriate retailer:
+              For assistance with affiliate-related questions or to be directed to CJ Dropshipping:
             </p>
             <div className="bg-gray-50 p-4 rounded-lg mb-6">
               <p className="text-gray-700">
-                <strong>Email:</strong> support@marwariluxe.com<br/>
-                {/* <strong>Phone:</strong> +1 (555) 123-4567<br/> */}
+                <strong>Email:</strong> marwariluxe@gmail.com<br/>
                 <strong>Response Time:</strong> Within 24-48 business hours
               </p>
             </div>
 
             <div className="bg-blue-50 border-l-4 border-blue-400 p-4">
               <p className="text-sm text-blue-700">
-                <strong>Note:</strong> This policy applies to purchases made through Marwari Luxe affiliate links. 
-                For products purchased directly from retailers, please refer to their individual refund policies.
+                <strong>Note:</strong> This policy applies to purchases made through Marwari Luxe affiliate links to CJ Dropshipping. 
+                For products purchased directly from other retailers, please refer to their individual refund policies.
               </p>
             </div>
           </div>

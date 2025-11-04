@@ -6,47 +6,47 @@ const FAQPage = () => {
   const faqData = [
     {
       question: "How do I place an order?",
-      answer: "Simply browse our products, add items to your cart, and proceed to checkout. You can pay using various payment methods including credit cards and other secure options."
+      answer: "Simply browse our products, click on any product to view details, and you'll be redirected to our affiliate partner CJ Dropshipping to complete your purchase. You'll enjoy the same quality products with reliable shipping."
     },
     {
       question: "What payment methods do you accept?",
-      answer: "We accept major credit cards (Visa, Mastercard, American Express) and bank transfers. All payments are processed securely through encrypted channels."
+      answer: "Payments are processed securely through CJ Dropshipping, our trusted affiliate partner. They accept major credit cards (Visa, Mastercard, American Express) and various other secure payment options."
     },
     {
       question: "How long does shipping take?",
-      answer: "Standard shipping typically takes 3-7 business days within the domestic region. Express shipping options are available for faster delivery. International shipping may take 7-21 business days depending on the destination."
+      answer: "Shipping times vary depending on your location and the shipping method selected. CJ Dropshipping typically offers: Standard shipping (3-7 business days domestic, 7-21 business days international), Express shipping options are also available for faster delivery."
     },
     {
       question: "Can I track my order?",
-      answer: "Yes, once your order ships, you'll receive a tracking number via email. You can use this number to track your package on our website or the carrier's website."
+      answer: "Yes, once your order ships through CJ Dropshipping, you'll receive a tracking number via email. You can use this number to track your package on our website or the carrier's website."
     },
     {
       question: "What if my order arrives damaged?",
-      answer: "If your order arrives damaged, please contact our customer service team immediately with photos of the damage. We'll arrange for a replacement or full refund at no cost to you."
+      answer: "If your order arrives damaged, please contact CJ Dropshipping customer service immediately with photos of the damage. They'll arrange for a replacement or full refund at no cost to you."
     },
     {
       question: "What is your return policy?",
-      answer: "We offer a 30-day return policy for most items. Products must be in original condition and packaging. Please see our detailed Refund Policy page for complete terms and conditions."
+      answer: "We work with CJ Dropshipping to provide a 30-day return policy for most items. Products must be in original condition and packaging. Please see our detailed Refund Policy page for complete terms and conditions."
     },
     {
       question: "How do I return an item?",
-      answer: "Contact our returns team at returns@marwariluxe.com with your order number. We'll provide you with return instructions and a prepaid shipping label if applicable."
+      answer: "Contact CJ Dropshipping customer service team with your order number. They'll provide you with return instructions and a prepaid shipping label if applicable."
     },
     {
       question: "When will I receive my refund?",
-      answer: "Refunds are processed within 3-5 business days after we receive and inspect your returned item. The refund will appear in your original payment method within 5-10 business days."
+      answer: "Refunds are processed within 3-5 business days after CJ Dropshipping receives and inspects your returned item. The refund will appear in your original payment method within 5-10 business days."
     },
     {
       question: "Can I exchange an item instead of returning it?",
-      answer: "Yes, we offer exchanges for size, color, or similar product variations subject to availability. Contact our customer service team to arrange an exchange."
+      answer: "Yes, CJ Dropshipping offers exchanges for size, color, or similar product variations subject to availability. Contact their customer service team to arrange an exchange."
     },
     {
       question: "Are your products safe to use?",
-      answer: "All our products are sourced from reputable manufacturers and comply with relevant safety standards. However, individual reactions may vary. Always read product labels and consult healthcare professionals if you have concerns."
+      answer: "All our products are sourced through CJ Dropshipping from reputable manufacturers and comply with relevant safety standards. However, individual reactions may vary. Always read product labels and consult healthcare professionals if you have concerns."
     },
     {
       question: "Do you test products on animals?",
-      answer: "We are committed to cruelty-free practices. We do not test on animals and work with suppliers who share this commitment. Many of our products are certified cruelty-free."
+      answer: "We prioritize cruelty-free practices. We work with CJ Dropshipping to ensure products are not tested on animals and many are certified cruelty-free by recognized organizations."
     },
     {
       question: "Can I use multiple products together?",
@@ -78,19 +78,19 @@ const FAQPage = () => {
     },
     {
       question: "Do you offer wholesale or bulk pricing?",
-      answer: "Yes, we offer special pricing for bulk orders and business customers. Please contact our business development team at business@marwariluxe.com for more information."
+      answer: "Yes, we offer special pricing for bulk orders and business customers through our partnership with CJ Dropshipping. Please contact our business development team at marwariluxe@gmail.com for more information."
     },
     {
       question: "Can I become an affiliate or partner?",
-      answer: "We have affiliate and partnership programs available. Please reach out to partnerships@marwariluxe.com with details about your proposal and audience."
+      answer: "We have affiliate and partnership programs available. Please reach out to marwariluxe@gmail.com with details about your proposal and audience."
     },
     {
       question: "Do you accept product submissions from brands?",
-      answer: "We carefully curate our product selection. If you're a brand interested in partnering with us, please submit your proposal to brands@marwariluxe.com."
+      answer: "We carefully curate our product selection through partnerships with CJ Dropshipping. If you're a brand interested in partnering with us, please submit your proposal to marwariluxe@gmail.com."
     },
     {
       question: "How can I contact customer service?",
-      answer: "You can reach our customer service team via email at support@marwariluxe.com, phone at +1 (555) 123-4567, or through our contact form. We're available Monday-Friday, 9 AM-6 PM EST."
+      answer: "You can reach our customer service team via email at marwariluxe@gmail.com, or through our contact form. For order-specific issues, please contact CJ Dropshipping directly. We're available Monday-Friday, 9 AM-6 PM EST."
     }
   ];
 
@@ -165,12 +165,6 @@ const FAQPage = () => {
               >
                 📧 Contact Support
               </Link>
-              <a
-                href="tel:+15551234567"
-                className="bg-purple-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-400 transition-colors"
-              >
-                📞 Call Us: +1 (555) 123-4567
-              </a>
             </div>
             <p className="text-sm text-purple-200 mt-4">
               Available Monday - Friday, 9 AM - 6 PM EST

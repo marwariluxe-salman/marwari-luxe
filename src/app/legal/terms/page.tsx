@@ -30,7 +30,8 @@ const TermsConditionsPage = () => {
             <p className="text-gray-700 mb-6">
               Welcome to Marwari Luxe. These Terms and Conditions ("Terms") govern your use of our website and services. 
               By accessing or using our website, you agree to be bound by these Terms. If you do not agree with these Terms, 
-              please do not use our services.
+              please do not use our services. We operate as an affiliate marketing platform and work with trusted partners 
+              like CJ Dropshipping to provide you with quality products.
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Definitions</h2>
@@ -39,7 +40,20 @@ const TermsConditionsPage = () => {
               <li><strong>"Service"</strong> refers to our website and related services</li>
               <li><strong>"User"</strong> refers to anyone who accesses or uses our Service</li>
               <li><strong>"Content"</strong> refers to all information, data, text, images, and other materials</li>
+              <li><strong>"CJ Dropshipping"</strong> refers to our trusted affiliate partner who fulfills orders</li>
             </ul>
+
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Affiliate Marketing Relationship</h2>
+            <div className="bg-purple-50 border-l-4 border-purple-400 p-6 mb-6">
+              <h3 className="text-xl font-semibold text-purple-800 mb-3">🤝 Partnership with CJ Dropshipping</h3>
+              <ul className="list-disc pl-5 text-purple-700 space-y-2">
+                <li>We are an affiliate marketing platform that earns commissions through product referrals</li>
+                <li>All products are fulfilled and shipped by CJ Dropshipping, our trusted partner</li>
+                <li>We do not handle inventory, shipping, or customer service for products</li>
+                <li>Product prices, availability, and policies are managed by CJ Dropshipping</li>
+                <li>Any issues with orders should be directed to CJ Dropshipping customer service</li>
+              </ul>
+            </div>
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Use of Our Service</h2>
             <h3 className="text-xl font-semibold text-gray-800 mb-3">Eligibility</h3>
@@ -59,43 +73,44 @@ const TermsConditionsPage = () => {
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Products and Services</h2>
             <h3 className="text-xl font-semibold text-gray-800 mb-3">Product Information</h3>
             <p className="text-gray-700 mb-4">
-              We strive to provide accurate product descriptions and pricing. However, we do not warrant that product 
-              descriptions or other content is accurate, complete, reliable, or error-free.
+              We strive to provide accurate product descriptions and information. However, we do not warrant that product 
+              descriptions or other content is accurate, complete, reliable, or error-free. Product details, pricing, and 
+              availability are managed by CJ Dropshipping.
             </p>
 
             <h3 className="text-xl font-semibold text-gray-800 mb-3">Pricing</h3>
             <ul className="list-disc pl-6 mb-6 text-gray-700">
-              <li>All prices are subject to change without notice</li>
+              <li>All prices are set and managed by CJ Dropshipping</li>
               <li>Prices include applicable taxes unless otherwise stated</li>
-              <li>We reserve the right to correct pricing errors</li>
+              <li>CJ Dropshipping reserves the right to correct pricing errors</li>
             </ul>
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Orders and Payment</h2>
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">Order Acceptance</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">Order Placement</h3>
             <p className="text-gray-700 mb-4">
-              Your order constitutes an offer to purchase products. We reserve the right to accept or decline your order 
-              for any reason, including product availability, pricing errors, or suspected fraudulent activity.
+              When you click on a product through our website, you will be redirected to CJ Dropshipping to complete your purchase. 
+              Your order constitutes an offer to purchase products from CJ Dropshipping.
             </p>
 
             <h3 className="text-xl font-semibold text-gray-800 mb-3">Payment Terms</h3>
             <ul className="list-disc pl-6 mb-6 text-gray-700">
-              <li>Payment is required at the time of order placement</li>
-              <li>We accept various payment methods as displayed on our website</li>
-              <li>All payments are processed securely through third-party payment processors</li>
+              <li>Payment is processed securely through CJ Dropshipping</li>
+              <li>We do not handle or store any payment information</li>
+              <li>All payments are processed by CJ Dropshipping's secure payment processors</li>
             </ul>
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Shipping and Delivery</h2>
             <ul className="list-disc pl-6 mb-6 text-gray-700">
-              <li>Shipping times are estimates and may vary</li>
-              <li>Risk of loss passes to you upon delivery</li>
-              <li>You are responsible for providing accurate shipping information</li>
-              <li>Additional charges may apply for expedited shipping</li>
+              <li>Shipping times and methods are determined by CJ Dropshipping</li>
+              <li>Risk of loss passes to you upon delivery by CJ Dropshipping</li>
+              <li>You are responsible for providing accurate shipping information to CJ Dropshipping</li>
+              <li>Additional charges for expedited shipping are set by CJ Dropshipping</li>
             </ul>
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Returns and Refunds</h2>
             <p className="text-gray-700 mb-6">
               Please refer to our <Link href="/legal/refund-policy" className="text-purple-600 hover:text-purple-700">Refund Policy</Link> for 
-              detailed information about returns, exchanges, and refunds.
+              detailed information about returns, exchanges, and refunds through our partner CJ Dropshipping.
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Prohibited Uses</h2>
@@ -109,6 +124,22 @@ const TermsConditionsPage = () => {
               <li>To upload or transmit viruses or any other type of malicious code</li>
             </ul>
 
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Affiliate Marketing Disclosure</h2>
+            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-6">
+              <h3 className="text-xl font-semibold text-yellow-800 mb-3">📢 Affiliate Disclosure</h3>
+              <p className="text-yellow-700 mb-4">
+                We participate in affiliate marketing programs, including with CJ Dropshipping. This means we may earn commissions 
+                from purchases made through links on our website. We only promote products we believe in and that align with our 
+                values of quality and customer satisfaction.
+              </p>
+              <ul className="list-disc pl-5 text-yellow-700 space-y-2">
+                <li>All affiliate relationships are disclosed transparently</li>
+                <li>We only recommend products we trust and believe will benefit our customers</li>
+                <li>Our commissions do not affect product pricing for customers</li>
+                <li>We maintain editorial independence in all product recommendations</li>
+              </ul>
+            </div>
+
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Intellectual Property</h2>
             <p className="text-gray-700 mb-6">
               The Service and its original content, features, and functionality are and will remain the exclusive property of 
@@ -119,20 +150,22 @@ const TermsConditionsPage = () => {
             <p className="text-gray-700 mb-6">
               The information on this website is provided on an "as is" basis without any warranties, express or implied. 
               We make no representations about the suitability, reliability, availability, timeliness, and accuracy of the 
-              information contained on the website.
+              information contained on the website. Product fulfillment and customer service are handled by CJ Dropshipping.
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Limitation of Liability</h2>
             <p className="text-gray-700 mb-6">
               In no event shall Marwari Luxe, nor its directors, employees, partners, agents, suppliers, or affiliates, be 
               liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, 
-              loss of profits, data, use, goodwill, or other intangible losses.
+              loss of profits, data, use, goodwill, or other intangible losses. As an affiliate marketing platform, we are 
+              not responsible for product fulfillment, shipping, or customer service which are handled by CJ Dropshipping.
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Governing Law</h2>
             <p className="text-gray-700 mb-6">
               These Terms shall be interpreted and governed by the laws of the jurisdiction in which Marwari Luxe operates, 
-              without regard to its conflict of law provisions.
+              without regard to its conflict of law provisions. Any disputes related to product fulfillment or shipping 
+              are subject to CJ Dropshipping's terms and policies.
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Changes to Terms</h2>
@@ -147,9 +180,7 @@ const TermsConditionsPage = () => {
             </p>
             <div className="bg-gray-50 p-4 rounded-lg">
               <p className="text-gray-700">
-                <strong>Email:</strong> legal@marwariluxe.com<br/>
-                <strong>Phone:</strong> +1 (555) 123-4567<br/>
-                <strong>Address:</strong> 123 Business Street, City, State 12345
+                <strong>Email:</strong> marwariluxe@gmail.com<br/>
               </p>
             </div>
           </div>

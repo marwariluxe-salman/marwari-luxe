@@ -72,8 +72,7 @@ const Navbar = () => {
                   width={40}
                   height={40}
                 />
-                <span className="text-xl sm:text-2xl font-bold text-black hidden sm:block">Marwari Luxe</span>
-                <span className="text-lg font-bold text-black sm:hidden">ML</span>
+                <span className="text-xl sm:text-2xl font-bold text-black">Marwari Luxe</span>
               </div>
             </Link>
           </div>

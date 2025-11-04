@@ -87,9 +87,8 @@ export default function RootLayout({
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+1-555-123-4567",
       "contactType": "customer service",
-      "email": "support@marwariluxe.com"
+      "email": "marwariluxe@gmail.com"
     }
   };
 

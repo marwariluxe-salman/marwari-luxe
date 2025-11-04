@@ -44,8 +44,22 @@ const DisclaimerPage = () => {
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">General Information</h2>
             <p className="text-gray-700 mb-6">
               This disclaimer applies to the Marwari Luxe website, products, services, and all related content. By using 
-              our website and services, you acknowledge and agree to the terms set forth in this disclaimer.
+              our website and services, you acknowledge and agree to the terms set forth in this disclaimer. We operate as 
+              an affiliate marketing platform and do not directly sell products. All products are fulfilled through our 
+              trusted partner CJ Dropshipping.
             </p>
+
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Affiliate Marketing Relationship</h2>
+            <div className="bg-purple-50 border-l-4 border-purple-400 p-6 mb-6">
+              <h3 className="text-xl font-semibold text-purple-800 mb-3">🔗 Partnership with CJ Dropshipping</h3>
+              <ul className="list-disc pl-5 text-purple-700 space-y-2">
+                <li>We are an affiliate marketing website and earn commissions through CJ Dropshipping</li>
+                <li>All products are fulfilled and shipped directly by CJ Dropshipping</li>
+                <li>We do not handle inventory, shipping, or customer service for products</li>
+                <li>Product prices and availability are managed by CJ Dropshipping</li>
+                <li>Any issues with orders should be directed to CJ Dropshipping customer service</li>
+              </ul>
+            </div>
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Health and Medical Disclaimer</h2>
             <div className="bg-red-50 border-l-4 border-red-400 p-6 mb-6">
@@ -65,9 +79,9 @@ const DisclaimerPage = () => {
               While we strive to provide accurate and up-to-date information about our products:
             </p>
             <ul className="list-disc pl-6 mb-6 text-gray-700">
-              <li>Product descriptions, ingredients, and specifications may be subject to change</li>
+              <li>Product descriptions, ingredients, and specifications may be subject to change by CJ Dropshipping</li>
               <li>Images may not reflect the exact appearance of products</li>
-              <li>Availability and pricing information may vary</li>
+              <li>Availability and pricing information may vary as managed by CJ Dropshipping</li>
               <li>We recommend checking product labels before use</li>
             </ul>
 
@@ -103,9 +117,9 @@ const DisclaimerPage = () => {
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Third-Party Content</h2>
             <p className="text-gray-700 mb-6">
-              Our website may contain links to third-party websites, advertisements, or content. We do not endorse or take 
-              responsibility for the accuracy, completeness, or reliability of third-party content. Users access third-party 
-              content at their own risk.
+              Our website may contain links to third-party websites, advertisements, or content including links to CJ Dropshipping. 
+              We do not endorse or take responsibility for the accuracy, completeness, or reliability of third-party content. 
+              Users access third-party content at their own risk.
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Professional Consultation</h2>
@@ -132,7 +146,8 @@ const DisclaimerPage = () => {
             <p className="text-gray-700 mb-6">
               To the fullest extent permitted by law, Marwari Luxe disclaims all liability for any damages, injuries, or 
               adverse effects that may result from the use of our products, website, or services. This includes but is not 
-              limited to direct, indirect, incidental, consequential, or punitive damages.
+              limited to direct, indirect, incidental, consequential, or punitive damages. As an affiliate marketing platform, 
+              we are not responsible for product fulfillment, shipping, or customer service which are handled by CJ Dropshipping.
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Age Restrictions</h2>
@@ -145,7 +160,8 @@ const DisclaimerPage = () => {
             <p className="text-gray-700 mb-6">
               Our products have not been evaluated by the Food and Drug Administration (FDA) unless specifically stated. 
               Products are not intended to diagnose, treat, cure, or prevent any disease. Claims made about our products 
-              are based on available research and user testimonials.
+              are based on available research and user testimonials. Product compliance and regulatory adherence are managed 
+              by CJ Dropshipping.
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Updates to This Disclaimer</h2>
@@ -161,9 +177,7 @@ const DisclaimerPage = () => {
             </p>
             <div className="bg-gray-50 p-4 rounded-lg">
               <p className="text-gray-700">
-                <strong>Email:</strong> legal@marwariluxe.com<br/>
-                <strong>Phone:</strong> +1 (555) 123-4567<br/>
-                <strong>Address:</strong> 123 Business Street, City, State 12345
+                <strong>Email:</strong> marwariluxe@gmail.com<br/>
               </p>
             </div>
 

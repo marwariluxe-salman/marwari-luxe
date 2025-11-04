@@ -73,30 +73,13 @@ const ContactPage = () => {
     }
   };
 
+  // Contact information cards
   const contactInfo = [
     {
       icon: <EnvelopeIcon className="h-6 w-6" />,
-      title: 'Email Support',
-      content: 'support@marwariluxe.com',
-      subtext: 'We typically respond within 24 hours'
-    },
-    {
-      icon: <ChatBubbleLeftRightIcon className="h-6 w-6" />,
-      title: 'Live Chat',
-      content: 'Available 24/7',
-      subtext: 'Click the chat icon in the corner'
-    },
-    {
-      icon: <UserGroupIcon className="h-6 w-6" />,
-      title: 'Community Support',
-      content: 'Join our Facebook Group',
-      subtext: 'Connect with other wellness enthusiasts'
-    },
-    {
-      icon: <LightBulbIcon className="h-6 w-6" />,
-      title: 'Product Ideas',
-      content: 'We value your feedback',
-      subtext: 'Help us improve our offerings'
+      title: "Email Us",
+      content: "marwariluxe@gmail.com",
+      description: "We'll respond within 24 hours"
     }
   ];
 
@@ -144,7 +127,7 @@ const ContactPage = () => {
                   {info.content}
                 </p>
                 <p className="text-gray-600 text-sm">
-                  {info.subtext}
+                  {info.description}
                 </p>
               </motion.div>
             ))}

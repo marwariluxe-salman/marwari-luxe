@@ -104,6 +104,7 @@ export default function RootLayout({
         <meta name="msapplication-tap-highlight" content="no" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="google-site-verification" content="your-google-verification-code" />
+        <meta name="p:domain_verify" content="aab945e83f0913b86a2eb25bfc0f8ff8"/>
         <meta name="theme-color" content="#9333ea" />
         <meta name="application-name" content="Marwari Luxe" />
         <meta name="msapplication-TileColor" content="#9333ea" />

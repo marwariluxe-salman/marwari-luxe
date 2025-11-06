@@ -33,4 +33,27 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
+### Environment Variables
+
+Before deploying, make sure to set the following environment variables in your Vercel project settings:
+
+```
+NEXT_PUBLIC_APP_URL=https://your-domain.com
+STRIPE_SECRET_KEY=your_stripe_secret_key
+STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
+PAYPAL_CLIENT_ID=your_paypal_client_id
+PAYPAL_CLIENT_SECRET=your_paypal_client_secret
+WISE_API_TOKEN=your_wise_api_token
+WISE_PROFILE_ID=your_wise_profile_id
+NEXT_PUBLIC_WISE_ENVIRONMENT=production
+NEXT_PUBLIC_PAYPAL_ENVIRONMENT=production
+```
+
+### Deployment Steps
+
+1. Push your code to a Git repository (GitHub, GitLab, or Bitbucket)
+2. Connect your repository to Vercel
+3. Add the required environment variables in the Vercel project settings
+4. Deploy your project
+
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

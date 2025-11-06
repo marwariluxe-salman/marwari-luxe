@@ -125,6 +125,7 @@ export default function RootLayout({
           suppressHydrationWarning
         />
         <Script
+          id="structured-data"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: serializedStructuredData,

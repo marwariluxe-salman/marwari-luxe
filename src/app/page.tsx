@@ -53,6 +53,7 @@ export default function Home() {
     <div className="min-h-screen w-full overflow-x-hidden flex flex-col">
       {/* Structured Data for Homepage */}
       <Script
+        id="homepage-structured-data"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(structuredData),

@@ -10,19 +10,6 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid email' }, { status: 400 });
     }
 
-    // Create email content
-    const emailContent = `
-New Newsletter Subscription!
-
-Email: ${email}
-Timestamp: ${timestamp}
-User Agent: ${userAgent}
-IP Address: ${request.headers.get('x-forwarded-for') || 'Unknown'}
-
----
-Marwari Luxe Newsletter System
-`;
-
     // Log the subscription (in a real app, you would send this to your email service)
     console.log('Newsletter subscription:', {
       email,
@@ -31,12 +18,6 @@ Marwari Luxe Newsletter System
       ip: request.headers.get('x-forwarded-for')
     });
 
-    // You can integrate with email services like:
-    // - SendGrid
-    // - Mailgun
-    // - AWS SES
-    // - Nodemailer with Gmail
-    
     // For now, we'll just log and return success
     // In production, you would send an email to marwariluxe@gmail.com here
 

@@ -7,16 +7,17 @@ import Link from 'next/link';
 import { tools } from '@/data/tools';
 import { Tool } from '@/types';
 import AdSpace from '@/components/AdSpace';
+import dynamic from 'next/dynamic';
 
-// Import tool components
-import BMICalculator from '@/components/tools/BMICalculator';
-import CalorieCalculator from '@/components/tools/CalorieCalculator';
-import BasicCalculator from '@/components/tools/BasicCalculator';
-import WaterIntakeCalculator from '@/components/tools/WaterIntakeCalculator';
-import HeartRateZoneCalculator from '@/components/tools/HeartRateZoneCalculator';
-import QRCodeGenerator from '@/components/tools/QRCodeGenerator';
-import SkinTypeAnalyzer from '@/components/tools/SkinTypeAnalyzer';
-import WordCounter from '@/components/tools/WordCounter';
+// Dynamically import tool components
+const BMICalculator = dynamic(() => import('@/components/tools/BMICalculator'), { ssr: true });
+const CalorieCalculator = dynamic(() => import('@/components/tools/CalorieCalculator'), { ssr: true });
+const BasicCalculator = dynamic(() => import('@/components/tools/BasicCalculator'), { ssr: true });
+const WaterIntakeCalculator = dynamic(() => import('@/components/tools/WaterIntakeCalculator'), { ssr: true });
+const HeartRateZoneCalculator = dynamic(() => import('@/components/tools/HeartRateZoneCalculator'), { ssr: true });
+const QRCodeGenerator = dynamic(() => import('@/components/tools/QRCodeGenerator'), { ssr: true });
+const SkinTypeAnalyzer = dynamic(() => import('@/components/tools/SkinTypeAnalyzer'), { ssr: true });
+const WordCounter = dynamic(() => import('@/components/tools/WordCounter'), { ssr: true });
 
 const ToolPage = () => {
   const params = useParams();

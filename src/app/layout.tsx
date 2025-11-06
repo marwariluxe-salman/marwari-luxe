@@ -1,8 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import Script from 'next/script';
 import "./globals.css";
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import dynamic from 'next/dynamic';
+
+const Footer = dynamic(() => import('@/components/Footer'));
 import { CartProvider } from '@/contexts/CartContext';
 import BackToTopButton from '@/components/BackToTopButton';
 
@@ -115,17 +118,18 @@ export default function RootLayout({
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="canonical" href="https://marwariluxe.com" />
-        <script
-          async
+        <Script
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX"
           crossOrigin="anonymous"
+          strategy="afterInteractive"
           suppressHydrationWarning
-        ></script>
-        <script
+        />
+        <Script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: serializedStructuredData,
           }}
+          strategy="afterInteractive"
           suppressHydrationWarning
         />
       </head>

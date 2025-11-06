@@ -4,3 +4,29 @@ https://www.tiktok.com/@marwariluxeofficial
 
 https://x.com/marwariluxe
 
+https://www.pinterest.com/MarwariLuxeOfficial/
+
+https://www.instagram.com/marwariluxeofficial/
+
+https://www.youtube.com/@MarwariLuxeOfficial
+
+
+https://linktr.ee/MarwariLuxeOfficial
+
+
+
+
+
+cd "C:\Users\RS Computers\Desktop\marwari-luxe"
+
+
+git status
+
+
+git add .
+
+
+git commit -m "Updated project files and fixed errors"
+
+
+git push origin main

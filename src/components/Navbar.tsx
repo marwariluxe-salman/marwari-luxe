@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ChevronDownIcon, Bars3Icon, XMarkIcon, ShoppingCartIcon } from '@heroicons/react/24/outline';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCart } from '@/contexts/CartContext';
@@ -65,10 +66,10 @@ const Navbar = () => {
               
               {/* Option 3: Combined Logo (Text + Icon) */}
               <div className="flex items-center space-x-3">
-                <img 
+                <Image 
                   src="/marwari logo.png" 
                   alt="Marwari Luxe" 
-                  className="h-8 sm:h-10 w-auto object-contain" 
+                  className="object-contain" 
                   width={40}
                   height={40}
                 />

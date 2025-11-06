@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { blogs } from '@/data/blogs';
 import { Blog } from '@/types';
 import AdUnit from '@/components/AdUnit';
@@ -102,14 +103,20 @@ const BlogPost = () => {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative h-96 overflow-hidden">
-        <motion.img
+        <motion.div
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.8 }}
-          src={blog.heroImage}
-          alt={blog.title}
-          className="w-full h-full object-cover"
-        />
+          className="w-full h-full relative"
+        >
+          <Image
+            src={blog.heroImage}
+            alt={blog.title}
+            fill
+            className="object-cover"
+            priority
+          />
+        </motion.div>
         <div className="absolute inset-0 bg-black bg-opacity-50" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-white max-w-4xl mx-auto px-4">
@@ -304,10 +311,11 @@ const BlogPost = () => {
                   className="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
                 >
                   <div className="relative h-48 overflow-hidden">
-                    <img
+                    <Image
                       src={product.image}
                       alt={product.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      fill
+                      className="object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   <div className="p-6">
@@ -356,10 +364,11 @@ const BlogPost = () => {
                   className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="relative h-48 overflow-hidden">
-                    <img
+                    <Image
                       src={relatedBlog.heroImage}
                       alt={relatedBlog.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      fill
+                      className="object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   <div className="p-6">

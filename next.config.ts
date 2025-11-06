@@ -26,6 +26,7 @@ const nextConfig: NextConfig = {
       transform: '@heroicons/react/24/solid/{{member}}',
     },
   },
+  // SWC minification is enabled by default in Next.js 15
 };
 
 export default nextConfig;

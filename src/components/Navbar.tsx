@@ -3,8 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronDownIcon, Bars3Icon, XMarkIcon, ShoppingCartIcon } from '@heroicons/react/24/outline';
-import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDownIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useCart } from '@/contexts/CartContext';
 
 const Navbar = () => {
@@ -72,6 +71,7 @@ const Navbar = () => {
                   className="object-contain" 
                   width={40}
                   height={40}
+                  priority
                 />
                 <span className="text-xl sm:text-2xl font-bold text-black">Marwari Luxe</span>
               </div>
@@ -95,38 +95,31 @@ const Navbar = () => {
                 Categories
                 <ChevronDownIcon className="ml-1 h-4 w-4" />
               </button>
-              <AnimatePresence>
-                {isCategoriesOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-10"
+              {isCategoriesOpen && (
+                <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-10">
+                  <Link
+                    href="/categories/health"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600"
+                    onClick={() => setIsCategoriesOpen(false)}
                   >
-                    <Link
-                      href="/categories/health"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600"
-                      onClick={() => setIsCategoriesOpen(false)}
-                    >
-                      🏥 Health & Wellness
-                    </Link>
-                    <Link
-                      href="/categories/beauty"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600"
-                      onClick={() => setIsCategoriesOpen(false)}
-                    >
-                      💄 Beauty & Cosmetics
-                    </Link>
-                    <Link
-                      href="/products"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600"
-                      onClick={() => setIsCategoriesOpen(false)}
-                    >
-                      🛍️ All Products
-                    </Link>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                    🏥 Health & Wellness
+                  </Link>
+                  <Link
+                    href="/categories/beauty"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600"
+                    onClick={() => setIsCategoriesOpen(false)}
+                  >
+                    💄 Beauty & Cosmetics
+                  </Link>
+                  <Link
+                    href="/products"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600"
+                    onClick={() => setIsCategoriesOpen(false)}
+                  >
+                    🛍️ All Products
+                  </Link>
+                </div>
+              )}
             </div>
 
             <Link href="/blogs" className="text-gray-700 hover:text-purple-600 transition-colors text-sm lg:text-base">
@@ -144,38 +137,31 @@ const Navbar = () => {
                 Tools
                 <ChevronDownIcon className="ml-1 h-4 w-4" />
               </button>
-              <AnimatePresence>
-                {isToolsOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-10"
+              {isToolsOpen && (
+                <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-10">
+                  <Link
+                    href="/tools/health"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600"
+                    onClick={() => setIsToolsOpen(false)}
                   >
-                    <Link
-                      href="/tools/health"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600"
-                      onClick={() => setIsToolsOpen(false)}
-                    >
-                      Health Tools
-                    </Link>
-                    <Link
-                      href="/tools/beauty"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600"
-                      onClick={() => setIsToolsOpen(false)}
-                    >
-                      Beauty Tools
-                    </Link>
-                    <Link
-                      href="/tools/general"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600"
-                      onClick={() => setIsToolsOpen(false)}
-                    >
-                      General Tools
-                    </Link>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                    Health Tools
+                  </Link>
+                  <Link
+                    href="/tools/beauty"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600"
+                    onClick={() => setIsToolsOpen(false)}
+                  >
+                    Beauty Tools
+                  </Link>
+                  <Link
+                    href="/tools/general"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600"
+                    onClick={() => setIsToolsOpen(false)}
+                  >
+                    General Tools
+                  </Link>
+                </div>
+              )}
             </div>
 
             <Link href="/contact" className="text-gray-700 hover:text-purple-600 transition-colors text-sm lg:text-base">
@@ -217,108 +203,76 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-gray-200 safe-area-inset-left safe-area-inset-right"
-          >
-            <div className="px-2 pt-2 pb-3 space-y-1 max-h-[calc(100vh-4rem)] overflow-y-auto">
-              <Link
-                href="/"
-                className="nav-link block px-3 py-4 text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-colors rounded-md font-medium"
-                onClick={closeMenu}
-              >
-                🏠 Home
-              </Link>
-              
-              <div className="px-3 py-2">
-                <span className="font-medium text-gray-900 block py-2">📂 Categories</span>
-                <div className="ml-4 mt-1 space-y-1">
-                  <Link
-                    href="/categories/health"
-                    className="nav-link block py-3 text-sm text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md transition-colors"
-                    onClick={closeMenu}
-                  >
-                    🏥 Health & Wellness
-                  </Link>
-                  <Link
-                    href="/categories/beauty"
-                    className="nav-link block py-3 text-sm text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md transition-colors"
-                    onClick={closeMenu}
-                  >
-                    💄 Beauty & Cosmetics
-                  </Link>
-                  <Link
-                    href="/products"
-                    className="nav-link block py-3 text-sm text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md transition-colors"
-                    onClick={closeMenu}
-                  >
-                    🛍️ All Products
-                  </Link>
-                </div>
-              </div>
-
-              <Link
-                href="/blogs"
-                className="nav-link block px-3 py-4 text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-colors rounded-md font-medium"
-                onClick={closeMenu}
-              >
-                📖 Blogs
-              </Link>
-
-              <div className="px-3 py-2">
-                <span className="font-medium text-gray-900 block py-2">🔧 Tools</span>
-                <div className="ml-4 mt-1 space-y-1">
-                  <Link
-                    href="/tools/health"
-                    className="nav-link block py-3 text-sm text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md transition-colors"
-                    onClick={closeMenu}
-                  >
-                    🏥 Health Tools
-                  </Link>
-                  <Link
-                    href="/tools/beauty"
-                    className="nav-link block py-3 text-sm text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md transition-colors"
-                    onClick={closeMenu}
-                  >
-                    💄 Beauty Tools
-                  </Link>
-                  <Link
-                    href="/tools/general"
-                    className="nav-link block py-3 text-sm text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md transition-colors"
-                    onClick={closeMenu}
-                  >
-                    ⚙️ General Tools
-                  </Link>
-                </div>
-              </div>
-
-              <Link
-                href="/contact"
-                className="nav-link block px-3 py-4 text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-colors rounded-md font-medium"
-                onClick={closeMenu}
-              >
-                📞 Contact
-              </Link>
-
-              <div className="pt-4 mt-4 border-t border-gray-200">
-                <Link
-                  href="/checkout"
-                  className="mobile-btn relative block px-4 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors mx-3 text-center flex items-center justify-center font-medium"
-                  onClick={closeMenu}
-                >
-                  <span className="mr-2">🔗</span>
-                  Social Media
-                </Link>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-white shadow-lg">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <Link
+              href="/"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
+              onClick={closeMenu}
+            >
+              Home
+            </Link>
+            <Link
+              href="/categories/health"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
+              onClick={closeMenu}
+            >
+              🏥 Health & Wellness
+            </Link>
+            <Link
+              href="/categories/beauty"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
+              onClick={closeMenu}
+            >
+              💄 Beauty & Cosmetics
+            </Link>
+            <Link
+              href="/products"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
+              onClick={closeMenu}
+            >
+              🛍️ All Products
+            </Link>
+            <Link
+              href="/blogs"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
+              onClick={closeMenu}
+            >
+              Blogs
+            </Link>
+            <Link
+              href="/tools/health"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
+              onClick={closeMenu}
+            >
+              Health Tools
+            </Link>
+            <Link
+              href="/tools/beauty"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
+              onClick={closeMenu}
+            >
+              Beauty Tools
+            </Link>
+            <Link
+              href="/tools/general"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
+              onClick={closeMenu}
+            >
+              General Tools
+            </Link>
+            <Link
+              href="/contact"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
+              onClick={closeMenu}
+            >
+              Contact
+            </Link>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

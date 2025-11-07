@@ -8,10 +8,11 @@ const nextConfig: NextConfig = {
     root: __dirname,
   },
   images: {
+    loader: 'default',
     domains: ['images.unsplash.com', 'marwariluxe.com', 'localhost', 'res.cloudinary.com', 'api.qrserver.com'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    formats: ['image/webp'],
+    formats: ['image/avif', 'image/webp'],
   },
   // Enable compression for better performance
   compress: true,
@@ -27,6 +28,42 @@ const nextConfig: NextConfig = {
     },
   },
   // SWC minification is enabled by default in Next.js 15
+  // Enable webpack bundle analysis
+  webpack: (config, { dev, isServer }) => {
+    // Replace React with Preact in client production builds
+    if (!dev && !isServer) {
+      Object.assign(config.resolve.alias, {
+        react: 'preact/compat',
+        'react-dom/test-utils': 'preact/test-utils',
+        'react-dom': 'preact/compat',
+      });
+    }
+
+    return config;
+  },
+  // Add headers for caching
+  async headers() {
+    return [
+      {
+        source: '/_next/static/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/(.*)\\.(jpg|jpeg|gif|png|webp|avif|svg|ico|woff|woff2|ttf|eot|otf)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

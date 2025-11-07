@@ -1,7 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
-
 interface AdSpaceProps {
   size?: 'banner' | 'rectangle' | 'sidebar' | 'large';
   position?: 'top' | 'middle' | 'bottom' | 'sidebar';
@@ -44,10 +42,7 @@ const AdSpace = ({
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
+    <div
       className={`
         ${getSizeClasses()}
         ${getPositionClasses()}
@@ -73,7 +68,7 @@ const AdSpace = ({
           {size.charAt(0).toUpperCase() + size.slice(1)} Ad
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

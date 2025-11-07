@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 const Footer = () => {
@@ -89,11 +88,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
+            <div>
               {/* Footer Logo - Multiple Options */}
               <h3 className="text-xl sm:text-2xl font-bold text-purple-400 mb-3 sm:mb-4">Marwari Luxe</h3>
               
@@ -114,16 +109,12 @@ const Footer = () => {
                 your wellness journey and natural beauty.
               </p>
 
-            </motion.div>
+            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
+            <div>
               <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Quick Links</h4>
               <ul className="space-y-2">
                 {quickLinks.map((link) => (
@@ -137,16 +128,12 @@ const Footer = () => {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
           </div>
 
           {/* Categories */}
           <div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-            >
+            <div>
               <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Categories</h4>
               <ul className="space-y-2">
                 {categoryLinks.map((link) => (
@@ -161,16 +148,12 @@ const Footer = () => {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
           </div>
 
           {/* Legal Links */}
           <div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
+            <div>
               <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Legal</h4>
               <ul className="space-y-2">
                 {legalLinks.map((link) => (
@@ -184,16 +167,12 @@ const Footer = () => {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
           </div>
 
           {/* Social Media Icons */}
           <div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
+            <div>
               <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Follow Us</h4>
               <div className="flex space-x-4">
                 <a 
@@ -233,17 +212,12 @@ const Footer = () => {
                   <YouTubeIcon />
                 </a>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
 
         {/* Newsletter Signup */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-gray-700"
-        >
+        <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-gray-700">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
             <div className="mb-4 lg:mb-0">
               <h4 className="text-base sm:text-lg font-semibold mb-2">Stay Updated</h4>
@@ -262,19 +236,14 @@ const Footer = () => {
               </button>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Bottom Copyright */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-gray-700 text-center"
-        >
+        <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-gray-700 text-center">
           <p className="text-gray-400 text-sm sm:text-base">
             © 2025-2026 Marwari Luxe – All Rights Reserved
           </p>
-        </motion.div>
+        </div>
       </div>
     </footer>
   );

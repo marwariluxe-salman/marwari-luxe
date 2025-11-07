@@ -1,14 +1,12 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import dynamic from 'next/dynamic';
 import HeroSlider from '@/components/HeroSlider';
-
-const IntroSection = dynamic(() => import('@/components/IntroSection'), { ssr: true });
-const BlogSection = dynamic(() => import('@/components/BlogSection'), { ssr: true });
-const ToolsSection = dynamic(() => import('@/components/ToolsSection'), { ssr: true });
-const ProductsSection = dynamic(() => import('@/components/ProductsSection'), { ssr: true });
-const NewsletterSection = dynamic(() => import('@/components/NewsletterSection'), { ssr: true });
-const AdSpace = dynamic(() => import('@/components/AdSpace'), { ssr: true });
+import IntroSection from '@/components/IntroSection';
+import BlogSection from '@/components/BlogSection';
+import ToolsSection from '@/components/ToolsSection';
+import ProductsSection from '@/components/ProductsSection';
+import NewsletterSection from '@/components/NewsletterSection';
+import AdSpace from '@/components/AdSpace';
 
 export const metadata: Metadata = {
   title: 'Marwari Luxe - Premium Health Supplements & Natural Beauty Products | Wellness Store',

@@ -137,8 +137,6 @@ export default function RootLayout({
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="canonical" href="https://marwariluxe.com" />
-        
-        {/* Load Google Ads with optimized attributes - moved to body for better performance */}
       </head>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased touch-manipulation w-full overflow-x-hidden`}

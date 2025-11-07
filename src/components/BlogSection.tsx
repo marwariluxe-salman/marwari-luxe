@@ -13,14 +13,12 @@ const BlogSection = () => {
   useEffect(() => {
     const loadBlogs = async () => {
       try {
-        const { healthBlogs, beautyBlogs, evergreenHealthBlogs, evergreenBeautyBlogs } = await getLightBlogData();
+        const { healthBlogs, beautyBlogs } = await getLightBlogData();
         
-        // Create a curated mix of blogs: 2 Health + 2 Beauty + 1 Evergreen Health + 1 Evergreen Beauty = 6 total
+        // Create a curated mix of blogs: 3 Health + 3 Beauty = 6 total for better distribution
         const blogs = [
-          ...healthBlogs.slice(0, 2),           // 2 Health blogs
-          ...beautyBlogs.slice(0, 2),           // 2 Beauty blogs  
-          ...evergreenHealthBlogs.slice(0, 1),  // 1 Evergreen Health blog
-          ...evergreenBeautyBlogs.slice(0, 1),  // 1 Evergreen Beauty blog
+          ...healthBlogs.slice(0, 3),           // 3 Health blogs
+          ...beautyBlogs.slice(0, 3),           // 3 Beauty blogs  
         ];
         
         setDisplayBlogs(blogs);
@@ -44,7 +42,7 @@ const BlogSection = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[...Array(3)].map((_, index) => (
+            {[...Array(6)].map((_, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div className="h-48 bg-gray-200 animate-pulse"></div>
                 <div className="p-6">
@@ -93,11 +91,10 @@ const BlogSection = () => {
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      quality={70}
-                      loading="lazy"
+                      quality={65} // Reduced quality for better mobile performance
+                      loading={index < 3 ? "eager" : "lazy"} // Eager load first 3 images
                       placeholder="blur"
                       blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
-                      // Optimize image delivery by using proper dimensions
                       style={{ objectFit: 'cover' }}
                       // Add fetch priority for above-the-fold images
                       fetchPriority={index < 2 ? "high" : "auto"}

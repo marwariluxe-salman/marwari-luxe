@@ -24,6 +24,18 @@ export const healthBlogs: Blog[] = [
     author: 'Dr. Michael Chen',
     publishedAt: '2025-01-10',
     readTime: 6
+  },
+  {
+    id: 'health-blog-003',
+    title: 'The Power of Plant-Based Nutrition',
+    excerpt: 'Unlock the benefits of plant-based eating for improved energy, better digestion, and long-term health.',
+    content: `Plant-based nutrition is more than just a trend – it's a powerful approach to wellness that's backed by science. Discover how incorporating more plants into your diet can transform your health.`,
+    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864928/marwari2_hs4y31.jpg',
+    images: [],
+    category: 'Health',
+    author: 'Dr. Amanda Roberts',
+    publishedAt: '2025-01-05',
+    readTime: 7
   }
 ];
 
@@ -39,6 +51,30 @@ export const beautyBlogs: Blog[] = [
     author: 'Emma Rodriguez',
     publishedAt: '2025-01-12',
     readTime: 7
+  },
+  {
+    id: 'beauty-blog-002',
+    title: 'The Ultimate Guide to Skincare Routines',
+    excerpt: 'Master the art of skincare with this comprehensive guide to building the perfect routine for your skin type.',
+    content: `Creating an effective skincare routine doesn't have to be complicated. With the right approach and products, you can achieve healthy, glowing skin regardless of your skin type.`,
+    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863553/200300_n50ysr.png',
+    images: [],
+    category: 'Beauty',
+    author: 'Sophia Martinez',
+    publishedAt: '2024-11-15',
+    readTime: 9
+  },
+  {
+    id: 'beauty-blog-003',
+    title: 'Hair Care Secrets from Ayurvedic Traditions',
+    excerpt: 'Ancient wisdom meets modern science in these time-tested hair care techniques for stronger, shinier hair.',
+    content: `Ayurvedic hair care practices have been passed down through generations for their effectiveness. Learn how to incorporate these natural methods into your modern routine.`,
+    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863544/800400_ljnnqg.png',
+    images: [],
+    category: 'Beauty',
+    author: 'Priya Sharma',
+    publishedAt: '2025-01-08',
+    readTime: 6
   }
 ];
 

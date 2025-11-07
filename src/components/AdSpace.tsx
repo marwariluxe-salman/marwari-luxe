@@ -60,6 +60,8 @@ const AdSpace = ({
         hover:bg-gray-100
         transition-colors
         duration-300
+        // Optimize for mobile performance
+        will-change-transform
       `}
       role="region"
       aria-label="Advertisement space"

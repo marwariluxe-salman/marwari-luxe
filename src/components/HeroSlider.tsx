@@ -104,7 +104,7 @@ const HeroSlider = () => {
           priority={currentSlide === 0} // Ensure first slide is prioritized
           className="object-cover w-full h-full"
           sizes="100vw"
-          quality={70} // Reduced quality for faster loading
+          quality={65} // Reduced quality for better mobile performance
           fetchPriority={currentSlide === 0 ? "high" : "auto"} // Add fetchpriority for LCP optimization
           // Optimize image delivery
           style={{ objectFit: 'cover' }}

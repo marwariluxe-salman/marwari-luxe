@@ -93,12 +93,14 @@ const BlogSection = () => {
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      quality={75}
+                      quality={70}
                       loading="lazy"
                       placeholder="blur"
                       blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
                       // Optimize image delivery by using proper dimensions
                       style={{ objectFit: 'cover' }}
+                      // Add fetch priority for above-the-fold images
+                      fetchPriority={index < 2 ? "high" : "auto"}
                     />
                   </div>
                   <div className="absolute top-4 left-4">

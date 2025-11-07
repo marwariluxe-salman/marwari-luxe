@@ -138,14 +138,26 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="canonical" href="https://marwariluxe.com" />
         
-        {/* Load Google Ads with optimized attributes */}
+        {/* Load Google Ads with optimized attributes - moved to body for better performance */}
+      </head>
+      <body
+        className={`${inter.variable} ${jetbrainsMono.variable} antialiased touch-manipulation w-full overflow-x-hidden`}
+        suppressHydrationWarning
+      >
+        {/* Load Google Ads asynchronously after main content */}
         <script 
           async 
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX"
           crossOrigin="anonymous"
           data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
-          defer
         />
+        <CartProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </CartProvider>
+        {/* Placing the button outside the CartProvider to ensure it renders */}
+        <BackToTopButton />
         <Script
           id="structured-data"
           type="application/ld+json"
@@ -155,18 +167,6 @@ export default function RootLayout({
           strategy="afterInteractive"
           suppressHydrationWarning
         />
-      </head>
-      <body
-        className={`${inter.variable} ${jetbrainsMono.variable} antialiased touch-manipulation w-full overflow-x-hidden`}
-        suppressHydrationWarning
-      >
-        <CartProvider>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </CartProvider>
-        {/* Placing the button outside the CartProvider to ensure it renders */}
-        <BackToTopButton />
       </body>
     </html>
   );

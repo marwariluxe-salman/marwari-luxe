@@ -70,6 +70,8 @@ const nextConfig: NextConfig = {
       '@heroicons/react/24/outline',
       '@heroicons/react/24/solid',
     ],
+    // Enable scroll restoration for better UX
+    scrollRestoration: true,
   },
   // Add performance optimizations
   compiler: {

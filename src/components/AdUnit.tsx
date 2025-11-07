@@ -13,11 +13,25 @@ export default function AdUnit({
   className?: string;
 }) {
   useEffect(() => {
-    try {
-      // @ts-expect-error - adsbygoogle is not in TypeScript types
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (e) {
-      console.log('AdSense error:', e);
+    // Only initialize ads after the main content has loaded
+    const initAds = () => {
+      try {
+        // @ts-expect-error - adsbygoogle is not in TypeScript types
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      } catch (e: unknown) {
+        console.log('AdSense error:', e);
+      }
+    };
+
+    // Defer ad loading to improve LCP
+    if (typeof window !== 'undefined') {
+      // Use requestIdleCallback if available for better performance
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(initAds, { timeout: 1000 });
+      } else {
+        // Fallback to setTimeout
+        setTimeout(initAds, 100);
+      }
     }
   }, []);
 

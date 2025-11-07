@@ -64,6 +64,13 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  // Vercel specific optimizations
+  experimental: {
+    optimizePackageImports: [
+      '@heroicons/react/24/outline',
+      '@heroicons/react/24/solid',
+    ],
+  },
 };
 
 export default nextConfig;

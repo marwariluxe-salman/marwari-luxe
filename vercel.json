@@ -32,5 +32,9 @@
     "env": {
       "NEXT_PUBLIC_APP_URL": "https://marwariluxe.com"
     }
-  }
+  },
+  "github": {
+    "silent": true
+  },
+  "regions": ["iad1"]
 }

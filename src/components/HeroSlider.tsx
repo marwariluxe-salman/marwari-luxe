@@ -12,7 +12,7 @@ const HeroSlider = () => {
   const slides = [
     {
       id: 1,
-      title: 'Premium Healthhh Supplements & Wellness Products',
+      title: 'Premiummmm Healthhh Supplements & Wellness Products',
       subtitle: 'Discover scientifically-backed vitamins, minerals & supplements that transform your daily wellness routine. Shop 25+ premium products.',
       image: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fill,g_auto/v1762471377/1_pllyfb.jpg',
       cta: 'Shop Health Supplements',

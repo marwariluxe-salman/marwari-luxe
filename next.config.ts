@@ -71,6 +71,10 @@ const nextConfig: NextConfig = {
       '@heroicons/react/24/solid',
     ],
   },
+  // Add performance optimizations
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error'] } : false,
+  },
 };
 
 export default nextConfig;

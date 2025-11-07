@@ -97,17 +97,19 @@ const BlogSection = () => {
                       loading="lazy"
                       placeholder="blur"
                       blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                      // Optimize image delivery by using proper dimensions
+                      style={{ objectFit: 'cover' }}
                     />
                   </div>
                   <div className="absolute top-4 left-4">
-                    <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-purple-700 text-white px-3 py-1 rounded-full text-sm font-medium">
                       {blog.category}
                     </span>
                   </div>
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2 line-clamp-2 hover:text-purple-600 transition-colors">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2 line-clamp-2 hover:text-purple-700 transition-colors">
                     {blog.title}
                   </h3>
                   <p className="text-gray-600 mb-4 line-clamp-3">
@@ -120,7 +122,7 @@ const BlogSection = () => {
                       <span className="mx-2">•</span>
                       <span>{blog.readTime} min read</span>
                     </div>
-                    <span className="text-purple-600 hover:text-purple-700 font-medium transition-colors">
+                    <span className="text-purple-700 hover:text-purple-800 font-medium transition-colors">
                       Read More →
                     </span>
                   </div>

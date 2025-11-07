@@ -134,12 +134,13 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="canonical" href="https://marwariluxe.com" />
         
-        {/* Load Google Ads with lazyOnload strategy */}
-        <Script
+        {/* Load Google Ads with lazyOnload strategy and optimized attributes */}
+        <script 
+          async 
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX"
           crossOrigin="anonymous"
-          strategy="lazyOnload"
-          suppressHydrationWarning
+          data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+          defer
         />
         <Script
           id="structured-data"

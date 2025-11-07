@@ -50,6 +50,7 @@ const BlogPost = () => {
   const [blog, setBlog] = useState<Blog | null>(null);
   const [relatedBlogs, setRelatedBlogs] = useState<Blog[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const loadBlogData = async () => {
@@ -58,15 +59,19 @@ const BlogPost = () => {
           console.log('Looking for blog with ID:', params.id);
           const foundBlog = await getBlogById(params.id as string);
           console.log('Found blog:', foundBlog ? foundBlog.title : 'Not found');
-          setBlog(foundBlog || null);
           
           if (foundBlog) {
+            setBlog(foundBlog);
+            
             // Get related blogs from the same category
             const related = await getRelatedBlogs(foundBlog.category, foundBlog.id, 3);
             setRelatedBlogs(related);
+          } else {
+            setError('Blog not found');
           }
-        } catch (error) {
-          console.error('Error loading blog:', error);
+        } catch (err) {
+          console.error('Error loading blog:', err);
+          setError('Failed to load blog post');
         } finally {
           setIsLoading(false);
         }
@@ -82,6 +87,24 @@ const BlogPost = () => {
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
           <p className="text-gray-600">Loading article...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-6xl mb-4">⚠️</div>
+          <h1 className="text-2xl font-semibold text-gray-900 mb-2">Error Loading Blog</h1>
+          <p className="text-gray-600 mb-6">{error}</p>
+          <Link
+            href="/blogs"
+            className="text-purple-600 hover:text-purple-700 font-medium"
+          >
+            ← Back to Blogs
+          </Link>
         </div>
       </div>
     );

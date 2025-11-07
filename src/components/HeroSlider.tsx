@@ -104,10 +104,11 @@ const HeroSlider = () => {
           priority={currentSlide === 0} // Ensure first slide is prioritized
           className="object-cover w-full h-full"
           sizes="100vw"
-          quality={80} // Reduced quality for faster loading
+          quality={75} // Reduced quality for faster loading
           fetchPriority={currentSlide === 0 ? "high" : "auto"} // Add fetchpriority for LCP optimization
           // Optimize image delivery
           style={{ objectFit: 'cover' }}
+          loading="eager"
         />
         <div className="absolute inset-0 bg-black/40" />
       </div>

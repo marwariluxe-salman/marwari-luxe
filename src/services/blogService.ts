@@ -6,7 +6,7 @@ const blogIndex: Blog[] = [
   // Health Blogs
   {
     id: 'health-blog-001',
-    title: 'Fibremaxxing Diet: Why Fiber is the Hottest Health Trend in 2025',
+    title: 'Fibremaxxingggg Diet: Why Fiber is the Hottest Health Trend in 2025',
     excerpt: 'Discover why the Fibremaxxing Diet is trending in 2025. Learn how adding more fiber boosts gut health, weight loss, and energy naturally.',
     content: '',
     heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864930/Marwari-luxe_dnwxfa.jpg',

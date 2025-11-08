@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import Script from 'next/script';
 import "./globals.css";
 import Navbar from '@/components/Navbar';
@@ -9,14 +9,9 @@ const Footer = dynamic(() => import('@/components/Footer'));
 import { CartProvider } from '@/contexts/CartContext';
 import BackToTopButton from '@/components/BackToTopButton';
 
+// Use only one clean font for better performance
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin"],
-  display: 'swap', // Add font-display swap for better performance
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
   display: 'swap', // Add font-display swap for better performance
 });
@@ -139,7 +134,7 @@ export default function RootLayout({
         <link rel="canonical" href="https://marwariluxe.com" />
       </head>
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} antialiased touch-manipulation w-full overflow-x-hidden`}
+        className={`${inter.variable} antialiased touch-manipulation w-full overflow-x-hidden`}
         suppressHydrationWarning
       >
         {/* Load Google Ads asynchronously after main content */}

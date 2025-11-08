@@ -56,9 +56,7 @@ const BlogPost = () => {
     const loadBlogData = async () => {
       if (params.id) {
         try {
-          console.log('Looking for blog with ID:', params.id);
           const foundBlog = await getBlogById(params.id as string);
-          console.log('Found blog:', foundBlog ? foundBlog.title : 'Not found');
           
           if (foundBlog) {
             setBlog(foundBlog);
@@ -70,7 +68,6 @@ const BlogPost = () => {
             setError('Blog not found');
           }
         } catch (err) {
-          console.error('Error loading blog:', err);
           setError('Failed to load blog post');
         } finally {
           setIsLoading(false);

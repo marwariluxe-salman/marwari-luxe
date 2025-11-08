@@ -61,7 +61,7 @@ const ContactPage = () => {
       await new Promise(resolve => setTimeout(resolve, 1500));
       
       // In a real app, you would send this to your email service
-      console.log('Form submission:', formData);
+      // Form data is captured in formData variable
       
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });

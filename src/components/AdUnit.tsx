@@ -19,7 +19,7 @@ export default function AdUnit({
         // @ts-expect-error - adsbygoogle is not in TypeScript types
         (window.adsbygoogle = window.adsbygoogle || []).push({});
       } catch (e: unknown) {
-        console.log('AdSense error:', e);
+        // AdSense errors are handled silently
       }
     };
 

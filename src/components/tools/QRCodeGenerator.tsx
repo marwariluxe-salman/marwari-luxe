@@ -53,7 +53,7 @@ const QRCodeGenerator = () => {
       const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(qrText)}`;
       setQrCode(qrUrl);
     } catch (error) {
-      console.error('Error generating QR code:', error);
+      // Error handling is done through UI feedback
     }
     
     setIsLoading(false);

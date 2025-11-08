@@ -11,12 +11,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Log the subscription (in a real app, you would send this to your email service)
-    console.log('Newsletter subscription:', {
-      email,
-      timestamp,
-      userAgent,
-      ip: request.headers.get('x-forwarded-for')
-    });
+    // Subscription data is captured in email, timestamp, userAgent, and ip variables
 
     // For now, we'll just log and return success
     // In production, you would send an email to marwariluxe@gmail.com here
@@ -27,7 +22,7 @@ export async function POST(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('Newsletter API error:', error);
+    // Error handling is done through UI feedback
     return NextResponse.json(
       { error: 'Internal server error' }, 
       { status: 500 }

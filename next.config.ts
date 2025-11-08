@@ -9,14 +9,14 @@ const nextConfig: NextConfig = {
   },
   images: {
     loader: 'default',
-    domains: ['images.unsplash.com', 'marwariluxe.com', 'localhost', 'res.cloudinary.com', 'api.qrserver.com'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    domains: ['res.cloudinary.com'],
+    formats: ['image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    formats: ['image/avif', 'image/webp'],
   },
   // Enable compression for better performance
   compress: true,
-  reactStrictMode: false, // Disable for better performance in production
+  reactStrictMode: true, // Enable React Strict Mode for better development experience
   poweredByHeader: false, // Remove Next.js header
   // Reduce bundle size
   modularizeImports: {
@@ -72,9 +72,12 @@ const nextConfig: NextConfig = {
     ],
     // Enable scroll restoration for better UX
     scrollRestoration: true,
+    // CSS optimization requires additional dependencies
+    // optimizeCss: true,
   },
-  // Add performance optimizations
+  // Compiler optimizations
   compiler: {
+    // Remove console logs in production except for errors
     removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error'] } : false,
   },
 };

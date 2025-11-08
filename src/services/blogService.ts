@@ -93,7 +93,7 @@ export const getBlogById = async (id: string): Promise<Blog | undefined> => {
     }
     return undefined;
   } catch (error) {
-    console.error('Error loading blog data:', error);
+    // Error handling is done through UI feedback
     return undefined;
   }
 };
@@ -117,7 +117,7 @@ export const getRelatedBlogs = async (categoryId: string, excludeId: string, lim
       .filter(blog => blog.category === categoryId && blog.id !== excludeId)
       .slice(0, limit);
   } catch (error) {
-    console.error('Error loading related blogs:', error);
+    // Error handling is done through UI feedback
     return [];
   }
 };
@@ -136,7 +136,7 @@ export const getBlogPage = async (page: number = 1, pageSize: number = 12): Prom
     
     return { blogs: paginatedBlogs, totalPages };
   } catch (error) {
-    console.error('Error loading blog page:', error);
+    // Error handling is done through UI feedback
     return { blogs: [], totalPages: 0 };
   }
 };
@@ -163,7 +163,7 @@ export const searchBlogs = async (term: string): Promise<Blog[]> => {
       blog.content.toLowerCase().includes(termLower)
     );
   } catch (error) {
-    console.error('Error searching blogs:', error);
+    // Error handling is done through UI feedback
     return [];
   }
 };

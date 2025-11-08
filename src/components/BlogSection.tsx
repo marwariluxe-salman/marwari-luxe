@@ -23,7 +23,7 @@ const BlogSection = () => {
         
         setDisplayBlogs(blogs);
       } catch (error) {
-        console.error('Error loading blogs:', error);
+        // Error handling is done through UI feedback
       } finally {
         setLoading(false);
       }

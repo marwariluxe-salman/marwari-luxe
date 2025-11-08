@@ -9,33 +9,45 @@ export const healthBlogs: Blog[] = [
     heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864930/Marwari-luxe_dnwxfa.jpg',
     images: [],
     category: 'Health',
-    author: 'Dr. Sarah Johnson',
-    publishedAt: '2025-01-15',
-    readTime: 8
+    author: 'Salman Marwari',
+    publishedAt: '2025-01-01',
+    readTime: 15
   },
   {
     id: 'health-blog-002',
-    title: 'The Science Behind Anti-Aging Skincare in 2025',
-    excerpt: 'Explore the latest breakthroughs in anti-aging skincare and what ingredients really work to turn back the clock.',
-    content: `In 2025, the skincare industry has seen remarkable advances in anti-aging technology. From peptide-based treatments to advanced retinol formulations, science is finally catching up to our beauty dreams.`,
-    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864926/marwari1_azrf1z.jpg',
+    title: 'Top 7 AI-Powered Health Tools That Make Fitness Smarter 2025.',
+    excerpt: 'Discover the top 7 AI-powered health and fitness tools transforming the way we track workouts, nutrition, and wellness in 2025. From smart wearables to AI diet planners, learn how technology is making fitness smarter, more personalized, and easier to maintain than ever before.',
+    content: `Health and fitness have always been about discipline, consistency, and effort—but in 2025, things are evolving faster than ever. Artificial Intelligence is no longer just powering self-driving cars or voice assistants; it’s now shaping the way we eat, exercise, and recover.`,
+    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863551/blog2-3_vldipi.png',
     images: [],
     category: 'Health',
-    author: 'Dr. Michael Chen',
+    author: 'Salman Marwari',
     publishedAt: '2025-01-10',
-    readTime: 6
+    readTime: 12
   },
   {
     id: 'health-blog-003',
-    title: 'The Power of Plant-Based Nutrition',
-    excerpt: 'Unlock the benefits of plant-based eating for improved energy, better digestion, and long-term health.',
-    content: `Plant-based nutrition is more than just a trend – it's a powerful approach to wellness that's backed by science. Discover how incorporating more plants into your diet can transform your health.`,
-    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864928/marwari2_hs4y31.jpg',
+    title: 'Sleep Therapy 2025: How Bed-Rotting Became the New Self-Care.',
+    excerpt: 'In 2025, Sleep Therapy has evolved from a wellness trend into a lifestyle movement. The "bed-rotting" era proves that rest, recovery, and mental reset aren\'t laziness — they\'re essential parts of self-care. Learn how mindful rest can heal your body, restore focus, and redefine productivity in a world that never stops.',
+    content: `For years, the idea of lying in bed all day was labeled as lazy or unproductive. Fast-forward to 2025, and that same act is being celebrated as one of the most powerful forms of rest and mental reset.`,
+    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863570/blog3-2_pabxj0.png',
     images: [],
     category: 'Health',
-    author: 'Dr. Amanda Roberts',
+    author: 'Salman Marwari',
     publishedAt: '2025-01-05',
-    readTime: 7
+    readTime: 15
+  },
+  {
+    id: 'health-blog-004',
+    title: 'Plant-Based Protein: Best Alternatives to Meat in Modern Diets.',
+    excerpt: 'Discover the best plant-based protein sources to replace meat in your diet. Learn how to build muscle, stay healthy, and enjoy flavorful meals without animal products.',
+    content: `Plant-based diets are no longer a trend — they're a lifestyle shift. As more people cut down on meat for health, environmental, or ethical reasons, the big question is: where do you get your protein?`,
+    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863656/blog4-2_af3nqp.png',
+    images: [],
+    category: 'Health',
+    author: 'Salman Marwari',
+    publishedAt: '2025-01-08',
+    readTime: 15
   }
 ];
 
@@ -48,9 +60,9 @@ export const beautyBlogs: Blog[] = [
     heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864928/marwari2_hs4y31.jpg',
     images: [],
     category: 'Beauty',
-    author: 'Emma Rodriguez',
+    author: 'Salman Marwari',
     publishedAt: '2025-01-12',
-    readTime: 7
+    readTime: 15
   },
   {
     id: 'beauty-blog-002',
@@ -60,9 +72,9 @@ export const beautyBlogs: Blog[] = [
     heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863553/200300_n50ysr.png',
     images: [],
     category: 'Beauty',
-    author: 'Sophia Martinez',
+    author: 'Salman Marwari',
     publishedAt: '2024-11-15',
-    readTime: 9
+    readTime: 12
   },
   {
     id: 'beauty-blog-003',
@@ -72,9 +84,9 @@ export const beautyBlogs: Blog[] = [
     heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863544/800400_ljnnqg.png',
     images: [],
     category: 'Beauty',
-    author: 'Priya Sharma',
+    author: 'Salman Marwari',
     publishedAt: '2025-01-08',
-    readTime: 6
+    readTime: 12
   }
 ];
 
@@ -87,9 +99,9 @@ export const evergreenHealthBlogs: Blog[] = [
     heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863544/800400_ljnnqg.png',
     images: [],
     category: 'Health',
-    author: 'Dr. James Wilson',
+    author: 'Salman Marwari',
     publishedAt: '2024-12-01',
-    readTime: 5
+    readTime: 10
   }
 ];
 
@@ -102,8 +114,8 @@ export const evergreenBeautyBlogs: Blog[] = [
     heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863553/200300_n50ysr.png',
     images: [],
     category: 'Beauty',
-    author: 'Sophia Martinez',
+    author: 'Salman Marwari',
     publishedAt: '2024-11-15',
-    readTime: 9
+    readTime: 10
   }
 ];

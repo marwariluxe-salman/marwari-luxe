@@ -6,7 +6,10 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "analyze": "ANALYZE=true next build",
+    "optimize": "node scripts/optimize-build.js",
+    "perf": "npm run build && npm run analyze"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",

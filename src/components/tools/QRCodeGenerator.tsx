@@ -66,7 +66,20 @@ const QRCodeGenerator = () => {
     link.href = qrCode;
     link.download = `qrcode-${Date.now()}.png`;
     document.body.appendChild(link);
-    link.click();
+    
+    // Check if link.click() is available
+    if (link.click) {
+      link.click();
+    } else {
+      // Fallback for older browsers
+      const event = new MouseEvent('click', {
+        view: window,
+        bubbles: true,
+        cancelable: true
+      });
+      link.dispatchEvent(event);
+    }
+    
     document.body.removeChild(link);
   };
 

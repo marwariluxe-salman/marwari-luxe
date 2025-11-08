@@ -23,7 +23,9 @@ const NewsletterSection = () => {
     setEmail('');
     
     // Reset success message after 3 seconds
-    setTimeout(() => setIsSubmitted(false), 3000);
+    if (typeof window !== 'undefined') {
+      setTimeout(() => setIsSubmitted(false), 3000);
+    }
   };
 
   // Fix: Generate random positions in useEffect and store in state

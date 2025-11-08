@@ -55,8 +55,7 @@ const WordCounter = () => {
   };
 
   const copyStats = () => {
-    const statsText = `
-Text Statistics:
+    const statsText = `Text Statistics:
 Characters: ${stats.characters}
 Characters (no spaces): ${stats.charactersNoSpaces}
 Words: ${stats.words}
@@ -66,7 +65,25 @@ Reading time: ${stats.readingTime} minute(s)
 Speaking time: ${stats.speakingTime} minute(s)
     `.trim();
 
-    navigator.clipboard.writeText(statsText);
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(statsText);
+    } else {
+      // Fallback for older browsers or non-secure contexts
+      const textArea = document.createElement("textarea");
+      textArea.value = statsText;
+      textArea.style.position = "fixed";
+      textArea.style.left = "-999999px";
+      textArea.style.top = "-999999px";
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        document.execCommand('copy');
+      } catch (err) {
+        console.error('Failed to copy text: ', err);
+      }
+      document.body.removeChild(textArea);
+    }
   };
 
   const getSampleText = () => {

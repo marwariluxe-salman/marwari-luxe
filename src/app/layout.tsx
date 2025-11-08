@@ -4,16 +4,17 @@ import Script from 'next/script';
 import "./globals.css";
 import Navbar from '@/components/Navbar';
 import dynamic from 'next/dynamic';
-
-const Footer = dynamic(() => import('@/components/Footer'));
 import { CartProvider } from '@/contexts/CartContext';
 import BackToTopButton from '@/components/BackToTopButton';
+
+const Footer = dynamic(() => import('@/components/Footer'));
 
 // Use only one clean font for better performance
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: 'swap', // Add font-display swap for better performance
+  weight: ['400', '500', '600', '700'], // Limit font weights for smaller bundle
 });
 
 export const viewport: Viewport = {
@@ -98,15 +99,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="msapplication-tap-highlight" content="no" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="google-site-verification" content="your-google-verification-code" />
         <meta name="p:domain_verify" content="aab945e83f0913b86a2eb25bfc0f8ff8"/>
-        <meta name="theme-color" content="#9333ea" />
-        <meta name="application-name" content="Marwari Luxe" />
         <meta name="msapplication-TileColor" content="#9333ea" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXX" />
@@ -122,23 +118,35 @@ export default function RootLayout({
         
         {/* Preload critical fonts */}
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
-        <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" as="style" />
         
         {/* Preload critical CSS */}
         <link rel="preload" href="/_next/static/css/app/layout.css" as="style" />
+        
+        {/* Resource hints for better performance */}
+        <link rel="prefetch" href="/products" />
+        <link rel="prefetch" href="/blogs" />
+        <link rel="prefetch" href="/tools" />
         
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="canonical" href="https://marwariluxe.com" />
+        {/* PWA meta tags */}
+        <meta name="theme-color" content="#9333ea" />
+        <meta name="application-name" content="Marwari Luxe" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-title" content="Marwari Luxe" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>
       <body
         className={`${inter.variable} antialiased touch-manipulation w-full overflow-x-hidden`}
         suppressHydrationWarning
       >
         {/* Load Google Ads asynchronously after main content */}
-        <script 
+        <Script 
+          id="google-ads"
           async 
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX"
           crossOrigin="anonymous"

@@ -6,7 +6,7 @@ const blogIndex: Blog[] = [
   // Health Blogs
   {
     id: 'health-blog-001',
-    title: 'Fibremaxxingggg Diet: Why Fiber is the Hottest Health Trend in 2025',
+    title: 'Fibremaxxing Diet: Why Fiber is the Hottest Health Trend in 2025',
     excerpt: 'Discover why the Fibremaxxing Diet is trending in 2025. Learn how adding more fiber boosts gut health, weight loss, and energy naturally.',
     content: '',
     heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864930/Marwari-luxe_dnwxfa.jpg',
@@ -14,7 +14,7 @@ const blogIndex: Blog[] = [
     category: 'Health',
     author: 'Dr. Sarah Johnson',
     publishedAt: '2025-01-15',
-    readTime: 8
+    readTime: 15
   },
   {
     id: 'health-blog-002',
@@ -26,7 +26,103 @@ const blogIndex: Blog[] = [
     category: 'Health',
     author: 'Dr. Michael Chen',
     publishedAt: '2025-01-10',
-    readTime: 6
+    readTime: 12
+  },
+  {
+    id: 'health-blog-003',
+    title: 'Sleep Therapy 2025: How Bed-Rotting Became the New Self-Care.',
+    excerpt: 'In 2025, Sleep Therapy has evolved from a wellness trend into a lifestyle movement. The "bed-rotting" era proves that rest, recovery, and mental reset aren\'t laziness — they\'re essential parts of self-care. Learn how mindful rest can heal your body, restore focus, and redefine productivity in a world that never stops.',
+    content: '',
+    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863570/blog3-2_pabxj0.png',
+    images: [],
+    category: 'Health',
+    author: 'Dr. Amanda Roberts',
+    publishedAt: '2025-01-05',
+    readTime: 15
+  },
+  {
+    id: 'health-blog-004',
+    title: 'Plant-Based Protein: Best Alternatives to Meat in Modern Diets.',
+    excerpt: 'Discover the best plant-based protein sources to replace meat in your diet. Learn how to build muscle, stay healthy, and enjoy flavorful meals without animal products.',
+    content: '',
+    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863656/blog4-2_af3nqp.png',
+    images: [],
+    category: 'Health',
+    author: 'Dr. James Wilson',
+    publishedAt: '2025-01-08',
+    readTime: 14
+  },
+  {
+    id: 'health-blog-005',
+    title: 'Probiotics and Gut Health: The Foundation of Wellness in 2025.',
+    excerpt: 'Explore how probiotics and gut health are revolutionizing modern wellness. Learn about the gut-brain connection, fermented foods, and how to improve your digestive system naturally.',
+    content: '',
+    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863547/blog2-1_jakq66.png',
+    images: [],
+    category: 'Health',
+    author: 'Dr. Sarah Johnson',
+    publishedAt: '2025-01-12',
+    readTime: 15
+  },
+  {
+    id: 'health-blog-006',
+    title: 'Fermented Foods: The Ancient Superfoods Taking Over Modern Kitchens.',
+    excerpt: 'Discover the power of fermented foods and how they can transform your gut health, boost immunity, and improve digestion. Learn about kefir, kimchi, sauerkraut, and more.',
+    content: '',
+    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863544/800400_ljnnqg.png',
+    images: [],
+    category: 'Health',
+    author: 'Dr. Michael Chen',
+    publishedAt: '2025-01-14',
+    readTime: 15
+  },
+  {
+    id: 'health-blog-007',
+    title: 'The Complete Guide to Adaptogens: Natural Stress Relief in 2025.',
+    excerpt: 'Learn how adaptogens like ashwagandha, rhodiola, and reishi mushrooms can help your body adapt to stress, boost energy, and improve mental clarity naturally.',
+    content: '',
+    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863553/200300_n50ysr.png',
+    images: [],
+    category: 'Health',
+    author: 'Dr. Amanda Roberts',
+    publishedAt: '2025-01-16',
+    readTime: 12
+  },
+  {
+    id: 'health-blog-008',
+    title: 'Mindful Movement: The Rise of Gentle Fitness in 2025.',
+    excerpt: 'Explore how mindful movement practices like yoga, tai chi, and walking meditation are becoming the preferred fitness methods for stress relief and holistic wellness.',
+    content: '',
+    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864930/Marwari-luxe_dnwxfa.jpg',
+    images: [],
+    category: 'Health',
+    author: 'Dr. James Wilson',
+    publishedAt: '2025-01-18',
+    readTime: 15
+  },
+  {
+    id: 'health-blog-009',
+    title: 'Blue Light Blocking: Protecting Your Eyes and Sleep in the Digital Age.',
+    excerpt: 'Discover how blue light from screens affects your sleep, eye health, and overall wellness. Learn about the latest blue light blocking solutions for 2025.',
+    content: '',
+    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864926/marwari1_azrf1z.jpg',
+    images: [],
+    category: 'Health',
+    author: 'Dr. Sarah Johnson',
+    publishedAt: '2025-01-20',
+    readTime: 15
+  },
+  {
+    id: 'health-blog-010',
+    title: 'The Rise of Personalized Nutrition: DNA-Based Diet Plans in 2025.',
+    excerpt: 'Explore how DNA testing and personalized nutrition are revolutionizing the way we approach diet and wellness. Learn about genetic testing for optimal health.',
+    content: '',
+    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864928/marwari2_hs4y31.jpg',
+    images: [],
+    category: 'Health',
+    author: 'Dr. Michael Chen',
+    publishedAt: '2025-01-22',
+    readTime: 12
   },
   // Beauty Blogs
   {
@@ -39,7 +135,79 @@ const blogIndex: Blog[] = [
     category: 'Beauty',
     author: 'Emma Rodriguez',
     publishedAt: '2025-01-12',
-    readTime: 7
+    readTime: 15
+  },
+  {
+    id: 'beauty-blog-002',
+    title: 'The Ultimate Guide to Skincare Routines',
+    excerpt: 'Master the art of skincare with this comprehensive guide to building the perfect routine for your skin type.',
+    content: '',
+    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863553/200300_n50ysr.png',
+    images: [],
+    category: 'Beauty',
+    author: 'Sophia Martinez',
+    publishedAt: '2024-11-15',
+    readTime: 9
+  },
+  {
+    id: 'beauty-blog-003',
+    title: 'Hair Care Secrets from Ayurvedic Traditions',
+    excerpt: 'Ancient wisdom meets modern science in these time-tested hair care techniques for stronger, shinier hair.',
+    content: '',
+    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863544/800400_ljnnqg.png',
+    images: [],
+    category: 'Beauty',
+    author: 'Priya Sharma',
+    publishedAt: '2025-01-08',
+    readTime: 12
+  },
+  {
+    id: 'beauty-blog-004',
+    title: 'The Science of Anti-Aging: Skincare Breakthroughs in 2025',
+    excerpt: 'Explore the latest anti-aging skincare technologies and ingredients that are revolutionizing beauty routines in 2025.',
+    content: '',
+    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863551/blog2-3_vldipi.png',
+    images: [],
+    category: 'Beauty',
+    author: 'Emma Rodriguez',
+    publishedAt: '2025-01-14',
+    readTime: 15
+  },
+  {
+    id: 'beauty-blog-005',
+    title: 'CBD Beauty: The Wellness Ingredient Taking Over Skincare',
+    excerpt: 'Discover how CBD is revolutionizing the beauty industry with its anti-inflammatory and calming properties for skin health.',
+    content: '',
+    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863547/blog2-1_jakq66.png',
+    images: [],
+    category: 'Beauty',
+    author: 'Sophia Martinez',
+    publishedAt: '2025-01-16',
+    readTime: 10
+  },
+  {
+    id: 'beauty-blog-006',
+    title: 'K-Beauty Trends: What\'s Hot in Korean Skincare for 2025',
+    excerpt: 'Explore the latest Korean beauty trends and innovations that are setting the global skincare standard in 2025.',
+    content: '',
+    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863544/800400_ljnnqg.png',
+    images: [],
+    category: 'Beauty',
+    author: 'Priya Sharma',
+    publishedAt: '2025-01-18',
+    readTime: 10
+  },
+  {
+    id: 'beauty-blog-007',
+    title: 'Makeup Minimalism: The \'Less is More\' Beauty Movement',
+    excerpt: 'Discover how the minimalist makeup trend is reshaping beauty standards with a focus on natural looks and skin health.',
+    content: '',
+    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863553/200300_n50ysr.png',
+    images: [],
+    category: 'Beauty',
+    author: 'Emma Rodriguez',
+    publishedAt: '2025-01-20',
+    readTime: 15
   },
   // Evergreen Health Blogs
   {
@@ -52,7 +220,7 @@ const blogIndex: Blog[] = [
     category: 'Health',
     author: 'Dr. James Wilson',
     publishedAt: '2024-12-01',
-    readTime: 5
+    readTime: 10
   },
   // Evergreen Beauty Blogs
   {
@@ -65,7 +233,7 @@ const blogIndex: Blog[] = [
     category: 'Beauty',
     author: 'Sophia Martinez',
     publishedAt: '2024-11-15',
-    readTime: 9
+    readTime: 10
   }
 ];
 
@@ -91,7 +259,11 @@ export const getBlogById = async (id: string): Promise<Blog | undefined> => {
       const { blogs } = await import('@/data/blogs');
       return blogs.find(blog => blog.id === id);
     }
-    return undefined;
+    
+    // If not found in index, still try to load from full data
+    // This fixes the issue where blogs not in the index couldn't be loaded
+    const { blogs } = await import('@/data/blogs');
+    return blogs.find(blog => blog.id === id);
   } catch (error) {
     // Error handling is done through UI feedback
     return undefined;
@@ -116,6 +288,24 @@ export const getRelatedBlogs = async (categoryId: string, excludeId: string, lim
     return blogs
       .filter(blog => blog.category === categoryId && blog.id !== excludeId)
       .slice(0, limit);
+  } catch (error) {
+    // Error handling is done through UI feedback
+    return [];
+  }
+};
+
+// Get blogs by category
+export const getBlogsByCategory = async (category: string): Promise<Blog[]> => {
+  try {
+    // Load full blog data
+    const { blogs } = await import('@/data/blogs');
+    
+    // Filter by category
+    if (category === 'All') {
+      return blogs;
+    }
+    
+    return blogs.filter(blog => blog.category === category);
   } catch (error) {
     // Error handling is done through UI feedback
     return [];
@@ -165,5 +355,24 @@ export const searchBlogs = async (term: string): Promise<Blog[]> => {
   } catch (error) {
     // Error handling is done through UI feedback
     return [];
+  }
+};
+
+// Optimized function to get featured blogs for homepage
+export const getFeaturedBlogs = async (): Promise<{ healthBlogs: Blog[], beautyBlogs: Blog[] }> => {
+  try {
+    // Use the lightweight index for featured blogs
+    const healthBlogs = blogIndex
+      .filter(blog => blog.category === 'Health')
+      .slice(0, 3);
+      
+    const beautyBlogs = blogIndex
+      .filter(blog => blog.category === 'Beauty')
+      .slice(0, 3);
+      
+    return { healthBlogs, beautyBlogs };
+  } catch (error) {
+    // Error handling is done through UI feedback
+    return { healthBlogs: [], beautyBlogs: [] };
   }
 };

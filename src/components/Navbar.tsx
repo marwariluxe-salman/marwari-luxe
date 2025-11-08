@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronDownIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useCart } from '@/contexts/CartContext';
+import { initializeWalletErrorHandler } from '@/utils/walletHandler';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,6 +42,13 @@ const Navbar = () => {
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Initialize wallet error handler
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      initializeWalletErrorHandler();
+    }
   }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);

@@ -4,7 +4,7 @@ export const blogs: Blog[] = [
   // Expert Health & Wellness Blogs (10)
   {
     id: 'health-blog-001',
-    title: 'Fibremaxxing Diet: Why Fiber is the Hottest Health Trend in 2025',
+    title: 'Fibremaxxinggg Diet: Why Fiber is the Hottest Health Trend in 2025',
     excerpt: 'Discover why the Fibremaxxing Diet is trending in 2025. Learn how adding more fiber boosts gut health, weight loss, and energy naturally.',
     content: `When people think about modern health trends, most expect to hear about protein shakes, fancy supplements, or some new superfood. But here’s the twist: the biggest diet trend of 2025 is something surprisingly simple — fiber. The Fibremaxxing Diet is exploding across TikTok, Reddit, and wellness blogs, and for good reason. Unlike fads that come and go, this one is rooted in solid science. Fiber is finally getting the spotlight it has always deserved.
 
@@ -190,10 +190,9 @@ Fibre is beneficial, but increasing intake too quickly can cause bloating, gas, 
 <h1 style="font-weight: 900;">5. What are the best foods to start fibremaxxing with?</h1>
 Great starter foods for fibremaxxing include oats, lentils, brown rice, chia seeds, flaxseeds, apples, pears, leafy greens, and chickpeas. These foods are easy to add to meals and provide a mix of soluble and insoluble fibre. For snacks, nuts and dried fruit work well. If you’re new to fibremaxxing, aim to build your plate around whole grains and vegetables, then add beans or seeds as toppings. Small swaps—like replacing white bread with whole grain bread—can make a big difference over time.
 
-![Healthy Lifestyle](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761864930/marwari3_f4rklv.png),
+![Healthy Lifestyle](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761864930/marwari3_f4rklv.png)
 
-
-If you’re ready to start your fibremaxxing journey, we highly recommend adding a high-quality fibre supplement or fibre-rich product to your daily routine. The product listed below is carefully chosen to support digestion, improve gut health, and keep you full for longer hours. It’s an easy way to reach your daily fibre goals without overcomplicating your meals. Whether your goal is weight loss, better energy, or improved gut balance, this product can give you the extra boost you need.`,
+If you're ready to start your fibremaxxing journey, we highly recommend adding a high-quality fibre supplement or fibre-rich product to your daily routine. The product listed below is carefully chosen to support digestion, improve gut health, and keep you full for longer hours. It's an easy way to reach your daily fibre goals without overcomplicating your meals. Whether your goal is weight loss, better energy, or improved gut balance, this product can give you the extra boost you need.`,
     heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761864930/Marwari-luxe_dnwxfa.jpg',
     images: [
       '/images/blogs/fibremaxxing-1.jpg',
@@ -762,7 +761,7 @@ Discover why Sleep Therapy and the “bed-rotting” trend are redefining self-c
       whatsapp: 'https://wa.me/?text='
     }
   },
-     {
+  {
     id: 'health-blog-004',
     title: 'Plant-Based Protein: Best Alternatives to Meat in Modern Diets.',
     excerpt: 'Discover the best plant-based protein sources to replace meat in your diet. Learn how to build muscle, stay healthy, and enjoy flavorful meals without animal products.',

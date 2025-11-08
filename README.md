@@ -20,6 +20,47 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Performance Optimizations
+
+This project includes several performance optimizations to ensure fast loading times (2-3 seconds target):
+
+### Code Splitting & Lazy Loading
+- Dynamic imports for all components
+- Loading skeletons for better perceived performance
+- Optimized data loading with lightweight indexes
+
+### Image Optimization
+- Next.js Image component with automatic optimization
+- Cloudinary integration for responsive images
+- Proper sizing and quality settings
+
+### Caching Strategies
+- HTTP headers for static asset caching
+- Service worker support (planned)
+- Efficient resource loading
+
+### Bundle Optimization
+- SWC minification
+- Preact replacement in production
+- Modularized imports
+
+### Resource Hints
+- Preconnect to critical third-party domains
+- Prefetch for key navigation paths
+- Preload for critical resources
+
+## Performance Monitoring
+
+### Development Tools
+- PerformanceMonitor component (Ctrl+Shift+P to toggle)
+- Web Vitals tracking
+- Bundle analysis with `npm run analyze`
+
+### Production Monitoring
+- Google Analytics 4 integration
+- Core Web Vitals tracking
+- Error tracking with Sentry (planned)
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

@@ -116,6 +116,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
   const addToCart = (product: Product, quantity: number = 1) => {
+    // Check if product is in stock before adding to cart
     if (!product.inStock) return;
     dispatch({ type: 'ADD_TO_CART', product, quantity });
   };

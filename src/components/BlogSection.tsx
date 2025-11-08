@@ -98,6 +98,8 @@ const BlogSection = () => {
                       style={{ objectFit: 'cover' }}
                       // Add fetch priority for above-the-fold images
                       fetchPriority={index < 2 ? "high" : "auto"}
+                      // Add decoding hint for better performance
+                      decoding="async"
                     />
                   </div>
                   <div className="absolute top-4 left-4">

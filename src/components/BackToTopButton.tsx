@@ -8,30 +8,41 @@ const BackToTopButton = () => {
   // Show button when page is scrolled down
   useEffect(() => {
     const toggleVisibility = () => {
-      // Show button when scrolled down 50px
-      if (window.pageYOffset > 50) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
+      // Check if window is defined (browser environment)
+      if (typeof window !== 'undefined') {
+        // Show button when scrolled down 50px
+        if (window.pageYOffset > 50) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
       }
     };
 
-    window.addEventListener('scroll', toggleVisibility);
-    
-    // Check on initial load
-    toggleVisibility();
+    // Only add event listener in browser environment
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', toggleVisibility);
+      
+      // Check on initial load
+      toggleVisibility();
+    }
 
     return () => {
-      window.removeEventListener('scroll', toggleVisibility);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('scroll', toggleVisibility);
+      }
     };
   }, []);
 
   // Scroll to top function
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    // Check if window is defined (browser environment)
+    if (typeof window !== 'undefined' && window.scrollTo) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
   };
 
   return (

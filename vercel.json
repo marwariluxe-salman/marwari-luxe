@@ -36,5 +36,7 @@
   "github": {
     "silent": true
   },
-  "regions": ["iad1"]
+  "regions": ["iad1"],
+  "trailingSlash": false,
+  "cleanUrls": true
 }

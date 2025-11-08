@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Blog } from '@/types';
 import Image from 'next/image';
-import { getBlogPage, searchBlogs } from '@/services/blogService';
+import { getBlogPage, searchBlogs, getBlogsByCategory } from '@/services/blogService';
 
 const BlogsPage = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
@@ -16,15 +16,25 @@ const BlogsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [isSearching, setIsSearching] = useState(false);
+  const [isFiltering, setIsFiltering] = useState(false);
 
   useEffect(() => {
     const loadBlogs = async () => {
       try {
         setLoading(true);
-        const { blogs: blogData, totalPages } = await getBlogPage(currentPage, 12);
-        setBlogs(blogData);
-        setFilteredBlogs(blogData);
-        setTotalPages(totalPages);
+        if (isFiltering) {
+          // Load blogs by category
+          const categoryBlogs = await getBlogsByCategory(selectedCategory);
+          setBlogs(categoryBlogs);
+          setFilteredBlogs(categoryBlogs);
+          setTotalPages(1); // For category filtering, we show all on one page
+        } else if (!isSearching) {
+          // Load blogs with pagination
+          const { blogs: blogData, totalPages } = await getBlogPage(currentPage, 12);
+          setBlogs(blogData);
+          setFilteredBlogs(blogData);
+          setTotalPages(totalPages);
+        }
       } catch (error) {
         // Error handling is done through UI feedback
       } finally {
@@ -32,20 +42,20 @@ const BlogsPage = () => {
       }
     };
 
-    if (!isSearching) {
-      loadBlogs();
-    }
-  }, [currentPage, isSearching]);
+    loadBlogs();
+  }, [currentPage, isSearching, isFiltering, selectedCategory]);
 
   const handleSearch = useCallback(async () => {
     if (searchTerm.trim() === '') {
       setIsSearching(false);
+      setIsFiltering(false);
       setCurrentPage(1);
       return;
     }
 
     try {
       setIsSearching(true);
+      setIsFiltering(false);
       setLoading(true);
       const searchResults = await searchBlogs(searchTerm);
       setFilteredBlogs(searchResults);
@@ -63,6 +73,7 @@ const BlogsPage = () => {
         handleSearch();
       } else if (isSearching) {
         setIsSearching(false);
+        setIsFiltering(false);
         setCurrentPage(1);
       }
     }, 500);
@@ -70,16 +81,15 @@ const BlogsPage = () => {
     return () => clearTimeout(delayDebounceFn);
   }, [searchTerm, handleSearch, isSearching]);
 
-  useEffect(() => {
-    let result = blogs;
-
-    // Filter by category (only when not searching)
-    if (selectedCategory !== 'All' && !isSearching) {
-      result = result.filter(blog => blog.category === selectedCategory);
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    if (category === 'All') {
+      setIsFiltering(false);
+      setCurrentPage(1);
+    } else {
+      setIsFiltering(true);
     }
-
-    setFilteredBlogs(result);
-  }, [selectedCategory, blogs, isSearching]);
+  };
 
   // Get unique categories from the lightweight data
   const categories = ['All', 'Health', 'Beauty', 'Evergreen Health', 'Evergreen Beauty'];
@@ -178,7 +188,7 @@ const BlogsPage = () => {
             {categories.map((category) => (
               <button
                 key={category}
-                onClick={() => setSelectedCategory(category)}
+                onClick={() => handleCategoryChange(category)}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
                   selectedCategory === category
                     ? 'bg-purple-600 text-white'
@@ -258,7 +268,7 @@ const BlogsPage = () => {
             </motion.div>
 
             {/* Pagination */}
-            {!isSearching && totalPages > 1 && (
+            {!isSearching && !isFiltering && totalPages > 1 && (
               <div className="flex justify-center mt-12">
                 <div className="flex space-x-2">
                   <button
@@ -333,6 +343,7 @@ const BlogsPage = () => {
                 setSearchTerm('');
                 setSelectedCategory('All');
                 setIsSearching(false);
+                setIsFiltering(false);
                 setCurrentPage(1);
               }}
               className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-medium"

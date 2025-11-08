@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
   },
   images: {
     loader: 'default',
-    domains: ['res.cloudinary.com'],
+    domains: ['res.cloudinary.com', 'images.unsplash.com'],
     formats: ['image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],

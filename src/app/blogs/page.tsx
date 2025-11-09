@@ -36,7 +36,7 @@ const BlogsPage = () => {
           setTotalPages(totalPages);
         }
       } catch (error) {
-        // Error handling is done through UI feedback
+        console.error('Error loading blogs:', error);
       } finally {
         setLoading(false);
       }
@@ -61,7 +61,7 @@ const BlogsPage = () => {
       setFilteredBlogs(searchResults);
       setTotalPages(1); // For search results, we show all on one page
     } catch (error) {
-      // Error handling is done through UI feedback
+      console.error('Error searching blogs:', error);
     } finally {
       setLoading(false);
     }

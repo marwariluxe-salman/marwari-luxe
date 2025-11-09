@@ -53,6 +53,7 @@ const SocialMediaPage = () => {
     { name: 'Twitter', url: 'https://x.com/marwariluxe', icon: <TwitterIcon />, color: 'bg-blue-400 hover:bg-blue-500' },
     { name: 'YouTube', url: 'https://www.youtube.com/@MarwariLuxeOfficial', icon: <YouTubeIcon />, color: 'bg-red-600 hover:bg-red-700' },
     { name: 'Pinterest', url: 'https://www.pinterest.com/MarwariLuxeOfficial/', icon: <PinterestIcon />, color: 'bg-red-500 hover:bg-red-600' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/company/marwariluxe', icon: <LinkedInIcon />, color: 'bg-blue-700 hover:bg-blue-800' },
     { name: 'Tiktok', url: 'https://www.tiktok.com/@marwariluxeofficial', icon: <TiktokIcon />, color: 'bg-blue-700 hover:bg-blue-800' },
   ];
 

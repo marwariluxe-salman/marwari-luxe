@@ -6,15 +6,16 @@
 // Type definitions for wallet providers
 interface EthereumProvider {
   isMetaMask?: boolean;
-  request?: (args: { method: string; params?: any[] }) => Promise<unknown>;
-  on?: (event: string, handler: (...args: any[]) => void) => void;
-  removeListener?: (event: string, handler: (...args: any[]) => void) => void;
+  request?: (args: { method: string; params?: unknown[] }) => Promise<unknown>;
+  on?: (event: string, handler: (...args: unknown[]) => void) => void;
+  removeListener?: (event: string, handler: (...args: unknown[]) => void) => void;
 }
 
+// Extend the Window interface
 declare global {
   interface Window {
     ethereum?: EthereumProvider;
-    web3?: any;
+    web3?: unknown;
   }
 }
 
@@ -58,14 +59,19 @@ export const connectWallet = async (): Promise<string | null> => {
     }
     
     return null;
-  } catch (error: any) {
+  } catch (error: unknown) {
     // Handle specific error cases
-    if (error.code === 4001) {
-      console.warn('Wallet connection rejected by user');
-    } else if (error.code === -32002) {
-      console.warn('Wallet connection request already pending');
+    if (typeof error === 'object' && error !== null && 'code' in error) {
+      const err = error as { code: number; message?: string };
+      if (err.code === 4001) {
+        console.warn('Wallet connection rejected by user');
+      } else if (err.code === -32002) {
+        console.warn('Wallet connection request already pending');
+      } else {
+        console.warn('Error connecting to wallet:', err.message || error);
+      }
     } else {
-      console.warn('Error connecting to wallet:', error.message || error);
+      console.warn('Error connecting to wallet:', error);
     }
     return null;
   }
@@ -90,7 +96,7 @@ export const initializeWalletErrorHandler = (): void => {
   // Handle unhandled rejections
   if (window.addEventListener) {
     window.addEventListener('unhandledrejection', (event: PromiseRejectionEvent) => {
-      if (handleError(event.reason?.message)) {
+      if (handleError(event.reason?.message || '')) {
         event.preventDefault();
       }
     });
@@ -104,8 +110,16 @@ export const initializeWalletErrorHandler = (): void => {
   }
 };
 
-export default {
+interface WalletHandler {
+  isWalletAvailable: () => boolean;
+  connectWallet: () => Promise<string | null>;
+  initializeWalletErrorHandler: () => void;
+}
+
+const walletHandler: WalletHandler = {
   isWalletAvailable,
   connectWallet,
   initializeWalletErrorHandler
 };
+
+export default walletHandler;

@@ -80,6 +80,24 @@ const ContactPage = () => {
       title: "Email Us",
       content: "marwariluxe@gmail.com",
       description: "We'll respond within 24 hours"
+    },
+    {
+      icon: <PhoneIcon className="h-6 w-6" />,
+      title: "Call Us",
+      content: "+1 (555) 123-4567",
+      description: "Mon-Fri, 9:00 AM - 6:00 PM"
+    },
+    {
+      icon: <MapPinIcon className="h-6 w-6" />,
+      title: "Visit Us",
+      content: "123 Wellness Street",
+      description: "Health District, CA 90210"
+    },
+    {
+      icon: <ClockIcon className="h-6 w-6" />,
+      title: "Business Hours",
+      content: "Mon-Fri: 9AM-6PM",
+      description: "Sat-Sun: 10AM-4PM"
     }
   ];
 
@@ -405,7 +423,7 @@ const ContactPage = () => {
                 { name: 'Instagram', icon: <InstagramIcon />, url: 'https://www.instagram.com/marwariluxeofficial/' },
                 { name: 'Twitter', icon: <TwitterIcon />, url: 'https://x.com/marwariluxe' },
                 { name: 'YouTube', icon: <YouTubeIcon />, url: 'https://www.youtube.com/@MarwariLuxeOfficial' },
-                // { name: 'LinkedIn', icon: <LinkedInIcon />, url: 'https://linkedin.com/company/marwariluxe' }
+                { name: 'LinkedIn', icon: <LinkedInIcon />, url: 'https://linkedin.com/company/marwariluxe' }
               ].map((social) => (
                 <motion.a
                   key={social.name}

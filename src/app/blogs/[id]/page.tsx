@@ -68,6 +68,7 @@ const BlogPost = () => {
             setError('Blog not found');
           }
         } catch (err) {
+          console.error('Error loading blog post:', err);
           setError('Failed to load blog post');
         } finally {
           setIsLoading(false);

@@ -251,7 +251,7 @@ Our goal is to build a trusted global community where people can discover natura
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
               >
-                <div className="h-64 bg-gradient-to-br from-purple-200 to-blue-200 flex items-center justify-center">
+                <div className="relative h-64 bg-gradient-to-br from-purple-200 to-blue-200 flex items-center justify-center">
                   {member.image ? (
                     <Image 
                       src={member.image} 

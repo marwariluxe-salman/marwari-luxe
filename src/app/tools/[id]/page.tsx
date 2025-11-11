@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { tools } from '@/data/tools';
 import { Tool } from '@/types';
-import AdSpace from '@/components/AdSpace';
+
 import dynamic from 'next/dynamic';
 
 // Dynamically import tool components
@@ -136,9 +136,7 @@ const ToolPage = () => {
 
       {/* Tool Component */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AdSpace size="banner" position="top" className="mb-8" />
         {renderTool()}
-        <AdSpace size="rectangle" position="bottom" className="mt-8" />
       </div>
 
       {/* Related Tools */}

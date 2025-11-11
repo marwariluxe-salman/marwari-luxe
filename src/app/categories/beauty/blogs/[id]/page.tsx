@@ -1,43 +1,21 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState, useEffect, use } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { beautyTools } from '@/data/tools';
 
-const BeautyCategoryPage = () => {
-  const beautyImages = [
-    {
-      src: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500&h=300&fit=crop",
-      alt: "Skincare products and routine",
-      title: "Skincare & Anti-Aging"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500&h=300&fit=crop",
-      alt: "Professional makeup and cosmetics",
-      title: "Makeup & Cosmetics"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1560869713-7d0b29837158?w=500&h=300&fit=crop",
-      alt: "Hair care and styling",
-      title: "Hair Care & Styling"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=500&h=300&fit=crop",
-      alt: "Nail care and manicure",
-      title: "Nail Care & Art"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&h=300&fit=crop",
-      alt: "Natural beauty and organic products",
-      title: "Natural & Organic Beauty"
-    }
-  ];
+interface Blog {
+  id: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  heroImage: string;
+}
 
-  // Custom blogs for Beauty & Cosmetics category
-  const customBeautyBlogs = [
-    {
-      id: 'custom-beauty-001',
+// Custom blogs data - same as in the beauty category page
+const customBeautyBlogs: Blog[] = [
+  {
+    id: 'custom-beauty-001',
           title: 'Waterless Skincare & Minimalist Beauty ',
       excerpt: "Discover the future of beauty with waterless skincare and minimalist routines. Learn how concentrated, eco-friendly products simplify your regimen, nourish your skin, and support sustainability. Try 7 must-have products in 2026 for radiant, healthy skin with minimal effort and maximum impact.",
       content: `<h1>Why Waterless Skincare Is the Future: 7 Must-Try Products for 2026</h1>
@@ -100,9 +78,9 @@ const BeautyCategoryPage = () => {
 <h2>Final Thoughts</h2>
 <p>Waterless skincare and minimalist beauty represent the future of conscious, effective routines. By choosing concentrated, multifunctional products in eco-friendly packaging, you simplify your routine, support sustainability, and enjoy healthier, radiant skin. Embrace this trend in 2026 to experience long-lasting results and a more mindful beauty lifestyle.</p>`,
     heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762857789/blogb-1_utllwn.png',
-    },
-    {
-      id: 'custom-beauty-002',
+  },
+  {
+    id: 'custom-beauty-002',
     title: 'Monochrome Makeup Looks',
     excerpt: "Discover the simplicity of monochrome makeup—one color, endless possibilities. Learn how to choose the right shade for your skin tone, master daily looks, and find top 2026 product picks that simplify your beauty routine while keeping it modern, radiant, and naturally effortless.",
     content: `<h1>Master the Monochrome Makeup Trend: Easy Daily Looks for Every Skin Tone</h1>
@@ -148,9 +126,9 @@ const BeautyCategoryPage = () => {
 <h2>Final Thoughts</h2>
 <p>Monochrome makeup is more than a trend—it’s timeless. It simplifies beauty routines, promotes sustainability, and enhances natural features effortlessly. By learning to work with tones and textures, anyone can master this look. Embrace the monochrome movement in 2026 for fresh, radiant, and easy-to-create daily beauty that fits every lifestyle.</p>`,
     heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762858256/blogb-2_qnyvv6.png',
-    },
-    {
-      id: 'custom-beauty-003',
+  },
+  {
+    id: 'custom-beauty-003',
     title: 'Sustainable & Eco-Friendly Beauty',
     excerpt: "Discover the top 10 sustainable beauty brands of 2025 revolutionizing skincare and makeup. Learn how to make eco-conscious swaps, choose ethical products, and embrace a cleaner, greener beauty routine that supports your skin and the planet effortlessly.",
     content: `<h1>Eco-Friendly Beauty 2026: Top 10 Sustainable Skincare & Makeup Brands to Try</h1>
@@ -193,9 +171,9 @@ const BeautyCategoryPage = () => {
 <p>Sustainable beauty in 2025 is about mindfulness and responsibility. By supporting ethical brands and making eco-conscious swaps, you’re investing in the planet’s future. Beauty and sustainability can coexist beautifully—because when your skincare and makeup choices reflect care for the Earth, you glow inside and out, naturally and confidently.</p>
 </p>`,
     heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762858786/blogb-3_bq9zlh.png',
-    },
-    {
-      id: 'custom-beauty-004',
+  },
+  {
+    id: 'custom-beauty-004',
     title: 'Hair Colour & Texture Trends',
     excerpt: "Discover 2025’s most exciting hair trends—from AI-inspired color blends to eco-friendly dyes and natural textures. Learn how futuristic styles redefine beauty with individuality, sustainability, and effortless confidence for every hair type and tone.",
     content: `<h1>Futuristic Hair Trends 2026: Colors, Textures, and Styles You’ll Love</h1>
@@ -239,9 +217,9 @@ const BeautyCategoryPage = () => {
 <h2>Final Thoughts</h2>
 <p>Futuristic hair trends in 2025 blend innovation, sustainability, and individuality. Whether you go for AI-customized colors, sustainable dyes, or bold natural textures, the message is clear: authenticity never goes out of style. Experiment freely, embrace your natural pattern, and let your hair reflect the confident, future-ready version of you.</p></p>`,
     heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762859782/blogb-4_rytecg.png',
-    },
-    {
-      id: 'custom-beauty-005',
+  },
+  {
+    id: 'custom-beauty-005',
     title: 'Tech-Powered Beauty (AI, AR, Smart Devices)',
     excerpt: "Explore how AI, AR, and smart devices are transforming skincare and beauty in 2026. Learn how technology-driven tools personalize routines, improve results, and make sustainable self-care easier than ever.",
     content: `<h1>Smart Beauty Devices & AI Skincare: How Tech Is Changing Your Routine in 2026</h1>
@@ -285,9 +263,9 @@ const BeautyCategoryPage = () => {
 <h2>Final Thoughts</h2>
 <p>Tech-powered beauty in 2026 is all about smart, adaptive care. From AI skincare to AR makeup and eco-conscious devices, technology is reshaping how we look after ourselves. It’s not just a trend—it’s the future of beauty: efficient, sustainable, and built around you.</p></p>`,
     heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762860104/blogb-5_pmytov.png',
-    },
-    {
-       id: 'custom-beauty-006',
+  },
+  {
+    id: 'custom-beauty-006',
     title: 'Playful & Statement Beauty Looks',
     excerpt: "Explore 2026’s most exciting beauty trends—duck nails, bold lips, glitter finishes, and more. Discover how to express your personality with confidence and color through playful, statement-making looks that redefine modern beauty.",
     content: `<h1>Playful Beauty Trends for 2026: Duck-Shape Nails, Bold Lips, and More Fun Ideas</h1>
@@ -332,402 +310,81 @@ const BeautyCategoryPage = () => {
 <p>Playful beauty in 2026 is more than a trend—it’s a movement toward joy and individuality. From duck nails to bold lips, it celebrates creativity and confidence. Forget rules and embrace fun. After all, the best beauty look is the one that makes you feel like you.</p>
 </p>`,
     heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762860508/blogb-6_sz2n1w.png',
-    }
-  ];
+  }
+];
+
+const BeautyBlogDetailPage = ({ params }: { params: Promise<{ id: string }> }) => {
+  // Unwrap the params promise
+  const unwrappedParams = use(params);
+  
+  const [blog, setBlog] = useState<Blog | null>(null);
+
+  useEffect(() => {
+    // Find the blog with the matching ID
+    const foundBlog = customBeautyBlogs.find(b => b.id === unwrappedParams.id);
+    setBlog(foundBlog || null);
+  }, [unwrappedParams.id]);
+
+  if (!blog) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Blog not found</h1>
+          <Link href="/categories/beauty" className="text-pink-600 hover:text-pink-700 font-medium">
+            ← Back to Beauty & Cosmetics
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-pink-600 via-purple-600 to-rose-600 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="text-center text-white"
-          >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8">
-              💄 Beauty & Cosmetics
+          <div className="text-center text-white">
+            <Link href="/categories/beauty" className="inline-flex items-center text-pink-100 hover:text-white mb-6">
+              ← Back to Beauty & Cosmetics
+            </Link>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              {blog.title}
             </h1>
-            <p className="text-xl md:text-2xl text-pink-100 max-w-4xl mx-auto leading-relaxed">
-              Unleash your natural beauty with our premium cosmetics, expert beauty advice, and personalized tools. Transform your beauty routine with professional-grade products and cutting-edge techniques.
+            <p className="text-xl text-pink-100 max-w-3xl mx-auto">
+              {blog.excerpt}
             </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="p-6"
-            >
-              <div className="text-4xl font-bold text-pink-600 mb-2">{beautyTools.length}+</div>
-              <p className="text-gray-600">Beauty Tools</p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="p-6"
-            >
-              <div className="text-4xl font-bold text-pink-600 mb-2">25+</div>
-              <p className="text-gray-600">Beauty Products</p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="p-6"
-            >
-              <div className="text-4xl font-bold text-pink-600 mb-2">75k+</div>
-              <p className="text-gray-600">Beauty Enthusiasts</p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="p-6"
-            >
-              <div className="text-4xl font-bold text-pink-600 mb-2">100+</div>
-              <p className="text-gray-600">Premium Brands</p>
-            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Beauty Blogs Section */}
-      <section className="py-20 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Latest Beauty & Cosmetics Blogs
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover expert insights, tips, and guides to enhance your beauty routine and express your unique style.
-            </p>
+      {/* Blog Content */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative h-96 rounded-xl overflow-hidden mb-12">
+            <Image
+              src={blog.heroImage}
+              alt={blog.title}
+              fill
+              className="object-cover"
+            />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {customBeautyBlogs.map((blog, index) => (
-              <div
-                key={blog.id}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={blog.heroImage}
-                    alt={blog.title}
-                    fill
-                    className="object-cover transition-transform duration-300 hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="text-lg font-semibold">{blog.title}</h3>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <p className="text-gray-600 mb-4 line-clamp-3 [&_h1]:text-xl [&_h1]:font-bold [&_h2]:text-lg [&_h2]:font-semibold [&_p]:font-bold">
-                    {blog.excerpt}
-                  </p>
-                  <Link
-                    href={`/categories/beauty/blogs/${blog.id}`}
-                    className="inline-flex items-center text-pink-600 hover:text-pink-700 font-medium"
-                  >
-                    Read More →
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Beauty Education Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Beauty Education & Tutorials
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Master the art of beauty with expert tutorials, tips, and personalized guidance.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="bg-gradient-to-br from-pink-50 to-purple-50 p-8 rounded-xl shadow-lg"
-            >
-              <div className="text-4xl mb-4">🎨</div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Makeup Tutorials</h2>
-              <p className="text-gray-600 mb-4">
-                Step-by-step makeup tutorials from professional artists covering everything from everyday looks to special occasions.
-              </p>
-              <Link href="/blogs" className="text-pink-600 hover:text-pink-700 font-medium">
-                Watch Tutorials →
-              </Link>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-gradient-to-br from-purple-50 to-rose-50 p-8 rounded-xl shadow-lg"
-            >
-              <div className="text-4xl mb-4">🛍️</div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Premium Products</h2>
-              <p className="text-gray-600 mb-4">
-                Discover our curated selection of premium beauty products designed to enhance your natural radiance.
-              </p>
-              <Link href="/products" className="text-pink-600 hover:text-pink-700 font-medium">
-                Explore Products →
-              </Link>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-gradient-to-br from-rose-50 to-pink-50 p-8 rounded-xl shadow-lg"
-            >
-              <div className="text-4xl mb-4">💅</div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Beauty Tools</h2>
-              <p className="text-gray-600 mb-4">
-                Professional beauty tools and analyzers to help you find your perfect beauty routine.
-              </p>
-              <Link href="/tools/beauty" className="text-pink-600 hover:text-pink-700 font-medium">
-                Try Beauty Tools →
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Beauty Tools */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Professional Beauty Tools
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Professional beauty analyzers and personalized recommendation tools to help you find your perfect beauty routine.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {beautyTools.filter(tool => tool.featured).map((tool, index) => (
-              <motion.div
-                key={tool.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="bg-white border border-gray-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <div className="text-center">
-                  <div className="text-5xl mb-6">{tool.icon}</div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{tool.title}</h3>
-                  <p className="text-gray-600 mb-6">{tool.description}</p>
-                  <Link
-                    href={`/tools/${tool.id}`}
-                    className="inline-block bg-pink-600 text-white px-6 py-3 rounded-lg hover:bg-pink-700 transition-colors font-medium"
-                  >
-                    Try Now
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
+          <div className="prose prose-lg max-w-none">
+            <div className="text-gray-700 mb-6 leading-relaxed [&_h1]:text-3xl [&_h1]:font-bold [&_h1]:mb-6 [&_h1]:text-gray-900 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:mb-4 [&_h2]:text-gray-800 [&_p]:mb-4" dangerouslySetInnerHTML={{ __html: blog.content }} />
           </div>
 
-          <div className="text-center mt-12">
-            <Link
-              href="/tools/beauty"
-              className="inline-block bg-pink-600 text-white px-8 py-4 rounded-lg hover:bg-pink-700 transition-colors font-semibold text-lg"
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <Link 
+              href="/categories/beauty" 
+              className="inline-flex items-center text-pink-600 hover:text-pink-700 font-medium"
             >
-              View All Beauty Tools
+              ← Back to Beauty & Cosmetics Blogs
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* Beauty Tips Section */}
-      <section className="py-20 bg-pink-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Professional Beauty Tips
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Professional beauty advice from makeup artists and skincare experts to help you look and feel your best.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="bg-white p-8 rounded-xl shadow-lg"
-            >
-              <div className="text-4xl mb-4">🧴</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Know Your Skin</h3>
-              <p className="text-gray-600">
-                Understanding your skin type is crucial. Use our Skin Type Analyzer to build a personalized skincare routine.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white p-8 rounded-xl shadow-lg"
-            >
-              <div className="text-4xl mb-4">💄</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Perfect Foundation</h3>
-              <p className="text-gray-600">
-                Find your ideal foundation shade using our Foundation Shade Finder. Test multiple brands and formulas easily.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-white p-8 rounded-xl shadow-lg"
-            >
-              <div className="text-4xl mb-4">🌞</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Sun Protection</h3>
-              <p className="text-gray-600">
-                Daily SPF is essential for healthy skin. Calculate your optimal sun protection with our SPF Calculator.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Trending Products Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Latest Beauty Trends
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover the latest beauty trends and must-have products loved by beauty enthusiasts worldwide.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="bg-gradient-to-br from-pink-100 to-purple-100 p-6 rounded-xl"
-            >
-              <div className="text-3xl mb-4">✨</div>
-              <h3 className="font-bold text-gray-900 mb-2">Glow Serums</h3>
-              <p className="text-sm text-gray-600">Vitamin C & Hyaluronic Acid</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-gradient-to-br from-purple-100 to-pink-100 p-6 rounded-xl"
-            >
-              <div className="text-3xl mb-4">💋</div>
-              <h3 className="font-bold text-gray-900 mb-2">Liquid Lipsticks</h3>
-              <p className="text-sm text-gray-600">Long-lasting & Transfer-proof</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-gradient-to-br from-rose-100 to-pink-100 p-6 rounded-xl"
-            >
-              <div className="text-3xl mb-4">👁️</div>
-              <h3 className="font-bold text-gray-900 mb-2">Eye Palettes</h3>
-              <p className="text-sm text-gray-600">Neutral & Bold Collections</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-gradient-to-br from-pink-100 to-rose-100 p-6 rounded-xl"
-            >
-              <div className="text-3xl mb-4">🎨</div>
-              <h3 className="font-bold text-gray-900 mb-2">Blush & Bronzer</h3>
-              <p className="text-sm text-gray-600">Natural & Sculpting Shades</p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="bg-gradient-to-r from-pink-600 to-purple-600 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-white"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Discover Your Perfect Beauty Routine
-            </h2>
-            <p className="text-xl text-pink-100 mb-10 max-w-3xl mx-auto">
-              Join our community of beauty lovers and unlock your full potential with personalized recommendations and premium products.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link
-                href="/products"
-                className="bg-white text-pink-600 px-10 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
-              >
-                Shop Beauty Products
-              </Link>
-              <Link
-                href="/tools/beauty"
-                className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-pink-600 transition-colors"
-              >
-                Try Beauty Tools
-              </Link>
-            </div>
-          </motion.div>
         </div>
       </section>
     </div>
   );
 };
 
-export default BeautyCategoryPage;
+export default BeautyBlogDetailPage;

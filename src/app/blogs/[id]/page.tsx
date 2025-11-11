@@ -5,7 +5,7 @@ import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Blog } from '@/types';
-import AdUnit from '@/components/AdUnit';
+
 import { getBlogById, getRelatedBlogs } from '@/services/blogService';
 
 // Function to render HTML content safely
@@ -190,9 +190,50 @@ const BlogPost = () => {
               {renderHTMLContent(blog.content)}
             </div>
             
+            {/* Products Section */}
+            {blog.products && blog.products.length > 0 && (
+              <section className="mt-12 pt-8 border-t border-gray-200">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">Recommended Products</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {blog.products.map((product) => (
+                    <div key={product.id} className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
+                      <div className="relative h-48 w-full">
+                        <Image
+                          src={product.image}
+                          alt={product.title}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
+                      </div>
+                      <div className="p-6">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">{product.title}</h3>
+                        <p className="text-gray-600 text-sm mb-4 line-clamp-2">{product.description}</p>
+                        <div className="flex items-center justify-between">
+                          <span className="text-lg font-bold text-purple-600">${product.price}</span>
+                          <Link 
+                            href={`/products/${product.id}`}
+                            className="text-sm bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 transition-colors"
+                          >
+                            View Product
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+            
             {/* Additional Content Sections */}
             <div className="space-y-8 mt-12">
-              <AdUnit slot="1234567890" layout="in-article" />
+              {/* Ad Space - Placeholder for Google AdSense */}
+              <div className="h-48 flex items-center justify-center bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg">
+                <div className="text-gray-500 text-center">
+                  <div>Advertisement</div>
+                  <div className="text-sm">Google AdSense will place ads here</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

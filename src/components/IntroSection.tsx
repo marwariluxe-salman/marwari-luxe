@@ -20,17 +20,10 @@ const IntroSection = () => {
               <span className="text-purple-600">Marwari Luxe</span>
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              At Marwari Luxe, we specialize in premium health supplements, natural beauty products, 
-              and wellness tools that combine traditional Marwari wisdom with modern scientific research. 
-              Our expert-curated collection includes high-quality vitamins, organic skincare essentials, 
-              anti-aging serums, and comprehensive health calculators designed to optimize your wellness journey.
+             At Marwari Luxe, we bring together the best of ancient Marwari wellness and modern science. Our curated range of premium health supplements, natural beauty products, and smart wellness tools is designed to help you feel and look your best. From high-quality vitamins and organic skincare to anti-aging serums and intelligent health calculators, everything we create supports your journey toward balanced, radiant living.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed">
-              From ancient Ayurvedic principles to cutting-edge nutritional science, we bridge traditional 
-              wellness practices with evidence-based health solutions. Every product undergoes rigorous 
-              quality testing to ensure efficacy, safety, and purity. Whether you're seeking immune support 
-              supplements, natural anti-aging skincare, or professional wellness tools, our collection 
-              meets the highest standards of quality and authenticity.
+              Blending ancient Ayurvedic wisdom with the precision of modern nutritional science, we create a seamless connection between tradition and innovation. Each product is carefully formulated and tested for purity, safety, and proven effectiveness. Whether you’re looking for immune-boosting supplements, natural anti-aging skincare, or expert wellness tools, every item in our collection reflects authenticity, quality, and trust.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
               <motion.div
@@ -77,7 +70,7 @@ const IntroSection = () => {
                 className="relative h-48"
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&h=200&fit=crop"
+                  src="https://res.cloudinary.com/dxg5ldzkv/image/upload/v1761864928/marwari2_hs4y31.jpg"
                   alt="Wellness Products"
                   fill
                   className="rounded-lg shadow-lg object-cover"
@@ -93,7 +86,7 @@ const IntroSection = () => {
                 className="relative h-48 mt-8"
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=300&h=200&fit=crop"
+                  src="https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762858786/blogb-3_bq9zlh.png"
                   alt="Beauty Products"
                   fill
                   className="rounded-lg shadow-lg object-cover"
@@ -109,7 +102,7 @@ const IntroSection = () => {
                 className="relative h-48 -mt-8"
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop"
+                  src="https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762860104/blogb-5_pmytov.png"
                   alt="Traditional Heritage"
                   fill
                   className="rounded-lg shadow-lg object-cover"
@@ -125,7 +118,7 @@ const IntroSection = () => {
                 className="relative h-48"
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop"
+                  src="https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762805385/blog-1_uwxwim.png"
                   alt="Modern Innovation"
                   fill
                   className="rounded-lg shadow-lg object-cover"

@@ -2,7 +2,7 @@ import { Blog } from '@/types';
 
 // Instead of importing the full blog data directly, we'll use a more efficient approach
 // Create a lightweight index of blogs for initial loads
-const blogIndex: Blog[] = [
+export const blogIndex: Blog[] = [
   // Health Blogs
   {
     id: 'health-blog-001',

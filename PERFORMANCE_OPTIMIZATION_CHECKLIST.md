@@ -11,7 +11,7 @@ This document outlines all the performance optimizations implemented for the Mar
 - [x] ToolsSection - Dynamically imported with loading skeleton
 - [x] ProductsSection - Dynamically imported with loading skeleton
 - [x] NewsletterSection - Dynamically imported with loading skeleton
-- [x] AdSpace - Dynamically imported with loading skeleton
+
 - [x] PerformanceOptimizer - Dynamically imported (client-side only)
 - [x] PerformanceMonitor - Dynamically imported (client-side only)
 

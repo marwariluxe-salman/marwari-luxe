@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { tools, healthTools, beautyTools, generalTools } from '@/data/tools';
-import AdSpace from '@/components/AdSpace';
+
 
 const ToolsPage = () => {
   const [activeCategory, setActiveCategory] = useState<string>('All');
@@ -56,7 +56,6 @@ const ToolsPage = () => {
       {/* Category Filter */}
       <section className="py-8 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AdSpace size="banner" position="top" className="mb-8" />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -83,7 +82,6 @@ const ToolsPage = () => {
       {/* Tools Grid */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AdSpace size="rectangle" position="top" className="mb-8" />
           <motion.div
             key={activeCategory}
             initial={{ opacity: 0 }}

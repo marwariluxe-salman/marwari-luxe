@@ -34,10 +34,7 @@ const NewsletterSection = dynamic(() => import('@/components/NewsletterSection')
   loading: () => <LoadingSkeleton />
 });
 
-const AdSpace = dynamic(() => import('@/components/AdSpace'), { 
-  ssr: true,
-  loading: () => <div className="h-32 w-full bg-gray-100 animate-pulse my-8" />
-});
+
 
 const PerformanceOptimizer = dynamic(() => import('@/components/PerformanceOptimizer'));
 const PerformanceMonitor = dynamic(() => import('@/components/PerformanceMonitor'));
@@ -100,22 +97,12 @@ export default function Home() {
       />
       
       <HeroSlider />
-      <div className="w-full max-w-7xl mx-auto px-4">
-        <AdSpace size="banner" position="top" />
-      </div>
+
       <IntroSection />
-      <div className="w-full max-w-7xl mx-auto px-4">
-        <AdSpace size="rectangle" position="middle" className="w-full" />
-      </div>
       <BlogSection />
       <ToolsSection />
-      <div className="w-full max-w-7xl mx-auto px-4">
-        <AdSpace size="banner" position="middle" className="w-full" />
-      </div>
+
       <ProductsSection />
-      <div className="w-full max-w-7xl mx-auto px-4">
-        <AdSpace size="rectangle" position="middle" className="w-full" />
-      </div>
       <NewsletterSection />
     </div>
   );

@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { allProducts } from '@/data/products';
 import { Product } from '@/types';
 import Image from 'next/image';
-import AdUnit from '@/components/AdUnit';
+
 
 const ProductDetail = () => {
   const params = useParams();
@@ -200,14 +200,17 @@ With thousands of satisfied customers worldwide, this product has established it
               </div>
             </motion.div>
 
-            {/* Ad Unit */}
+            {/* Ad Space - Placeholder for Google AdSense */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="my-6"
+              className="my-6 h-32 flex items-center justify-center bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg"
             >
-              <AdUnit slot="1234567891" />
+              <div className="text-gray-500 text-center">
+                <div>Advertisement</div>
+                <div className="text-sm">Google AdSense will place ads here</div>
+              </div>
             </motion.div>
 
             <motion.div

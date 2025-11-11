@@ -83,21 +83,21 @@ const ContactPage = () => {
     },
     {
       icon: <PhoneIcon className="h-6 w-6" />,
-      title: "Call Us",
-      content: "+1 (555) 123-4567",
-      description: "Mon-Fri, 9:00 AM - 6:00 PM"
+      title: "Trusted Partners",
+      content: "Verified Affiliate Network",
+      description: "Quality Products from Trusted Brands"
     },
     {
       icon: <MapPinIcon className="h-6 w-6" />,
-      title: "Visit Us",
-      content: "123 Wellness Street",
-      description: "Health District, CA 90210"
+      title: "Expert Curated",
+      content: "Handpicked Selection",
+      description: "Carefully Selected for Your Wellness"
     },
     {
       icon: <ClockIcon className="h-6 w-6" />,
-      title: "Business Hours",
-      content: "Mon-Fri: 9AM-6PM",
-      description: "Sat-Sun: 10AM-4PM"
+      title: "24/7 Support",
+      content: "Online Assistance",
+      description: "Help Whenever You Need It"
     }
   ];
 

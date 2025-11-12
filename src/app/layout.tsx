@@ -99,6 +99,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="msapplication-tap-highlight" content="no" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="google-site-verification" content="your-google-verification-code" />
@@ -106,6 +108,17 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#9333ea" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXX" />
+        
+        {/* Google tag (gtag.js) */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-TYSD6BMBCJ" strategy="beforeInteractive" />
+        <Script id="gtag-init" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-TYSD6BMBCJ');
+          `}
+        </Script>
         
         {/* Preconnect to critical third-party domains */}
         <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
@@ -128,7 +141,6 @@ export default function RootLayout({
         <link rel="prefetch" href="/tools" />
         
         <link rel="manifest" href="/manifest.json" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="canonical" href="https://marwari-luxe-web.vercel.app" />

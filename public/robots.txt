@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://marwariluxe.com/sitemap.xml
+Sitemap: https://marwari-luxe-web.vercel.app/sitemap.xml
 
 # Performance optimization: Allow crawling of critical resources
 Allow: /*.js$

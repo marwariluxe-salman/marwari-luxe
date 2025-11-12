@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About Marwari Luxe - Premium Health & Beauty Brand Story',
     description: 'Discover Marwari Luxe story - premium health supplements & natural beauty products combining traditional wisdom with modern science.',
-    url: 'https://marwariluxe.com/about',
+    url: 'https://marwari-luxe-web.vercel.app/about',
     type: 'website'
   },
   alternates: {
-    canonical: 'https://marwariluxe.com/about'
+    canonical: 'https://marwari-luxe-web.vercel.app/about'
   }
 };
 

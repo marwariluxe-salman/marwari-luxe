@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   title: "Marwari Luxe - Premium Health & Beauty Products | Wellness Essentials Online Store",
   description: "Shop premium health supplements, natural beauty products & wellness tools at Marwari Luxe. Expert-curated skincare, vitamins, fitness accessories with free shipping over $50. Trusted by 10,000+ customers worldwide.",
   robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
-  authors: [{ name: "Marwari Luxe Team", url: "https://marwariluxe.com/about" }],
+  authors: [{ name: "Marwari Luxe Team", url: "https://marwari-luxe-web.vercel.app/about" }],
   keywords: "health supplements, natural beauty products, wellness tools, skincare essentials, vitamins minerals, fitness accessories, organic beauty, anti-aging products, immune support, weight management, hair care, skin care routine, health calculators, wellness blog, premium supplements, beauty serum, protein powder, probiotics, omega-3, vitamin D, collagen peptides, hyaluronic acid, retinol products, sunscreen SPF, natural ingredients, cruelty-free beauty, sustainable wellness, marwari heritage wellness",
   openGraph: {
     title: 'Marwari Luxe - Premium Health & Beauty Products | Wellness Essentials Store',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'Marwari Luxe',
-    url: 'https://marwariluxe.com',
+    url: 'https://marwari-luxe-web.vercel.app',
     images: [{
       url: '/marwari-luxe-og-image.jpg',
       width: 1200,
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     telephone: false
   },
   alternates: {
-    canonical: 'https://marwariluxe.com'
+    canonical: 'https://marwari-luxe-web.vercel.app'
   },
   category: 'Health & Beauty',
   classification: 'Business'
@@ -78,8 +78,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Marwari Luxe",
-    "url": "https://marwariluxe.com",
-    "logo": "https://marwariluxe.com/marwari-logo.png",
+    "url": "https://marwari-luxe-web.vercel.app",
+    "logo": "https://marwari-luxe-web.vercel.app/marwari-logo.png",
     "description": "Premium health supplements, natural beauty products & wellness tools. Expert-curated collection for optimal health and beauty.",
     "sameAs": [
       "https://facebook.com/marwariluxe",
@@ -131,7 +131,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="canonical" href="https://marwariluxe.com" />
+        <link rel="canonical" href="https://marwari-luxe-web.vercel.app" />
         {/* PWA meta tags */}
         <meta name="theme-color" content="#9333ea" />
         <meta name="application-name" content="Marwari Luxe" />

@@ -20,10 +20,10 @@ const SEOStructuredData = ({ type, data }: SEOStructuredDataProps) => {
       baseData.publisher = {
         "@type": "Organization",
         "name": "Marwari Luxe",
-        "url": "https://marwariluxe.com",
+        "url": "https://marwari-luxe-web.vercel.app",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://marwariluxe.com/marwari-logo.png"
+          "url": "https://marwari-luxe-web.vercel.app/marwari-logo.png"
         }
       };
     }

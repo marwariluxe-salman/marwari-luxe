@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Marwari Luxe - Premium Health Supplements & Natural Beauty Products',
     description: 'Shop expert-curated health supplements, natural beauty products & wellness tools. Free shipping over $50.',
-    url: 'https://marwariluxe.com',
+    url: 'https://marwari-luxe-web.vercel.app',
     type: 'website',
     images: [{
       url: '/marwari-luxe-home-og.jpg',
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     }]
   },
   alternates: {
-    canonical: 'https://marwariluxe.com'
+    canonical: 'https://marwari-luxe-web.vercel.app'
   }
 };
 
@@ -66,11 +66,11 @@ export default function Home() {
     "@type": "WebPage",
     "name": "Marwari Luxe - Premium Health & Beauty Products",
     "description": "Shop premium health supplements, natural beauty products & wellness tools. Expert-curated collection for optimal health and beauty.",
-    "url": "https://marwariluxe.com",
+    "url": "https://marwari-luxe-web.vercel.app",
     "mainEntity": {
       "@type": "Store",
       "name": "Marwari Luxe",
-      "image": "https://marwariluxe.com/marwari-logo.png",
+      "image": "https://marwari-luxe-web.vercel.app/marwari-logo.png",
       "description": "Premium health supplements, natural beauty products & wellness tools store",
       "paymentAccepted": ["Credit Card"],
       "currenciesAccepted": "USD",

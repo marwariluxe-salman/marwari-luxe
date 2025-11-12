@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Privacy Policy | Marwari Luxe - Data Protection & Privacy Rights',
     description: 'Understanding how Marwari Luxe protects your personal information and respects your privacy rights.',
-    url: 'https://marwariluxe.com/legal/privacy-policy',
+    url: 'https://marwari-luxe-web.vercel.app/legal/privacy-policy',
     type: 'website'
   },
   alternates: {
-    canonical: 'https://marwariluxe.com/legal/privacy-policy'
+    canonical: 'https://marwari-luxe-web.vercel.app/legal/privacy-policy'
   }
 };
 

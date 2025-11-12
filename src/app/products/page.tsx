@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Premium Health Supplements & Natural Beauty Products | Marwari Luxe',
     description: 'Shop 25+ premium health supplements, natural beauty products & wellness essentials. Free shipping over $50.',
-    url: 'https://marwariluxe.com/products',
+    url: 'https://marwari-luxe-web.vercel.app/products',
     type: 'website',
     images: [{
       url: '/marwari-luxe-products-og.jpg',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     }]
   },
   alternates: {
-    canonical: 'https://marwariluxe.com/products'
+    canonical: 'https://marwari-luxe-web.vercel.app/products'
   }
 };
 

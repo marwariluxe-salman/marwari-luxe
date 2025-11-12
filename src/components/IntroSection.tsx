@@ -16,7 +16,7 @@ const IntroSection = () => {
             className="space-y-6"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-              Welcome to{' '}
+              "Welcome to"{' '}
               <span className="text-purple-600">Marwari Luxe</span>
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">

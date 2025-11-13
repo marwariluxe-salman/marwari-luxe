@@ -4,17 +4,29 @@ import AboutPageClient from '@/components/AboutPageClient';
 
 // SEO Metadata for About Page
 export const metadata: Metadata = {
-  title: 'About Marwari Luxe - Premium Health & Beauty Brand | Our Story & Mission',
-  description: 'Learn about Marwari Luxe - your trusted partner in premium health supplements and natural beauty products. Discover our heritage, mission, and commitment to quality wellness solutions since 2020.',
-  keywords: 'about marwari luxe, health beauty brand, wellness company story, premium supplements, natural beauty products, ayurvedic heritage, wellness mission, quality assurance, global shipping, expert team',
-  openGraph: {
-    title: 'About Marwari Luxe - Premium Health & Beauty Brand Story',
-    description: 'Discover Marwari Luxe story - premium health supplements & natural beauty products combining traditional wisdom with modern science.',
-    url: 'https://marwari-luxe-web.vercel.app/about',
-    type: 'website'
-  },
+  title: 'About Marwari Luxe - Our Heritage, Mission & Values',
+  description: 'Discover the story behind Marwari Luxe, our commitment to premium wellness, and how we blend traditional wisdom with modern science for optimal health and beauty.',
   alternates: {
     canonical: 'https://marwari-luxe-web.vercel.app/about'
+  },
+  openGraph: {
+    title: 'About Marwari Luxe - Our Heritage, Mission & Values',
+    description: 'Discover the story behind Marwari Luxe, our commitment to premium wellness, and how we blend traditional wisdom with modern science for optimal health and beauty.',
+    url: 'https://marwari-luxe-web.vercel.app/about',
+    images: [
+      {
+        url: '/about-og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'About Marwari Luxe - Our Heritage and Mission'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Marwari Luxe - Our Heritage, Mission & Values',
+    description: 'Discover the story behind Marwari Luxe, our commitment to premium wellness, and how we blend traditional wisdom with modern science.',
+    images: ['/about-twitter-card.jpg']
   }
 };
 

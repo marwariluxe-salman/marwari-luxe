@@ -4,17 +4,29 @@ import Link from 'next/link';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Marwari Luxe - Data Protection & Privacy Rights',
-  description: 'Read Marwari Luxe privacy policy to understand how we collect, use, and protect your personal information. Learn about your privacy rights and data security measures.',
-  keywords: 'privacy policy, data protection, personal information, privacy rights, data security, GDPR compliance, cookie policy, information collection, data usage',
-  openGraph: {
-    title: 'Privacy Policy | Marwari Luxe - Data Protection & Privacy Rights',
-    description: 'Understanding how Marwari Luxe protects your personal information and respects your privacy rights.',
-    url: 'https://marwari-luxe-web.vercel.app/legal/privacy-policy',
-    type: 'website'
-  },
+  title: 'Privacy Policy - Marwari Luxe',
+  description: 'Learn how Marwari Luxe protects your personal information, collects data, and ensures your privacy when shopping for premium health supplements and beauty products.',
   alternates: {
     canonical: 'https://marwari-luxe-web.vercel.app/legal/privacy-policy'
+  },
+  openGraph: {
+    title: 'Privacy Policy - Marwari Luxe',
+    description: 'Learn how Marwari Luxe protects your personal information, collects data, and ensures your privacy when shopping for premium health supplements and beauty products.',
+    url: 'https://marwari-luxe-web.vercel.app/legal/privacy-policy',
+    images: [
+      {
+        url: '/privacy-policy-og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Marwari Luxe Privacy Policy'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy - Marwari Luxe',
+    description: 'Learn how Marwari Luxe protects your personal information and ensures your privacy when shopping for premium health supplements and beauty products.',
+    images: ['/privacy-policy-twitter-card.jpg']
   }
 };
 

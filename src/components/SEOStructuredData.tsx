@@ -2,42 +2,35 @@
 
 import Script from 'next/script';
 
-interface SEOStructuredDataProps {
-  type: 'Organization' | 'Product' | 'Article' | 'WebPage' | 'Store';
-  data: Record<string, unknown>;
-}
-
-const SEOStructuredData = ({ type, data }: SEOStructuredDataProps) => {
-  const generateStructuredData = () => {
-    const baseData: Record<string, unknown> = {
-      "@context": "https://schema.org",
-      "@type": type,
-      ...data
-    };
-
-    // Add organization data for all types
-    if (type !== 'Organization') {
-      baseData.publisher = {
-        "@type": "Organization",
-        "name": "Marwari Luxe",
-        "url": "https://marwari-luxe-web.vercel.app",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://marwari-luxe-web.vercel.app/marwari-logo.png"
-        }
-      };
+const SEOStructuredData = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Marwari Luxe",
+    "url": "https://marwari-luxe-web.vercel.app",
+    "logo": "https://marwari-luxe-web.vercel.app/marwari-logo.png",
+    "description": "Premium health supplements, natural beauty products & wellness tools. Expert-curated collection for optimal health and beauty.",
+    "sameAs": [
+      "https://facebook.com/marwariluxe",
+      "https://instagram.com/marwariluxe",
+      "https://twitter.com/marwariluxe"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "marwariluxe@gmail.com"
     }
-
-    return JSON.stringify(baseData);
   };
 
   return (
     <Script
-      id={`structured-data-${type.toLowerCase()}`}
+      id="structured-data"
       type="application/ld+json"
       dangerouslySetInnerHTML={{
-        __html: generateStructuredData()
+        __html: JSON.stringify(structuredData),
       }}
+      strategy="afterInteractive"
+      suppressHydrationWarning
     />
   );
 };

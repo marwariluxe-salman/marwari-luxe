@@ -30,3 +30,22 @@ git commit -m "Updated project files and fixed errors"
 
 
 git push origin main
+
+
+
+
+
+Hey everyone!
+I’m excited to welcome you to this space. If you’re into beauty, skincare, haircare, wellness, and all the little things that make life feel good, you’re in the right place.
+Here’s what you can expect from me:
+• Honest tips that actually work
+• Daily beauty inspiration
+• Simple guides for glowing skin and healthy hair
+• Product insights and trend breakdowns
+• Clean, helpful content you can trust
+My goal is to build a community where we learn, share, and level up together.
+Glad you’re here. Let’s make this journey fun.
+Stay tuned — the best content is on the way.
+https://marwari-luxe-web.vercel.app/
+
+#blogger #bloggersofinstagram #blogging #blog #products #productreview #tools #toolshop #healthtools #beautytools #health #beauty #beautytips #healthylifestyle

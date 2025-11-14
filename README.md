@@ -98,3 +98,20 @@ NEXT_PUBLIC_PAYPAL_ENVIRONMENT=production
 4. Deploy your project
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Sitemap
+
+This project includes a sitemap.xml file in the public directory for search engine optimization. The sitemap is automatically served at `/sitemap.xml` and includes all important pages of the website.
+
+### Google Search Console Integration
+
+To resolve the "Sitemap could not be read" error:
+
+1. Visit the sitemap directly: https://marwari-luxe-web.vercel.app/sitemap.xml
+2. Manually submit the sitemap in Google Search Console:
+   - Go to Google Search Console
+   - Select your property
+   - Click "Sitemaps" in the left sidebar
+   - Enter "sitemap.xml" and click "Submit"
+
+For detailed troubleshooting, see [README.SITEMAP.md](README.SITEMAP.md).

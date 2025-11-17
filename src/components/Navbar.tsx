@@ -69,11 +69,11 @@ const Navbar = () => {
                   src="/marwari logo.png" 
                   alt="Marwari Luxe" 
                   className="object-contain" 
-                  width={40}
-                  height={40}
+                  width={60}
+                  height={60}
                   priority
                 />
-                <span className="text-xl sm:text-2xl font-bold text-black">Marwari Luxe</span>
+                <span className="text-2xl sm:text-3xl font-bold text-black">Marwari Luxe</span>
               </div>
             </Link>
           </div>

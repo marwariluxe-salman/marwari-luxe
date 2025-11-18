@@ -1,14 +1,14 @@
 # Sitemap Setup and Troubleshooting Guide
 
 ## Current Status
-The sitemap.xml file is properly configured and located in the public directory. It should be automatically served at `https://marwari-luxe-web.vercel.app/sitemap.xml`.
+The sitemap.xml file is properly configured and located in the public directory. It should be automatically served at `https://marwariluxe.com/sitemap.xml`.
 
 ## Google Search Console Sitemap Submission
 
 Since Google has deprecated the automatic ping service, you need to manually submit your sitemap to Google Search Console:
 
 1. Go to [Google Search Console](https://search.google.com/search-console/)
-2. Select your property (https://marwari-luxe-web.vercel.app)
+2. Select your property (https://marwariluxe.com)
 3. In the left sidebar, click on "Sitemaps"
 4. In the "Add a sitemap" field, enter: `sitemap.xml`
 5. Click "Submit"
@@ -19,13 +19,13 @@ If Google Search Console still shows "Sitemap could not be read", try these solu
 
 ### 1. Verify Sitemap Accessibility
 First, check if your sitemap is publicly accessible:
-- Visit: https://marwari-luxe-web.vercel.app/sitemap.xml
+- Visit: https://marwariluxe.com/sitemap.xml
 - You should see the XML content of your sitemap
 
 ### 2. Check Sitemap Validity
 Use an online sitemap validator:
 - Visit: https://www.xml-sitemaps.com/validate-xml.html
-- Enter your sitemap URL: https://marwari-luxe-web.vercel.app/sitemap.xml
+- Enter your sitemap URL: https://marwariluxe.com/sitemap.xml
 - Click "Validate Now"
 
 ### 3. Common Issues and Fixes

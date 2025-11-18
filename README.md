@@ -107,7 +107,7 @@ This project includes a sitemap.xml file in the public directory for search engi
 
 To resolve the "Sitemap could not be read" error:
 
-1. Visit the sitemap directly: https://marwari-luxe-web.vercel.app/sitemap.xml
+1. Visit the sitemap directly: https://marwariluxe.com/sitemap.xml
 2. Manually submit the sitemap in Google Search Console:
    - Go to Google Search Console
    - Select your property

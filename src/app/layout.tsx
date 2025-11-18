@@ -23,14 +23,14 @@ export const viewport: Viewport = {
   maximumScale: 5,
   userScalable: true,
   viewportFit: 'cover',
-  themeColor: [{ media: '(prefers-color-scheme: light)', color: '#9333ea' }, { media: '(prefers-color-scheme: dark)', color: '#7c3aed' }]
+  themeColor: [{ media: '(prefers-color-scheme: light)', color: '#000000' }, { media: '(prefers-color-scheme: dark)', color: '#000000' }]
 };
 
 export const metadata: Metadata = {
   title: "Marwari Luxe - Premium Health & Beauty Products | Wellness Essentials Online Store",
   description: "Shop premium health supplements, natural beauty products & wellness tools at Marwari Luxe. Expert-curated skincare, vitamins, fitness accessories with free shipping over $50. Trusted by 10,000+ customers worldwide.",
   robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
-  authors: [{ name: "Marwari Luxe Team", url: "https://marwari-luxe-web.vercel.app/about" }],
+  authors: [{ name: "Marwari Luxe Team", url: "https://marwariluxe.com/about" }],
   keywords: "health supplements, natural beauty products, wellness tools, skincare essentials, vitamins minerals, fitness accessories, organic beauty, anti-aging products, immune support, weight management, hair care, skin care routine, health calculators, wellness blog, premium supplements, beauty serum, protein powder, probiotics, omega-3, vitamin D, collagen peptides, hyaluronic acid, retinol products, sunscreen SPF, natural ingredients, cruelty-free beauty, sustainable wellness, marwari heritage wellness",
   openGraph: {
     title: 'Marwari Luxe - Premium Health & Beauty Products | Wellness Essentials Store',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'Marwari Luxe',
-    url: 'https://marwari-luxe-web.vercel.app',
+    url: 'https://marwariluxe.com',
     images: [{
       url: '/marwari-luxe-og-image.jpg',
       width: 1200,
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     telephone: false
   },
   alternates: {
-    canonical: 'https://marwari-luxe-web.vercel.app'
+    canonical: 'https://marwariluxe.com'
   },
   category: 'Health & Beauty',
   classification: 'Business'
@@ -78,8 +78,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Marwari Luxe",
-    "url": "https://marwari-luxe-web.vercel.app",
-    "logo": "https://marwari-luxe-web.vercel.app/marwari-logo.png",
+    "url": "https://marwariluxe.com",
+    "logo": "https://marwariluxe.com/marwari-logo.png",
     "description": "Premium health supplements, natural beauty products & wellness tools. Expert-curated collection for optimal health and beauty.",
     "sameAs": [
       "https://facebook.com/marwariluxe",
@@ -105,7 +105,7 @@ export default function RootLayout({
         <meta name="format-detection" content="telephone=no" />
         <meta name="google-site-verification" content="your-google-verification-code" />
         <meta name="p:domain_verify" content="aab945e83f0913b86a2eb25bfc0f8ff8"/>
-        <meta name="msapplication-TileColor" content="#9333ea" />
+        <meta name="msapplication-TileColor" content="#000000" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXX" />
         
@@ -145,9 +145,9 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="32x32" href="/icon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/icon-16x16.png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="canonical" href="https://marwari-luxe-web.vercel.app" />
+        <link rel="canonical" href="https://marwariluxe.com" />
         {/* PWA meta tags */}
-        <meta name="theme-color" content="#9333ea" />
+        <meta name="theme-color" content="#000000" />
         <meta name="application-name" content="Marwari Luxe" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-title" content="Marwari Luxe" />

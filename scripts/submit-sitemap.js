@@ -6,7 +6,7 @@
 const https = require('https');
 
 // Sitemap URL
-const sitemapUrl = 'https://marwari-luxe-web.vercel.app/sitemap.xml';
+const sitemapUrl = 'https://marwariluxe.com/sitemap.xml';
 
 // Google Search Console ping URL
 const googlePingUrl = `https://www.google.com/ping?sitemap=${encodeURIComponent(sitemapUrl)}`;

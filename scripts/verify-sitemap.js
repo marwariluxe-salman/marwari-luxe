@@ -145,7 +145,7 @@ console.log('\n📋 Summary');
 console.log('==========');
 console.log('The sitemap.xml file appears to be correctly configured.');
 console.log('To resolve the "Sitemap could not be read" error in Google Search Console:');
-console.log('\n1. Visit https://marwari-luxe-web.vercel.app/sitemap.xml directly in your browser');
+console.log('\n1. Visit https://marwariluxe.com/sitemap.xml directly in your browser');
 console.log('   to verify it loads correctly');
 console.log('\n2. Manually submit the sitemap in Google Search Console:');
 console.log('   - Go to Google Search Console');

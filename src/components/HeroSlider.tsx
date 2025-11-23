@@ -92,7 +92,7 @@ const HeroSlider = () => {
     }
   }, [isHydrated]);
 
-  // Fix for image sizing - ensure full screen display
+  // Fix for image sizing - ensure full screen display with mobile optimization
   return (
     <div className="relative h-screen w-full overflow-hidden">
       {/* Background Image with Overlay */}

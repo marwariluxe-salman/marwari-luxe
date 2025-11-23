@@ -110,7 +110,7 @@ const BlogSection = () => {
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2 line-clamp-2 hover:text-purple-700 transition-colors">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2 line-clamp-2 hover:text-purple-700 transition-colors mobile-blog-title">
                     {blog.title}
                   </h3>
                   <p className="text-gray-600 mb-4 line-clamp-3">

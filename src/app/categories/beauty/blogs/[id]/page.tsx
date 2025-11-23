@@ -347,7 +347,7 @@ const BeautyBlogDetailPage = ({ params }: { params: Promise<{ id: string }> }) =
             <Link href="/categories/beauty" className="inline-flex items-center text-pink-100 hover:text-white mb-6">
               ← Back to Beauty & Cosmetics
             </Link>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 mobile-blog-title">
               {blog.title}
             </h1>
             <p className="text-xl text-pink-100 max-w-3xl mx-auto">

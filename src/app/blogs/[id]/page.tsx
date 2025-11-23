@@ -155,7 +155,7 @@ const BlogPost = () => {
                 {blog.category}
               </span>
             </div>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 mobile-blog-title">
               {blog.title}
             </h1>
             <div className="flex items-center justify-center space-x-6 text-lg">
@@ -259,7 +259,7 @@ const BlogPost = () => {
                     />
                   </div>
                   <div className="p-4">
-                    <h3 className="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors line-clamp-2">
+                    <h3 className="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors line-clamp-2 mobile-blog-title">
                       {relatedBlog.title}
                     </h3>
                     <p className="text-sm text-gray-500 mt-2">

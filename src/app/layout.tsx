@@ -151,8 +151,8 @@ export default function RootLayout({
         
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/icon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/icon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/icon.svg" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/icon.svg" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="canonical" href="https://marwariluxe.com" />
         {/* PWA meta tags */}

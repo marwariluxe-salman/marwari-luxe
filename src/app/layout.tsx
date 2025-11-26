@@ -99,6 +99,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Google Tag Manager */}
+        <Script id="google-tag-manager" strategy="beforeInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-W752VDNN');`}
+        </Script>
+        {/* End Google Tag Manager */}
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
         <meta name="msapplication-tap-highlight" content="no" />
@@ -110,13 +119,13 @@ export default function RootLayout({
         <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXX" />
         
         {/* Google tag (gtag.js) */}
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-TYSD6BMBCJ" strategy="beforeInteractive" />
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-YF42TR9015" strategy="beforeInteractive" />
         <Script id="gtag-init" strategy="beforeInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-TYSD6BMBCJ');
+            gtag('config', 'G-YF42TR9015');
           `}
         </Script>
         
@@ -158,6 +167,12 @@ export default function RootLayout({
         className={`${inter.variable} antialiased touch-manipulation w-full overflow-x-hidden`}
         suppressHydrationWarning
       >
+        {/** Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W752VDNN"
+            height="0" width="0" style={{display: 'none', visibility: 'hidden'}} />
+        </noscript>
+        {/** End Google Tag Manager (noscript) */}
         {/* Load Google Ads asynchronously after main content */}
         <Script 
           id="google-ads"

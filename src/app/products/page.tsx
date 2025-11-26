@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   title: 'All Products - Marwari Luxe Health & Beauty Essentials',
   description: 'Browse our complete collection of premium health supplements, natural beauty products, and wellness tools. Shop by category, read expert reviews, and enjoy free shipping on orders over $50.',
   alternates: {
-    canonical: 'https://marwari-luxe-web.vercel.app/products'
+    canonical: 'https://www.marwariluxe.com/products'
   },
   openGraph: {
     title: 'All Products - Marwari Luxe Health & Beauty Essentials',
     description: 'Browse our complete collection of premium health supplements, natural beauty products, and wellness tools. Shop by category, read expert reviews, and enjoy free shipping on orders over $50.',
-    url: 'https://marwari-luxe-web.vercel.app/products',
+    url: 'https://www.marwariluxe.com/products',
     images: [
       {
         url: '/products-og-image.jpg',

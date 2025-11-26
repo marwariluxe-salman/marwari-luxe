@@ -43,7 +43,7 @@
   ],
   "build": {
     "env": {
-      "NEXT_PUBLIC_APP_URL": "https://marwari-luxe-web.vercel.app"
+      "NEXT_PUBLIC_APP_URL": "https://www.marwariluxe.com"
     }
   },
   "github": {

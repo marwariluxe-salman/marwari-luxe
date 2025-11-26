@@ -121,6 +121,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXX" />
         
+        {/* Explicit meta description for better Google search appearance */}
+        <meta name="description" content="Shop premium health supplements, natural beauty products & wellness tools at Marwari Luxe. Expert-curated skincare, vitamins, fitness accessories with free shipping over $50. Trusted by 10,000+ customers worldwide." />
+        
         {/* Google tag (gtag.js) - Placed immediately after head as requested */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-SP1G773WJ6"></script>
         <script dangerouslySetInnerHTML={{

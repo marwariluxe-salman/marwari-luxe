@@ -112,7 +112,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
         <meta name="msapplication-tap-highlight" content="no" />
         <meta name="format-detection" content="telephone=no" />
-        <meta name="google-site-verification" content="your-google-verification-code" />
+        <meta name="google-site-verification" content="__0ge4eBHD54-N-NN_of2JxBqq6nYXyMoYA03mbYF9E" />
         <meta name="p:domain_verify" content="aab945e83f0913b86a2eb25bfc0f8ff8"/>
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
@@ -163,40 +163,40 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>
-      <body
-        className={`${inter.variable} antialiased touch-manipulation w-full overflow-x-hidden`}
-        suppressHydrationWarning
-      >
+      <body>
         {/** Google Tag Manager (noscript) */}
         <noscript>
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W752VDNN"
             height="0" width="0" style={{display: 'none', visibility: 'hidden'}} />
         </noscript>
         {/** End Google Tag Manager (noscript) */}
-        {/* Load Google Ads asynchronously after main content */}
-        <Script 
-          id="google-ads"
-          async 
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX"
-          crossOrigin="anonymous"
-          data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
-        />
-        <CartProvider>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </CartProvider>
-        {/* Placing the button outside the CartProvider to ensure it renders */}
-        <BackToTopButton />
-        <Script
-          id="structured-data"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: serializedStructuredData,
-          }}
-          strategy="afterInteractive"
-          suppressHydrationWarning
-        />
+        <div className={`${inter.variable} antialiased touch-manipulation w-full overflow-x-hidden`}
+          suppressHydrationWarning>
+          {/* Load Google Ads asynchronously after main content */}
+          <Script 
+            id="google-ads"
+            async 
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX"
+            crossOrigin="anonymous"
+            data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+          />
+          <CartProvider>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </CartProvider>
+          {/* Placing the button outside the CartProvider to ensure it renders */}
+          <BackToTopButton />
+          <Script
+            id="structured-data"
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: serializedStructuredData,
+            }}
+            strategy="afterInteractive"
+            suppressHydrationWarning
+          />
+        </div>
       </body>
     </html>
   );

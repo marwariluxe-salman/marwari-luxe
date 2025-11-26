@@ -164,12 +164,12 @@ export default function RootLayout({
           })(window,document,'script','dataLayer','GTM-W752VDNN');`}
         </Script>
         {/* End Google Tag Manager */}
-        {/** Google Tag Manager (noscript) */}
+        {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W752VDNN"
             height="0" width="0" style={{display: 'none', visibility: 'hidden'}} />
         </noscript>
-        {/** End Google Tag Manager (noscript) */}
+        {/* End Google Tag Manager (noscript) */}
         <div className={`${inter.variable} antialiased touch-manipulation w-full overflow-x-hidden`}
           suppressHydrationWarning>
           {/* Load Google Ads asynchronously after main content */}

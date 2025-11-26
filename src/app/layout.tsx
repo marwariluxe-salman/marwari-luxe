@@ -142,8 +142,7 @@ export default function RootLayout({
         {/* Preload critical fonts */}
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
         
-        {/* Preload critical CSS */}
-        <link rel="preload" href="/_next/static/css/app/layout.css" as="style" />
+        {/* Preload critical CSS - Removed incorrect static path that was causing 404 errors */}
         
         {/* Resource hints for better performance */}
         <link rel="prefetch" href="/products" />

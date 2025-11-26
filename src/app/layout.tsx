@@ -119,16 +119,16 @@ export default function RootLayout({
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXX" />
         
-        {/* Google tag (gtag.js) */}
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-YF42TR9015" strategy="beforeInteractive" />
-        <Script id="gtag-init" strategy="beforeInteractive">
-          {`
+        {/* Google tag (gtag.js) - Placed immediately after head as requested */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-SP1G773WJ6"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-YF42TR9015');
-          `}
-        </Script>
+            gtag('config', 'G-SP1G773WJ6');
+          `
+        }} />
         
         {/* Preconnect to critical third-party domains */}
         <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />

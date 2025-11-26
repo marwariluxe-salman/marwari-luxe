@@ -21,5 +21,4 @@ Disallow: /admin/
 Disallow: /api/
 Disallow: /checkout/
 
-# Crawl delay for better server performance
-Crawl-delay: 10
+# Note: Crawl-delay is not supported by Googlebot, so it's been removed to prevent warnings

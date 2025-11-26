@@ -99,14 +99,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Google Tag Manager - Fixed placement and encoding for proper verification */}
+        {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-W752VDNN');`,
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W752VDNN');`
           }}
         />
         {/* End Google Tag Manager */}
@@ -167,10 +167,8 @@ export default function RootLayout({
       </head>
       <body>
         {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W752VDNN"
-            height="0" width="0" style={{display: 'none', visibility: 'hidden'}} />
-        </noscript>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W752VDNN"
+        height="0" width="0" style={{display:'none', visibility:'hidden'}}></iframe></noscript>
         {/* End Google Tag Manager (noscript) */}
         <div className={`${inter.variable} antialiased touch-manipulation w-full overflow-x-hidden`}
           suppressHydrationWarning>

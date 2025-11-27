@@ -155,11 +155,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="prefetch" href="/tools" />
         
         <link rel="manifest" href="/manifest.json" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png" />
-        <link rel="apple-touch-icon" href="/favicon-192x192.png" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/marwari logo.png" />
         <link rel="canonical" href="https://marwariluxe.com" />
         {/* PWA meta tags */}
         <meta name="theme-color" content="#000000" />

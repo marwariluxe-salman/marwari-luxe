@@ -111,6 +111,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
         {/* End Google Tag Manager */}
         
+        {/* Initialize GTM Consent */}
+        <script
+          dangerouslySetInnerHTML={
+            {__html: `dataLayer.push({event: "gtm.init_consent"});`}
+          }
+        />
+        
+        {/* Initialize GTM */}
+        <script
+          dangerouslySetInnerHTML={
+            {__html: `dataLayer.push({event: "gtm.init"});`}
+          }
+        />
+        
+        {/* Push gtm.js event */}
+        <script
+          dangerouslySetInnerHTML={
+            {__html: `dataLayer.push({event: "gtm.js"});`}
+          }
+        />
+        
+        
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
         <meta name="msapplication-tap-highlight" content="no" />
@@ -171,6 +193,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5STLSHD"
         height="0" width="0" style={{display:'none', visibility:'hidden'}}></iframe></noscript>
         {/* End Google Tag Manager (noscript) */}
+        {/* Push gtm.dom event */}
+        <script
+          dangerouslySetInnerHTML={
+            {__html: `dataLayer.push({event: "gtm.dom"});`}
+          }
+        />
+        
+        {/* Push gtm.load event */}
+        <script
+          dangerouslySetInnerHTML={
+            {__html: `dataLayer.push({event: "gtm.load"});`}
+          }
+        />
+        
         <div className={`${inter.variable} antialiased touch-manipulation w-full overflow-x-hidden`}
           suppressHydrationWarning>
           {/* Load Google Ads asynchronously after main content */}

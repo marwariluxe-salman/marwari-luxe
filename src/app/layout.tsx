@@ -106,7 +106,7 @@ export default function RootLayout({
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W752VDNN');`
+})(window,document,'script','dataLayer','GTM-M5STLSHD');`
           }}
         />
         {/* End Google Tag Manager */}
@@ -168,7 +168,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </head>
       <body>
         {/* Google Tag Manager (noscript) */}
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W752VDNN"
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5STLSHD"
         height="0" width="0" style={{display:'none', visibility:'hidden'}}></iframe></noscript>
         {/* End Google Tag Manager (noscript) */}
         <div className={`${inter.variable} antialiased touch-manipulation w-full overflow-x-hidden`}

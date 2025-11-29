@@ -75,9 +75,8 @@ const Footer = () => {
     </svg>
   );
 
-  // Scroll to top icon
-  const ScrollTopIcon = () => (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  const ArrowUpIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
     </svg>
   );
@@ -229,20 +228,30 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 sm:flex-none sm:w-64 px-4 py-3 bg-gray-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400 text-sm sm:text-base"
+                className="px-4 py-2 rounded-md text-gray-900 w-full sm:w-64 focus:outline-none focus:ring-2 focus:ring-purple-500"
               />
-              <button className="px-6 py-3 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors font-medium text-sm sm:text-base">
+              <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-md transition-colors font-medium">
                 Subscribe
               </button>
             </div>
           </div>
         </div>
 
-        {/* Bottom Copyright */}
-        <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-gray-700 text-center">
-          <p className="text-gray-400 text-sm sm:text-base">
-            © 2025-2026 Marwari Luxe – All Rights Reserved
-          </p>
+        {/* Copyright */}
+        <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
+          <p>&copy; {new Date().getFullYear()} Marwari Luxe. All rights reserved.</p>
+          <p className="mt-1">Designed with ❤️ for your wellness journey</p>
+          
+          {/* Scroll to Top Button */}
+          {showScrollTop && (
+            <button
+              onClick={scrollToTop}
+              className="fixed bottom-6 right-6 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 transition-colors z-50"
+              aria-label="Scroll to top"
+            >
+              <ArrowUpIcon />
+            </button>
+          )}
         </div>
       </div>
     </footer>

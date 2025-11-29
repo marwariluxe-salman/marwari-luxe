@@ -36,6 +36,7 @@ const NewsletterSection = dynamic(() => import('@/components/NewsletterSection')
 
 
 
+
 const PerformanceOptimizer = dynamic(() => import('@/components/PerformanceOptimizer'));
 const PerformanceMonitor = dynamic(() => import('@/components/PerformanceMonitor'));
 
@@ -43,7 +44,6 @@ export const metadata: Metadata = {
   title: "Marwari Luxe - Premium Health & Beauty Products | Wellness Essentials Online Store",
   description: "Shop premium health supplements, natural beauty products & wellness tools at Marwari Luxe. Expert-curated skincare, vitamins, fitness accessories with free shipping over $50. Trusted by 10,000+ customers worldwide.",
   robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
-  authors: [{ name: "Marwari Luxe Team", url: "https://marwariluxe-web.vercel.app/about" }],
   keywords: "health supplements, natural beauty products, wellness tools, skincare essentials, vitamins minerals, fitness accessories, organic beauty, anti-aging products, immune support, weight management, hair care, skin care routine, health calculators, wellness blog, premium supplements, beauty serum, protein powder, probiotics, omega-3, vitamin D, collagen peptides, hyaluronic acid, retinol products, sunscreen SPF, natural ingredients, cruelty-free beauty, sustainable wellness, marwari heritage wellness",
   openGraph: {
     title: 'Marwari Luxe - Premium Health & Beauty Products | Wellness Essentials Store',

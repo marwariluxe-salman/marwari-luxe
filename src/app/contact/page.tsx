@@ -422,8 +422,7 @@ const ContactPage = () => {
                 { name: 'Facebook', icon: <FacebookIcon />, url: 'https://www.facebook.com/marwariluxeofficial' },
                 { name: 'Instagram', icon: <InstagramIcon />, url: 'https://www.instagram.com/marwariluxeofficial/' },
                 { name: 'Twitter', icon: <TwitterIcon />, url: 'https://x.com/marwariluxe' },
-                { name: 'YouTube', icon: <YouTubeIcon />, url: 'https://www.youtube.com/@MarwariLuxeOfficial' },
-                { name: 'LinkedIn', icon: <LinkedInIcon />, url: 'https://linkedin.com/company/marwariluxe' }
+                { name: 'YouTube', icon: <YouTubeIcon />, url: 'https://www.youtube.com/@MarwariLuxeOfficial' }
               ].map((social) => (
                 <motion.a
                   key={social.name}

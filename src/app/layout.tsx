@@ -120,8 +120,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXX" />
         
-        {/* Explicit meta description for better Google search appearance */}
-        <meta name="description" content="Shop premium health supplements, natural beauty products & wellness tools at Marwari Luxe. Expert-curated skincare, vitamins, fitness accessories with free shipping over $50. Trusted by 10,000+ customers worldwide." />
         
         {/* Google tag (gtag.js) - Placed immediately after head as requested */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-SP1G773WJ6"></script>
@@ -138,6 +136,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net" />
         
         {/* Preload hero image */}
@@ -152,12 +153,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="prefetch" href="/products" />
         <link rel="prefetch" href="/blogs" />
         <link rel="prefetch" href="/tools" />
+        <link rel="prefetch" href="/categories/health" />
+        <link rel="prefetch" href="/categories/beauty" />
+        <link rel="prefetch" href="/about" />
+        <link rel="prefetch" href="/contact" />
         
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/marwari logo.png" />
-        <link rel="canonical" href="https://marwariluxe.com" />
         {/* PWA meta tags */}
         <meta name="theme-color" content="#000000" />
         <meta name="application-name" content="Marwari Luxe" />
@@ -166,7 +170,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5STLSHD"

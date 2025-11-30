@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   title: 'Privacy Policy - Marwari Luxe',
   description: 'Learn how Marwari Luxe protects your personal information, collects data, and ensures your privacy when shopping for premium health supplements and beauty products.',
   alternates: {
-    canonical: 'https://www.marwariluxe.com/legal/privacy-policy'
+    canonical: 'https://marwariluxe.com/legal/privacy-policy'
   },
   openGraph: {
     title: 'Privacy Policy - Marwari Luxe',
     description: 'Learn how Marwari Luxe protects your personal information, collects data, and ensures your privacy when shopping for premium health supplements and beauty products.',
-    url: 'https://www.marwariluxe.com/legal/privacy-policy',
+    url: 'https://marwariluxe.com/legal/privacy-policy',
     images: [
       {
         url: '/privacy-policy-og-image.jpg',

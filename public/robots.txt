@@ -19,6 +19,8 @@ Allow: /*.woff2$
 # Prevent crawling of admin areas
 Disallow: /admin/
 Disallow: /api/
-Disallow: /checkout/
+
+# Allow the checkout page since it's actually a social media page
+Allow: /checkout/
 
 # Note: Crawl-delay is not supported by Googlebot, so it's been removed to prevent warnings

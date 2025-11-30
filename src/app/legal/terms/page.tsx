@@ -1,6 +1,34 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
+
+export const metadata: Metadata = {
+  title: 'Terms & Conditions - Marwari Luxe Health & Beauty',
+  description: 'Read our terms and conditions for using Marwari Luxe website and services. Understand our affiliate marketing relationship, product information, and user responsibilities.',
+  alternates: {
+    canonical: 'https://marwariluxe.com/legal/terms'
+  },
+  openGraph: {
+    title: 'Terms & Conditions - Marwari Luxe Health & Beauty',
+    description: 'Read our terms and conditions for using Marwari Luxe website and services.',
+    url: 'https://marwariluxe.com/legal/terms',
+    images: [
+      {
+        url: '/terms-og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Marwari Luxe Terms & Conditions'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms & Conditions - Marwari Luxe Health & Beauty',
+    description: 'Read our terms and conditions for using Marwari Luxe website and services.',
+    images: ['/terms-twitter-card.jpg']
+  }
+};
 
 const TermsConditionsPage = () => {
   return (

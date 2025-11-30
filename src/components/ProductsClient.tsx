@@ -61,9 +61,9 @@ const ProductsClient = ({ products }: ProductsClientProps) => {
               Premium Health Supplements & Natural Beauty Products
             </h1>
             <p className="text-xl md:text-2xl text-green-100 max-w-3xl mx-auto">
-              Discover our expert-curated collection of 25+ high-quality health supplements, 
-              organic skincare products, vitamins, anti-aging serums, and wellness essentials 
-              designed to enhance your natural beauty and optimize your health journey.
+              Discover our collection of high-quality health supplements, 
+              organic skincare products, vitamins, and wellness essentials 
+              designed to enhance your natural beauty and optimize your health.
             </p>
           </motion.div>
         </div>

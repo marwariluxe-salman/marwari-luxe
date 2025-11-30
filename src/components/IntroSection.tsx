@@ -20,10 +20,10 @@ const IntroSection = () => {
               <span className="text-purple-600">Marwari Luxe</span>
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-             At Marwari Luxe, we bring together the best of ancient Marwari wellness and modern science. Our curated range of premium health supplements, natural beauty products, and smart wellness tools is designed to help you feel and look your best. From high-quality vitamins and organic skincare to anti-aging serums and intelligent health calculators, everything we create supports your journey toward balanced, radiant living.
+             At Marwari Luxe, we combine ancient wellness traditions with modern science. We offer premium health supplements, natural beauty products, and smart wellness tools to help you feel and look your best. Our products include high-quality vitamins, organic skincare, anti-aging serums, and health calculators that support your wellness journey.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Blending ancient Ayurvedic wisdom with the precision of modern nutritional science, we create a seamless connection between tradition and innovation. Each product is carefully formulated and tested for purity, safety, and proven effectiveness. Whether you’re looking for immune-boosting supplements, natural anti-aging skincare, or expert wellness tools, every item in our collection reflects authenticity, quality, and trust.
+              We blend Ayurvedic wisdom with modern science to connect tradition and innovation. Every product is carefully tested for purity, safety, and effectiveness. Whether you need supplements, skincare, or wellness tools, our collection offers authentic, high-quality products you can trust.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
               <motion.div

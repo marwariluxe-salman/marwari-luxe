@@ -7,8 +7,8 @@ const SEOStructuredData = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Marwari Luxe",
-    "url": "https://www.marwariluxe.com",
-    "logo": "https://www.marwariluxe.com/marwari-logo.png",
+    "url": "https://marwariluxe.com",
+    "logo": "https://marwariluxe.com/marwari-logo.png",
     "description": "Premium health supplements, natural beauty products & wellness tools. Expert-curated collection for optimal health and beauty.",
     "sameAs": [
       "https://facebook.com/marwariluxe",

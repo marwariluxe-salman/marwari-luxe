@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'Marwari Luxe',
-    url: 'https://www.marwariluxe.com',
+    url: 'https://marwariluxe.com',
     images: [{
       url: '/marwari-luxe-og-image.jpg',
       width: 1200,
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     telephone: false
   },
   alternates: {
-    canonical: 'https://www.marwariluxe.com'
+    canonical: 'https://marwariluxe.com'
   },
   category: 'Health & Beauty',
   classification: 'Business'
@@ -86,8 +86,8 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Marwari Luxe",
-  "url": "https://www.marwariluxe.com",
-  "logo": "https://www.marwariluxe.com/marwari-logo.png",
+  "url": "https://marwariluxe.com",
+  "logo": "https://marwariluxe.com/marwari-logo.png",
   "description": "Premium health supplements, natural beauty products & wellness tools. Expert-curated collection for optimal health and beauty.",
   "sameAs": [
     "https://facebook.com/marwariluxe",

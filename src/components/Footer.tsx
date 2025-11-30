@@ -168,51 +168,6 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-
-          {/* Social Media Icons */}
-          <div>
-            <div>
-              <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Follow Us</h4>
-              <div className="flex space-x-4">
-                <a 
-                  href="https://www.facebook.com/marwariluxeofficial" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-600 transition-colors p-2 rounded-md hover:bg-gray-800" 
-                  aria-label="Facebook"
-                >
-                  <FacebookIcon />
-                </a>
-                <a 
-                  href="https://www.instagram.com/marwariluxeofficial/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-pink-500 transition-colors p-2 rounded-md hover:bg-gray-800" 
-                  aria-label="Instagram"
-                >
-                  <InstagramIcon />
-                </a>
-                <a 
-                  href="https://x.com/marwariluxe" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-400 transition-colors p-2 rounded-md hover:bg-gray-800" 
-                  aria-label="Twitter"
-                >
-                  <TwitterIcon />
-                </a>
-                <a 
-                  href="https://www.youtube.com/@MarwariLuxeOfficial" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-red-600 transition-colors p-2 rounded-md hover:bg-gray-800" 
-                  aria-label="YouTube"
-                >
-                  <YouTubeIcon />
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Newsletter Signup */}
@@ -242,16 +197,16 @@ const Footer = () => {
           <p>&copy; {new Date().getFullYear()} Marwari Luxe. All rights reserved.</p>
           <p className="mt-1">Designed with ❤️ for your wellness journey</p>
           
-          {/* Scroll to Top Button */}
-          {showScrollTop && (
-            <button
-              onClick={scrollToTop}
-              className="fixed bottom-6 right-6 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 transition-colors z-50"
-              aria-label="Scroll to top"
-            >
-              <ArrowUpIcon />
-            </button>
-          )}
+          {/* Scroll to Top Button - Always rendered to prevent hydration mismatch */}
+          <button
+            onClick={scrollToTop}
+            className={`fixed bottom-6 right-6 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 transition-all duration-300 z-50 ${
+              showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
+            }`}
+            aria-label="Scroll to top"
+          >
+            <ArrowUpIcon />
+          </button>
         </div>
       </div>
     </footer>

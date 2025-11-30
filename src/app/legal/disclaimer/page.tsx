@@ -1,6 +1,34 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeftIcon, ExclamationTriangleIcon, InformationCircleIcon } from '@heroicons/react/24/outline';
+
+export const metadata: Metadata = {
+  title: 'Disclaimer - Marwari Luxe Health & Beauty Products',
+  description: 'Important disclaimer regarding the use of Marwari Luxe website, products, and services. Read our affiliate marketing disclosure and medical information limitations.',
+  alternates: {
+    canonical: 'https://marwariluxe.com/legal/disclaimer'
+  },
+  openGraph: {
+    title: 'Disclaimer - Marwari Luxe Health & Beauty Products',
+    description: 'Important disclaimer regarding the use of Marwari Luxe website, products, and services.',
+    url: 'https://marwariluxe.com/legal/disclaimer',
+    images: [
+      {
+        url: '/disclaimer-og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Marwari Luxe Disclaimer'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Disclaimer - Marwari Luxe Health & Beauty Products',
+    description: 'Important disclaimer regarding the use of Marwari Luxe website, products, and services.',
+    images: ['/disclaimer-twitter-card.jpg']
+  }
+};
 
 const DisclaimerPage = () => {
   return (

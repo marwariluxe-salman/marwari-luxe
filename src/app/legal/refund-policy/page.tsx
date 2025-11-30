@@ -1,6 +1,34 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
+
+export const metadata: Metadata = {
+  title: 'Refund, Resend and Returns Policy - Marwari Luxe',
+  description: 'Learn about our refund, resend, and returns policy for products purchased through our affiliate links. Understand how we handle disputes and returns through our partner CJ Dropshipping.',
+  alternates: {
+    canonical: 'https://marwariluxe.com/legal/refund-policy'
+  },
+  openGraph: {
+    title: 'Refund, Resend and Returns Policy - Marwari Luxe',
+    description: 'Learn about our refund, resend, and returns policy for products purchased through our affiliate links.',
+    url: 'https://marwariluxe.com/legal/refund-policy',
+    images: [
+      {
+        url: '/refund-policy-og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Marwari Luxe Refund Policy'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Refund, Resend and Returns Policy - Marwari Luxe',
+    description: 'Learn about our refund, resend, and returns policy for products purchased through our affiliate links.',
+    images: ['/refund-policy-twitter-card.jpg']
+  }
+};
 
 const RefundPolicyPage = () => {
   return (

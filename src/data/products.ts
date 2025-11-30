@@ -199,7 +199,7 @@ export const products: Product[] = [
     title: 'Natural Herbal Immune Defense Supplement',
     description: 'Strengthen your body’s natural defense system with AOVITAO Natural Herbal Immune Defense, a premium mushroom supplement formulated to boost immunity, energy, and overall wellness. Each capsule combines nature’s most powerful immune-supporting mushrooms, including Lion’s Mane, Reishi, Chaga, Cordyceps, and Turkey Tail, along with essential vitamins C and B6 for complete daily protection.',
     price: 15.99,
-    image: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1761867849/hpd-20_lerssb.jpg',
+    image: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto,c_fill,g_auto/v1761867849/hpd-20_lerssb.jpg',
     category: 'Health',
     inStock: true,
     affiliateLink: 'https://www.cjdropshipping.com/product/natural-herbal-immune-defense-supplement-p-2411290320421617600.html?token=f7b00a22-64a4-4d38-bc50-c4cffe51af47',

@@ -77,7 +77,7 @@ const customBeautyBlogs: Blog[] = [
 
 <h2>Final Thoughts</h2>
 <p>Waterless skincare and minimalist beauty represent the future of conscious, effective routines. By choosing concentrated, multifunctional products in eco-friendly packaging, you simplify your routine, support sustainability, and enjoy healthier, radiant skin. Embrace this trend in 2026 to experience long-lasting results and a more mindful beauty lifestyle.</p>`,
-    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762857789/blogb-1_utllwn.png',
+    heroImage: '/images/blogs/placeholder.jpg',
   },
   {
     id: 'custom-beauty-002',
@@ -125,7 +125,7 @@ const customBeautyBlogs: Blog[] = [
 
 <h2>Final Thoughts</h2>
 <p>Monochrome makeup is more than a trend—it’s timeless. It simplifies beauty routines, promotes sustainability, and enhances natural features effortlessly. By learning to work with tones and textures, anyone can master this look. Embrace the monochrome movement in 2026 for fresh, radiant, and easy-to-create daily beauty that fits every lifestyle.</p>`,
-    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762858256/blogb-2_qnyvv6.png',
+    heroImage: '/images/blogs/placeholder.jpg',
   },
   {
     id: 'custom-beauty-003',
@@ -170,7 +170,7 @@ const customBeautyBlogs: Blog[] = [
 <h2>Final Thoughts</h2>
 <p>Sustainable beauty in 2025 is about mindfulness and responsibility. By supporting ethical brands and making eco-conscious swaps, you’re investing in the planet’s future. Beauty and sustainability can coexist beautifully—because when your skincare and makeup choices reflect care for the Earth, you glow inside and out, naturally and confidently.</p>
 </p>`,
-    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762858786/blogb-3_bq9zlh.png',
+    heroImage: '/images/blogs/placeholder.jpg',
   },
   {
     id: 'custom-beauty-004',
@@ -216,7 +216,7 @@ const customBeautyBlogs: Blog[] = [
 
 <h2>Final Thoughts</h2>
 <p>Futuristic hair trends in 2025 blend innovation, sustainability, and individuality. Whether you go for AI-customized colors, sustainable dyes, or bold natural textures, the message is clear: authenticity never goes out of style. Experiment freely, embrace your natural pattern, and let your hair reflect the confident, future-ready version of you.</p></p>`,
-    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762859782/blogb-4_rytecg.png',
+    heroImage: '/images/blogs/placeholder.jpg',
   },
   {
     id: 'custom-beauty-005',
@@ -262,7 +262,7 @@ const customBeautyBlogs: Blog[] = [
 
 <h2>Final Thoughts</h2>
 <p>Tech-powered beauty in 2026 is all about smart, adaptive care. From AI skincare to AR makeup and eco-conscious devices, technology is reshaping how we look after ourselves. It’s not just a trend—it’s the future of beauty: efficient, sustainable, and built around you.</p></p>`,
-    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762860104/blogb-5_pmytov.png',
+    heroImage: '/images/blogs/placeholder.jpg',
   },
   {
     id: 'custom-beauty-006',
@@ -309,7 +309,7 @@ const customBeautyBlogs: Blog[] = [
 <h2>Final Thoughts</h2>
 <p>Playful beauty in 2026 is more than a trend—it’s a movement toward joy and individuality. From duck nails to bold lips, it celebrates creativity and confidence. Forget rules and embrace fun. After all, the best beauty look is the one that makes you feel like you.</p>
 </p>`,
-    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762860508/blogb-6_sz2n1w.png',
+    heroImage: '/images/blogs/placeholder.jpg',
   }
 ];
 

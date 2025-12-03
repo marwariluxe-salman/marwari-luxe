@@ -88,7 +88,7 @@ Your gut health influences everything—from your mood and immunity to your ener
 You don’t need fancy detoxes or expensive supplements. Simple, natural changes in your daily routine can completely transform your gut over time. Listen to your body, stay patient, and let nature do the work. A healthy gut means a healthier, happier you.</p>`,
 
 
-    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762805385/blog-1_uwxwim.png',
+    heroImage: '/images/blogs/placeholder.jpg',
   },
   {
     id: 'custom-health-002',
@@ -159,7 +159,7 @@ Focus on nutrient-dense meals and consistent physical activity. Avoid crash diet
 Lowering blood pressure naturally isn’t about perfection—it’s about consistency. Every mindful meal, peaceful breath, and short walk adds up to stronger heart health.
 <br><br>
 Start small, track your progress, and let these habits become part of your daily life. Over time, you’ll notice more energy, calmer days, and a healthier, more balanced heart.</p>`,
-    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762812134/blog-2_lviexx.png',
+    heroImage: '/images/blogs/placeholder.jpg',
   },
   {
     id: 'custom-health-003',
@@ -216,7 +216,7 @@ Start small, track your progress, and let these habits become part of your daily
 <h2>Final Thoughts</h2>
 <p>Resetting your body clock requires consistent effort and mindful lifestyle adjustments. Understanding your circadian rhythm, maintaining a steady sleep schedule, limiting screens, and practicing relaxation techniques are essential steps. With persistence, you can overcome insomnia, enjoy deep sleep, and improve overall physical and mental well-being naturally.</p>
 </p>`,
-    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762814682/blog-3_xmvsmn.png',
+    heroImage: '/images/blogs/placeholder.jpg',
   },
   {
     id: 'custom-health-004',
@@ -268,7 +268,7 @@ Focus on whole, unprocessed foods. Balanced meals reduce mood swings, stabilize 
 <p>Adaptogenic herbs like ashwagandha, holy basil, and maca root support adrenal and thyroid health.
 <br><br>
 Consult a healthcare professional before adding supplements. Herbal remedies can improve energy, mood, and overall hormone balance naturally.</p>`,
-    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762816421/blog-4_gjtcpo.png',
+    heroImage: '/images/blogs/placeholder.jpg',
   },
   {
     id: 'custom-health-005',
@@ -333,7 +333,7 @@ Consult a healthcare professional before adding supplements. Herbal remedies can
 <p>While self-care strategies are valuable, some situations require professional intervention. Therapists, counselors, and psychiatrists can provide additional tools and support for managing mental health.</p>
 <h2>Final Thoughts on Reducing Stress and Anxiety</h2>
 <p>Managing overthinking and stress requires consistent effort. By understanding triggers, practicing mindfulness, exercising, eating well, setting boundaries, and journaling, you can calm your mind and improve emotional health. These habits support mental clarity, reduce anxiety, and foster long-term emotional balance naturally.</p>`,
-    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762817815/blog-5_e7i150.png',
+    heroImage: '/images/blogs/placeholder.jpg',
   },
   {
     id: 'custom-health-006',
@@ -399,7 +399,7 @@ Consult a healthcare professional before adding supplements. Herbal remedies can
 
 <h2>Final Thoughts</h2>
 <p>Boosting immunity naturally requires consistent daily effort. Eating nutrient-rich foods, exercising, sleeping well, managing stress, staying hydrated, and avoiding harmful habits work together to strengthen your body’s defenses. Over time, these habits reduce illness frequency, enhance energy, and promote long-term physical and mental well-being effectively.</p>`,
-      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762818516/blog-6_sataw7.png',
+      heroImage: '/images/blogs/placeholder.jpg',
   }
 ];
 

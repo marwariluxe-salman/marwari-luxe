@@ -26,8 +26,9 @@ In short, the Fibremaxxing Diet is the health revolution of 2025 because it’s 
     <br><br>
 As the year progresses, expect to see more recipes, meal plans, and personal success stories popping up online under the #Fibremaxxing hashtag. And here’s the thing: this isn’t just another hype cycle. It’s a return to basics, a reminder that sometimes the simplest solution is the most powerful one.
     
-![Fibremaxxing Diet Hero Image](https://res.cloudinary.com/dxg5ldzkv/image/upload/v1761864930/Marwari-luxe_dnwxfa.jpg)
-
+![Fibremaxxing Diet Hero Image](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761864930/Marwari-luxe_dnwxfa.jpg)
+    
+    
 <h1 style="font-weight: 900;">What Exactly is the Fibremaxxing Diet?</h1>
 
 The word “fibremaxxing” might sound like another flashy internet trend, but at its core, it’s a very straightforward idea: eating as much fiber as your body can comfortably handle. Unlike typical diets that restrict food groups or demand strict calorie counting, the fibremaxxing diet is about abundance. The focus is on maximizing daily fiber intake through natural, plant-based foods such as vegetables, fruits, legumes, whole grains, nuts, and seeds.
@@ -194,12 +195,11 @@ Great starter foods for fibremaxxing include oats, lentils, brown rice, chia see
 If you're ready to start your fibremaxxing journey, we highly recommend adding a high-quality fibre supplement or fibre-rich product to your daily routine. The product listed below is carefully chosen to support digestion, improve gut health, and keep you full for longer hours. It's an easy way to reach your daily fibre goals without overcomplicating your meals. Whether your goal is weight loss, better energy, or improved gut balance, this product can give you the extra boost you need.`,
     heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761864930/Marwari-luxe_dnwxfa.jpg',
     images: [
-      'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761864930/Marwari-luxe_dnwxfa.jpg',
-      'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761864926/marwari1_azrf1z.jpg',
-      'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761864928/marwari2_hs4y31.jpg',
-      'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761863544/800400_ljnnqg.png',
-      'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761863553/200300_n50ysr.png'
-    ],    category: 'Health',
+      '/images/blogs/placeholder.jpg',
+      '/images/blogs/placeholder.jpg',
+      '/images/blogs/placeholder.jpg',
+      '/images/blogs/placeholder.jpg',
+      '/images/blogs/placeholder.jpg'    ],    category: 'Health',
     author: 'Salman Marwari',
     publishedAt: '2025-01-01',
     readTime: 15,

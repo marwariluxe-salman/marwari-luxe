@@ -26,9 +26,8 @@ In short, the Fibremaxxing Diet is the health revolution of 2025 because it’s 
     <br><br>
 As the year progresses, expect to see more recipes, meal plans, and personal success stories popping up online under the #Fibremaxxing hashtag. And here’s the thing: this isn’t just another hype cycle. It’s a return to basics, a reminder that sometimes the simplest solution is the most powerful one.
     
-![Fibremaxxing Diet Hero Image](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761864930/Marwari-luxe_dnwxfa.jpg)
-    
-    
+![Fibremaxxing Diet Hero Image](https://res.cloudinary.com/dxg5ldzkv/image/upload/v1761864930/Marwari-luxe_dnwxfa.jpg)
+
 <h1 style="font-weight: 900;">What Exactly is the Fibremaxxing Diet?</h1>
 
 The word “fibremaxxing” might sound like another flashy internet trend, but at its core, it’s a very straightforward idea: eating as much fiber as your body can comfortably handle. Unlike typical diets that restrict food groups or demand strict calorie counting, the fibremaxxing diet is about abundance. The focus is on maximizing daily fiber intake through natural, plant-based foods such as vegetables, fruits, legumes, whole grains, nuts, and seeds.

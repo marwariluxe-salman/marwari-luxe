@@ -36,7 +36,7 @@ const ProductIngredientChecker = () => {
       analysis,
       recommendations
     });
-  }, [ingredients, skinType, concerns]);
+  }, [ingredients, skinType, concerns, analyzeIngredients]);
 
   // Helper functions
   function analyzeIngredients(ingredients: string[], skinType: string, concerns: string[]) {

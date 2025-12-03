@@ -8,7 +8,25 @@ const AntiAgingRoutinePlanner = () => {
   const [skinType, setSkinType] = useState('');
   const [concerns, setConcerns] = useState<string[]>([]);
   const [budget, setBudget] = useState('mid');
-  const [result, setResult] = useState<{routine: any, ingredientInfo: any[], lifestyleTips: string[]} | null>(null);
+  const [result, setResult] = useState<{
+    routine: {
+      morning: {
+        title: string;
+        steps: { step: number; name: string; description: string; recommendation: string }[];
+      };
+      evening: {
+        title: string;
+        steps: { step: number; name: string; description: string; recommendation: string }[];
+      };
+      weekly: { name: string; frequency: string; description: string; recommendation: string }[];
+    };
+    ingredientInfo: {
+      name: string;
+      description: string;
+      benefits: string[];
+    }[];
+    lifestyleTips: string[];
+  } | null>(null);
 
   const toggleConcern = (concern: string) => {
     if (concerns.includes(concern)) {

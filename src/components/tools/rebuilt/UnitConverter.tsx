@@ -186,7 +186,7 @@ const UnitConverter = () => {
   const swapUnits = useCallback(() => {
     setFromUnit(toUnit);
     setToUnit(fromUnit);
-  }, [fromUnit, toUnit]);
+  }, [fromUnit, toUnit, conversionData]);
 
   const reset = useCallback(() => {
     setInputValue('');

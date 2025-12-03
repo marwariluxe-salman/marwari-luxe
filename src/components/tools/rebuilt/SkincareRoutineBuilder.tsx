@@ -7,7 +7,17 @@ const SkincareRoutineBuilder = () => {
   const [skinType, setSkinType] = useState('');
   const [concerns, setConcerns] = useState<string[]>([]);
   const [budget, setBudget] = useState('mid');
-  const [routine, setRoutine] = useState<any>(null);
+  const [routine, setRoutine] = useState<{
+    morning: {
+      title: string;
+      steps: { step: number; name: string; description: string; recommendation: string }[];
+    };
+    evening: {
+      title: string;
+      steps: { step: number; name: string; description: string; recommendation: string }[];
+    };
+    weekly: { name: string; frequency: string; recommendation: string }[];
+  } | null>(null);
 
   const toggleConcern = (concern: string) => {
     if (concerns.includes(concern)) {
@@ -21,14 +31,14 @@ const SkincareRoutineBuilder = () => {
     if (!skinType) return;
 
     // Define products based on skin type and concerns
-    const routineStructure: any = {
+    const routineStructure = {
       morning: {
         title: "Morning Routine",
-        steps: []
+        steps: [] as { step: number; name: string; description: string; recommendation: string }[]
       },
       evening: {
         title: "Evening Routine",
-        steps: []
+        steps: [] as { step: number; name: string; description: string; recommendation: string }[]
       }
     };
 
@@ -392,7 +402,7 @@ const SkincareRoutineBuilder = () => {
             <div className="mb-8">
               <h3 className="font-semibold text-gray-900 text-lg mb-4">{routine.morning.title}</h3>
               <div className="space-y-4">
-                {routine.morning.steps.map((step: any, index: number) => (
+                {routine.morning.steps.map((step, index: number) => (
                   <div key={index} className="flex items-start p-3 bg-gray-50 rounded-md">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center font-bold mr-3">
                       {step.step}
@@ -411,7 +421,7 @@ const SkincareRoutineBuilder = () => {
             <div className="mb-8">
               <h3 className="font-semibold text-gray-900 text-lg mb-4">{routine.evening.title}</h3>
               <div className="space-y-4">
-                {routine.evening.steps.map((step: any, index: number) => (
+                {routine.evening.steps.map((step, index: number) => (
                   <div key={index} className="flex items-start p-3 bg-gray-50 rounded-md">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 text-green-800 flex items-center justify-center font-bold mr-3">
                       {step.step}
@@ -431,7 +441,7 @@ const SkincareRoutineBuilder = () => {
               <div className="mb-8">
                 <h3 className="font-semibold text-gray-900 text-lg mb-4">Weekly Treatments</h3>
                 <div className="space-y-4">
-                  {routine.weekly.map((treatment: any, index: number) => (
+                  {routine.weekly.map((treatment, index: number) => (
                     <div key={index} className="p-3 bg-gray-50 rounded-md">
                       <h4 className="font-medium text-gray-900">{treatment.name}</h4>
                       <p className="text-sm text-gray-600">Frequency: {treatment.frequency}</p>

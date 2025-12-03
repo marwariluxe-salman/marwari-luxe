@@ -214,7 +214,7 @@ const PasswordGenerator = () => {
                 className="h-4 w-4 text-blue-600 rounded focus:ring-blue-500"
               />
               <label htmlFor="excludeAmbiguous" className="ml-2 block text-sm text-gray-700">
-                Exclude Ambiguous Characters ({'{'}[]{'}'}()/-\')
+                Exclude Ambiguous Characters (&#123;&#39;&#125;&#91;&#93;()/-\')
               </label>
             </div>
           </div>

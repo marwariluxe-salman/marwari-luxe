@@ -39,7 +39,7 @@ const WordCounter = () => {
     
     // Find most frequent word (excluding common words)
     const commonWords = ['the', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'a', 'an', 'is', 'are', 'was', 'were', 'be', 'been', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could', 'should', 'may', 'might', 'must', 'can'];
-    const wordFrequency: any = {};
+    const wordFrequency: Record<string, number> = {};
     
     words.forEach(word => {
       const cleanWord = word.toLowerCase().replace(/[^\w]/g, '');
@@ -153,14 +153,14 @@ const WordCounter = () => {
                   <div className="flex justify-between items-center p-3 bg-gray-50 rounded-md">
                     <span className="text-gray-700">Reading Time</span>
                     <span className="font-medium text-gray-900">
-                      {results.readingTime} min{results.readingTime !== 1 ? 's' : ''}
+                      {results.readingTime} min{results.readingTime !== 1 ? '\'s' : ''}
                     </span>
                   </div>
                   
                   <div className="flex justify-between items-center p-3 bg-gray-50 rounded-md">
                     <span className="text-gray-700">Speaking Time</span>
                     <span className="font-medium text-gray-900">
-                      {results.speakingTime} min{results.speakingTime !== 1 ? 's' : ''}
+                      {results.speakingTime} min{results.speakingTime !== 1 ? '\'s' : ''}
                     </span>
                   </div>
                   

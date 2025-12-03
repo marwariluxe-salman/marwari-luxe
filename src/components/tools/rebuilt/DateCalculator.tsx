@@ -88,7 +88,7 @@ const DateCalculator = () => {
     }
 
     setError('');
-    let resultDate = new Date(start);
+    const resultDate = new Date(start);
 
     if (calculationType === 'add') {
       switch (unit) {

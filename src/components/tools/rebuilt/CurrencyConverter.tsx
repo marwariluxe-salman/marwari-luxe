@@ -101,7 +101,7 @@ const CurrencyConverter = () => {
   const swapCurrencies = useCallback(() => {
     setFromCurrency(toCurrency);
     setToCurrency(fromCurrency);
-  }, [fromCurrency, toCurrency]);
+  }, [fromCurrency, toCurrency, currencies]);
 
   // Fetch exchange rates on component mount
   useEffect(() => {

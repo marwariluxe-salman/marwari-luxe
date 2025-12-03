@@ -9,7 +9,17 @@ const SavingsCalculator = () => {
   const [interestRate, setInterestRate] = useState('3');
   const [savingPeriod, setSavingPeriod] = useState('10');
   const [compoundFrequency, setCompoundFrequency] = useState('monthly');
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<{
+    futureValue: string;
+    totalContributions: string;
+    totalInterest: string;
+    yearlyData: {
+      year: number;
+      total: string;
+      contributions: string;
+      interest: string;
+    }[];
+  } | null>(null);
 
   const calculateSavings = useCallback(() => {
     const principal = parseFloat(initialAmount);
@@ -63,7 +73,7 @@ const SavingsCalculator = () => {
     
     // Calculate year-by-year growth for chart data
     const yearlyData = [];
-    let currentPrincipal = principal;
+    const currentPrincipal = principal;
     let currentContributions = principal;
     
     for (let year = 1; year <= Math.min(years, 20); year++) {
@@ -81,9 +91,9 @@ const SavingsCalculator = () => {
       
       yearlyData.push({
         year,
-        total: fvTotal,
-        contributions: currentContributions,
-        interest: interestEarned
+        total: fvTotal.toFixed(2),
+        contributions: currentContributions.toFixed(2),
+        interest: interestEarned.toFixed(2)
       });
     }
     
@@ -253,7 +263,7 @@ const SavingsCalculator = () => {
                           </tr>
                         </thead>
                         <tbody>
-                          {result.yearlyData.map((entry: any) => (
+                          {result.yearlyData.map((entry) => (
                             <tr key={entry.year} className="border-b border-gray-200">
                               <td className="p-2">{entry.year}</td>
                               <td className="p-2 text-right">${parseFloat(entry.total).toFixed(2)}</td>

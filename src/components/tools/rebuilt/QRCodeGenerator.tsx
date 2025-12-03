@@ -20,14 +20,14 @@ const QRCodeGenerator = () => {
       const qrCodeDataUrl = await QRCode.toDataURL(text, {
         width: size,
         margin: 2,
-        errorCorrectionLevel: errorCorrection as any,
+        errorCorrectionLevel: errorCorrection as 'L' | 'M' | 'Q' | 'H',
         color: {
           dark: foregroundColor,
           light: backgroundColor
         }
       });
       setQrCode(qrCodeDataUrl);
-    } catch (err) {
+    } catch (_err) {
       // Error generating QR code - handled silently
     }
   }, [text, size, errorCorrection, foregroundColor, backgroundColor]);

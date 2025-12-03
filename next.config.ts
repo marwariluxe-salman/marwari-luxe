@@ -1,4 +1,7 @@
 import type { NextConfig } from "next";
+import withBundleAnalyzer from '@next/bundle-analyzer';
+
+const withAnalyzer = withBundleAnalyzer({ enabled: process.env.ANALYZE === 'true' });
 
 const nextConfig: NextConfig = {
   // Removed experimental.optimizeCss because it can require additional optional
@@ -8,8 +11,7 @@ const nextConfig: NextConfig = {
     root: __dirname,
   },
   devIndicators: {
-    buildActivity: true,
-    buildActivityPosition: 'bottom-right',
+    position: 'bottom-right',
   },
   onDemandEntries: {
     // period (in ms) where the server will keep pages in the buffer
@@ -92,4 +94,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withAnalyzer(nextConfig);

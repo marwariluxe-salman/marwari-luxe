@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { healthTools } from '@/data/tools';
@@ -166,8 +165,40 @@ const HealthCategoryClient = () => {
 <p>Strong social connections are vital for mental health. Having people to talk to, share experiences with, and lean on during difficult times provides emotional resilience.</p>
 
 <h2>When Professional Help is Needed</h2>
-<p>While self-care strategies are valuable, some situations require professional intervention. Therapists, counselors, and psychiatrists can provide additional tools and support for managing mental health.</p>`,
-      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762817609/blog-5_xkzjxg.png',
+<p>While self-care strategies are valuable, some situations require professional intervention. Therapists, counselors, and psychiatrists can provide additional tools and support for managing mental health.`,
+      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762817815/blog-5_e7i150.png'
+    },
+    {
+      id: 'custom-health-006',
+      title: 'Immunity Weakness – Frequent Colds & Fatigue',
+      excerpt: "Feeling run-down and frequently getting sick? Discover 6 daily habits including nutrition, exercise, sleep, stress management, hydration, and lifestyle adjustments to naturally boost your immune system and improve overall health and vitality.",
+      content: `<h1>Always Getting Sick? Boost Your Immune System Naturally With These Daily Habits</h1>
+<p>Frequent colds, fatigue, and feeling run-down are signs of a weakened immune system. Modern lifestyle factors, stress, poor nutrition, and lack of sleep can compromise immunity. Strengthening your body's natural defenses is essential. Daily habits focused on nutrition, exercise, sleep, and stress management can significantly improve immune function and overall health.</p>
+
+<h2>How the Immune System Works</h2>
+<p>The immune system consists of white blood cells, antibodies, the complement system, the lymphatic system, and organs like the spleen and thymus. These components work together to identify and eliminate threats.</p>
+
+<h2>Nutrition for Immune Support</h2>
+<p>Certain vitamins and minerals are crucial for immune function. Vitamin C, vitamin D, zinc, and selenium play key roles in supporting immune responses and maintaining immune cell function.</p>
+
+<h2>The Gut-Immune Connection</h2>
+<p>Approximately 70% of immune cells reside in the gut. Maintaining a healthy gut microbiome through probiotics, prebiotics, and fiber-rich foods is essential for optimal immune function.</p>
+
+<h2>Sleep and Immune Function</h2>
+<p>Quality sleep is when your body repairs and regenerates. During sleep, immune cells are produced and distributed throughout the body, making adequate rest crucial for immune health.</p>
+
+<h2>Exercise and Immunity</h2>
+<p>Regular moderate exercise can boost immune function by promoting good circulation, which allows immune cells to move freely throughout the body and do their job efficiently.</p>
+
+<h2>Stress Management for Better Immunity</h2>
+<p>Chronic stress suppresses immune function by elevating cortisol levels. Managing stress through relaxation techniques, hobbies, and social support helps maintain immune balance.</p>
+
+<h2>When to Consider Immune Support Supplements</h2>
+<p>While a balanced diet should provide most nutrients, certain supplements may be beneficial during times of increased need. Consult with a healthcare provider to determine what's right for you.</p>
+
+<h2>Final Thoughts</h2>
+<p>Boosting immunity naturally requires consistent daily effort. Eating nutrient-rich foods, exercising, sleeping well, managing stress, staying hydrated, and avoiding harmful habits work together to strengthen your body's defenses. Over time, these habits reduce illness frequency, enhance energy, and promote long-term physical and mental well-being effectively.</p>`,
+      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762818516/blog-6_sataw7.png',
     }
   ];
 
@@ -178,23 +209,13 @@ const HealthCategoryClient = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-green-600 opacity-90"></div>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-white px-4">
-            <motion.h1 
-              className="text-4xl md:text-6xl font-bold mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Health & Wellness
-            </motion.h1>
-            <motion.p 
-              className="text-xl md:text-2xl max-w-3xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
+            </h1>
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto">
               Discover premium health products, expert wellness advice, and comprehensive tools 
               to enhance your physical and mental well-being.
-            </motion.p>
+            </p>
           </div>
         </div>
       </section>
@@ -203,42 +224,28 @@ const HealthCategoryClient = () => {
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="p-6"
-            >
+            <div className="p-6">
               <div className="text-4xl font-bold text-blue-600 mb-2">15+</div>
               <p className="text-gray-600">Health Tools</p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+            </div>
+            <div
               className="p-6"
             >
               <div className="text-4xl font-bold text-blue-600 mb-2">30+</div>
               <p className="text-gray-600">Health Products</p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+            </div>
+            <div
               className="p-6"
             >
               <div className="text-4xl font-bold text-blue-600 mb-2">100k+</div>
               <p className="text-gray-600">Wellness Enthusiasts</p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+            </div>
+            <div
               className="p-6"
             >
               <div className="text-4xl font-bold text-blue-600 mb-2">50+</div>
               <p className="text-gray-600">Premium Brands</p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -254,17 +261,14 @@ const HealthCategoryClient = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {customHealthBlogs.slice(0, 3).map((blog, index) => (
-              <motion.article
+            {customHealthBlogs.map((blog, index) => (
+              <article
                 key={blog.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="relative h-48 overflow-hidden">
                   <Image
-                    src={blog.heroImage}
+                    src={`${blog.heroImage}?f_auto&q_auto:w_600&dpr_auto&c_fill,g_auto`}
                     alt={blog.title}
                     fill
                     className="object-cover"
@@ -284,7 +288,7 @@ const HealthCategoryClient = () => {
                     </svg>
                   </Link>
                 </div>
-              </motion.article>
+              </article>
             ))}
           </div>
         </div>
@@ -293,25 +297,17 @@ const HealthCategoryClient = () => {
       {/* Featured Health Tools */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
+          <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Professional Health Tools</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Scientifically-backed calculators and analyzers to help you monitor your health
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {healthTools.slice(0, 4).map((tool, index) => (
-              <motion.div
+            {healthTools.slice(0, 4).map((tool) => (
+              <div
                 key={tool.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-white border border-gray-200 rounded-lg p-6 text-center hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="text-4xl mb-4">{tool.icon}</div>
@@ -323,7 +319,7 @@ const HealthCategoryClient = () => {
                 >
                   Use Tool
                 </Link>
-              </motion.div>
+              </div>
             ))}
           </div>
 
@@ -344,36 +340,23 @@ const HealthCategoryClient = () => {
       {/* Health Tips Section */}
       <section className="py-16 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
+          <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Expert Health Tips</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Professional health advice from doctors and wellness experts
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="bg-white p-8 rounded-lg shadow-md"
-            >
+            <div className="bg-white p-8 rounded-lg shadow-md">
               <div className="text-4xl mb-4">🥗</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Balanced Nutrition</h3>
               <p className="text-gray-600">
                 Learn how to build a balanced plate with the right proportions of proteins, carbs, and healthy fats for optimal health.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+            <div
               className="bg-white p-8 rounded-lg shadow-md"
             >
               <div className="text-4xl mb-4">🏃</div>
@@ -381,12 +364,9 @@ const HealthCategoryClient = () => {
               <p className="text-gray-600">
                 Discover the best types of exercise for your age, fitness level, and health goals with our personalized recommendations.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+            <div
               className="bg-white p-8 rounded-lg shadow-md"
             >
               <div className="text-4xl mb-4">😴</div>
@@ -394,7 +374,7 @@ const HealthCategoryClient = () => {
               <p className="text-gray-600">
                 Improve your sleep quality with evidence-based techniques for better rest and recovery.
               </p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -402,12 +382,7 @@ const HealthCategoryClient = () => {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-blue-600 to-green-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-white"
-          >
+          <div className="text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Take Control of Your Health Journey
             </h2>
@@ -428,7 +403,7 @@ const HealthCategoryClient = () => {
                 Try Health Tools
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>

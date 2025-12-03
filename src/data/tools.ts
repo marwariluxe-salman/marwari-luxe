@@ -8,6 +8,7 @@ export const tools: Tool[] = [
     description: 'Calculate your Body Mass Index to assess if you\'re in a healthy weight range.',
     category: 'Health',
     icon: '⚖️',
+    active: true,
     featured: true,
   },
   {
@@ -16,6 +17,7 @@ export const tools: Tool[] = [
     description: 'Determine your daily caloric needs based on your activity level and goals.',
     category: 'Health',
     icon: '🔥',
+    active: true,
     featured: true,
   },
   {
@@ -24,6 +26,7 @@ export const tools: Tool[] = [
     description: 'Find out how much water you should drink daily for optimal hydration.',
     category: 'Health',
     icon: '💧',
+    active: true,
     featured: true,
   },
   {
@@ -32,6 +35,7 @@ export const tools: Tool[] = [
     description: 'Calculate your target heart rate zones for different types of exercise.',
     category: 'Health',
     icon: '❤️',
+    active: true,
   },
   {
     id: 'health-tool-005',
@@ -39,6 +43,7 @@ export const tools: Tool[] = [
     description: 'Determine your daily protein needs based on your lifestyle and fitness goals.',
     category: 'Health',
     icon: '🥩',
+    active: true,
   },
   {
     id: 'health-tool-006',
@@ -46,6 +51,7 @@ export const tools: Tool[] = [
     description: 'Find the optimal bedtime and wake-up time based on sleep cycles.',
     category: 'Health',
     icon: '😴',
+    active: true,
   },
   {
     id: 'health-tool-007',
@@ -53,6 +59,7 @@ export const tools: Tool[] = [
     description: 'Estimate your body fat percentage using various measurement methods.',
     category: 'Health',
     icon: '📊',
+    active: true,
   },
   {
     id: 'health-tool-008',
@@ -60,6 +67,7 @@ export const tools: Tool[] = [
     description: 'Calculate recommended vitamin D intake based on your location and lifestyle.',
     category: 'Health',
     icon: '☀️',
+    active: true,
   },
   {
     id: 'health-tool-009',
@@ -67,6 +75,7 @@ export const tools: Tool[] = [
     description: 'Evaluate your stress levels with our comprehensive assessment tool.',
     category: 'Health',
     icon: '🧘',
+    active: true,
   },
   {
     id: 'health-tool-010',
@@ -74,6 +83,7 @@ export const tools: Tool[] = [
     description: 'Calculate your optimal macronutrient distribution for your goals.',
     category: 'Health',
     icon: '🍎',
+    active: true,
   },
 
   // Beauty Tools (10)
@@ -83,6 +93,7 @@ export const tools: Tool[] = [
     description: 'Determine your skin type with our comprehensive questionnaire.',
     category: 'Beauty',
     icon: '✨',
+    active: true,
     featured: true,
   },
   {
@@ -91,6 +102,7 @@ export const tools: Tool[] = [
     description: 'Create a personalized skincare routine based on your skin type and concerns.',
     category: 'Beauty',
     icon: '🧴',
+    active: true,
     featured: true,
   },
   {
@@ -99,6 +111,7 @@ export const tools: Tool[] = [
     description: 'Get personalized hair care recommendations based on your hair type.',
     category: 'Beauty',
     icon: '💇',
+    active: true,
     featured: true,
   },
   {
@@ -107,6 +120,7 @@ export const tools: Tool[] = [
     description: 'Find your perfect foundation shade match across different brands.',
     category: 'Beauty',
     icon: '💄',
+    active: true,
   },
   {
     id: 'beauty-tool-005',
@@ -114,6 +128,7 @@ export const tools: Tool[] = [
     description: 'Calculate how long you can stay in the sun based on your skin type and SPF.',
     category: 'Beauty',
     icon: '🌞',
+    active: true,
   },
   {
     id: 'beauty-tool-006',
@@ -121,6 +136,7 @@ export const tools: Tool[] = [
     description: 'Check if beauty products contain ingredients that might irritate your skin.',
     category: 'Beauty',
     icon: '🔍',
+    active: true,
   },
   {
     id: 'beauty-tool-007',
@@ -128,6 +144,7 @@ export const tools: Tool[] = [
     description: 'Determine your face shape and get personalized makeup and hairstyle tips.',
     category: 'Beauty',
     icon: '👤',
+    active: true,
   },
   {
     id: 'beauty-tool-008',
@@ -135,6 +152,7 @@ export const tools: Tool[] = [
     description: 'Find colors that complement your skin tone for makeup and clothing.',
     category: 'Beauty',
     icon: '🎨',
+    active: true,
   },
   {
     id: 'beauty-tool-009',
@@ -142,6 +160,7 @@ export const tools: Tool[] = [
     description: 'Create an age-appropriate skincare routine with anti-aging focus.',
     category: 'Beauty',
     icon: '⏳',
+    active: true,
   },
   {
     id: 'beauty-tool-010',
@@ -149,15 +168,17 @@ export const tools: Tool[] = [
     description: 'Assess your nail health and get care recommendations.',
     category: 'Beauty',
     icon: '💅',
+    active: true,
   },
 
-  // General Tools (5)
+  // General Tools (10)
   {
     id: 'general-tool-001',
     title: 'Basic Calculator',
     description: 'Perform basic mathematical calculations quickly and easily.',
     category: 'General',
     icon: '🧮',
+    active: true,
   },
   {
     id: 'general-tool-002',
@@ -165,6 +186,7 @@ export const tools: Tool[] = [
     description: 'Generate QR codes for text, URLs, or contact information.',
     category: 'General',
     icon: '📱',
+    active: true,
   },
   {
     id: 'general-tool-003',
@@ -172,6 +194,7 @@ export const tools: Tool[] = [
     description: 'Check your text for potential plagiarism against online sources.',
     category: 'General',
     icon: '📝',
+    active: true,
   },
   {
     id: 'general-tool-004',
@@ -179,6 +202,7 @@ export const tools: Tool[] = [
     description: 'Count words, characters, and paragraphs in your text.',
     category: 'General',
     icon: '📄',
+    active: true,
   },
   {
     id: 'general-tool-005',
@@ -186,6 +210,47 @@ export const tools: Tool[] = [
     description: 'Convert between different units of measurement easily.',
     category: 'General',
     icon: '🔄',
+    active: true,
+  },
+  {
+    id: 'general-tool-006',
+    title: 'Currency Converter',
+    description: 'Convert between different world currencies in real-time.',
+    category: 'General',
+    icon: '💱',
+    active: true,
+  },
+  {
+    id: 'general-tool-007',
+    title: 'Password Generator',
+    description: 'Generate secure, random passwords with customizable options.',
+    category: 'General',
+    icon: '🔑',
+    active: true,
+  },
+  {
+    id: 'general-tool-008',
+    title: 'Loan Calculator',
+    description: 'Calculate monthly payments, total interest, and amortization schedules.',
+    category: 'General',
+    icon: '💰',
+    active: true,
+  },
+  {
+    id: 'general-tool-009',
+    title: 'Savings Calculator',
+    description: 'Calculate compound interest and future value of your savings.',
+    category: 'General',
+    icon: '📈',
+    active: true,
+  },
+  {
+    id: 'general-tool-010',
+    title: 'Date Calculator',
+    description: 'Calculate date differences or add/subtract time periods from dates.',
+    category: 'General',
+    icon: '📅',
+    active: true,
   },
 ];
 

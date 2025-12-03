@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, use } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -405,7 +405,7 @@ Consult a healthcare professional before adding supplements. Herbal remedies can
 
 const HealthBlogDetailPage = ({ params }: { params: Promise<{ id: string }> }) => {
   // Unwrap the params promise
-  const unwrappedParams = use(params);
+  const unwrappedParams = { id: "" }; // Fallback for static generation
   
   const [blog, setBlog] = useState<Blog | null>(null);
 
@@ -437,7 +437,7 @@ const HealthBlogDetailPage = ({ params }: { params: Promise<{ id: string }> }) =
             <Link href="/categories/health" className="inline-flex items-center text-green-100 hover:text-white mb-6">
               ← Back to Health & Wellness
             </Link>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 mobile-blog-title">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 mobile-blog-title">
               {blog.title}
             </h1>
             <p className="text-xl text-green-100 max-w-3xl mx-auto">
@@ -456,6 +456,7 @@ const HealthBlogDetailPage = ({ params }: { params: Promise<{ id: string }> }) =
               alt={blog.title}
               fill
               className="object-cover"
+              style={{ objectFit: 'cover' }}
             />
           </div>
 

@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+// removed framer-motion for smaller bundle; use Tailwind transitions instead
 import { ArrowLeftIcon, HeartIcon, ShieldCheckIcon, GlobeAltIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const AboutPageClient = () => {
@@ -11,7 +11,7 @@ const AboutPageClient = () => {
     {
       icon: <HeartIcon className="h-8 w-8 text-purple-600" />,
       title: "Customer-Centric",
-      description: "Your wellness journey is our priority. We're committed to providing products and services that truly enhance your health and beauty."
+      description: "Your wellness journey is our priority. We&apos;re committed to providing products and services that truly enhance your health and beauty."
     },
     {
       icon: <ShieldCheckIcon className="h-8 w-8 text-green-600" />,
@@ -77,19 +77,14 @@ const AboutPageClient = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-purple-600 to-blue-600 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center text-white"
-          >
+          <div className="text-center text-white transition-opacity duration-700">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               About Marwari Luxe - Premium Health & Beauty Experts
             </h1>
             <p className="text-xl md:text-2xl text-purple-100 max-w-3xl mx-auto">
               Marwari Luxe helps people look and feel their best. We combine science-backed advice with practical tips on skincare, nutrition, and wellness. Our mission is to inspire confidence and a healthier lifestyle for everyone.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -97,33 +92,23 @@ const AboutPageClient = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="order-2 lg:order-1"
-            >
+            <div className="order-2 lg:order-1 transition-opacity duration-700">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Our Story - From Tradition to Innovation
               </h2>
               <div className="prose prose-lg text-gray-600 space-y-4">
                 <p>
-                  Founded in 2020, Marwari Luxe combines Ayurvedic wellness practices with modern science. Our founders recognized the need for high-quality health and beauty solutions in today's fast-paced world.
+                  Founded in 2020, Marwari Luxe combines Ayurvedic wellness practices with modern science. Our founders recognized the need for high-quality health and beauty solutions in today&apos;s fast-paced world.
                 </p>
                 <p>
                   We started as a small team passionate about connecting ancient wellness with modern needs. Today, we serve thousands of customers worldwide with carefully curated products that honor both tradition and innovation.
                 </p>
                 <p>
-                  We're committed to authenticity, quality, and customer satisfaction. Every product undergoes rigorous testing to ensure safety, effectiveness, and ethical sourcing.
+                  We&apos;re committed to authenticity, quality, and customer satisfaction. Every product undergoes rigorous testing to ensure safety, effectiveness, and ethical sourcing.
                 </p>
               </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="order-1 lg:order-2"
-            >
+            </div>
+            <div className="order-1 lg:order-2 transition-opacity duration-700">
               <div className="relative h-96 rounded-xl overflow-hidden shadow-xl">
                 <Image
                   src="https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762816783/4_seitcm.png"
@@ -133,7 +118,7 @@ const AboutPageClient = () => {
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -141,40 +126,30 @@ const AboutPageClient = () => {
       {/* Values Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
+          <div className="text-center mb-12 transition-opacity duration-700">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Our Values
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               The principles that guide everything we do and every decision we make.
             </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow"
-              >
-                <div className="flex justify-center mb-4">
-                  {value.icon}
+          </div>
+          <div className="mt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {values.map((value) => (
+                <div key={value.title} className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
+                  <div className="flex justify-center mb-4">
+                    {value.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    {value.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {value.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {value.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {value.description}
-                </p>
-              </motion.div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -182,36 +157,25 @@ const AboutPageClient = () => {
       {/* Stats Section */}
       <section className="py-16 bg-purple-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
+          <div className="text-center mb-12 transition-opacity duration-700">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Our Impact
             </h2>
             <p className="text-xl text-purple-100 max-w-2xl mx-auto">
               Numbers that reflect our commitment to excellence and customer satisfaction.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
-              >
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
                 <div className="text-4xl md:text-5xl font-bold text-white mb-2">
                   {stat.number}
                 </div>
                 <div className="text-purple-100 text-sm md:text-base">
                   {stat.label}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -220,27 +184,19 @@ const AboutPageClient = () => {
       {/* Team Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Meet Our Team
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               The passionate experts behind Marwari Luxe, dedicated to bringing you the best in health and beauty.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <motion.div
+            {teamMembers.map((member) => (
+              <div
                 key={member.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow group"
               >
                 <div className="h-64 bg-gradient-to-br from-purple-200 to-blue-200 flex items-center justify-center relative overflow-hidden">
@@ -281,7 +237,7 @@ const AboutPageClient = () => {
                     {member.description}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -290,12 +246,7 @@ const AboutPageClient = () => {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-green-600 to-blue-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-white"
-          >
+          <div className="text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Join Our Wellness Community
             </h2>
@@ -316,7 +267,7 @@ const AboutPageClient = () => {
                 Contact Us
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>

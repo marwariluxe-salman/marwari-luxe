@@ -35,6 +35,8 @@ body {
   -webkit-tap-highlight-color: transparent;
   overflow-x: hidden; /* Prevent horizontal scrolling */
   touch-action: manipulation; /* Improve touch responsiveness */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Add this to prevent horizontal overflow on all elements */
@@ -98,6 +100,25 @@ html {
   .hover-effect:hover {
     transform: none !important;
   }
+}
+
+/* Enhanced touch interactions */
+.touch-target {
+  min-height: 48px;
+  min-width: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+}
+
+/* Scroll anchoring to prevent jumps during async loading */
+.scroll-anchor {
+  overflow-anchor: none;
+}
+
+.anchor-element {
+  overflow-anchor: auto;
 }
 
 /* Custom utilities */
@@ -198,6 +219,18 @@ html {
   .nav-link {
     padding: 16px 12px;
     display: block;
+  }
+  
+  /* Mobile-specific touch optimizations */
+  .mobile-touch {
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Prevent pull-to-refresh on mobile */
+  body {
+    overscroll-behavior-y: contain;
   }
 }
 

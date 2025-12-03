@@ -1,6 +1,7 @@
-'use client';
+"use client";
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 interface MobileOptimizedToolWrapperProps {
   children: React.ReactNode;
@@ -41,15 +42,15 @@ const MobileOptimizedToolWrapper = ({
 
         {/* Mobile-friendly back button */}
         <div className="mt-8 text-center safe-area-inset-bottom">
-          <a
+          <Link
             href="/tools"
-            className="mobile-btn inline-flex items-center px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+            className="mobile-btn inline-flex items-center px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium touch-target"
           >
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
             Back to Tools
-          </a>
+          </Link>
         </div>
       </div>
     </div>

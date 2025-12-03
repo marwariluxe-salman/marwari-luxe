@@ -1,6 +1,5 @@
 import { getBlogById, getRelatedBlogs } from '@/services/blogService';
 import BlogPostClient from '@/components/BlogPostClient';
-import { Blog } from '@/types';
 
 // Function to generate dynamic metadata for blog posts
 export async function generateMetadata({ params }: { params: { id: string } }) {
@@ -44,7 +43,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
         images: [blog.heroImage]
       }
     };
-  } catch (error) {
+  } catch {
     return {
       title: 'Blog Post - Marwari Luxe',
       description: 'Read our latest health and beauty blog posts.',

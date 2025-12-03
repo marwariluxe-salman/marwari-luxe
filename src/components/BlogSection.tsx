@@ -23,7 +23,8 @@ const BlogSection = () => {
         
         setDisplayBlogs(blogs);
       } catch (error) {
-        // Error handling is done through UI feedback
+        // Log error for debugging and show UI feedback
+        console.error('Error loading blogs:', error);
       } finally {
         setLoading(false);
       }
@@ -91,7 +92,7 @@ const BlogSection = () => {
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      quality={65} // Reduced quality for better mobile performance
+                      quality={75}
                       loading={index < 3 ? "eager" : "lazy"} // Eager load first 3 images
                       placeholder="blur"
                       blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="

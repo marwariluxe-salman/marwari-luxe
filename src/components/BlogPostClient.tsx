@@ -5,7 +5,6 @@ import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Blog } from '@/types';
-import { getBlogById, getRelatedBlogs } from '@/services/blogService';
 
 // Function to render HTML content safely
 const renderHTMLContent = (content: string) => {
@@ -47,7 +46,7 @@ const renderHTMLContent = (content: string) => {
 const BlogPostClient = ({ blog, relatedBlogs }: { blog: Blog | null; relatedBlogs: Blog[] }) => {
   const params = useParams();
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [error] = useState<string | null>(null);
 
   useEffect(() => {
     // Simulate loading for client-side effects
@@ -60,11 +59,8 @@ const BlogPostClient = ({ blog, relatedBlogs }: { blog: Blog | null; relatedBlog
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading article...</p>
-        </div>
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
       </div>
     );
   }
@@ -116,6 +112,7 @@ const BlogPostClient = ({ blog, relatedBlogs }: { blog: Blog | null; relatedBlog
             fill
             className="object-cover"
             priority
+            style={{ objectFit: 'cover' }}
           />
         </div>
         <div className="absolute inset-0 bg-black bg-opacity-50" />
@@ -134,7 +131,7 @@ const BlogPostClient = ({ blog, relatedBlogs }: { blog: Blog | null; relatedBlog
                 {blog.category}
               </span>
             </div>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 mobile-blog-title">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 mobile-blog-title">
               {blog.title}
             </h1>
             <div className="flex items-center justify-center space-x-6 text-lg">
@@ -183,6 +180,7 @@ const BlogPostClient = ({ blog, relatedBlogs }: { blog: Blog | null; relatedBlog
                           fill
                           className="object-cover"
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          style={{ objectFit: 'cover' }}
                         />
                       </div>
                       <div className="p-6">
@@ -235,6 +233,7 @@ const BlogPostClient = ({ blog, relatedBlogs }: { blog: Blog | null; relatedBlog
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      style={{ objectFit: 'cover' }}
                     />
                   </div>
                   <div className="p-4">

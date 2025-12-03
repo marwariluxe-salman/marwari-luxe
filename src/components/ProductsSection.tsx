@@ -48,16 +48,17 @@ const ProductsSection = () => {
                   className="relative w-full h-full"
                 >
                   <Image
-                    src={product.image}
+                    src={`${product.image}?f_auto&q_auto:w_400&dpr_auto&c_fill,g_auto`}
                     alt={product.title}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 20vw"
-                    quality={70}
+                    quality={75}
                     loading="lazy"
                     placeholder="blur"
                     blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
                     decoding="async"
+                    style={{ objectFit: 'cover' }}
                   />
                 </motion.div>
                 {product.originalPrice && (

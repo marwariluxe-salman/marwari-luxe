@@ -14,7 +14,7 @@ const HeroSlider = () => {
       id: 1,
       title: 'Premium Health Supplements & Wellness Products',
       subtitle: 'Discover scientifically-backed vitamins, minerals & supplements that transform your daily wellness routine. Shop 25+ premium products.',
-      image: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762817015/1_pllyfb.png',
+      image: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_1600,dpr_auto,c_fill,g_auto/v1762817015/1_pllyfb.png',
       cta: 'Shop Health Supplements',
       link: '/products',
     },
@@ -22,7 +22,7 @@ const HeroSlider = () => {
       id: 2,
       title: 'Natural Anti-Aging Beauty Solutions',
       subtitle: 'Embrace your natural glow with our expert-curated collection of organic skincare, anti-aging serums & cruelty-free beauty essentials.',
-      image: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762817052/2_gnrg7c.png',
+      image: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_1600,dpr_auto,c_fill,g_auto/v1762817052/2_gnrg7c.png',
       cta: 'Explore Natural Beauty',
       link: '/categories/beauty',
     },
@@ -30,7 +30,7 @@ const HeroSlider = () => {
       id: 3,
       title: 'Health Calculators & Wellness Tools',
       subtitle: 'Access 25+ powerful health calculators, BMI tools & fitness trackers to optimize your wellness journey with data-driven insights.',
-      image: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762817080/5_gifuma.png',
+      image: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_1600,dpr_auto,c_fill,g_auto/v1762817080/5_gifuma.png',
       cta: 'Try Wellness Tools',
       link: '/tools',
     },
@@ -38,7 +38,7 @@ const HeroSlider = () => {
       id: 4,
       title: 'Expert Health & Beauty Insights Blog',
       subtitle: 'Read science-backed health advice, beauty tips & wellness guides from certified experts. 30+ comprehensive articles updated regularly.',
-      image: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762817098/3_x5umfy.png',
+      image: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_1600,dpr_auto,c_fill,g_auto/v1762817098/3_x5umfy.png',
       cta: 'Read Expert Blogs',
       link: '/blogs',
     },
@@ -46,7 +46,7 @@ const HeroSlider = () => {
       id: 5,
       title: 'Marwari Heritage Meets Modern Wellness',
       subtitle: 'Experience timeless Ayurvedic wisdom combined with cutting-edge health innovation. Discover our heritage-inspired wellness philosophy.',
-      image: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762816783/4_seitcm.png',
+      image: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_1600,dpr_auto,c_fill,g_auto/v1762816783/4_seitcm.png',
       cta: 'Discover Our Story',
       link: '/about',
     },
@@ -104,7 +104,7 @@ const HeroSlider = () => {
           priority={currentSlide === 0} // Ensure first slide is prioritized
           className="object-cover w-full h-full"
           sizes="100vw"
-          quality={65} // Reduced quality for better mobile performance
+          quality={75}
           fetchPriority={currentSlide === 0 ? "high" : "auto"} // Add fetchpriority for LCP optimization
           // Optimize image delivery
           style={{ objectFit: 'cover' }}
@@ -141,14 +141,14 @@ const HeroSlider = () => {
       {/* Navigation Arrows - Kept but without purple color */}
       <button
         onClick={prevSlide}
-        className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-white/80 transition-colors z-20 p-1 sm:p-2 rounded-full bg-black/20 backdrop-blur-sm"
+        className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-white/80 transition-colors z-20 p-2 sm:p-3 rounded-full bg-black/20 backdrop-blur-sm touch-target"
         aria-label="Previous slide"
       >
         <ChevronLeftIcon className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 text-white" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-white/80 transition-colors z-20 p-1 sm:p-2 rounded-full bg-black/20 backdrop-blur-sm"
+        className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-white/80 transition-colors z-20 p-2 sm:p-3 rounded-full bg-black/20 backdrop-blur-sm touch-target"
         aria-label="Next slide"
       >
         <ChevronRightIcon className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 text-white" />

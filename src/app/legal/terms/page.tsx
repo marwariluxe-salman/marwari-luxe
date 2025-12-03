@@ -56,7 +56,7 @@ const TermsConditionsPage = () => {
           <div className="prose prose-lg max-w-none">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Introduction</h2>
             <p className="text-gray-700 mb-6">
-              Welcome to Marwari Luxe. These Terms and Conditions ("Terms") govern your use of our website and services. 
+              Welcome to Marwari Luxe. These Terms and Conditions (&quot;Terms&quot;) govern your use of our website and services. 
               By accessing or using our website, you agree to be bound by these Terms. If you do not agree with these Terms, 
               please do not use our services. We operate as an affiliate marketing platform and work with trusted partners 
               like CJ Dropshipping to provide you with quality products.
@@ -64,11 +64,11 @@ const TermsConditionsPage = () => {
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Definitions</h2>
             <ul className="list-disc pl-6 mb-6 text-gray-700">
-              <li><strong>"Company"</strong> refers to Marwari Luxe</li>
-              <li><strong>"Service"</strong> refers to our website and related services</li>
-              <li><strong>"User"</strong> refers to anyone who accesses or uses our Service</li>
-              <li><strong>"Content"</strong> refers to all information, data, text, images, and other materials</li>
-              <li><strong>"CJ Dropshipping"</strong> refers to our trusted affiliate partner who fulfills orders</li>
+              <li><strong>&quot;Company&quot;</strong> refers to Marwari Luxe</li>
+              <li><strong>&quot;Service&quot;</strong> refers to our website and related services</li>
+              <li><strong>&quot;User&quot;</strong> refers to anyone who accesses or uses our Service</li>
+              <li><strong>&quot;Content&quot;</strong> refers to all information, data, text, images, and other materials</li>
+              <li><strong>&quot;CJ Dropshipping&quot;</strong> refers to our trusted affiliate partner who fulfills orders</li>
             </ul>
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Affiliate Marketing Relationship</h2>
@@ -124,7 +124,7 @@ const TermsConditionsPage = () => {
             <ul className="list-disc pl-6 mb-6 text-gray-700">
               <li>Payment is processed securely through CJ Dropshipping</li>
               <li>We do not handle or store any payment information</li>
-              <li>All payments are processed by CJ Dropshipping's secure payment processors</li>
+               <li>All payments are processed by CJ Dropshipping&apos;s secure payment processors</li>
             </ul>
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Shipping and Delivery</h2>
@@ -176,7 +176,7 @@ const TermsConditionsPage = () => {
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Disclaimers</h2>
             <p className="text-gray-700 mb-6">
-              The information on this website is provided on an "as is" basis without any warranties, express or implied. 
+              The information on this website is provided on an &quot;as is&quot; basis without any warranties, express or implied. 
               We make no representations about the suitability, reliability, availability, timeliness, and accuracy of the 
               information contained on the website. Product fulfillment and customer service are handled by CJ Dropshipping.
             </p>
@@ -193,7 +193,7 @@ const TermsConditionsPage = () => {
             <p className="text-gray-700 mb-6">
               These Terms shall be interpreted and governed by the laws of the jurisdiction in which Marwari Luxe operates, 
               without regard to its conflict of law provisions. Any disputes related to product fulfillment or shipping 
-              are subject to CJ Dropshipping's terms and policies.
+               are subject to CJ Dropshipping&apos;s terms and policies.
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Changes to Terms</h2>

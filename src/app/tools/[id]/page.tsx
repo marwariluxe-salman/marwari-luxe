@@ -1,5 +1,4 @@
 import { tools } from '@/data/tools';
-import { Tool } from '@/types';
 import ToolPageClient from '@/components/ToolPageClient';
 
 // Function to generate dynamic metadata for tool pages

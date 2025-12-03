@@ -97,8 +97,8 @@ const FAQPage = () => {
       answer: "Log into your account and go to the 'Account Settings' or 'Profile' section where you can update your personal information, shipping addresses, and preferences."
     },
     {
-      question: "Why can't I access certain features on mobile?",
-      answer: "Our website is optimized for mobile devices. If you're experiencing issues, try refreshing the page, clearing your browser cache, or updating your browser to the latest version."
+      question: "Why can&apos;t I access certain features on mobile?",
+      answer: "Our website is optimized for mobile devices. If you&apos;re experiencing issues, try refreshing the page, clearing your browser cache, or updating your browser to the latest version."
     },
     {
       question: "How do I unsubscribe from emails?",
@@ -114,11 +114,11 @@ const FAQPage = () => {
     },
     {
       question: "Do you accept product submissions from brands?",
-      answer: "We carefully curate our product selection through partnerships with CJ Dropshipping. If you're a brand interested in partnering with us, please submit your proposal to marwariluxe@gmail.com."
+      answer: "We carefully curate our product selection through partnerships with CJ Dropshipping. If you&apos;re a brand interested in partnering with us, please submit your proposal to marwariluxe@gmail.com."
     },
     {
       question: "How can I contact customer service?",
-      answer: "You can reach our customer service team via email at marwariluxe@gmail.com, or through our contact form. For order-specific issues, please contact CJ Dropshipping directly. We're available Monday-Friday, 9 AM-6 PM EST."
+      answer: "You can reach our customer service team via email at marwariluxe@gmail.com, or through our contact form. For order-specific issues, please contact CJ Dropshipping directly. We&apos;re available Monday-Friday, 9 AM-6 PM EST."
     }
   ];
 
@@ -144,7 +144,7 @@ const FAQPage = () => {
           </div>
           <p className="text-gray-600">
             Find answers to common questions about our products, services, and policies. 
-            Can't find what you're looking for? <Link href="/contact" className="text-purple-600 hover:text-purple-700">Contact us</Link>.
+            Can&apos;t find what you&apos;re looking for? <Link href="/contact" className="text-purple-600 hover:text-purple-700">Contact us</Link>.
           </p>
         </div>
 

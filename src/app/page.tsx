@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import dynamic from 'next/dynamic';
-import LoadingSkeleton from '@/components/LoadingSkeleton';
+import HomeClientWrapper from '@/components/HomeClientWrapper';
 
 // Dynamically import components with lazy loading
 const HeroSlider = dynamic(() => import('@/components/HeroSlider'), { 
@@ -9,36 +9,9 @@ const HeroSlider = dynamic(() => import('@/components/HeroSlider'), {
   loading: () => <div className="h-screen w-full bg-gray-200 animate-pulse" />
 });
 
-const IntroSection = dynamic(() => import('@/components/IntroSection'), { 
-  ssr: true,
-  loading: () => <LoadingSkeleton />
-});
-
-const BlogSection = dynamic(() => import('@/components/BlogSection'), { 
-  ssr: true,
-  loading: () => <LoadingSkeleton />
-});
-
-const ToolsSection = dynamic(() => import('@/components/ToolsSection'), { 
-  ssr: true,
-  loading: () => <LoadingSkeleton />
-});
-
-const ProductsSection = dynamic(() => import('@/components/ProductsSection'), { 
-  ssr: true,
-  loading: () => <LoadingSkeleton />
-});
-
-const NewsletterSection = dynamic(() => import('@/components/NewsletterSection'), { 
-  ssr: true,
-  loading: () => <LoadingSkeleton />
-});
 
 
-
-
-const PerformanceOptimizer = dynamic(() => import('@/components/PerformanceOptimizer'));
-const PerformanceMonitor = dynamic(() => import('@/components/PerformanceMonitor'));
+// Note: non-critical homepage sections are lazy-loaded from the client wrapper
 
 export const metadata: Metadata = {
   title: "Marwari Luxe - Premium Health & Beauty Products | Wellness Essentials Online Store",
@@ -104,11 +77,7 @@ const structuredData = {
 export default function Home() {
   return (
     <div className="min-h-screen w-full overflow-x-hidden flex flex-col">
-      {/* Performance Optimizer */}
-      <PerformanceOptimizer />
-      
-      {/* Performance Monitor (development only) */}
-      <PerformanceMonitor />
+  {/* Performance helpers are loaded inside the client wrapper when needed */}
       
       {/* Structured Data for Homepage */}
       <Script
@@ -120,14 +89,10 @@ export default function Home() {
         strategy="afterInteractive"
       />
       
-      <HeroSlider />
+  <HeroSlider />
 
-      <IntroSection />
-      <BlogSection />
-      <ToolsSection />
-
-      <ProductsSection />
-      <NewsletterSection />
+  {/* Client-only wrapper: lazy-load non-critical homepage sections */}
+  <HomeClientWrapper />
     </div>
   );
 }

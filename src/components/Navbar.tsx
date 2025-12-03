@@ -4,13 +4,12 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronDownIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { useCart } from '@/contexts/CartContext';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
   const [isToolsOpen, setIsToolsOpen] = useState(false);
-  const { state: cartState } = useCart();
+  // cart state not used in this component; omit to avoid unused variable
   const categoriesRef = useRef<HTMLDivElement>(null);
   const toolsRef = useRef<HTMLDivElement>(null);
 
@@ -88,7 +87,7 @@ const Navbar = () => {
             <div className="relative" ref={categoriesRef}>
               <button
                 onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
-                className="flex items-center text-gray-700 hover:text-purple-600 transition-colors text-sm lg:text-base"
+                className="flex items-center text-gray-700 hover:text-purple-600 transition-colors text-sm lg:text-base touch-target py-2 px-3"
                 aria-haspopup="true"
                 aria-expanded={isCategoriesOpen}
               >
@@ -130,7 +129,7 @@ const Navbar = () => {
             <div className="relative" ref={toolsRef}>
               <button
                 onClick={() => setIsToolsOpen(!isToolsOpen)}
-                className="flex items-center text-gray-700 hover:text-purple-600 transition-colors text-sm lg:text-base"
+                className="flex items-center text-gray-700 hover:text-purple-600 transition-colors text-sm lg:text-base touch-target py-2 px-3"
                 aria-haspopup="true"
                 aria-expanded={isToolsOpen}
               >
@@ -189,7 +188,7 @@ const Navbar = () => {
             </Link>
             <button
               onClick={toggleMenu}
-              className="text-gray-700 hover:text-purple-600 transition-colors p-2 rounded-md hover:bg-gray-100"
+              className="text-gray-700 hover:text-purple-600 transition-colors p-2 rounded-md hover:bg-gray-100 touch-target"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMenuOpen}
             >
@@ -209,63 +208,63 @@ const Navbar = () => {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
               href="/"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
+              className="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50 touch-target"
               onClick={closeMenu}
             >
               Home
             </Link>
             <Link
               href="/categories/health"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
+              className="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50 touch-target"
               onClick={closeMenu}
             >
               🏥 Health & Wellness
             </Link>
             <Link
               href="/categories/beauty"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
+              className="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50 touch-target"
               onClick={closeMenu}
             >
               💄 Beauty & Cosmetics
             </Link>
             <Link
               href="/products"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
+              className="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50 touch-target"
               onClick={closeMenu}
             >
               🛍️ All Products
             </Link>
             <Link
               href="/blogs"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
+              className="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50 touch-target"
               onClick={closeMenu}
             >
               Blogs
             </Link>
             <Link
               href="/tools/health"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
+              className="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50 touch-target"
               onClick={closeMenu}
             >
               Health Tools
             </Link>
             <Link
               href="/tools/beauty"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
+              className="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50 touch-target"
               onClick={closeMenu}
             >
               Beauty Tools
             </Link>
             <Link
               href="/tools/general"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
+              className="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50 touch-target"
               onClick={closeMenu}
             >
               General Tools
             </Link>
             <Link
               href="/contact"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
+              className="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50 touch-target"
               onClick={closeMenu}
             >
               Contact

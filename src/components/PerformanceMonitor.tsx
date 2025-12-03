@@ -45,31 +45,28 @@ const PerformanceMonitor = () => {
         const fcpObserver = new PerformanceObserver((list) => {
           for (const entry of list.getEntries()) {
             if (entry.name === 'first-contentful-paint') {
-              console.log('FCP:', entry.startTime);
+
             }
           }
         });
         fcpObserver.observe({ entryTypes: ['paint'] });
 
         // Measure Largest Contentful Paint (LCP)
-        const lcpObserver = new PerformanceObserver((list) => {
-          const entries = list.getEntries();
-          const lastEntry = entries[entries.length - 1];
-          console.log('LCP:', lastEntry.startTime);
+        const lcpObserver = new PerformanceObserver(() => {
+          // Observer callback
         });
         lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
 
         // Measure Cumulative Layout Shift (CLS)
-        let clsValue = 0;
         const clsObserver = new PerformanceObserver((list) => {
           for (const entry of list.getEntries()) {
             // Use proper typing instead of casting to 'any'
             const layoutShiftEntry = entry as LayoutShiftEntry;
             if (!layoutShiftEntry.hadRecentInput) {
-              clsValue += layoutShiftEntry.value;
+              // Process layout shift entry
             }
           }
-          console.log('CLS:', clsValue);
+
         });
         clsObserver.observe({ entryTypes: ['layout-shift'] });
 
@@ -77,8 +74,8 @@ const PerformanceMonitor = () => {
         const fidObserver = new PerformanceObserver((list) => {
           for (const entry of list.getEntries()) {
             // Use proper typing instead of casting to 'any'
-            const firstInputEntry = entry as FirstInputEntry;
-            console.log('FID:', firstInputEntry.processingStart - entry.startTime);
+            entry as FirstInputEntry;
+
           }
         });
         fidObserver.observe({ entryTypes: ['first-input'] });
@@ -99,7 +96,7 @@ const PerformanceMonitor = () => {
           };
           
           setPerformanceData(perfData);
-          console.log('Page Load Time:', perfData.loadTime, 'seconds');
+
         }, 0);
       });
     };

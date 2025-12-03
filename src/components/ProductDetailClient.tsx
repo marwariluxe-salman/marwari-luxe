@@ -1,15 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { useParams } from 'next/navigation';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { allProducts } from '@/data/products';
 import { Product } from '@/types';
 import Image from 'next/image';
 
 const ProductDetailClient = ({ product, relatedProducts }: { product: Product | null; relatedProducts: Product[] }) => {
-  const params = useParams();
+  // params not required in this client component
   const [selectedImage, setSelectedImage] = useState(0);
 
   // Demo sales data - different for each product
@@ -80,7 +78,7 @@ With thousands of satisfied customers worldwide, this product has established it
         <div className="text-center">
           <div className="text-6xl mb-4">📦</div>
           <h1 className="text-2xl font-semibold text-gray-900 mb-2">Product Not Found</h1>
-          <p className="text-gray-600 mb-6">The product you're looking for doesn't exist.</p>
+          <p className="text-gray-600 mb-6">The product you&apos;re looking for doesn&apos;t exist.</p>
           <Link href="/products" className="text-purple-600 hover:text-purple-700 font-medium">
             ← Back to Products
           </Link>
@@ -122,6 +120,7 @@ With thousands of satisfied customers worldwide, this product has established it
                 priority
                 placeholder="blur"
                 blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                style={{ objectFit: 'cover' }}
               />
             </motion.div>
             
@@ -143,8 +142,9 @@ With thousands of satisfied customers worldwide, this product has established it
                       fill
                       className="object-cover"
                       sizes="100px"
-                      quality={60}
+                      quality={75}
                       loading="lazy"
+                      style={{ objectFit: 'cover' }}
                     />
                   </div>
                 </button>
@@ -291,8 +291,9 @@ With thousands of satisfied customers worldwide, this product has established it
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                         sizes="200px"
-                        quality={70}
+                        quality={75}
                         loading="lazy"
+                        style={{ objectFit: 'cover' }}
                       />
                     </div>
                     <div className="p-4">

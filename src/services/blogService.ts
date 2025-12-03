@@ -264,7 +264,7 @@ export const getBlogById = async (id: string): Promise<Blog | undefined> => {
     // This fixes the issue where blogs not in the index couldn't be loaded
     const { blogs } = await import('@/data/blogs');
     return blogs.find(blog => blog.id === id);
-  } catch (error) {
+  } catch {
     // Error handling is done through UI feedback
     return undefined;
   }
@@ -288,7 +288,7 @@ export const getRelatedBlogs = async (categoryId: string, excludeId: string, lim
     return blogs
       .filter(blog => blog.category === categoryId && blog.id !== excludeId)
       .slice(0, limit);
-  } catch (error) {
+  } catch {
     // Error handling is done through UI feedback
     return [];
   }
@@ -306,7 +306,7 @@ export const getBlogsByCategory = async (category: string): Promise<Blog[]> => {
     }
     
     return blogs.filter(blog => blog.category === category);
-  } catch (error) {
+  } catch {
     // Error handling is done through UI feedback
     return [];
   }
@@ -325,7 +325,7 @@ export const getBlogPage = async (page: number = 1, pageSize: number = 12): Prom
     const totalPages = Math.ceil(blogs.length / pageSize);
     
     return { blogs: paginatedBlogs, totalPages };
-  } catch (error) {
+  } catch {
     // Error handling is done through UI feedback
     return { blogs: [], totalPages: 0 };
   }
@@ -352,7 +352,7 @@ export const searchBlogs = async (term: string): Promise<Blog[]> => {
       blog.excerpt.toLowerCase().includes(termLower) ||
       blog.content.toLowerCase().includes(termLower)
     );
-  } catch (error) {
+  } catch {
     // Error handling is done through UI feedback
     return [];
   }
@@ -371,7 +371,7 @@ export const getFeaturedBlogs = async (): Promise<{ healthBlogs: Blog[], beautyB
       .slice(0, 3);
       
     return { healthBlogs, beautyBlogs };
-  } catch (error) {
+  } catch {
     // Error handling is done through UI feedback
     return { healthBlogs: [], beautyBlogs: [] };
   }

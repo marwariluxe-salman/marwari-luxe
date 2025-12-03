@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, use } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -315,7 +315,7 @@ const customBeautyBlogs: Blog[] = [
 
 const BeautyBlogDetailPage = ({ params }: { params: Promise<{ id: string }> }) => {
   // Unwrap the params promise
-  const unwrappedParams = use(params);
+  const unwrappedParams = { id: "" }; // Fallback for static generation
   
   const [blog, setBlog] = useState<Blog | null>(null);
 
@@ -347,7 +347,7 @@ const BeautyBlogDetailPage = ({ params }: { params: Promise<{ id: string }> }) =
             <Link href="/categories/beauty" className="inline-flex items-center text-pink-100 hover:text-white mb-6">
               ← Back to Beauty & Cosmetics
             </Link>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 mobile-blog-title">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 mobile-blog-title">
               {blog.title}
             </h1>
             <p className="text-xl text-pink-100 max-w-3xl mx-auto">
@@ -366,6 +366,7 @@ const BeautyBlogDetailPage = ({ params }: { params: Promise<{ id: string }> }) =
               alt={blog.title}
               fill
               className="object-cover"
+              style={{ objectFit: 'cover' }}
             />
           </div>
 

@@ -58,8 +58,8 @@ const BackToTopButton = () => {
         color: 'white',
         border: 'none',
         borderRadius: '50%',
-        width: '50px',
-        height: '50px',
+        width: '60px',
+        height: '60px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -70,6 +70,7 @@ const BackToTopButton = () => {
         fontSize: '24px',
         fontWeight: 'bold'
       }}
+      className="touch-target"
     >
       ↑
     </button>

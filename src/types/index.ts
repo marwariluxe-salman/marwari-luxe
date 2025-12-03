@@ -46,6 +46,7 @@ export interface Tool {
   category: 'Health' | 'Beauty' | 'General';
   icon: string;
   featured?: boolean;
+  active?: boolean;
 }
 
 export interface CartItem {

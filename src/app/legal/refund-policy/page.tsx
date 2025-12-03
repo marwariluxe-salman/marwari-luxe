@@ -113,7 +113,7 @@ const RefundPolicyPage = () => {
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Orders Not Received</h2>
             <p className="text-gray-700 mb-4">
-              If your tracking information shows the order was delivered but you haven't received it:
+              If your tracking information shows the order was delivered but you have not received it:
             </p>
             <ul className="list-disc pl-6 mb-6 text-gray-700">
               <li>Contact your local post office with the tracking number</li>
@@ -130,7 +130,7 @@ const RefundPolicyPage = () => {
               <li>Document the damage with clear photos or videos</li>
               <li>Contact CJ Dropshipping within 30 days of delivery</li>
               <li>Provide the order number and damage documentation</li>
-              <li>Follow CJ Dropshipping's return process</li>
+              <li>Follow CJ Dropshipping&apos;s return process</li>
             </ul>
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">4. Incorrect or Missing Products</h2>
@@ -141,7 +141,7 @@ const RefundPolicyPage = () => {
               <li>Contact CJ Dropshipping immediately with your order details</li>
               <li>Provide photos of the incorrect items received</li>
               <li>Include screenshots of the original order confirmation</li>
-              <li>Follow CJ Dropshipping's process for corrections</li>
+              <li>Follow CJ Dropshipping&apos;s process for corrections</li>
             </ul>
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. Return Policy Through CJ Dropshipping</h2>
@@ -157,10 +157,10 @@ const RefundPolicyPage = () => {
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">6. How Marwari Luxe Can Help</h2>
             <p className="text-gray-700 mb-4">
-              While we don't handle the products directly, we're here to assist you:
+              While we do not handle the products directly, we&apos;re here to assist you:
             </p>
             <ul className="list-disc pl-6 mb-6 text-gray-700">
-              <li>Provide CJ Dropshipping's contact information</li>
+              <li>Provide CJ Dropshipping&apos;s contact information</li>
               <li>Help you locate your order details and tracking information</li>
               <li>Guide you through the dispute process with CJ Dropshipping</li>
               <li>Offer general advice on international shipping and customs</li>
@@ -191,7 +191,7 @@ const RefundPolicyPage = () => {
               The following disputes are typically not accepted by CJ Dropshipping:
             </p>
             <ul className="list-disc pl-6 mb-6 text-gray-700">
-              <li>Buyer's change of mind or personal preferences</li>
+              <li>Buyer&apos;s change of mind or personal preferences</li>
               <li>Incorrect shipping addresses provided by the customer</li>
               <li>Failure to clear customs in certain countries</li>
               <li>Tracking information deleted by logistics companies</li>

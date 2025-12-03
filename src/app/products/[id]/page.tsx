@@ -1,5 +1,4 @@
 import { allProducts } from '@/data/products';
-import { Product } from '@/types';
 import ProductDetailClient from '@/components/ProductDetailClient';
 
 // Function to generate dynamic metadata for product pages

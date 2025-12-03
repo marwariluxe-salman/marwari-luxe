@@ -195,13 +195,12 @@ Great starter foods for fibremaxxing include oats, lentils, brown rice, chia see
 If you're ready to start your fibremaxxing journey, we highly recommend adding a high-quality fibre supplement or fibre-rich product to your daily routine. The product listed below is carefully chosen to support digestion, improve gut health, and keep you full for longer hours. It's an easy way to reach your daily fibre goals without overcomplicating your meals. Whether your goal is weight loss, better energy, or improved gut balance, this product can give you the extra boost you need.`,
     heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761864930/Marwari-luxe_dnwxfa.jpg',
     images: [
-      '/images/blogs/fibremaxxing-1.jpg',
-      '/images/blogs/fibremaxxing-2.jpg',
-      '/images/blogs/fibremaxxing-3.jpg',
-      '/images/blogs/fibremaxxing-4.jpg',
-      '/images/blogs/fibremaxxing-5.jpg'
-    ],
-    category: 'Health',
+      'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761864930/Marwari-luxe_dnwxfa.jpg',
+      'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761864926/marwari1_azrf1z.jpg',
+      'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761864928/marwari2_hs4y31.jpg',
+      'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761863544/800400_ljnnqg.png',
+      'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761863553/200300_n50ysr.png'
+    ],    category: 'Health',
     author: 'Salman Marwari',
     publishedAt: '2025-01-01',
     readTime: 15,

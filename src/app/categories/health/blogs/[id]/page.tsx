@@ -12,6 +12,43 @@ interface Blog {
   heroImage: string;
 }
 
+// Function to render HTML content safely with image support
+const renderHTMLContent = (content: string) => {
+  // Split content by double newlines to handle paragraphs
+  const paragraphs = content.split('\n\n');
+  
+  return (
+    <div className="space-y-6">
+      {paragraphs.map((paragraph, index) => {
+        // Check if paragraph contains HTML tags or markdown images
+        if (paragraph.includes('<br>') || paragraph.includes('<h1') || paragraph.includes('<h2') || paragraph.includes('<img') || paragraph.includes('![')) {
+          // Replace <br> tags with actual line breaks
+          let processedContent = paragraph.replace(/<br\s*\/?>/g, '<br />');
+          
+          // Convert markdown image syntax ![alt](src) to HTML img tags
+          processedContent = processedContent.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="rounded-lg shadow-md my-4 w-full" style="max-width: 100%; height: auto;" />');
+          
+          // Create a unique key for dangerouslySetInnerHTML
+          return (
+            <div 
+              key={index} 
+              dangerouslySetInnerHTML={{ __html: processedContent }} 
+              className="text-gray-700 leading-relaxed"
+            />
+          );
+        } else {
+          // Regular paragraph without HTML
+          return (
+            <p key={index} className="text-gray-700 leading-relaxed">
+              {paragraph}
+            </p>
+          );
+        }
+      })}
+    </div>
+  );
+};
+
 // Custom blogs data - same as in the health category page
 const customHealthBlogs: Blog[] = [
   {
@@ -20,6 +57,8 @@ const customHealthBlogs: Blog[] = [
     excerpt: "Your gut health affects your whole body—energy, mood, and even skin. This guide breaks down natural, science-backed ways to heal your gut, reduce bloating, and build daily habits for lasting digestive wellness.",
     content: `<h1>Always Bloated After Meals? 7 Proven Ways to Fix Your Gut Naturally</h1>
     
+![Gut Health Hero](/images/blogs/placeholder.jpg)
+
 <p>If you feel bloated after every meal, you’re not alone. Millions struggle with poor digestion, stomach discomfort, and an unbalanced gut microbiome every single day. What most people don’t realize is that your gut health affects far more than just your stomach — it impacts your mood, energy, skin, and even your immune system.
 <br><br>
 Here’s the thing: when your digestion slows down or your gut bacteria are out of balance, your body starts sending warning signs — like gas, fatigue, or feeling heavy after eating. It’s your body’s way of saying something’s off. The good news is, you don’t need fancy supplements or strict diets to fix it. You can heal your gut naturally with simple, science-backed habits that actually work.
@@ -32,10 +71,14 @@ So if you’re tired of feeling sluggish or constantly bloated, stay with me. Th
 <br><br>
 Your journey to better digestion starts right here.</p>
 
+![Understanding Bloating](/images/blogs/placeholder.jpg)
+
 <h2>Understand What’s Really Causing Your Bloating</h2>
 <p>Most people blame food right away when they feel bloated, but that’s only part of the story. Bloating usually happens when your gut bacteria get imbalanced, or you swallow excess air while eating too fast. Stress, lack of fiber, or even dehydration can slow digestion and trap gas in your intestines.
 <br><br>
 Another big reason is food intolerance — especially to dairy, gluten, or processed foods. These trigger inflammation and make your stomach feel tight or swollen. The key is to track what you eat, slow down at meals, and stay hydrated to keep digestion smooth and your gut happy.</p>
+
+![Gut-Friendly Foods](/images/blogs/placeholder.jpg)
 
 <h2>Eat Gut-Friendly Foods Every Day</h2>
 <p>Your gut acts like the command center of your health. When it’s balanced, digestion improves, bloating goes down, and your energy levels rise. To keep it that way, include probiotic-rich foods like yogurt, kefir, sauerkraut, and kimchi in your diet. These boost the “good” bacteria in your intestines and help reduce inflammation.
@@ -44,6 +87,8 @@ Fiber also plays a big role. Foods like oats, chia seeds, apples, and lentils fe
 <br><br>
 Making gut-friendly eating a habit doesn’t just reduce bloating—it supports better mood, skin, and immunity too.</p>
 
+![Common Gut Health Mistakes](/images/blogs/placeholder.jpg)
+
 <h2>Avoid These Common Gut Health Mistakes</h2>
 <p>Even if you’re eating healthy, some habits might quietly harm your gut. One big mistake is skipping meals or eating too quickly—this throws off your digestive rhythm and causes bloating. Another common problem is overusing antibiotics. While they’re helpful for infections, they also wipe out good bacteria your gut needs.
 <br><br>
@@ -51,12 +96,16 @@ Many people also rely on too much caffeine or alcohol, which irritates the stoma
 <br><br>
 Lastly, ignoring stress can make things worse. Stress hormones directly affect gut movement and balance. Learn to manage it through exercise, meditation, or enough sleep.</p>
 
+![Mindful Eating](/images/blogs/placeholder.jpg)
+
 <h2>Practice Mindful Eating for Better Digestion</h2>
 <p>Most people don’t realize that how you eat matters as much as what you eat. Rushing through meals, eating in front of screens, or swallowing without chewing properly puts stress on your digestive system. Mindful eating helps you slow down, chew food thoroughly, and listen to your body’s hunger and fullness cues.
 <br><br>
 When you take time to enjoy each bite, your brain signals your stomach to release the right digestive enzymes. This simple shift can reduce bloating, acid reflux, and overeating. It also helps maintain a balanced gut microbiome since your food gets broken down more effectively.
 <br><br>
 To start, eat without distractions, take smaller bites, and breathe between them. It’s not a diet—just a habit that keeps your digestion smooth and your gut happy.</p>
+
+![Daily Gut Habits](/images/blogs/placeholder.jpg)
 
 <h2>Build Daily Habits for a Healthy Gut</h2>
 <p>A healthy gut doesn’t just happen overnight—it’s built through small, consistent habits. Your daily routine has a direct impact on how well your digestion works, how strong your immunity stays, and even how stable your mood feels.
@@ -67,12 +116,16 @@ Sleep also matters more than most people realize. Poor sleep can disrupt your gu
 <br><br>
 When these habits become part of your lifestyle, your gut stays balanced and resilient. Remember—consistency beats perfection when it comes to gut health.</p>
 
+![Signs of Unhealthy Gut](/images/blogs/placeholder.jpg)
+
 <h2>Recognize the Signs Your Gut Is Unhealthy</h2>
 <p>Your body sends warning signals when your gut isn’t functioning properly—you just have to know how to read them. Common symptoms of an unhealthy gut include bloating, gas, constipation, diarrhea, and heartburn. If these issues occur regularly, they often point to poor gut bacteria balance or inflammation in the digestive tract.
 <br><br>
 But digestion isn’t the only thing affected. You might notice fatigue, frequent colds, skin breakouts, or even mood swings, since the gut communicates directly with your brain and immune system. These subtle changes are your body’s way of saying your digestive health needs attention.
 <br><br>
 Paying attention to these signs early can help prevent bigger problems later. Track what you eat, how you feel, and how your body reacts. This awareness is the first step toward restoring your gut balance and feeling your best again.</p>
+
+![Natural Gut Healing](/images/blogs/placeholder.jpg)
 
 <h2>Natural Ways to Heal Your Gut Long-Term</h2>
 <p>Healing your gut takes time, but small, consistent habits can completely reset your digestion and overall health. Start by eating a fiber-rich diet with plenty of fruits, vegetables, and whole grains—these nourish the good bacteria in your gut. Add fermented foods like yogurt, kefir, kimchi, and sauerkraut to boost probiotics naturally.
@@ -86,8 +139,6 @@ Don’t forget the mind-gut connection—stress directly affects digestion. Try 
 Your gut health influences everything—from your mood and immunity to your energy and skin. When your digestion is balanced, your whole body functions better. The key is consistency: eat clean, stay hydrated, manage stress, and give your body time to heal.
 <br><br>
 You don’t need fancy detoxes or expensive supplements. Simple, natural changes in your daily routine can completely transform your gut over time. Listen to your body, stay patient, and let nature do the work. A healthy gut means a healthier, happier you.</p>`,
-
-
     heroImage: '/images/blogs/placeholder.jpg',
   },
   {
@@ -461,7 +512,7 @@ const HealthBlogDetailPage = ({ params: _params }: { params: Promise<{ id: strin
           </div>
 
           <div className="prose prose-lg max-w-none">
-            <div className="text-gray-700 mb-6 leading-relaxed [&_h1]:text-3xl [&_h1]:font-bold [&_h1]:mb-6 [&_h1]:text-gray-900 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:mb-4 [&_h2]:text-gray-800 [&_p]:mb-4" dangerouslySetInnerHTML={{ __html: blog.content }} />
+            {renderHTMLContent(blog.content)}
           </div>
 
           <div className="mt-12 pt-8 border-t border-gray-200">

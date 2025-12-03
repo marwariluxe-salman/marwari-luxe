@@ -12,6 +12,43 @@ interface Blog {
   heroImage: string;
 }
 
+// Function to render HTML content safely with image support
+const renderHTMLContent = (content: string) => {
+  // Split content by double newlines to handle paragraphs
+  const paragraphs = content.split('\n\n');
+  
+  return (
+    <div className="space-y-6">
+      {paragraphs.map((paragraph, index) => {
+        // Check if paragraph contains HTML tags or markdown images
+        if (paragraph.includes('<br>') || paragraph.includes('<h1') || paragraph.includes('<h2') || paragraph.includes('<img') || paragraph.includes('![')) {
+          // Replace <br> tags with actual line breaks
+          let processedContent = paragraph.replace(/<br\s*\/?>/g, '<br />');
+          
+          // Convert markdown image syntax ![alt](src) to HTML img tags
+          processedContent = processedContent.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="rounded-lg shadow-md my-4 w-full" style="max-width: 100%; height: auto;" />');
+          
+          // Create a unique key for dangerouslySetInnerHTML
+          return (
+            <div 
+              key={index} 
+              dangerouslySetInnerHTML={{ __html: processedContent }} 
+              className="text-gray-700 leading-relaxed"
+            />
+          );
+        } else {
+          // Regular paragraph without HTML
+          return (
+            <p key={index} className="text-gray-700 leading-relaxed">
+              {paragraph}
+            </p>
+          );
+        }
+      })}
+    </div>
+  );
+};
+
 // Custom blogs data - same as in the beauty category page
 const customBeautyBlogs: Blog[] = [
   {
@@ -20,6 +57,8 @@ const customBeautyBlogs: Blog[] = [
       excerpt: "Discover the future of beauty with waterless skincare and minimalist routines. Learn how concentrated, eco-friendly products simplify your regimen, nourish your skin, and support sustainability. Try 7 must-have products in 2026 for radiant, healthy skin with minimal effort and maximum impact.",
       content: `<h1>Why Waterless Skincare Is the Future: 7 Must-Try Products for 2026</h1>
       
+![Waterless Skincare Hero](/images/blogs/placeholder.jpg)
+
 <p><p>Waterless skincare is revolutionizing beauty routines worldwide. With environmental concerns rising, brands are creating concentrated formulas without water, reducing waste and packaging. Minimalist beauty is also gaining momentum, emphasizing fewer, multifunctional products. Understanding this trend helps you choose sustainable options that enhance skin health while simplifying your daily routine.</p>
 
 <p>These products are nutrient-dense, delivering potent ingredients directly to your skin. From balms to oils, waterless formulas prevent dilution and preserve efficacy. They are perfect for eco-conscious consumers who care about results and sustainability. By switching to waterless skincare, you can enjoy healthier skin while contributing to environmental conservation.</p>
@@ -36,20 +75,32 @@ const customBeautyBlogs: Blog[] = [
 
 <p>Ultimately, waterless skincare and minimalist beauty reflect the future of conscious beauty. They provide effective solutions while prioritizing sustainability and simplicity. By embracing this trend, you can simplify your routine, reduce environmental impact, and enjoy healthier, glowing skin naturally and efficiently.</p>
 
+![Waterless Skincare Ingredients](/images/blogs/placeholder.jpg)
+
 <h2>1. Understanding Waterless Skincare</h2>
 <p>Waterless skincare eliminates water from formulas, concentrating active ingredients. This improves efficacy and shelf life while minimizing preservatives. Products include solid cleansers, oils, and serums. Knowing how these work helps you select the best items for your skin type, ensuring hydration, nourishment, and visible results with minimal effort.</p>
+
+![Minimalist Beauty Routine](/images/blogs/placeholder.jpg)
 
 <h2>2. Benefits of Minimalist Beauty</h2>
 <p>Minimalist beauty focuses on multifunctional products that simplify routines. Using fewer items reduces clutter and decision fatigue. It also encourages choosing high-quality formulations over quantity. Combining minimalist principles with waterless skincare maximizes efficiency, delivering both eco-conscious and skin-nourishing results.</p>
 
+![Waterless Cleansers](/images/blogs/placeholder.jpg)
+
 <h2>3. Must-Try Waterless Cleansers</h2>
 <p>Solid cleansing balms and powders are perfect examples of waterless products. They remove impurities without over-drying the skin. Many contain natural oils and botanical extracts, leaving skin soft and balanced. Their compact design makes them convenient for travel while providing eco-friendly alternatives to liquid cleansers.</p>
+
+![Concentrated Oils and Serums](/images/blogs/placeholder.jpg)
 
 <h2>4. Concentrated Oils and Serums</h2>
 <p>Waterless oils and serums deliver potent ingredients directly to the skin. Facial oils rich in vitamins and antioxidants help hydrate and repair skin. These concentrated formulas ensure maximum absorption and efficacy, reducing the need for multiple products while supporting healthy, radiant skin.</p>
 
+![Eco-Friendly Packaging](/images/blogs/placeholder.jpg)
+
 <h2>5. Eco-Friendly Packaging and Sustainability</h2>
 <p>Waterless skincare often comes in recyclable or refillable packaging. This reduces environmental impact and encourages conscious consumption. Choosing brands that prioritize sustainability ensures your beauty routine contributes positively to the planet while maintaining high-quality skincare benefits.</p>
+
+![Transition Tips](/images/blogs/placeholder.jpg)
 
 <h2>6. How to Transition to Waterless Skincare</h2>
 <p>Start gradually by replacing one or two products with waterless alternatives. Experiment with different textures like solid cleansers, oils, or balms. Observe how your skin reacts and adjust accordingly. Gradual transition helps maintain skin balance while embracing minimalist and sustainable beauty practices.</p>
@@ -60,20 +111,32 @@ const customBeautyBlogs: Blog[] = [
 <h2>Understanding Your Skin Type</h2>
 <p>Before diving into any skincare routine, it's crucial to identify your skin type. Whether you have oily, dry, combination, or sensitive skin, each type requires a tailored approach. Oily skin benefits from lightweight, non-comedogenic products, while dry skin needs rich, hydrating formulas. Combination skin requires a balance of both, and sensitive skin needs gentle, fragrance-free options.</p>
 
-<h2>The Essential 5-Step Routine</h2>bs
+![Skincare Routine](/images/blogs/placeholder.jpg)
+
+<h2>The Essential 5-Step Routine</h2>
 <p>Every effective skincare routine follows five fundamental steps: cleanse, tone, treat, moisturize, and protect. Start with a gentle cleanser to remove dirt and impurities without stripping natural oils. Follow with a toner to balance pH levels and prep the skin for treatment products. Apply serums or treatments targeting specific concerns like aging or hyperpigmentation. Lock in moisture with a suitable moisturizer, and always finish with broad-spectrum SPF during the day.</p>
+
+![Product Selection](/images/blogs/placeholder.jpg)
 
 <h2>Choosing the Right Products</h2>
 <p>Ingredient selection is more important than brand loyalty. Look for proven actives like hyaluronic acid for hydration, vitamin C for brightening, retinoids for anti-aging, and niacinamide for overall skin health. Patch test new products and introduce them gradually to avoid irritation. Remember that consistency trumps intensity – gentle, regular care produces better long-term results than harsh treatments.</p>
 
+![Advanced Techniques](/images/blogs/placeholder.jpg)
+
 <h2>Advanced Techniques for Enhanced Results</h2>
 <p>Once you've mastered the basics, consider incorporating advanced techniques like facial massage, gua sha, or LED light therapy. These methods can boost circulation, promote lymphatic drainage, and enhance product absorption. Additionally, professional treatments like chemical peels or microdermabrasion can accelerate results when performed by qualified specialists.</p>
+
+![Maintaining Your Glow](/images/blogs/placeholder.jpg)
 
 <h2>Maintaining Your Glow Long-Term</h2>
 <p>Sustainable skincare is about more than just products. Adequate sleep, proper hydration, a balanced diet, and stress management all contribute to healthy skin. Avoid over-exfoliating or using too many active ingredients simultaneously, as this can compromise the skin barrier. Listen to your skin and adjust your routine seasonally or as needed.</p>
 
+![Common Mistakes](/images/blogs/placeholder.jpg)
+
 <h2>Common Mistakes to Avoid</h2>
 <p>Many people sabotage their skincare efforts with common mistakes. Over-cleansing can strip the skin's natural barrier, leading to increased oil production and sensitivity. Skipping sunscreen, even on cloudy days, accelerates aging and increases skin cancer risk. Using too many products at once makes it difficult to identify what's working and can cause irritation. Finally, expecting immediate results leads to frustration – healthy skin is a long-term investment.</p>
+
+![Future of Beauty](/images/blogs/placeholder.jpg)
 
 <h2>Final Thoughts</h2>
 <p>Waterless skincare and minimalist beauty represent the future of conscious, effective routines. By choosing concentrated, multifunctional products in eco-friendly packaging, you simplify your routine, support sustainability, and enjoy healthier, radiant skin. Embrace this trend in 2026 to experience long-lasting results and a more mindful beauty lifestyle.</p>`,
@@ -85,6 +148,8 @@ const customBeautyBlogs: Blog[] = [
     excerpt: "Discover the simplicity of monochrome makeup—one color, endless possibilities. Learn how to choose the right shade for your skin tone, master daily looks, and find top 2026 product picks that simplify your beauty routine while keeping it modern, radiant, and naturally effortless.",
     content: `<h1>Master the Monochrome Makeup Trend: Easy Daily Looks for Every Skin Tone</h1>
     
+![Monochrome Makeup Hero](/images/blogs/placeholder.jpg)
+
 <p><p>Monochrome makeup is one of the most flattering and effortless beauty trends of 2026. It focuses on using a single color palette across eyes, lips, and cheeks. This technique creates a balanced, polished, and cohesive look that enhances your natural features without overwhelming your face with too many contrasting tones.</p>
 
 <p>The appeal of monochrome makeup lies in its simplicity. Whether you love soft peach, warm bronze, or rosy pink, you can create a complete look using just one shade family. It’s perfect for busy mornings, minimal makeup lovers, or anyone looking for a fresh, modern way to enhance their style.</p>
@@ -101,20 +166,32 @@ const customBeautyBlogs: Blog[] = [
 
 <p>Monochrome makeup celebrates simplicity, individuality, and balance. Whether you prefer earthy tones, rosy hues, or bronzed shades, this trend allows endless creativity while keeping your look cohesive and chic. Let’s explore how to master monochrome makeup for every skin tone and create effortless daily looks that never fail.</p>
 
+![What Is Monochrome Makeup](/images/blogs/placeholder.jpg)
+
 <h2>1. What Is Monochrome Makeup?</h2>
 <p>Monochrome makeup means using the same color palette across your face—eyes, cheeks, and lips. Instead of contrasting shades, it focuses on harmony. The result is a unified, natural look that enhances your features. It’s modern, quick to apply, and works beautifully for both everyday wear and special occasions.</p>
+
+![Choosing the Right Color](/images/blogs/placeholder.jpg)
 
 <h2>2. Choosing the Right Color for Your Skin Tone</h2>
 <p>Skin tone matters when picking your base color. Peach and coral flatter warm tones, while rose and mauve complement cool tones. Bronze and beige suit neutral undertones. Experiment with shades that bring warmth or depth to your complexion for a flattering, natural finish that glows in any light.</p>
 
+![Step-by-Step Guide](/images/blogs/placeholder.jpg)
+
 <h2>3. Step-by-Step: Creating a Monochrome Look</h2>
 <p>Start with clean, hydrated skin. Apply a lightweight foundation and use your chosen shade as eyeshadow, blush, and lip color. Blend softly for a seamless finish. You can use the same cream or tint across all areas for uniformity. Add mascara and highlighter to complete your effortless, glowing look.</p>
+
+![Day to Night Looks](/images/blogs/placeholder.jpg)
 
 <h2>4. Day to Night Monochrome Makeup</h2>
 <p>For daytime, stick to soft, dewy finishes in muted tones. For nighttime, add a shimmery layer to your lids and glossy lips. The monochrome concept stays intact, but the textures create depth. Switching finishes helps you transform your look easily without changing the color palette.</p>
 
+![Best Shades by Skin Tone](/images/blogs/placeholder.jpg)
+
 <h2>5. Best Monochrome Shades by Skin Tone</h2>
 <p>Fair skin tones glow with peach, pink, and champagne shades. Medium tones shine with coral, rose, or bronze. Deep tones look stunning in berry, terracotta, and plum hues. The goal is to pick a tone that enhances your natural undertone while adding radiance and balance to your overall look.</p>
+
+![Product Recommendations](/images/blogs/placeholder.jpg)
 
 <h2>6. Product Recommendations for 2026</h2>
 <p>Top brands now offer all-in-one monochrome palettes. Look for creamy blush sticks, multipurpose lip-and-cheek tints, or eyeshadow creams. Popular 2026 launches include hydrating formulas with skin-loving ingredients like hyaluronic acid and squalane. Choose long-wear, buildable textures that deliver color and hydration while keeping your skin looking fresh and healthy.</p>
@@ -122,6 +199,8 @@ const customBeautyBlogs: Blog[] = [
 
 </p>
 
+
+![Final Thoughts](/images/blogs/placeholder.jpg)
 
 <h2>Final Thoughts</h2>
 <p>Monochrome makeup is more than a trend—it’s timeless. It simplifies beauty routines, promotes sustainability, and enhances natural features effortlessly. By learning to work with tones and textures, anyone can master this look. Embrace the monochrome movement in 2026 for fresh, radiant, and easy-to-create daily beauty that fits every lifestyle.</p>`,
@@ -133,6 +212,8 @@ const customBeautyBlogs: Blog[] = [
     excerpt: "Discover the top 10 sustainable beauty brands of 2025 revolutionizing skincare and makeup. Learn how to make eco-conscious swaps, choose ethical products, and embrace a cleaner, greener beauty routine that supports your skin and the planet effortlessly.",
     content: `<h1>Eco-Friendly Beauty 2026: Top 10 Sustainable Skincare & Makeup Brands to Try</h1>
     
+![Sustainable Beauty Hero](/images/blogs/placeholder.jpg)
+
 <p><p>The beauty industry is evolving, and 2025 marks a major shift toward sustainability. Consumers today want clean, ethical, and eco-friendly products that care for both their skin and the planet. From zero-waste packaging to biodegradable ingredients, sustainable beauty is no longer a niche—it's becoming the new global standard.</p>
 
 <p>Eco-friendly beauty means more than just natural ingredients. It’s about reducing plastic waste, sourcing responsibly, and ensuring cruelty-free testing. Many innovative brands are leading the way, using refillable containers, carbon-neutral shipping, and plant-based formulas that deliver powerful results without harming the environment. Conscious beauty is now a lifestyle choice.</p>
@@ -149,23 +230,37 @@ const customBeautyBlogs: Blog[] = [
 
 <p>In 2025, sustainable beauty isn’t a passing trend—it’s a global standard. Whether you’re switching to refillable skincare or exploring carbon-neutral makeup brands, your choices matter. Let’s look at 10 top sustainable brands leading this eco-friendly revolution and transforming how we define beauty, responsibility, and self-care this year.</p>
 
+![What Makes a Brand Truly Sustainable](/images/blogs/placeholder.jpg)
+
 <h2>1. What Makes a Brand Truly Sustainable?</h2>
 <p>True sustainability covers ingredients, packaging, and ethics. Brands that use biodegradable formulas, recyclable containers, and cruelty-free testing practices stand out. Carbon offset programs and eco-friendly production methods further enhance sustainability. Transparency and responsible sourcing are key—because real beauty comes from conscious choices that protect both your skin and the planet.</p>
+
+![Top Sustainable Skincare Brands](/images/blogs/placeholder.jpg)
 
 <h2>2. Top Sustainable Skincare Brands 2025</h2>
 <p>Brands like *Youth to the People*, *Herbivore Botanicals*, and *Biossance* lead in clean skincare. They use renewable ingredients, glass packaging, and eco-friendly manufacturing. *Tata Harper* and *REN Clean Skincare* also focus on zero-waste initiatives. These brands offer effective products that nourish skin while reducing environmental harm.</p>
 
+![Eco-Friendly Makeup Brands](/images/blogs/placeholder.jpg)
+
 <h2>3. Eco-Friendly Makeup Brands to Watch</h2>
 <p>*ILIA Beauty*, *Kjaer Weis*, and *RMS Beauty* are revolutionizing sustainable makeup. Their refillable compacts, organic pigments, and compostable packaging reduce waste. *Axiology* and *Elate Cosmetics* use minimal plastic and ethical sourcing. These brands prove eco-conscious beauty can deliver luxury, performance, and environmental responsibility in one sleek package.</p>
+
+![Refillable Products](/images/blogs/placeholder.jpg)
 
 <h2>4. The Rise of Refillable and Waterless Products</h2>
 <p>Refillable systems and waterless formulas are the future of eco-beauty. Solid cleansers, powder masks, and concentrated serums reduce packaging waste and extend shelf life. Brands like *Ethique* and *Everist* lead this innovation, showing that sustainability can be practical, stylish, and highly effective for modern conscious consumers.</p>
 
+![Sustainable Packaging](/images/blogs/placeholder.jpg)
+
 <h2>5. Sustainable Packaging & Ingredient Transparency</h2>
 <p>Packaging accounts for much of beauty’s waste problem. Brands now use glass, aluminum, and compostable paper instead of plastic. Ingredient transparency is equally vital—companies like *The Ordinary* and *True Botanicals* share full ingredient lists and sourcing details, ensuring consumers know exactly what they’re applying to their skin.</p>
 
+![Building Your Routine](/images/blogs/placeholder.jpg)
+
 <h2>6. How to Build Your Eco-Friendly Beauty Routine</h2>
 <p>Start small. Replace one disposable product at a time with sustainable alternatives—like switching to reusable cotton pads or refillable lipsticks. Choose brands that align with your values, check certifications like *Leaping Bunny*, and support local artisans. Every conscious purchase contributes to a cleaner, more ethical beauty future.</p>
+
+![Final Thoughts](/images/blogs/placeholder.jpg)
 
 <h2>Final Thoughts</h2>
 <p>Sustainable beauty in 2025 is about mindfulness and responsibility. By supporting ethical brands and making eco-conscious swaps, you’re investing in the planet’s future. Beauty and sustainability can coexist beautifully—because when your skincare and makeup choices reflect care for the Earth, you glow inside and out, naturally and confidently.</p>
@@ -178,6 +273,8 @@ const customBeautyBlogs: Blog[] = [
     excerpt: "Discover 2025’s most exciting hair trends—from AI-inspired color blends to eco-friendly dyes and natural textures. Learn how futuristic styles redefine beauty with individuality, sustainability, and effortless confidence for every hair type and tone.",
     content: `<h1>Futuristic Hair Trends 2026: Colors, Textures, and Styles You’ll Love</h1>
     
+![Futuristic Hair Hero](/images/blogs/placeholder.jpg)
+
 <p><p>Hair fashion is entering a new era. In 2025, individuality, innovation, and sustainability dominate every hairstyle trend. From holographic color blends to naturally textured cuts, the future of hair is all about self-expression with purpose. The best part? You can adapt these futuristic looks to fit your lifestyle easily.</p>
 
 <p>Here’s the thing: the modern beauty scene celebrates diversity more than ever. No single style defines beauty now. Whether you’re rocking coils, sleek strands, or pastel hues, 2025 trends focus on enhancing your natural texture while experimenting with bold, creative color stories inspired by tech and nature.</p>
@@ -195,24 +292,37 @@ const customBeautyBlogs: Blog[] = [
 <p>Let’s explore the top color, texture, and style trends defining futuristic hair fashion in 2025—and how you can make them work for your everyday look, no matter your hair type or vibe.</p>
 
 
+![AI-Inspired Hair Colors](/images/blogs/placeholder.jpg)
 
 <h2>1. AI-Inspired Hair Colors and Digital Blends</h2>
 <p>AI color mapping is helping stylists create shades customized to your skin tone and undertones. Expect soft holographic effects, muted metallics, and pastel-chrome blends. These futuristic colors adapt beautifully to light and motion, giving your hair a dynamic glow without harsh chemicals or overly synthetic finishes.</p>
 
+![Sustainable Dyes](/images/blogs/placeholder.jpg)
+
 <h2>2. Sustainable Dyes and Eco-Friendly Formulas</h2>
 <p>Consumers in the USA, UK, and Europe are moving toward plant-based, biodegradable dyes. Brands like *Oway* and *Maria Nila* lead this change with formulas free from ammonia and harsh sulfates. These clean dyes not only protect hair health but also reduce environmental waste, proving sustainability can look stunning.</p>
+
+![Natural Texture](/images/blogs/placeholder.jpg)
 
 <h2>3. Embracing Natural Texture and Movement</h2>
 <p>2025 celebrates the beauty of natural texture. Loose waves, curls, and coils are enhanced using moisture-rich treatments and minimal heat styling. Stylists focus on lightweight layering to define shape without heavy products. Texture positivity encourages authenticity, giving every hair type its moment in the spotlight.</p>
 
+![Futuristic Cuts](/images/blogs/placeholder.jpg)
+
 <h2>4. Futuristic Cuts with Effortless Shapes</h2>
 <p>Haircuts are leaning toward architectural simplicity—soft bobs, fluid shags, and modern mullets. The goal is low maintenance with personality. Micro-fringes and asymmetrical ends add individuality, while cuts are designed to move naturally. These futuristic silhouettes adapt seamlessly between professional and casual looks.</p>
+
+![Smart Haircare](/images/blogs/placeholder.jpg)
 
 <h2>5. Smart Haircare and Climate-Adaptive Styling</h2>
 <p>Technology is making haircare smarter. Climate-adaptive serums adjust moisture levels based on humidity, while smart brushes analyze scalp health. These innovations help maintain color vibrancy and texture consistency. In 2025, your hair routine can literally respond to your environment, keeping styles effortless and fresh.</p>
 
+![Gender-Neutral Styling](/images/blogs/placeholder.jpg)
+
 <h2>6. Gender-Neutral and Inclusive Styling</h2>
 <p>Genderless hair trends are redefining beauty standards. Short crops, buzzed fades, and long flowy cuts are being worn by everyone. This inclusive shift focuses on confidence, comfort, and creativity over gender norms. Futuristic hair fashion celebrates expression—because style belongs to everyone, regardless of labels.</p>
+
+![Final Thoughts](/images/blogs/placeholder.jpg)
 
 <h2>Final Thoughts</h2>
 <p>Futuristic hair trends in 2025 blend innovation, sustainability, and individuality. Whether you go for AI-customized colors, sustainable dyes, or bold natural textures, the message is clear: authenticity never goes out of style. Experiment freely, embrace your natural pattern, and let your hair reflect the confident, future-ready version of you.</p></p>`,
@@ -371,7 +481,7 @@ const BeautyBlogDetailPage = ({ params: _params }: { params: Promise<{ id: strin
           </div>
 
           <div className="prose prose-lg max-w-none">
-            <div className="text-gray-700 mb-6 leading-relaxed [&_h1]:text-3xl [&_h1]:font-bold [&_h1]:mb-6 [&_h1]:text-gray-900 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:mb-4 [&_h2]:text-gray-800 [&_p]:mb-4" dangerouslySetInnerHTML={{ __html: blog.content }} />
+            {renderHTMLContent(blog.content)}
           </div>
 
           <div className="mt-12 pt-8 border-t border-gray-200">

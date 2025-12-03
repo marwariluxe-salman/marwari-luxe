@@ -7,7 +7,7 @@ const ProductIngredientChecker = () => {
   const [ingredients, setIngredients] = useState('');
   const [skinType, setSkinType] = useState('');
   const [concerns, setConcerns] = useState<string[]>([]);
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<{analysis: {problematic: Array<{name: string, problem: string}>, beneficial: Array<{name: string, benefit: string}>, neutral: string[]}, recommendations: {recommendations: string[], rating: string, ratingText: string, ratingColor: string}} | null>(null);
 
   const toggleConcern = (concern: string) => {
     if (concerns.includes(concern)) {
@@ -40,8 +40,8 @@ const ProductIngredientChecker = () => {
 
   // Helper functions
   function analyzeIngredients(ingredients: string[], skinType: string, concerns: string[]) {
-    const problematicIngredients: any[] = [];
-    const beneficialIngredients: any[] = [];
+    const problematicIngredients: Array<{name: string, problem: string}> = [];
+    const beneficialIngredients: Array<{name: string, benefit: string}> = [];
     const neutralIngredients: string[] = [];
 
     ingredients.forEach(ingredient => {
@@ -207,7 +207,7 @@ const ProductIngredientChecker = () => {
     return null;
   }
 
-  function getRecommendations(analysis: any, skinType: string, concerns: string[]) {
+  function getRecommendations(analysis: {problematic: Array<{name: string, problem: string}>, beneficial: Array<{name: string, benefit: string}>, neutral: string[]}, skinType: string, concerns: string[]) {
     const recommendations: string[] = [];
     
     // General recommendations based on analysis
@@ -412,7 +412,7 @@ const ProductIngredientChecker = () => {
               <div className="mb-6">
                 <h3 className="font-semibold text-gray-900 mb-3">⚠️ Potentially Problematic Ingredients</h3>
                 <div className="space-y-3">
-                  {result.analysis.problematic.map((item: any, index: number) => (
+                  {result.analysis.problematic.map((item: {name: string, problem: string}, index: number) => (
                     <div key={index} className="p-3 bg-red-50 rounded-md border border-red-200">
                       <h4 className="font-medium text-red-800">{item.name}</h4>
                       <p className="text-red-700 text-sm mt-1">{item.problem}</p>
@@ -427,7 +427,7 @@ const ProductIngredientChecker = () => {
               <div className="mb-6">
                 <h3 className="font-semibold text-gray-900 mb-3">✅ Beneficial Ingredients</h3>
                 <div className="space-y-3">
-                  {result.analysis.beneficial.map((item: any, index: number) => (
+                  {result.analysis.beneficial.map((item: {name: string, benefit: string}, index: number) => (
                     <div key={index} className="p-3 bg-green-50 rounded-md border border-green-200">
                       <h4 className="font-medium text-green-800">{item.name}</h4>
                       <p className="text-green-700 text-sm mt-1">{item.benefit}</p>

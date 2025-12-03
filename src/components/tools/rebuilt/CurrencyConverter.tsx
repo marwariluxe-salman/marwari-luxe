@@ -41,7 +41,7 @@ const CurrencyConverter = () => {
   };
 
   // Mock exchange rates (in a real app, this would come from an API)
-  const mockExchangeRates: any = {
+  const mockExchangeRates: Record<string, number> = {
     'USD': 1,
     'EUR': 0.85,
     'GBP': 0.73,
@@ -77,7 +77,7 @@ const CurrencyConverter = () => {
       setLastUpdated(new Date().toLocaleString());
       setIsLoading(false);
     }, 800);
-  }, []);
+  }, [mockExchangeRates]);
 
   const convertCurrency = useCallback(() => {
     if (!amount || !exchangeRates[fromCurrency] || !exchangeRates[toCurrency]) {

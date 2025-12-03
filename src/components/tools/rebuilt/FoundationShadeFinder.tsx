@@ -8,7 +8,7 @@ const FoundationShadeFinder = () => {
   const [skinTone, setSkinTone] = useState('');
   const [veinColor, setVeinColor] = useState('');
   const [jewelryPreference, setJewelryPreference] = useState('');
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<{undertone: string, shadeRecommendations: {description: string, brands: Array<{name: string, shades: string[]}>}, applicationTips: string[]} | null>(null);
 
   const findShade = useCallback(() => {
     if (!undertone || !skinTone) return;
@@ -46,7 +46,7 @@ const FoundationShadeFinder = () => {
   }
 
   function getShadeRecommendations(undertone: string, skinTone: string) {
-    const recommendations: any = {
+    const recommendations = {
       cool: {
         fair: {
           description: 'Fair skin with cool undertones',
@@ -205,7 +205,10 @@ const FoundationShadeFinder = () => {
       }
     };
 
-    return recommendations[undertone][skinTone] || recommendations.cool.fair;
+    const validUndertone = (undertone === 'cool' || undertone === 'warm' || undertone === 'neutral') ? undertone : 'cool';
+    const validSkinTone = (skinTone === 'fair' || skinTone === 'light' || skinTone === 'medium' || skinTone === 'tan' || skinTone === 'deep') ? skinTone : 'fair';
+    
+    return recommendations[validUndertone][validSkinTone] || recommendations.cool.fair;
   }
 
   function getApplicationTips(undertone: string, skinTone: string) {
@@ -441,7 +444,7 @@ const FoundationShadeFinder = () => {
               <p className="text-gray-600 mb-4">{result.shadeRecommendations.description}</p>
               
               <div className="space-y-4">
-                {result.shadeRecommendations.brands.map((brand: any, index: number) => (
+                {result.shadeRecommendations.brands.map((brand: {name: string, shades: string[]}, index: number) => (
                   <div key={index} className="p-3 bg-gray-50 rounded-md">
                     <h4 className="font-medium text-gray-900">{brand.name}</h4>
                     <p className="text-gray-700 text-sm">Shades: {brand.shades.join(', ')}</p>

@@ -7,7 +7,7 @@ const ColorPaletteGenerator = () => {
   const [undertone, setUndertone] = useState('');
   const [eyeColor, setEyeColor] = useState('');
   const [hairColor, setHairColor] = useState('');
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<{palette: {description: string, bestColors: {name: string, colors: string[]}[], avoidColors: {name: string, colors: string[]}[]}, stylingTips: string[]} | null>(null);
 
   const generatePalette = useCallback(() => {
     if (!undertone) return;
@@ -26,7 +26,7 @@ const ColorPaletteGenerator = () => {
 
   // Helper functions
   function generateColorPalette(undertone: string, eyeColor: string, hairColor: string) {
-    const palettes: any = {
+    const palettes = {
       cool: {
         description: 'Colors with blue, pink, or purple undertones',
         bestColors: [
@@ -73,7 +73,8 @@ const ColorPaletteGenerator = () => {
       }
     };
 
-    return palettes[undertone] || palettes.cool;
+    const validUndertone = (undertone === 'cool' || undertone === 'warm' || undertone === 'neutral') ? undertone : 'cool';
+    return palettes[validUndertone];
   }
 
   function getStylingTips(undertone: string, eyeColor: string, hairColor: string) {
@@ -84,7 +85,7 @@ const ColorPaletteGenerator = () => {
       'Your best colors may vary depending on season and lighting'
     ];
 
-    const undertoneTips: any = {
+    const undertoneTips = {
       cool: [
         'Silver jewelry tends to look better on you than gold',
         'Choose blue-based reds like berry or rose over orange-based reds',
@@ -105,7 +106,7 @@ const ColorPaletteGenerator = () => {
       ]
     };
 
-    const eyeColorTips: any = {
+    const eyeColorTips = {
       blue: [
         'Copper and bronze tones make blue eyes pop',
         'Warm browns and taupes complement blue eyes',
@@ -128,7 +129,7 @@ const ColorPaletteGenerator = () => {
       ]
     };
 
-    const hairColorTips: any = {
+    const hairColorTips = {
       blonde: [
         'Soft pastels and cool tones complement blonde hair',
         'Avoid colors that wash out your complexion',
@@ -151,14 +152,17 @@ const ColorPaletteGenerator = () => {
       ]
     };
 
-    let tips = [...generalTips, ...(undertoneTips[undertone] || [])];
+    const validUndertone = (undertone === 'cool' || undertone === 'warm' || undertone === 'neutral') ? undertone : 'cool';
+    let tips = [...generalTips, ...(undertoneTips[validUndertone] || [])];
     
     if (eyeColor) {
-      tips = [...tips, ...(eyeColorTips[eyeColor] || [])];
+      const validEyeColor = (eyeColor === 'blue' || eyeColor === 'green' || eyeColor === 'brown' || eyeColor === 'hazel') ? eyeColor : 'blue';
+      tips = [...tips, ...(eyeColorTips[validEyeColor] || [])];
     }
     
     if (hairColor) {
-      tips = [...tips, ...(hairColorTips[hairColor] || [])];
+      const validHairColor = (hairColor === 'blonde' || hairColor === 'brunette' || hairColor === 'redhead' || hairColor === 'black') ? hairColor : 'blonde';
+      tips = [...tips, ...(hairColorTips[validHairColor] || [])];
     }
 
     return tips;
@@ -319,7 +323,7 @@ const ColorPaletteGenerator = () => {
             <div className="mb-6">
               <h3 className="font-semibold text-gray-900 mb-3">Colors That Look Great On You</h3>
               <div className="space-y-4">
-                {result.palette.bestColors.map((colorGroup: any, index: number) => (
+                {result.palette.bestColors.map((colorGroup: {name: string, colors: string[]}, index: number) => (
                   <div key={index} className="p-3 bg-gray-50 rounded-md">
                     <h4 className="font-medium text-gray-900 mb-2">{colorGroup.name}</h4>
                     <div className="flex flex-wrap gap-2">
@@ -342,7 +346,7 @@ const ColorPaletteGenerator = () => {
             <div className="mb-6">
               <h3 className="font-semibold text-gray-900 mb-3">Colors to Avoid</h3>
               <div className="space-y-4">
-                {result.palette.avoidColors.map((colorGroup: any, index: number) => (
+                {result.palette.avoidColors.map((colorGroup: {name: string, colors: string[]}, index: number) => (
                   <div key={index} className="p-3 bg-gray-50 rounded-md">
                     <h4 className="font-medium text-gray-900 mb-2">{colorGroup.name}</h4>
                     <div className="flex flex-wrap gap-2">

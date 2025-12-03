@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 
 const UnitConverter = () => {
@@ -194,9 +194,9 @@ const UnitConverter = () => {
   }, []);
 
   // Update conversion when inputs change
-  useState(() => {
+  useEffect(() => {
     convertUnits();
-  });
+  }, [convertUnits]);
 
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-6">
@@ -252,7 +252,7 @@ const UnitConverter = () => {
                 onChange={(e) => setFromUnit(e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
               >
-                {conversionData[category].units.map((unit: any) => (
+                {conversionData[category].units.map((unit) => (
                   <option key={unit.value} value={unit.value}>
                     {unit.label}
                   </option>
@@ -269,7 +269,7 @@ const UnitConverter = () => {
                 onChange={(e) => setToUnit(e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
               >
-                {conversionData[category].units.map((unit: any) => (
+                {conversionData[category].units.map((unit) => (
                   <option key={unit.value} value={unit.value}>
                     {unit.label}
                   </option>

@@ -8,7 +8,7 @@ const AntiAgingRoutinePlanner = () => {
   const [skinType, setSkinType] = useState('');
   const [concerns, setConcerns] = useState<string[]>([]);
   const [budget, setBudget] = useState('mid');
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<{routine: any, ingredientInfo: any[], lifestyleTips: string[]} | null>(null);
 
   const toggleConcern = (concern: string) => {
     if (concerns.includes(concern)) {
@@ -39,16 +39,16 @@ const AntiAgingRoutinePlanner = () => {
 
   // Helper functions
   function createAntiAgingRoutine(age: number, skinType: string, concerns: string[], budget: string) {
-    const routine: any = {
+    const routine = {
       morning: {
         title: "Morning Routine",
-        steps: []
+        steps: [] as {step: number, name: string, description: string, recommendation: string}[]
       },
       evening: {
         title: "Evening Routine",
-        steps: []
+        steps: [] as {step: number, name: string, description: string, recommendation: string}[]
       },
-      weekly: []
+      weekly: [] as {name: string, frequency: string, description: string, recommendation: string}[]
     };
 
     // Morning routine - basics for all ages
@@ -282,7 +282,7 @@ const AntiAgingRoutinePlanner = () => {
   }
 
   function getIngredientInformation(concerns: string[]) {
-    const ingredients: any = {
+    const ingredients = {
       fineLines: {
         name: "Retinoids",
         description: "Vitamin A derivatives that boost collagen production and cell turnover",
@@ -321,7 +321,10 @@ const AntiAgingRoutinePlanner = () => {
       }
     };
 
-    return concerns.map(concern => ingredients[concern]).filter(Boolean);
+    const validConcerns = concerns.filter(concern => 
+      concern === 'fineLines' || concern === 'darkSpots' || concern === 'firmness' || concern === 'hydration'
+    );
+    return validConcerns.map(concern => ingredients[concern]);
   }
 
   function getLifestyleTips(age: number, concerns: string[]) {
@@ -524,7 +527,7 @@ const AntiAgingRoutinePlanner = () => {
             <div className="mb-8">
               <h3 className="font-semibold text-gray-900 text-lg mb-4">{result.routine.morning.title}</h3>
               <div className="space-y-4">
-                {result.routine.morning.steps.map((step: any, index: number) => (
+                {result.routine.morning.steps.map((step: {step: number, name: string, description: string, recommendation: string}, index: number) => (
                   <div key={index} className="flex items-start p-3 bg-gray-50 rounded-md">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center font-bold mr-3">
                       {step.step}
@@ -543,7 +546,7 @@ const AntiAgingRoutinePlanner = () => {
             <div className="mb-8">
               <h3 className="font-semibold text-gray-900 text-lg mb-4">{result.routine.evening.title}</h3>
               <div className="space-y-4">
-                {result.routine.evening.steps.map((step: any, index: number) => (
+                {result.routine.evening.steps.map((step: {step: number, name: string, description: string, recommendation: string}, index: number) => (
                   <div key={index} className="flex items-start p-3 bg-gray-50 rounded-md">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 text-green-800 flex items-center justify-center font-bold mr-3">
                       {step.step}
@@ -563,7 +566,7 @@ const AntiAgingRoutinePlanner = () => {
               <div className="mb-8">
                 <h3 className="font-semibold text-gray-900 text-lg mb-4">Weekly Treatments</h3>
                 <div className="space-y-4">
-                  {result.routine.weekly.map((treatment: any, index: number) => (
+                  {result.routine.weekly.map((treatment: {name: string, frequency: string, description: string, recommendation: string}, index: number) => (
                     <div key={index} className="p-3 bg-gray-50 rounded-md">
                       <h4 className="font-medium text-gray-900">{treatment.name}</h4>
                       <p className="text-sm text-gray-600">Frequency: {treatment.frequency}</p>
@@ -580,7 +583,7 @@ const AntiAgingRoutinePlanner = () => {
               <div className="mb-8">
                 <h3 className="font-semibold text-gray-900 text-lg mb-4">Key Anti-Aging Ingredients</h3>
                 <div className="space-y-4">
-                  {result.ingredientInfo.map((ingredient: any, index: number) => (
+                  {result.ingredientInfo.map((ingredient, index) => (
                     <div key={index} className="p-4 bg-blue-50 rounded-md">
                       <h4 className="font-bold text-blue-800">{ingredient.name}</h4>
                       <p className="text-blue-700 text-sm mt-1">{ingredient.description}</p>

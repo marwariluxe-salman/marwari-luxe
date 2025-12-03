@@ -403,7 +403,7 @@ Consult a healthcare professional before adding supplements. Herbal remedies can
   }
 ];
 
-const HealthBlogDetailPage = ({ params }: { params: Promise<{ id: string }> }) => {
+const HealthBlogDetailPage = ({ params: _params }: { params: Promise<{ id: string }> }) => {
   // Unwrap the params promise
   const unwrappedParams = { id: "" }; // Fallback for static generation
   

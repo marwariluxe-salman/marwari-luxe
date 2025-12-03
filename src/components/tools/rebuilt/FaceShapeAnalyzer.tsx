@@ -10,7 +10,7 @@ const FaceShapeAnalyzer = () => {
     jaw: '',
     faceLength: ''
   });
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<{faceShape: string, description: string, features: string[], makeupTips: string[], hairstyleTips: string[], measurements: {forehead: number, cheekbones: number, jaw: number, faceLength: number}, ratios: {widthRatio: string, lengthWidthRatio: string}} | null>(null);
 
   const handleMeasurementChange = (field: string, value: string) => {
     setMeasurements(prev => ({
@@ -360,19 +360,19 @@ const FaceShapeAnalyzer = () => {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
                 <div className="text-center">
                   <div className="font-medium text-gray-900">Forehead</div>
-                  <div className="text-gray-600">{result.measurements.forehead}"</div>
+                  <div className="text-gray-600">{result.measurements.forehead}&#34;</div>
                 </div>
                 <div className="text-center">
                   <div className="font-medium text-gray-900">Cheekbones</div>
-                  <div className="text-gray-600">{result.measurements.cheekbones}"</div>
+                  <div className="text-gray-600">{result.measurements.cheekbones}&#34;</div>
                 </div>
                 <div className="text-center">
                   <div className="font-medium text-gray-900">Jawline</div>
-                  <div className="text-gray-600">{result.measurements.jaw}"</div>
+                  <div className="text-gray-600">{result.measurements.jaw}&#34;</div>
                 </div>
                 <div className="text-center">
                   <div className="font-medium text-gray-900">Length</div>
-                  <div className="text-gray-600">{result.measurements.faceLength}"</div>
+                  <div className="text-gray-600">{result.measurements.faceLength}&#34;</div>
                 </div>
               </div>
               <div className="mt-2 text-center text-xs text-gray-500">

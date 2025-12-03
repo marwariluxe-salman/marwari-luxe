@@ -313,7 +313,7 @@ const customBeautyBlogs: Blog[] = [
   }
 ];
 
-const BeautyBlogDetailPage = ({ params }: { params: Promise<{ id: string }> }) => {
+const BeautyBlogDetailPage = ({ params: _params }: { params: Promise<{ id: string }> }) => {
   // Unwrap the params promise
   const unwrappedParams = { id: "" }; // Fallback for static generation
   

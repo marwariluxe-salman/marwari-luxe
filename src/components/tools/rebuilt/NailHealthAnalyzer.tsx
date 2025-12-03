@@ -8,7 +8,7 @@ const NailHealthAnalyzer = () => {
   const [texture, setTexture] = useState<string[]>([]);
   const [growth, setGrowth] = useState('');
   const [habits, setHabits] = useState<string[]>([]);
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<{analysis: {issues: Array<{issue: string, description: string, severity: string}>, strengths: string[], overallHealth: string, healthDescription: string}, recommendations: string[], preventiveTips: string[]} | null>(null);
 
   const toggleAppearance = (option: string) => {
     if (appearance.includes(option)) {
@@ -53,7 +53,7 @@ const NailHealthAnalyzer = () => {
 
   // Helper functions
   function analyzeNailHealth(appearance: string[], texture: string[], growth: string, habits: string[]) {
-    const issues: any[] = [];
+    const issues: Array<{issue: string, description: string, severity: string}> = [];
     const strengths: string[] = [];
 
     // Analyze appearance
@@ -174,27 +174,27 @@ const NailHealthAnalyzer = () => {
     };
   }
 
-  function getRecommendations(analysis: any, habits: string[]) {
+  function getRecommendations(analysis: {issues: Array<{issue: string, description: string, severity: string}>, strengths: string[], overallHealth: string, healthDescription: string}, habits: string[]) {
     const recommendations: string[] = [];
 
     // General recommendations based on issues
-    if (analysis.issues.some((issue: any) => issue.severity === 'high')) {
+    if (analysis.issues.some((issue) => issue.severity === 'high')) {
       recommendations.push('Consult a dermatologist for persistent or severe nail issues');
     }
 
     // Specific recommendations
-    if (analysis.issues.some((issue: any) => issue.issue === 'Brittle Nails')) {
+    if (analysis.issues.some((issue) => issue.issue === 'Brittle Nails')) {
       recommendations.push('Increase biotin intake through supplements or foods like eggs and nuts');
       recommendations.push('Use gloves when cleaning or exposed to water for long periods');
       recommendations.push('Apply cuticle oil daily to hydrate nails and cuticles');
     }
 
-    if (analysis.issues.some((issue: any) => issue.issue === 'Discoloration')) {
+    if (analysis.issues.some((issue) => issue.issue === 'Discoloration')) {
       recommendations.push('Consider antifungal treatments if discoloration is accompanied by thickening');
       recommendations.push('Limit use of dark nail polishes and always use a base coat');
     }
 
-    if (analysis.issues.some((issue: any) => issue.issue === 'Ridges')) {
+    if (analysis.issues.some((issue) => issue.issue === 'Ridges')) {
       recommendations.push('Use ridge-filling base coats for smoother polish application');
       recommendations.push('Gently buff nails instead of filing aggressively');
     }
@@ -452,7 +452,7 @@ const NailHealthAnalyzer = () => {
               <div className="mb-6">
                 <h3 className="font-semibold text-gray-900 mb-3">⚠️ Areas for Improvement</h3>
                 <div className="space-y-3">
-                  {result.analysis.issues.map((issue: any, index: number) => (
+                  {result.analysis.issues.map((issue, index: number) => (
                     <div 
                       key={index} 
                       className={`p-3 rounded-md border ${

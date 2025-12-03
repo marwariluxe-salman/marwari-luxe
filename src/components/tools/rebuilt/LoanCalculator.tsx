@@ -8,7 +8,7 @@ const LoanCalculator = () => {
   const [interestRate, setInterestRate] = useState('5');
   const [loanTerm, setLoanTerm] = useState('5');
   const [termUnit, setTermUnit] = useState('years');
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<{monthlyPayment: string, totalPayment: string, totalInterest: string, schedule: Array<{month: number, payment: number, principal: number, interest: number, balance: number}>} | null>(null);
 
   const calculateLoan = useCallback(() => {
     const principal = parseFloat(loanAmount);
@@ -198,13 +198,13 @@ const LoanCalculator = () => {
                           </tr>
                         </thead>
                         <tbody>
-                          {result.schedule.map((entry: any) => (
+                          {result.schedule.map((entry: {month: number, payment: number, principal: number, interest: number, balance: number}) => (
                             <tr key={entry.month} className="border-b border-gray-200">
                               <td className="p-2">{entry.month}</td>
-                              <td className="p-2 text-right">${parseFloat(entry.payment).toFixed(2)}</td>
-                              <td className="p-2 text-right">${parseFloat(entry.principal).toFixed(2)}</td>
-                              <td className="p-2 text-right">${parseFloat(entry.interest).toFixed(2)}</td>
-                              <td className="p-2 text-right">${parseFloat(entry.balance).toFixed(2)}</td>
+                              <td className="p-2 text-right">${entry.payment.toFixed(2)}</td>
+                              <td className="p-2 text-right">${entry.principal.toFixed(2)}</td>
+                              <td className="p-2 text-right">${entry.interest.toFixed(2)}</td>
+                              <td className="p-2 text-right">${entry.balance.toFixed(2)}</td>
                             </tr>
                           ))}
                         </tbody>

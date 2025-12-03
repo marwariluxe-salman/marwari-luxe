@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 
 const DateCalculator = () => {
@@ -17,7 +17,7 @@ const DateCalculator = () => {
     const today = new Date().toISOString().split('T')[0];
     if (!startDate) setStartDate(today);
     if (!endDate) setEndDate(today);
-  }, []);
+  }, [startDate, endDate]);
 
   const calculateDifference = () => {
     if (!startDate || !endDate) {
@@ -125,13 +125,13 @@ const DateCalculator = () => {
     setResult(`Result date: ${resultDate.toISOString().split('T')[0]}`);
   };
 
-  const handleCalculate = () => {
+  const handleCalculate = useCallback(() => {
     if (calculationType === 'difference') {
       calculateDifference();
     } else {
       addSubtractDate();
     }
-  };
+  }, [calculationType, calculateDifference, addSubtractDate]);
 
   const resetForm = () => {
     const today = new Date().toISOString().split('T')[0];

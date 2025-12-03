@@ -74,8 +74,9 @@ const PerformanceMonitor = () => {
         const fidObserver = new PerformanceObserver((list) => {
           for (const entry of list.getEntries()) {
             // Use proper typing instead of casting to 'any'
-            entry as FirstInputEntry;
-
+            const typedEntry = entry as FirstInputEntry;
+            // Use the typedEntry variable to avoid unused expression warning
+            console.log('FID entry:', typedEntry);
           }
         });
         fidObserver.observe({ entryTypes: ['first-input'] });

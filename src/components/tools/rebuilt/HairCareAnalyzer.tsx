@@ -8,7 +8,7 @@ const HairCareAnalyzer = () => {
   const [scalpCondition, setScalpCondition] = useState('');
   const [concerns, setConcerns] = useState<string[]>([]);
   const [lifestyle, setLifestyle] = useState('');
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<{hairCharacteristics: {type: string, description: string, characteristics: string[]}, scalpRecommendations: {condition: string, description: string, recommendations: string[]}, concernSolutions: Array<{title: string, solutions: string[]}>, lifestyleTips: {title: string, tips: string[]}, routine: {washing: {frequency: string, products: string[]}, treatments: string[], styling: string[]}} | null>(null);
 
   const toggleConcern = (concern: string) => {
     if (concerns.includes(concern)) {
@@ -153,7 +153,7 @@ const HairCareAnalyzer = () => {
   }
 
   function getConcernSolutions(concerns: string[]) {
-    const solutions: any = {
+    const solutions: Record<string, {title: string, solutions: string[]}> = {
       hairLoss: {
         title: 'Hair Loss/Thinning',
         solutions: [
@@ -201,7 +201,10 @@ const HairCareAnalyzer = () => {
       }
     };
 
-    return concerns.map(concern => solutions[concern]).filter(Boolean);
+    const validConcerns = concerns.filter(concern => 
+      concern === 'hairLoss' || concern === 'dandruff' || concern === 'frizz' || concern === 'damage' || concern === 'colorFading'
+    );
+    return validConcerns.map(concern => solutions[concern]);
   }
 
   function getLifestyleTips(lifestyle: string) {
@@ -260,13 +263,13 @@ const HairCareAnalyzer = () => {
   }
 
   function createHairRoutine(hairType: string, scalpCondition: string, concerns: string[], lifestyle: string) {
-    const routine: any = {
+    const routine = {
       washing: {
         frequency: '',
-        products: []
+        products: [] as string[]
       },
-      treatments: [],
-      styling: []
+      treatments: [] as string[],
+      styling: [] as string[]
     };
 
     // Washing frequency based on hair type and scalp condition
@@ -515,7 +518,7 @@ const HairCareAnalyzer = () => {
               <div className="mb-6">
                 <h3 className="font-semibold text-gray-900 mb-3">Addressing Your Concerns</h3>
                 <div className="space-y-4">
-                  {result.concernSolutions.map((solution: any, index: number) => (
+                  {result.concernSolutions.map((solution: {title: string, solutions: string[]}, index: number) => (
                     <div key={index} className="p-3 bg-gray-50 rounded-md">
                       <h4 className="font-medium text-gray-900 mb-2">{solution.title}</h4>
                       <ul className="space-y-1">

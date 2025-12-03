@@ -8,7 +8,15 @@ const SPFCalculator = () => {
   const [uvIndex, setUvIndex] = useState('');
   const [exposureTime, setExposureTime] = useState('');
   const [currentSPF, setCurrentSPF] = useState('');
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<{
+    burnTime: number;
+    currentSafeTime: number;
+    recommendedSPF: number;
+    recommendedSafeTime: number;
+    currentProtection: number;
+    recommendedProtection: number;
+    safetyTips: string[];
+  } | null>(null);
 
   const calculateSPF = useCallback(() => {
     if (!skinType || !uvIndex || !exposureTime) return;

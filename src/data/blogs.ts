@@ -74,9 +74,7 @@ Finally, the antioxidants, vitamins, and minerals that naturally come with fiber
 
 In short, a high-fiber lifestyle improves digestion, supports weight loss, protects the heart, stabilizes blood sugar, and strengthens immunity — all while being simple and affordable. No wonder the fibremaxxing movement has become the hottest trend of 2025.
 
-![Weight Loss Success](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761863544/800400_ljnnqg.png)
-
-<h1 style="font-weight: 900;">Best Fibre-Rich Foods to Add to Your Diet</h1>
+![Weight Loss Success](/images/blogs/placeholder.jpg)<h1 style="font-weight: 900;">Best Fibre-Rich Foods to Add to Your Diet</h1>
 
 If you’re serious about trying the fibremaxxing diet, the first step is simple: fill your plate with foods that are naturally high in fiber. The good news is that you don’t need exotic ingredients or expensive supplements. Most of the best fiber sources are everyday items you can easily find in local markets and grocery stores. Here are the top categories of fibre-rich foods to help you reach your daily goals.
 

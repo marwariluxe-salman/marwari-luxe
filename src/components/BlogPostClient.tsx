@@ -19,8 +19,19 @@ const renderHTMLContent = (content: string) => {
           // Replace <br> tags with actual line breaks
           let processedContent = paragraph.replace(/<br\s*\/?>/g, '<br />');
           
-          // Convert markdown image syntax ![alt](src) to HTML img tags
-          processedContent = processedContent.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="rounded-lg shadow-md my-4" style="max-width: 100%; height: auto;" />');
+          // Convert markdown image syntax ![alt](src) to HTML img tags with proper attributes
+          processedContent = processedContent.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, src) => {
+            // Handle relative paths by prepending the base URL
+            const imageUrl = src.startsWith('/') ? `${window.location.origin}${src}` : src;
+            return `<img src="${imageUrl}" alt="${alt}" class="rounded-lg shadow-md my-4" style="max-width: 100%; height: auto;" />`;
+          });
+          
+          // Handle HTML img tags and ensure they have proper attributes
+          processedContent = processedContent.replace(/<img([^>]*?)src=["']([^"']*?)["']([^>]*?)>/g, (match, before, src, after) => {
+            // Handle relative paths by prepending the base URL
+            const imageUrl = src.startsWith('/') ? `${window.location.origin}${src}` : src;
+            return `<img${before}src="${imageUrl}"${after}>`;
+          });
           
           // Create a unique key for dangerouslySetInnerHTML
           return (

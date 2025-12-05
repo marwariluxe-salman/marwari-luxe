@@ -26,12 +26,31 @@ const ProductDetailClient = ({ product, relatedProducts }: { product: Product | 
 
   // Generate 5 product images
   const getProductImages = (product: Product) => {
+    // Extract the base URL and transformations
+    const baseUrl = product.image.split('/upload/')[0];
+    const transformations = product.image.split('/upload/')[1]?.split('/');
+    
+    if (!transformations || transformations.length < 2) {
+      // If we can't parse the URL structure, return the same image 5 times
+      return [
+        product.image,
+        product.image,
+        product.image,
+        product.image,
+        product.image
+      ];
+    }
+    
+    const imagePath = transformations[transformations.length - 1];
+    const transformPath = transformations.slice(0, -1).join('/');
+    
+    // Generate different sized versions
     return [
-      product.image,
-      product.image.replace('300&h=300', '400&h=400'),
-      product.image.replace('300&h=300', '500&h=500'),
-      product.image.replace('300&h=300', '600&h=600'),
-      product.image.replace('300&h=300', '350&h=350'),
+      `${baseUrl}/upload/${transformPath}/${imagePath}`,
+      `${baseUrl}/upload/w_400,h_400,c_fill,g_auto/${imagePath}`,
+      `${baseUrl}/upload/w_500,h_500,c_fill,g_auto/${imagePath}`,
+      `${baseUrl}/upload/w_600,h_600,c_fill,g_auto/${imagePath}`,
+      `${baseUrl}/upload/w_350,h_350,c_fill,g_auto/${imagePath}`
     ];
   };
 

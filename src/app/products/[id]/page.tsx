@@ -25,7 +25,8 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
       title: product.title,
       description: product.description,
       url: productUrl,
-      type: 'product',
+      // Next.js expects one of the supported OpenGraph types; 'product' is not valid here
+      type: 'website',
       images: [
         {
           url: product.image,

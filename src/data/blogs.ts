@@ -4,7 +4,7 @@ export const blogs: Blog[] = [
   // Expert Health & Wellness Blogs (10)
   {
     id: 'health-blog-001',
-    title: 'Fibremaxxing Diet: Why Fiber is the Hottest Health Trend in 2025',
+    title: 'Fibremaxxinggg Diet: Why Fiber is the Hottest Health Trend in 2025',
     excerpt: 'Discover why the Fibremaxxing Diet is trending in 2025. Learn how adding more fiber boosts gut health, weight loss, and energy naturally.',
     content: `When people think about modern health trends, most expect to hear about protein shakes, fancy supplements, or some new superfood. But here’s the twist: the biggest diet trend of 2025 is something surprisingly simple — fiber. The Fibremaxxing Diet is exploding across TikTok, Reddit, and wellness blogs, and for good reason. Because unlike fads that come and go, this one is rooted in solid science. Fiber is finally getting the spotlight it has always deserved.<br><br>
     
@@ -26,7 +26,7 @@ In short, the Fibremaxxing Diet is the health revolution of 2025 because it’s 
     <br><br>
 As the year progresses, expect to see more recipes, meal plans, and personal success stories popping up online under the #Fibremaxxing hashtag. And here’s the thing: this isn’t just another hype cycle. It’s a return to basics, a reminder that sometimes the simplest solution is the most powerful one.
     
-![Fibremaxxing Diet Hero Image](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761864930/Marwari-luxe_dnwxfa.jpg)
+![Fibremaxxing Diet Hero Image](https://res.cloudinary.com/dxg5ldzkv/image/upload/v1761864930/Marwari-luxe_dnwxfa.jpg)
     
 <h1 style="font-weight: 900;">What Exactly is the Fibremaxxing Diet?</h1>
 

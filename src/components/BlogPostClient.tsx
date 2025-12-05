@@ -41,21 +41,40 @@ const BlogContent = ({ content }: { content: string }) => {
   return (
     <div className="space-y-6">
       {paragraphs.map((paragraph, index) => {
-        // Check if paragraph contains HTML tags or markdown images
-        if (paragraph.includes('<br>') || paragraph.includes('<h1') || paragraph.includes('<img') || paragraph.includes('![')) {
+        // Check if paragraph contains HTML tags, markdown images, or headings
+        if (paragraph.includes('<br>') || paragraph.includes('<h1') || paragraph.includes('![')) {
           // Process the paragraph to extract images
           const parts: React.ReactNode[] = [];
           let lastIndex = 0;
           
-          // Regex to find image placeholders
-          const imageRegex = /<div class="nextjs-image-placeholder" data-src="([^"]*)" data-alt="([^"]*)"><\/div>/g;
+          // First, handle markdown images: ![alt](src)
+          const markdownImageRegex = /!\[([^\]]*)\]\(([^)]+)\)/g;
           let match;
+          let tempParagraph = paragraph;
+          
+          // Find all markdown images and replace them with placeholders
+          while ((match = markdownImageRegex.exec(paragraph)) !== null) {
+            const fullMatch = match[0];
+            const alt = match[1];
+            const src = match[2];
+            
+            // Replace with our custom placeholder
+            tempParagraph = tempParagraph.replace(
+              fullMatch,
+              `<div class="nextjs-image-placeholder" data-src="${src}" data-alt="${alt}"></div>`
+            );
+          }
+          
+          // Now process with the existing logic for our custom placeholders
+          const imageRegex = /<div class="nextjs-image-placeholder" data-src="([^"]*)" data-alt="([^"]*)"><\/div>/g;
+          let imageMatch;
+          lastIndex = 0;
           
           // Find all image placeholders
-          while ((match = imageRegex.exec(paragraph)) !== null) {
+          while ((imageMatch = imageRegex.exec(tempParagraph)) !== null) {
             // Add text before the image
-            if (match.index > lastIndex) {
-              const text = paragraph.substring(lastIndex, match.index);
+            if (imageMatch.index > lastIndex) {
+              const text = tempParagraph.substring(lastIndex, imageMatch.index);
               parts.push(
                 <div 
                   key={`${index}-${lastIndex}`} 
@@ -66,16 +85,16 @@ const BlogContent = ({ content }: { content: string }) => {
             }
             
             // Add the image component
-            const src = match[1];
-            const alt = match[2];
-            parts.push(<BlogImage key={`${index}-${match.index}`} src={src} alt={alt} />);
+            const src = imageMatch[1];
+            const alt = imageMatch[2];
+            parts.push(<BlogImage key={`${index}-${imageMatch.index}`} src={src} alt={alt} />);
             
-            lastIndex = match.index + match[0].length;
+            lastIndex = imageMatch.index + imageMatch[0].length;
           }
           
           // Add remaining text after the last image
-          if (lastIndex < paragraph.length) {
-            const text = paragraph.substring(lastIndex);
+          if (lastIndex < tempParagraph.length) {
+            const text = tempParagraph.substring(lastIndex);
             parts.push(
               <div 
                 key={`${index}-${lastIndex}`} 

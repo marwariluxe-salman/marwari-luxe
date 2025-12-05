@@ -4,7 +4,7 @@ export const blogs: Blog[] = [
   // Expert Health & Wellness Blogs (10)
   {
     id: 'health-blog-001',
-    title: 'Fibremaxxing Diet: Why Fiber is the Hottest Health Trend in 2025',
+    title: 'Fibremaxxing Diettt: Why Fiber is the Hottest Health Trend in 2025',
     excerpt: 'Discover why the Fibremaxxing Diet is trending in 2025. Learn how adding more fiber boosts gut health, weight loss, and energy naturally.',
     content: `When people think about modern health trends, most expect to hear about protein shakes, fancy supplements, or some new superfood. But here’s the twist: the biggest diet trend of 2025 is something surprisingly simple — fiber. The Fibremaxxing Diet is exploding across TikTok, Reddit, and wellness blogs, and for good reason. Because unlike fads that come and go, this one is rooted in solid science. Fiber is finally getting the spotlight it has always deserved.<br><br>
     
@@ -28,6 +28,7 @@ As the year progresses, expect to see more recipes, meal plans, and personal suc
     
 ![Fibremaxxing Diet Hero Image](https://res.cloudinary.com/dxg5ldzkv/image/upload/v1761864930/Marwari-luxe_dnwxfa.jpg)
 
+
     
 <h1 style="font-weight: 900;">What Exactly is the Fibremaxxing Diet?</h1>
 
@@ -42,6 +43,7 @@ The philosophy behind this diet is simple: more fiber equals better health outco
 In short, the fibremaxxing diet isn’t a fad that cuts you off from foods you enjoy. It’s a science-backed, lifestyle-based approach to eating that adds more variety, more nutrients, and more balance to your meals. By rethinking your food choices through the lens of fiber, you can create lasting changes that improve both short-term energy and long-term wellness.
 
 ![High Fiber Foods](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864926/marwari1_azrf1z.jpg)
+
 
 <h1 style="font-weight: 900;">Why Fibremaxxing is Dominating Health Trends in 2025</h1>
 
@@ -59,6 +61,7 @@ In essence, fibremaxxing is dominating 2025 because it checks every box: afforda
 
 ![Gut Health Illustration](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864928/marwari2_hs4y31.jpg)
 
+
 <h1 style="font-weight: 900;">Proven Health Benefits of a High-Fiber Lifestyle</h1>
 
 When people hear about the fibremaxxing diet, the first question is always the same: does eating more fiber really make that big of a difference? The short answer is yes. A high-fiber lifestyle has been studied for decades, and the evidence is stronger than ever in 2025. Adding fiber-rich foods to your daily meals isn’t just about digestion — it impacts nearly every system in your body, from your gut to your heart to your immune system.
@@ -75,7 +78,7 @@ Finally, the antioxidants, vitamins, and minerals that naturally come with fiber
 
 In short, a high-fiber lifestyle improves digestion, supports weight loss, protects the heart, stabilizes blood sugar, and strengthens immunity — all while being simple and affordable. No wonder the fibremaxxing movement has become the hottest trend of 2025.
 
-![Weight Loss Success](/images/blogs/placeholder.jpg)
+![Weight Loss Success](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864930/Marwari-luxe_dnwxfa.jpg)
 
 <h1 style="font-weight: 900;">Best Fibre-Rich Foods to Add to Your Diet</h1>
 
@@ -100,6 +103,7 @@ The beauty of these foods is that they not only increase fiber but also deliver 
 
 ![Heart Healthy Foods](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863553/200300_n50ysr.png)
 
+
 <h1 style="font-weight: 900;">Fibremaxxing for Weight Loss and Gut Health</h1>
 
 One of the main reasons people are adopting the fibremaxxing diet in 2025 is because of its double impact: it helps with weight loss while also improving gut health. Unlike extreme diets that cut out carbs or demand fasting, fibremaxxing is a balanced approach that supports your body’s natural systems without making you feel deprived.
@@ -119,6 +123,7 @@ Insoluble fiber also plays its part by adding bulk to stool and keeping bowel mo
 By combining these two benefits — weight management and gut health — fibremaxxing offers a holistic approach to wellness. Instead of quick fixes or restrictive rules, it provides long-term results that improve both how you look and how you feel.
 
 ![Healthy Lifestyle](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864930/marwari_loida5.png)
+
 
 <h1 style="font-weight: 900;">Common Mistakes and Side Effects to Watch Out For</h1>
 
@@ -161,6 +166,7 @@ Most of these side effects are temporary and manageable. Once your gut adapts, t
 
 ![Healthy Lifestyle](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864932/marwari1_bf1ryp.png)
 
+
 <h1 style="font-weight: 900;">Final Thoughts</h1>
 
 At the end of the day, fibremaxxing isn’t just another diet trend—it’s a practical shift toward better long-term health. The core idea is simple: eat more fibre-rich foods, stay consistent, and let your gut, metabolism, and energy levels thank you. Unlike fad diets that restrict or deprive, this approach focuses on abundance. You’re adding nourishing foods, not cutting everything out.
@@ -172,6 +178,7 @@ Of course, the key is balance. Jumping in too fast or relying only on supplement
 If you’re serious about taking charge of your health, start small: add an extra serving of vegetables at lunch, swap refined carbs for whole grains, or snack on fruit instead of processed foods. Over time, these changes compound. Fibremaxxing isn’t a quick fix—it’s a lifestyle upgrade with lasting results.
 
 ![Healthy Lifestyle](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864932/marwari2_sti5xd.png)
+
 
 <h1 style="font-weight: 900;">FAQs About the Fibremaxxing Diet</h1>
 
@@ -192,14 +199,15 @@ Great starter foods for fibremaxxing include oats, lentils, brown rice, chia see
 
 ![Healthy Lifestyle](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864930/marwari3_f4rklv.png)
 
+
 If you're ready to start your fibremaxxing journey, we highly recommend adding a high-quality fibre supplement or fibre-rich product to your daily routine. The product listed below is carefully chosen to support digestion, improve gut health, and keep you full for longer hours. It's an easy way to reach your daily fibre goals without overcomplicating your meals. Whether your goal is weight loss, better energy, or improved gut balance, this product can give you the extra boost you need.`,
     heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1761864930/Marwari-luxe_dnwxfa.jpg',
     images: [
-      '/images/blogs/placeholder.jpg',
-      '/images/blogs/placeholder.jpg',
-      '/images/blogs/placeholder.jpg',
-      '/images/blogs/placeholder.jpg',
-      '/images/blogs/placeholder.jpg'
+      'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864926/marwari1_azrf1z.jpg',
+      'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864928/marwari2_hs4y31.jpg',
+      'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863553/200300_n50ysr.png',
+      'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864930/marwari_loida5.png',
+      'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864932/marwari1_bf1ryp.png'
     ],
     category: 'Health',
     author: 'Salman Marwari',
@@ -243,7 +251,8 @@ The rise of these tools has also made fitness more accessible. Someone who canno
 
 In this blog, we’ll explore the Top 7 AI-powered health tools that are redefining modern fitness. From wearable devices to smart nutrition planners, each of these innovations shows how technology and wellness are merging. And if you’re serious about staying ahead in your health journey, these tools can give you an edge you never thought possible. .
 
-![Probiotics and Gut Health Hero](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863547/blog2-1_jakq66.png)
+// ![Probiotics and Gut Health Hero](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863547/blog2-1_jakq66.png)
+
 
 <h1 style="font-weight: 900;">What Are AI-Powered Health Tools?</h1>
 
@@ -259,11 +268,13 @@ In short, AI-powered health tools are not just about collecting data—they’re
 
 ![Gut Bacteria Illustration](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863548/blog2-2_kqbajl.png)
 
+
 <h1 style="font-weight: 900;">Top 7 AI-Powered Health Tools in 2025.</h1>
 
 AI is now at the heart of modern health and fitness. Let's break down the 7 smartest AI-powered health tools that are making fitness easier, more personalized, and more effective.<br>
 
 ![Fermented Foods](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863551/blog2-3_vldipi.png)
+
 
 <h1 style="font-weight: 900;">1. Fitbit Sense 2 – The Smart Health Watch</h1>
 
@@ -271,11 +282,13 @@ Fitbit Sense 2 goes beyond step tracking. It monitors stress levels, heart rate,
 
 ![Digestive System Health](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863549/blog2-4_yn8yu7.png)
 
+
 <h1 style="font-weight: 900;">2. WHOOP 4.0 – AI Recovery Coach</h1>
 
 WHOOP 4.0 is designed for athletes and fitness enthusiasts. It uses AI to track strain, recovery, and sleep with precision. The AI coach gives actionable suggestions, like adjusting your training intensity or improving sleep quality.<br> 
 
 ![Immune System Boost](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863543/blog2-5_wkt1dn.png)
+
 
 <h1 style="font-weight: 900;">3. MyFitnessPal with AI Meal Suggestions</h1>
 
@@ -283,11 +296,13 @@ This app doesn't just count calories. Its AI recommends meal plans, portion size
 
 ![Probiotic Supplements](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863545/blog2-6_tsk8ox.png)
 
+
 <h1 style="font-weight: 900;">4. Peloton AI – Smart Workout Assistant</h1>
 
 Peloton's AI helps create custom fitness classes and adapts based on your workout history. It also provides real-time feedback on your form during exercises, making home workouts smarter and safer.<br>  
 
 ![Probiotic Supplements](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863557/blog2-7_n4tvt1.png)
+
 
 <h1 style="font-weight: 900;">5. Apple Watch Ultra – AI Fitness & Safety Tracker</h1>
 

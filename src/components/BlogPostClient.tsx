@@ -19,18 +19,22 @@ const renderHTMLContent = (content: string) => {
           // Replace <br> tags with actual line breaks
           let processedContent = paragraph.replace(/<br\s*\/?>/g, '<br />');
           
-          // Convert markdown image syntax ![alt](src) to HTML img tags with proper attributes
+          // Convert markdown image syntax ![alt](src) to Next.js Image components
           processedContent = processedContent.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, src) => {
             // Handle relative paths by prepending the base URL
             const imageUrl = src.startsWith('/') ? `${window.location.origin}${src}` : src;
-            return `<img src="${imageUrl}" alt="${alt}" class="rounded-lg shadow-md my-4" style="max-width: 100%; height: auto;" />`;
+            // Ensure the URL is properly encoded
+            const encodedUrl = encodeURI(imageUrl);
+            return `<div style="position: relative; width: 100%; height: auto;"><img src="${encodedUrl}" alt="${alt}" class="rounded-lg shadow-md my-4" style="max-width: 100%; height: auto;" /></div>`;
           });
           
           // Handle HTML img tags and ensure they have proper attributes
           processedContent = processedContent.replace(/<img([^>]*?)src=["']([^"']*?)["']([^>]*?)>/g, (match, before, src, after) => {
             // Handle relative paths by prepending the base URL
             const imageUrl = src.startsWith('/') ? `${window.location.origin}${src}` : src;
-            return `<img${before}src="${imageUrl}"${after}>`;
+            // Ensure the URL is properly encoded
+            const encodedUrl = encodeURI(imageUrl);
+            return `<img${before}src="${encodedUrl}"${after}>`;
           });
           
           // Create a unique key for dangerouslySetInnerHTML

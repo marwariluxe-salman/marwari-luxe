@@ -4,7 +4,7 @@ export const blogs: Blog[] = [
   // Expert Health & Wellness Blogs (10)
   {
     id: 'health-blog-001',
-    title: 'Fibremaxxinggg Diet: Why Fiber is the Hottest Health Trend in 2025',
+    title: 'Fibremaxxing Diet: Why Fiber is the Hottest Health Trend in 2025',
     excerpt: 'Discover why the Fibremaxxing Diet is trending in 2025. Learn how adding more fiber boosts gut health, weight loss, and energy naturally.',
     content: `When people think about modern health trends, most expect to hear about protein shakes, fancy supplements, or some new superfood. But here’s the twist: the biggest diet trend of 2025 is something surprisingly simple — fiber. The Fibremaxxing Diet is exploding across TikTok, Reddit, and wellness blogs, and for good reason. Because unlike fads that come and go, this one is rooted in solid science. Fiber is finally getting the spotlight it has always deserved.<br><br>
     
@@ -40,7 +40,7 @@ The philosophy behind this diet is simple: more fiber equals better health outco
 
 In short, the fibremaxxing diet isn’t a fad that cuts you off from foods you enjoy. It’s a science-backed, lifestyle-based approach to eating that adds more variety, more nutrients, and more balance to your meals. By rethinking your food choices through the lens of fiber, you can create lasting changes that improve both short-term energy and long-term wellness.
 
-![High Fiber Foods](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761864926/marwari1_azrf1z.jpg)
+![High Fiber Foods](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864926/marwari1_azrf1z.jpg)
 
 <h1 style="font-weight: 900;">Why Fibremaxxing is Dominating Health Trends in 2025</h1>
 
@@ -56,7 +56,7 @@ Finally, fibremaxxing aligns perfectly with the shift toward sustainable living.
 
 In essence, fibremaxxing is dominating 2025 because it checks every box: affordable, accessible, science-backed, social-media friendly, and beneficial for both body and environment. Unlike diets that ask you to give something up, fibremaxxing focuses on adding more of what’s good for you. And that positive, sustainable message is exactly what people were waiting for.
 
-![Gut Health Illustration](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761864928/marwari2_hs4y31.jpg)
+![Gut Health Illustration](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864928/marwari2_hs4y31.jpg)
 
 <h1 style="font-weight: 900;">Proven Health Benefits of a High-Fiber Lifestyle</h1>
 
@@ -95,7 +95,7 @@ Chia seeds, flaxseeds, almonds, and walnuts are small but mighty when it comes t
 
 The beauty of these foods is that they not only increase fiber but also deliver essential nutrients like protein, healthy fats, vitamins, and minerals. By combining them across meals, you create a diet that is balanced, filling, and perfectly aligned with the fibremaxxing lifestyle.
 
-![Heart Healthy Foods](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761863553/200300_n50ysr.png)
+![Heart Healthy Foods](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863553/200300_n50ysr.png)
 
 <h1 style="font-weight: 900;">Fibremaxxing for Weight Loss and Gut Health</h1>
 
@@ -115,7 +115,7 @@ Insoluble fiber also plays its part by adding bulk to stool and keeping bowel mo
 
 By combining these two benefits — weight management and gut health — fibremaxxing offers a holistic approach to wellness. Instead of quick fixes or restrictive rules, it provides long-term results that improve both how you look and how you feel.
 
-![Healthy Lifestyle](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761864930/marwari_loida5.png)
+![Healthy Lifestyle](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864930/marwari_loida5.png)
 
 <h1 style="font-weight: 900;">Common Mistakes and Side Effects to Watch Out For</h1>
 
@@ -156,7 +156,7 @@ Nutrient absorption issues if you go overboard and ignore variety
 
 Most of these side effects are temporary and manageable. Once your gut adapts, the benefits far outweigh the bumps in the road.
 
-![Healthy Lifestyle](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761864932/marwari1_bf1ryp.png)
+![Healthy Lifestyle](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864932/marwari1_bf1ryp.png)
 
 <h1 style="font-weight: 900;">Final Thoughts</h1>
 
@@ -168,7 +168,7 @@ Of course, the key is balance. Jumping in too fast or relying only on supplement
 
 If you’re serious about taking charge of your health, start small: add an extra serving of vegetables at lunch, swap refined carbs for whole grains, or snack on fruit instead of processed foods. Over time, these changes compound. Fibremaxxing isn’t a quick fix—it’s a lifestyle upgrade with lasting results.
 
-![Healthy Lifestyle](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761864932/marwari2_sti5xd.png)
+![Healthy Lifestyle](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864932/marwari2_sti5xd.png)
 
 <h1 style="font-weight: 900;">FAQs About the Fibremaxxing Diet</h1>
 
@@ -187,16 +187,18 @@ Fibre is beneficial, but increasing intake too quickly can cause bloating, gas, 
 <h1 style="font-weight: 900;">5. What are the best foods to start fibremaxxing with?</h1>
 Great starter foods for fibremaxxing include oats, lentils, brown rice, chia seeds, flaxseeds, apples, pears, leafy greens, and chickpeas. These foods are easy to add to meals and provide a mix of soluble and insoluble fibre. For snacks, nuts and dried fruit work well. If you’re new to fibremaxxing, aim to build your plate around whole grains and vegetables, then add beans or seeds as toppings. Small swaps—like replacing white bread with whole grain bread—can make a big difference over time.
 
-![Healthy Lifestyle](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761864930/marwari3_f4rklv.png)
+![Healthy Lifestyle](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864930/marwari3_f4rklv.png)
 
 If you're ready to start your fibremaxxing journey, we highly recommend adding a high-quality fibre supplement or fibre-rich product to your daily routine. The product listed below is carefully chosen to support digestion, improve gut health, and keep you full for longer hours. It's an easy way to reach your daily fibre goals without overcomplicating your meals. Whether your goal is weight loss, better energy, or improved gut balance, this product can give you the extra boost you need.`,
-    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761864930/Marwari-luxe_dnwxfa.jpg',
+    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864930/Marwari-luxe_dnwxfa.jpg',
     images: [
       '/images/blogs/placeholder.jpg',
       '/images/blogs/placeholder.jpg',
       '/images/blogs/placeholder.jpg',
       '/images/blogs/placeholder.jpg',
-      '/images/blogs/placeholder.jpg'    ],    category: 'Health',
+      '/images/blogs/placeholder.jpg'
+    ],
+    category: 'Health',
     author: 'Salman Marwari',
     publishedAt: '2025-01-01',
     readTime: 15,
@@ -207,7 +209,7 @@ If you're ready to start your fibremaxxing journey, we highly recommend adding a
     title: 'Mushroom Soft Candy Dietary Supplement Vegetarian Nutrition',
     description: 'Efficacy: hair dye protection, strong hair quality, smooth pendant, fragile split care, hair dye perm injury care, improve frizzy hair Color classification: red Net content: 80 tablets Category: soft candy',
     price: 3.16,
-    image: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761866918/hpd-3_evvatf.jpg',
+    image: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_600,dpr_auto,c_fill,g_auto/v1761866918/hpd-3_evvatf.jpg',
     category: 'Health',
       },
       {
@@ -215,7 +217,7 @@ If you're ready to start your fibremaxxing journey, we highly recommend adding a
         title: 'Fiber Soft Candy',
         description: 'Looking for an easy and tasty way to get your daily fiber? These Fiber Soft Candies make gut care simple. Each gummy is packed with natural fiber to support digestion, reduce bloating, and keep your metabolism active. The soft, chewy texture feels like a treat, not a supplement.',
         price: 2.50,
-        image: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761867855/hpd-25_gd1oms.jpg',
+        image: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_600,dpr_auto,c_fill,g_auto/v1761867855/hpd-25_gd1oms.jpg',
         category: 'Health'
       }
     ],
@@ -238,7 +240,7 @@ The rise of these tools has also made fitness more accessible. Someone who canno
 
 In this blog, we’ll explore the Top 7 AI-powered health tools that are redefining modern fitness. From wearable devices to smart nutrition planners, each of these innovations shows how technology and wellness are merging. And if you’re serious about staying ahead in your health journey, these tools can give you an edge you never thought possible. .
 
-![Probiotics and Gut Health Hero](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761863547/blog2-1_jakq66.png)
+![Probiotics and Gut Health Hero](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863547/blog2-1_jakq66.png)
 
 <h1 style="font-weight: 900;">What Are AI-Powered Health Tools?</h1>
 
@@ -252,43 +254,43 @@ From AI-driven mobile apps to smartwatches, and even advanced platforms that pre
 
 In short, AI-powered health tools are not just about collecting data—they’re about turning data into actionable advice that helps you stay healthier and fitter in smarter ways. 
 
-![Gut Bacteria Illustration](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761863548/blog2-2_kqbajl.png)
+![Gut Bacteria Illustration](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863548/blog2-2_kqbajl.png)
 
 <h1 style="font-weight: 900;">Top 7 AI-Powered Health Tools in 2025.</h1>
 
 AI is now at the heart of modern health and fitness. Let's break down the 7 smartest AI-powered health tools that are making fitness easier, more personalized, and more effective.<br>
 
-![Fermented Foods](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761863551/blog2-3_vldipi.png)
+![Fermented Foods](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863551/blog2-3_vldipi.png)
 
 <h1 style="font-weight: 900;">1. Fitbit Sense 2 – The Smart Health Watch</h1>
 
 Fitbit Sense 2 goes beyond step tracking. It monitors stress levels, heart rate, oxygen saturation, and sleep cycles using AI algorithms. The watch gives personalized daily readiness scores so you know whether to push harder in your workout or take rest.<br> 
 
-![Digestive System Health](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761863549/blog2-4_yn8yu7.png)
+![Digestive System Health](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863549/blog2-4_yn8yu7.png)
 
 <h1 style="font-weight: 900;">2. WHOOP 4.0 – AI Recovery Coach</h1>
 
 WHOOP 4.0 is designed for athletes and fitness enthusiasts. It uses AI to track strain, recovery, and sleep with precision. The AI coach gives actionable suggestions, like adjusting your training intensity or improving sleep quality.<br> 
 
-![Immune System Boost](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761863543/blog2-5_wkt1dn.png)
+![Immune System Boost](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863543/blog2-5_wkt1dn.png)
 
 <h1 style="font-weight: 900;">3. MyFitnessPal with AI Meal Suggestions</h1>
 
 This app doesn't just count calories. Its AI recommends meal plans, portion sizes, and nutrient breakdowns based on your body type and goals. It even learns your eating habits to make smarter suggestions over time.<br> 
 
-![Probiotic Supplements](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761863545/blog2-6_tsk8ox.png)
+![Probiotic Supplements](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863545/blog2-6_tsk8ox.png)
 
 <h1 style="font-weight: 900;">4. Peloton AI – Smart Workout Assistant</h1>
 
 Peloton's AI helps create custom fitness classes and adapts based on your workout history. It also provides real-time feedback on your form during exercises, making home workouts smarter and safer.<br>  
 
-![Probiotic Supplements](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761863557/blog2-7_n4tvt1.png)
+![Probiotic Supplements](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863557/blog2-7_n4tvt1.png)
 
 <h1 style="font-weight: 900;">5. Apple Watch Ultra – AI Fitness & Safety Tracker</h1>
 
 The Apple Watch Ultra is more than a gadget. It uses AI for ECG monitoring, fall detection, sleep tracking, and advanced workout analytics. Its health alerts can even notify you of irregular heart rhythms.<br>  
 
-![Probiotic Supplements](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1761863555/blog2-8_jwhv8y.png)
+![Probiotic Supplements](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863555/blog2-8_jwhv8y.png)
 
 <h1 style="font-weight: 900;">6. Calm App with AI Stress Management</h1>
 

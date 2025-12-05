@@ -1,13 +1,40 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Blog } from '@/types';
 
-// Function to render HTML content safely
-const renderHTMLContent = (content: string) => {
+
+
+// Component to render images with Next.js Image component
+const BlogImage = ({ src, alt }: { src: string; alt: string }) => {
+  // Decode the URL and alt text
+  const decodedSrc = decodeURIComponent(src);
+  const decodedAlt = decodeURIComponent(alt);
+  
+  return (
+    <div className="relative w-full h-auto my-4 rounded-lg shadow-md">
+      <Image
+        src={decodedSrc}
+        alt={decodedAlt}
+        width={800}
+        height={600}
+        className="rounded-lg w-full h-auto"
+        quality={75}
+        loading="lazy"
+        placeholder="blur"
+        blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+        style={{ objectFit: 'cover' }}
+        decoding="async"
+      />
+    </div>
+  );
+};
+
+// Component to render content with proper image handling
+const BlogContent = ({ content }: { content: string }) => {
   // Split content by double newlines to handle paragraphs
   const paragraphs = content.split('\n\n');
   
@@ -16,35 +43,49 @@ const renderHTMLContent = (content: string) => {
       {paragraphs.map((paragraph, index) => {
         // Check if paragraph contains HTML tags or markdown images
         if (paragraph.includes('<br>') || paragraph.includes('<h1') || paragraph.includes('<img') || paragraph.includes('![')) {
-          // Replace <br> tags with actual line breaks
-          let processedContent = paragraph.replace(/<br\s*\/?>/g, '<br />');
+          // Process the paragraph to extract images
+          const parts: React.ReactNode[] = [];
+          let lastIndex = 0;
           
-          // Convert markdown image syntax ![alt](src) to Next.js Image components
-          processedContent = processedContent.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, src) => {
-            // Handle relative paths by prepending the base URL
-            const imageUrl = src.startsWith('/') ? `${window.location.origin}${src}` : src;
-            // Ensure the URL is properly encoded
-            const encodedUrl = encodeURI(imageUrl);
-            return `<div style="position: relative; width: 100%; height: auto;"><img src="${encodedUrl}" alt="${alt}" class="rounded-lg shadow-md my-4" style="max-width: 100%; height: auto;" /></div>`;
-          });
+          // Regex to find image placeholders
+          const imageRegex = /<div class="nextjs-image-placeholder" data-src="([^"]*)" data-alt="([^"]*)"><\/div>/g;
+          let match;
           
-          // Handle HTML img tags and ensure they have proper attributes
-          processedContent = processedContent.replace(/<img([^>]*?)src=["']([^"']*?)["']([^>]*?)>/g, (match, before, src, after) => {
-            // Handle relative paths by prepending the base URL
-            const imageUrl = src.startsWith('/') ? `${window.location.origin}${src}` : src;
-            // Ensure the URL is properly encoded
-            const encodedUrl = encodeURI(imageUrl);
-            return `<img${before}src="${encodedUrl}"${after}>`;
-          });
+          // Find all image placeholders
+          while ((match = imageRegex.exec(paragraph)) !== null) {
+            // Add text before the image
+            if (match.index > lastIndex) {
+              const text = paragraph.substring(lastIndex, match.index);
+              parts.push(
+                <div 
+                  key={`${index}-${lastIndex}`} 
+                  dangerouslySetInnerHTML={{ __html: text.replace(/<br\s*\/?>/g, '<br />') }} 
+                  className="text-gray-800 leading-relaxed"
+                />
+              );
+            }
+            
+            // Add the image component
+            const src = match[1];
+            const alt = match[2];
+            parts.push(<BlogImage key={`${index}-${match.index}`} src={src} alt={alt} />);
+            
+            lastIndex = match.index + match[0].length;
+          }
           
-          // Create a unique key for dangerouslySetInnerHTML
-          return (
-            <div 
-              key={index} 
-              dangerouslySetInnerHTML={{ __html: processedContent }} 
-              className="text-gray-800 leading-relaxed"
-            />
-          );
+          // Add remaining text after the last image
+          if (lastIndex < paragraph.length) {
+            const text = paragraph.substring(lastIndex);
+            parts.push(
+              <div 
+                key={`${index}-${lastIndex}`} 
+                dangerouslySetInnerHTML={{ __html: text.replace(/<br\s*\/?>/g, '<br />') }} 
+                className="text-gray-800 leading-relaxed"
+              />
+            );
+          }
+          
+          return <div key={index}>{parts}</div>;
         } else {
           // Regular paragraph without HTML
           return (
@@ -178,7 +219,7 @@ const BlogPostClient = ({ blog, relatedBlogs }: { blog: Blog | null; relatedBlog
           <div className="text-gray-800 leading-relaxed space-y-6">
             {/* Render content with proper formatting */}
             <div className="prose prose-lg max-w-none">
-              {renderHTMLContent(blog.content)}
+              <BlogContent content={blog.content} />
             </div>
             
             {/* Products Section */}

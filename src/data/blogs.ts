@@ -27,6 +27,7 @@ In short, the Fibremaxxing Diet is the health revolution of 2025 because it’s 
 As the year progresses, expect to see more recipes, meal plans, and personal success stories popping up online under the #Fibremaxxing hashtag. And here’s the thing: this isn’t just another hype cycle. It’s a return to basics, a reminder that sometimes the simplest solution is the most powerful one.
     
 ![Fibremaxxing Diet Hero Image](https://res.cloudinary.com/dxg5ldzkv/image/upload/v1761864930/Marwari-luxe_dnwxfa.jpg)
+
     
 <h1 style="font-weight: 900;">What Exactly is the Fibremaxxing Diet?</h1>
 
@@ -74,7 +75,9 @@ Finally, the antioxidants, vitamins, and minerals that naturally come with fiber
 
 In short, a high-fiber lifestyle improves digestion, supports weight loss, protects the heart, stabilizes blood sugar, and strengthens immunity — all while being simple and affordable. No wonder the fibremaxxing movement has become the hottest trend of 2025.
 
-![Weight Loss Success](/images/blogs/placeholder.jpg)<h1 style="font-weight: 900;">Best Fibre-Rich Foods to Add to Your Diet</h1>
+![Weight Loss Success](/images/blogs/placeholder.jpg)
+
+<h1 style="font-weight: 900;">Best Fibre-Rich Foods to Add to Your Diet</h1>
 
 If you’re serious about trying the fibremaxxing diet, the first step is simple: fill your plate with foods that are naturally high in fiber. The good news is that you don’t need exotic ingredients or expensive supplements. Most of the best fiber sources are everyday items you can easily find in local markets and grocery stores. Here are the top categories of fibre-rich foods to help you reach your daily goals.
 
@@ -190,7 +193,7 @@ Great starter foods for fibremaxxing include oats, lentils, brown rice, chia see
 ![Healthy Lifestyle](https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864930/marwari3_f4rklv.png)
 
 If you're ready to start your fibremaxxing journey, we highly recommend adding a high-quality fibre supplement or fibre-rich product to your daily routine. The product listed below is carefully chosen to support digestion, improve gut health, and keep you full for longer hours. It's an easy way to reach your daily fibre goals without overcomplicating your meals. Whether your goal is weight loss, better energy, or improved gut balance, this product can give you the extra boost you need.`,
-    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864930/Marwari-luxe_dnwxfa.jpg',
+    heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1761864930/Marwari-luxe_dnwxfa.jpg',
     images: [
       '/images/blogs/placeholder.jpg',
       '/images/blogs/placeholder.jpg',

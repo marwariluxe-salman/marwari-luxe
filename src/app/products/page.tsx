@@ -5,6 +5,7 @@ import ProductsClient from '@/components/ProductsClient';
 export const metadata: Metadata = {
   title: 'All Products - Marwari Luxe Health & Beauty Essentials',
   description: 'Browse our complete collection of premium health supplements, natural beauty products, and wellness tools. Shop by category, read expert reviews, and enjoy free shipping on orders over $50.',
+  robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
   alternates: {
     canonical: 'https://marwariluxe.com/products'
   },

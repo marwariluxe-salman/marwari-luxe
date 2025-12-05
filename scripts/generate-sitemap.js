@@ -26,6 +26,29 @@ async function readToolsData() {
   return toolsIds;
 }
 
+// Read blog data directly from file
+async function readBlogData() {
+  const blogsPath = path.join(__dirname, '..', 'src', 'data', 'blogs.ts');
+  const blogsContent = await fs.readFile(blogsPath, 'utf8');
+  
+  // Extract the blog IDs using specific patterns
+  const blogIds = [];
+  
+  // Match all blog IDs with the pattern xxx-blog-xxx or evergreen-xxx
+  const blogMatches = blogsContent.matchAll(/^\s*id:\s*'((?:health|beauty|evergreen)-blog-[\d\w-]+)'/gm);
+  for (const match of blogMatches) {
+    blogIds.push(match[1]);
+  }
+  
+  // Also match evergreen blogs
+  const evergreenMatches = blogsContent.matchAll(/^\s*id:\s*'(evergreen-(?:health|beauty)-[\d\w-]+)'/gm);
+  for (const match of evergreenMatches) {
+    blogIds.push(match[1]);
+  }
+  
+  return blogIds;
+}
+
 // Base URLs
 const BASE_URL = 'https://marwariluxe.com';
 
@@ -50,30 +73,8 @@ const STATIC_PAGES = [
   '/tools/beauty'
 ];
 
-// Blog posts
-const BLOG_POSTS = [
-  '/blogs/health-blog-001',
-  '/blogs/health-blog-002',
-  '/blogs/health-blog-003',
-  '/blogs/health-blog-004'
-];
-
-// Products
-const PRODUCTS = [
-  '/products/health-001',
-  '/products/health-002',
-  '/products/health-003',
-  '/products/health-004',
-  '/products/health-005',
-  '/products/beauty-001',
-  '/products/beauty-002',
-  '/products/beauty-003',
-  '/products/beauty-004',
-  '/products/beauty-005'
-];
-
 // Function to generate sitemap XML
-function generateSitemapXML(toolsIds) {
+function generateSitemapXML(toolsIds, blogIds) {
   const now = new Date().toISOString().split('T')[0];
   
   let xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -102,17 +103,30 @@ function generateSitemapXML(toolsIds) {
   });
   
   // Add blog posts
-  BLOG_POSTS.forEach(post => {
+  blogIds.forEach(blogId => {
     xml += `
   <url>
-    <loc>${BASE_URL}${post}</loc>
+    <loc>${BASE_URL}/blogs/${blogId}</loc>
     <lastmod>${now}</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>`;
   });
   
-  // Add products
+  // Add products (hardcoded for now, but could be read from products.ts)
+  const PRODUCTS = [
+    '/products/health-001',
+    '/products/health-002',
+    '/products/health-003',
+    '/products/health-004',
+    '/products/health-005',
+    '/products/beauty-001',
+    '/products/beauty-002',
+    '/products/beauty-003',
+    '/products/beauty-004',
+    '/products/beauty-005'
+  ];
+  
   PRODUCTS.forEach(product => {
     xml += `
   <url>
@@ -148,14 +162,17 @@ async function generateSitemap() {
     // Read tools data
     const toolsIds = await readToolsData();
     
+    // Read blog data
+    const blogIds = await readBlogData();
+    
     // Generate XML
-    const sitemapXML = generateSitemapXML(toolsIds);
+    const sitemapXML = generateSitemapXML(toolsIds, blogIds);
     
     // Write to public directory
     const outputPath = path.join(__dirname, '..', 'public', 'sitemap.xml');
     await fs.writeFile(outputPath, sitemapXML);
     
-    console.log(`✅ Sitemap generated successfully with ${STATIC_PAGES.length + BLOG_POSTS.length + PRODUCTS.length + toolsIds.length} URLs`);
+    console.log(`✅ Sitemap generated successfully with ${STATIC_PAGES.length + blogIds.length + 10 + toolsIds.length} URLs`);
     console.log(`📁 Saved to: ${outputPath}`);
   } catch (error) {
     console.error('❌ Error generating sitemap:', error);

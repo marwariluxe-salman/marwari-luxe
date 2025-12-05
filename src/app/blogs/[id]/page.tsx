@@ -19,6 +19,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
     return {
       title: `${blog.title} - Marwari Luxe Health & Beauty Blog`,
       description: blog.excerpt,
+      robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
       alternates: {
         canonical: blogUrl
       },

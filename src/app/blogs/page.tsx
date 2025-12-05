@@ -4,6 +4,7 @@ import BlogsClient from '@/components/BlogsClient';
 export const metadata: Metadata = {
   title: 'Health & Beauty Blog - Expert Wellness Articles | Marwari Luxe',
   description: 'Discover expert health and beauty insights, wellness tips, and product guides. Stay updated with the latest trends in natural skincare, supplements, and holistic wellness.',
+  robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
   alternates: {
     canonical: 'https://marwariluxe.com/blogs'
   },

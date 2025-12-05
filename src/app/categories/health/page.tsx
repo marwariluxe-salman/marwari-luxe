@@ -4,6 +4,7 @@ import HealthCategoryClient from '@/components/HealthCategoryClient';
 export const metadata: Metadata = {
   title: 'Health & Wellness Products - Premium Supplements & Tools | Marwari Luxe',
   description: 'Discover premium health products, expert wellness advice, and comprehensive tools to enhance your physical and mental well-being. Your journey to optimal health starts here.',
+  robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
   alternates: {
     canonical: 'https://marwariluxe.com/categories/health'
   },

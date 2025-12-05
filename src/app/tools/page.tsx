@@ -5,6 +5,7 @@ import { tools } from '@/data/tools';
 export const metadata: Metadata = {
   title: 'Wellness Tools & Calculators - Health & Beauty Assessments | Marwari Luxe',
   description: 'Access our comprehensive collection of health, beauty, and general wellness tools. Make informed decisions about your wellness journey with our scientifically-backed calculators and analyzers.',
+  robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
   alternates: {
     canonical: 'https://marwariluxe.com/tools'
   },

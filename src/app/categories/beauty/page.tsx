@@ -4,6 +4,7 @@ import BeautyCategoryClient from '@/components/BeautyCategoryClient';
 export const metadata: Metadata = {
   title: 'Beauty & Cosmetics - Premium Beauty Products & Tools | Marwari Luxe',
   description: 'Unleash your natural beauty with our premium cosmetics, expert beauty advice, and personalized tools. Transform your beauty routine with professional-grade products and cutting-edge techniques.',
+  robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
   alternates: {
     canonical: 'https://marwariluxe.com/categories/beauty'
   },

@@ -18,6 +18,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   return {
     title: `${product.title} - Marwari Luxe Premium ${product.category} Product`,
     description: product.description,
+    robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     alternates: {
       canonical: productUrl
     },

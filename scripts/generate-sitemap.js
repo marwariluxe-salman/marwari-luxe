@@ -46,7 +46,31 @@ async function readBlogData() {
     blogIds.push(match[1]);
   }
   
+  // Also match health and beauty blogs that don't have 'blog' in the ID
+  const otherBlogMatches = blogsContent.matchAll(/^\s*id:\s*'((?:health|beauty)-[\d\w-]+)'/gm);
+  for (const match of otherBlogMatches) {
+    // Only add if it's not already in the list
+    if (!blogIds.includes(match[1])) {
+      blogIds.push(match[1]);
+    }
+  }
+  
   return blogIds;
+}
+
+// Read product data directly from file
+async function readProductData() {
+  const productsPath = path.join(__dirname, '..', 'src', 'data', 'products.ts');
+  const productsContent = await fs.readFile(productsPath, 'utf8');
+  
+  // Extract the product IDs
+  const productIds = [];
+  const productMatches = productsContent.matchAll(/^\s*id:\s*'([^']+)'/gm);
+  for (const match of productMatches) {
+    productIds.push(match[1]);
+  }
+  
+  return productIds;
 }
 
 // Base URLs
@@ -74,7 +98,7 @@ const STATIC_PAGES = [
 ];
 
 // Function to generate sitemap XML
-function generateSitemapXML(toolsIds, blogIds) {
+function generateSitemapXML(toolsIds, blogIds, productIds) {
   const now = new Date().toISOString().split('T')[0];
   
   let xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -113,24 +137,11 @@ function generateSitemapXML(toolsIds, blogIds) {
   </url>`;
   });
   
-  // Add products (hardcoded for now, but could be read from products.ts)
-  const PRODUCTS = [
-    '/products/health-001',
-    '/products/health-002',
-    '/products/health-003',
-    '/products/health-004',
-    '/products/health-005',
-    '/products/beauty-001',
-    '/products/beauty-002',
-    '/products/beauty-003',
-    '/products/beauty-004',
-    '/products/beauty-005'
-  ];
-  
-  PRODUCTS.forEach(product => {
+  // Add products
+  productIds.forEach(productId => {
     xml += `
   <url>
-    <loc>${BASE_URL}${product}</loc>
+    <loc>${BASE_URL}/products/${productId}</loc>
     <lastmod>${now}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -165,14 +176,17 @@ async function generateSitemap() {
     // Read blog data
     const blogIds = await readBlogData();
     
+    // Read product data
+    const productIds = await readProductData();
+    
     // Generate XML
-    const sitemapXML = generateSitemapXML(toolsIds, blogIds);
+    const sitemapXML = generateSitemapXML(toolsIds, blogIds, productIds);
     
     // Write to public directory
     const outputPath = path.join(__dirname, '..', 'public', 'sitemap.xml');
     await fs.writeFile(outputPath, sitemapXML);
     
-    console.log(`✅ Sitemap generated successfully with ${STATIC_PAGES.length + blogIds.length + 10 + toolsIds.length} URLs`);
+    console.log(`✅ Sitemap generated successfully with ${STATIC_PAGES.length + blogIds.length + productIds.length + toolsIds.length} URLs`);
     console.log(`📁 Saved to: ${outputPath}`);
   } catch (error) {
     console.error('❌ Error generating sitemap:', error);

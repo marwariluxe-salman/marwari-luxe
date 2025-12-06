@@ -225,7 +225,7 @@ const StressLevelAssessment = () => {
         <div className="mt-4 sm:mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-md">
           <p className="mobile-text-sm text-yellow-800 leading-relaxed">
             <strong>Disclaimer:</strong> This assessment provides general information and is not a substitute 
-            for professional mental health evaluation. If you're experiencing severe stress or mental health 
+            for professional mental health evaluation. If you&apos;re experiencing severe stress or mental health 
             concerns, please consult with a qualified healthcare provider or mental health professional.
           </p>
         </div>

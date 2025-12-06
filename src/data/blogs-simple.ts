@@ -1,4 +1,3 @@
-import { Blog } from '@/types';
 import { blogs } from '@/data/blogs';
 
 export const healthBlogs = blogs.filter(blog => blog.category === 'Health');

@@ -214,7 +214,7 @@ const PasswordGenerator = () => {
                 className="h-4 w-4 text-blue-600 rounded focus:ring-blue-500"
               />
               <label htmlFor="excludeAmbiguous" className="ml-2 block text-sm text-gray-700">
-                Exclude Ambiguous Characters (&#123;&#39;&#125;&#91;&#93;()/-\')
+                Exclude Ambiguous Characters (&#123;&apos;&#125;&#91;&#93;()/-\')
               </label>
             </div>
           </div>
@@ -251,7 +251,7 @@ const PasswordGenerator = () => {
         <div className="mt-4 sm:mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-md">
           <p className="mobile-text-sm text-yellow-800 leading-relaxed">
             <strong>Disclaimer:</strong> This password generator creates cryptographically secure 
-            passwords using browser-based randomness. However, always ensure you're using the latest 
+            passwords using browser-based randomness. However, always ensure you&apos;re using the latest 
             version of your browser for optimal security. For maximum security, consider using a 
             reputable password manager.
           </p>

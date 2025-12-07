@@ -19,7 +19,7 @@ const DateCalculator = () => {
     if (!endDate) setEndDate(today);
   }, [startDate, endDate]);
 
-  const calculateDifference = () => {
+  const calculateDifference = useCallback(() => {
     if (!startDate || !endDate) {
       setError('Please select both start and end dates');
       setResult('');
@@ -65,9 +65,9 @@ const DateCalculator = () => {
         setResult(`${diffYears} years`);
         break;
     }
-  };
+  }, [startDate, endDate]);
 
-  const addSubtractDate = () => {
+  const addSubtractDate = useCallback(() => {
     if (!startDate) {
       setError('Please select a start date');
       setResult('');
@@ -123,7 +123,7 @@ const DateCalculator = () => {
     }
 
     setResult(`Result date: ${resultDate.toISOString().split('T')[0]}`);
-  };
+  }, [startDate, amount, unit, calculationType]);
 
   const handleCalculate = useCallback(() => {
     if (calculationType === 'difference') {

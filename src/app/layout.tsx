@@ -139,7 +139,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net" />
         
         {/* Preload hero image */}
-        <link rel="preload" as="image" href="https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_1600,dpr_auto,c_fill,g_auto/v1762471377/1_pllyfb.jpg" />
+        <link rel="preload" as="image" href="https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto:good,w_1600,dpr_auto,c_fill,g_auto,v1762471377/1_pllyfb.jpg" />
         
         {/* Preload critical fonts */}
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
@@ -176,14 +176,6 @@ export default function RootLayout({
         {/* End Google Tag Manager (noscript) */}
         <div className={`${inter.variable} antialiased touch-manipulation w-full overflow-x-hidden`}
           suppressHydrationWarning>
-          {/* Load Google Ads asynchronously after main content */}
-          <Script 
-            id="google-ads"
-            async 
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX"
-            crossOrigin="anonymous"
-            data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
-          />
           <CartProvider>
             <Navbar />
             <main>{children}</main>
@@ -191,6 +183,15 @@ export default function RootLayout({
           </CartProvider>
           {/* Placing the button outside the CartProvider to ensure it renders */}
           <BackToTopButton />
+          {/* Load Google Ads asynchronously after main content */}
+          <Script 
+            id="google-ads"
+            async 
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX"
+            crossOrigin="anonymous"
+            data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+            strategy="lazyOnload"
+          />
           <Script
             id="structured-data"
             type="application/ld+json"

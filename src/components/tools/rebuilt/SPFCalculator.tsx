@@ -212,7 +212,7 @@ const SPFCalculator = () => {
                 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Current SPF you're using (if any)
+                    Current SPF you&apos;re using (if any)
                   </label>
                   <input
                     type="number"

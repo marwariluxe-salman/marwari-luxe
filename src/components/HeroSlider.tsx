@@ -114,6 +114,9 @@ const HeroSlider = () => {
           blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
           // Add decoding hint for better performance
           decoding="async"
+          // Add dimensions to prevent CLS
+          width={1600}
+          height={900}
         />
         <div className="absolute inset-0 bg-black/40" />
       </div>

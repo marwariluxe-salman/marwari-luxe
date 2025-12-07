@@ -262,7 +262,7 @@ const HairCareAnalyzer = () => {
     }
   }
 
-  function createHairRoutine(hairType: string, scalpCondition: string, concerns: string[], lifestyle: string) {
+  function createHairRoutine(hairType: string, scalpCondition: string, concerns: string[]) {
     const routine = {
       washing: {
         frequency: '',
@@ -611,7 +611,7 @@ const HairCareAnalyzer = () => {
           <p className="mobile-text-sm text-yellow-800 leading-relaxed">
             <strong>Disclaimer:</strong> This analysis provides general guidance based on your responses. 
             Individual hair needs can be complex and may require professional evaluation by a trichologist 
-            or dermatologist. Results may vary, and it's important to patch test new products before full application.
+            or dermatologist. Results may vary, and it&apos;s important to patch test new products before full application.
           </p>
         </div>
       </motion.div>

@@ -13,7 +13,7 @@ const ColorPaletteGenerator = () => {
     if (!undertone) return;
 
     // Generate color palette based on characteristics
-    const palette = generateColorPalette(undertone, eyeColor, hairColor);
+    const palette = generateColorPalette(undertone);
     
     // Provide styling tips
     const stylingTips = getStylingTips(undertone, eyeColor, hairColor);
@@ -25,7 +25,7 @@ const ColorPaletteGenerator = () => {
   }, [undertone, eyeColor, hairColor]);
 
   // Helper functions
-  function generateColorPalette(undertone: string, eyeColor: string, hairColor: string) {
+  function generateColorPalette(undertone: string) {
     const palettes = {
       cool: {
         description: 'Colors with blue, pink, or purple undertones',

@@ -73,7 +73,7 @@ const SavingsCalculator = () => {
     
     // Calculate year-by-year growth for chart data
     const yearlyData = [];
-    const currentPrincipal = principal;
+
     let currentContributions = principal;
     
     for (let year = 1; year <= Math.min(years, 20); year++) {

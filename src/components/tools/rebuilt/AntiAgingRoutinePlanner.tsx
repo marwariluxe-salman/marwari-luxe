@@ -53,7 +53,7 @@ const AntiAgingRoutinePlanner = () => {
       ingredientInfo,
       lifestyleTips
     });
-  }, [age, skinType, concerns, budget]);
+  }, [age, skinType, concerns, budget, createAntiAgingRoutine]);
 
   // Helper functions
   function createAntiAgingRoutine(age: number, skinType: string, concerns: string[], budget: string) {

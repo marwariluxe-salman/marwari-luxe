@@ -101,6 +101,9 @@ const BlogSection = () => {
                       fetchPriority={index < 2 ? "high" : "auto"}
                       // Add decoding hint for better performance
                       decoding="async"
+                      // Add dimensions to prevent CLS
+                      width={600}
+                      height={400}
                     />
                   </div>
                   <div className="absolute top-4 left-4">

@@ -4,19 +4,19 @@ import { useEffect } from 'react';
 
 const PerformanceOptimizer = () => {
   useEffect(() => {
-    // Preload critical images
+    // Preload critical images with proper LCP optimization
     const preloadImages = () => {
       const images = [
-        'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_1600,dpr_auto,c_fill,g_auto/v1762471377/1_pllyfb.jpg',
-        'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761864930/Marwari-luxe_dnwxfa.jpg',
-        'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_800,dpr_auto,c_fill,g_auto/v1761863551/blog2-3_vldipi.png',
-        'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_600,dpr_auto,c_fill,g_auto/v1762817015/1_pllyfb.png',
-        'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto,w_600,dpr_auto,c_fill,g_auto/v1762817052/2_gnrg7c.png'
+        'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto:good,w_1600,dpr_auto,c_fill,g_auto/v1762471377/1_pllyfb.jpg',
+        'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto:good,w_800,dpr_auto,c_fill,g_auto/v1761864930/Marwari-luxe_dnwxfa.jpg',
+        'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto:good,w_800,dpr_auto,c_fill,g_auto/v1761863551/blog2-3_vldipi.png',
+        'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto:good,w_600,dpr_auto,c_fill,g_auto/v1762817015/1_pllyfb.png',
+        'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,q_auto:good,w_600,dpr_auto,c_fill,g_auto/v1762817052/2_gnrg7c.png'
       ];
 
       images.forEach(src => {
         const link = document.createElement('link');
-        link.rel = 'prefetch';
+        link.rel = 'preload';
         link.as = 'image';
         link.href = src;
         document.head.appendChild(link);
@@ -46,7 +46,7 @@ const PerformanceOptimizer = () => {
       });
     };
 
-    // Implement efficient lazy loading
+    // Implement efficient lazy loading with better CLS prevention
     const implementLazyLoading = () => {
       // Use Intersection Observer for better lazy loading
       if ('IntersectionObserver' in window) {
@@ -85,7 +85,7 @@ const PerformanceOptimizer = () => {
       });
     };
 
-    // Optimize animations
+    // Optimize animations for better performance
     const optimizeAnimations = () => {
       // Use transform and opacity for better performance
       const style = document.createElement('style');
@@ -105,7 +105,7 @@ const PerformanceOptimizer = () => {
       document.head.appendChild(style);
     };
 
-    // Implement efficient font loading
+    // Implement efficient font loading with better FOUT handling
     const optimizeFontLoading = () => {
       // Add font-display swap for better performance
       const fontStyles = document.createElement('style');
@@ -118,12 +118,12 @@ const PerformanceOptimizer = () => {
       document.head.appendChild(fontStyles);
     };
 
-    // Optimize image loading
+    // Optimize image loading with CLS prevention
     const optimizeImageLoading = () => {
       // Add loading="lazy" to all images that don't have it
       document.querySelectorAll('img:not([loading]):not([priority])').forEach(img => {
         // Don't lazy load above-the-fold images
-        const rect = img.getBoundingClientRect();
+        const rect = (img as HTMLElement).getBoundingClientRect();
         if (rect.top > window.innerHeight * 0.5) { // Lazy load images below 50% of viewport
           img.setAttribute('loading', 'lazy');
         }
@@ -176,6 +176,51 @@ const PerformanceOptimizer = () => {
       });
     };
 
+    // Fix CLS issues by reserving space for ads and dynamic content
+    const fixCLS = () => {
+      // Reserve space for ad containers to prevent layout shifts
+      const adContainers = document.querySelectorAll('[class*="ad"], [class*="advertisement"]');
+      adContainers.forEach(container => {
+        const el = container as HTMLElement;
+        // Set explicit dimensions to prevent CLS
+        if (!el.style.height) {
+          el.style.height = '250px'; // Standard ad height
+        }
+        if (!el.style.minHeight) {
+          el.style.minHeight = '250px';
+        }
+        el.style.backgroundColor = '#f3f4f6'; // Light gray background
+      });
+
+      // Reserve space for images without dimensions
+      const imagesWithoutDimensions = document.querySelectorAll('img:not([width]):not([height])');
+      imagesWithoutDimensions.forEach(imgElement => {
+        const img = imgElement as HTMLImageElement;
+        // Wait for image to load to get natural dimensions
+        img.onload = () => {
+          const { naturalWidth, naturalHeight } = img;
+          if (naturalWidth && naturalHeight) {
+            // Set aspect ratio to prevent CLS when image loads
+            const aspectRatio = naturalHeight / naturalWidth;
+            if (img.parentElement) {
+              img.parentElement.style.setProperty('--img-aspect-ratio', aspectRatio.toString());
+            }
+            img.style.aspectRatio = aspectRatio.toString();
+          }
+        };
+      });
+
+      // Add CSS for aspect ratio preservation
+      const aspectRatioCSS = document.createElement('style');
+      aspectRatioCSS.textContent = `
+        img {
+          aspect-ratio: var(--img-aspect-ratio, auto);
+          object-fit: cover;
+        }
+      `;
+      document.head.appendChild(aspectRatioCSS);
+    };
+
     // Execute optimizations
     preloadImages();
     optimizeResourceLoading();
@@ -187,6 +232,7 @@ const PerformanceOptimizer = () => {
     optimizeEventHandling();
     optimizeCSSDelivery();
     optimizeDataFetching();
+    fixCLS();
 
     // Cleanup function
     return () => {

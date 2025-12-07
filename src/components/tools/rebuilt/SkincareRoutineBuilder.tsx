@@ -168,7 +168,7 @@ const SkincareRoutineBuilder = () => {
   }, [skinType, concerns, budget]);
 
   // Helper functions for product recommendations
-  function getCleanseRecommendation(skinType: string, budget: string, evening = false) {
+  function getCleanseRecommendation(skinType: string, budget: string, _evening = false) {
     if (budget === 'low') {
       return "CeraVe Hydrating Cleanser or Cetaphil Gentle Skin Cleanser";
     } else if (budget === 'mid') {
@@ -184,7 +184,7 @@ const SkincareRoutineBuilder = () => {
     }
   }
 
-  function getTonerRecommendation(skinType: string, budget: string, evening = false) {
+  function getTonerRecommendation(skinType: string, budget: string, _evening = false) {
     if (budget === 'low') {
       return "Thayers Witch Hazel Toner";
     } else if (budget === 'mid') {
@@ -223,7 +223,7 @@ const SkincareRoutineBuilder = () => {
     return "Drunk Elephant T.L.C. Framboos Glycolic Night Serum";
   }
 
-  function getMoisturizerRecommendation(skinType: string, budget: string, evening = false) {
+  function getMoisturizerRecommendation(skinType: string, budget: string, _evening = false) {
     if (skinType === 'oily') {
       if (budget === 'low') return "Neutrogena Hydro Boost Water Gel";
       if (budget === 'mid') return "Clinique Moisture Surge 100H Auto-Replenishing Hydrator";

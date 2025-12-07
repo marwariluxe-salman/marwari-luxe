@@ -20,7 +20,7 @@ const FoundationShadeFinder = () => {
     const shadeRecommendations = getShadeRecommendations(determinedUndertone, skinTone);
     
     // Provide application tips
-    const applicationTips = getApplicationTips(determinedUndertone, skinTone);
+    const applicationTips = getApplicationTips();
 
     setResult({
       undertone: determinedUndertone,
@@ -211,7 +211,7 @@ const FoundationShadeFinder = () => {
     return recommendations[validUndertone][validSkinTone] || recommendations.cool.fair;
   }
 
-  function getApplicationTips(undertone: string, skinTone: string) {
+  function getApplicationTips() {
     return [
       'Test foundation on your jawline in natural light for the most accurate match',
       'Apply a small amount and blend well - you can always add more coverage',

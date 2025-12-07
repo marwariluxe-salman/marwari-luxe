@@ -67,7 +67,7 @@ const BeautyCategoryClient = () => {
 
 <h2>Final Thoughts</h2>
 <p>Waterless skincare and minimalist beauty represent the future of conscious, effective routines. By choosing concentrated, multifunctional products in eco-friendly packaging, you simplify your routine, support sustainability, and enjoy healthier, radiant skin. Embrace this trend in 2026 to experience long-lasting results and a more mindful beauty lifestyle.</p>`,
-      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762857789/blogb-1_utllwn.png',
+      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,v1762857789,q_auto:good/blogb-1_utllwn.png',
     },
     {
       id: 'custom-beauty-002',
@@ -111,7 +111,7 @@ const BeautyCategoryClient = () => {
 
 <h2>Final Thoughts</h2>
 <p>Monochrome makeup is more than a trend—it's timeless. It simplifies beauty routines, promotes sustainability, and enhances natural features effortlessly. By learning to work with tones and textures, anyone can master this look. Embrace the monochrome movement in 2026 for fresh, radiant, and easy-to-create daily beauty that fits every lifestyle.</p>`,
-      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762858256/blogb-2_qnyvv6.png',
+      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,v1762858256,q_auto:good/blogb-2_qnyvv6.png',
     },
     {
       id: 'custom-beauty-003',
@@ -134,7 +134,7 @@ const BeautyCategoryClient = () => {
 <p>Social media has amplified this movement. Influencers now highlight eco-conscious routines, inspiring millions to make small, sustainable swaps. Reusable cleansing pads, solid shampoos, and bamboo brushes are replacing wasteful alternatives. These accessible changes help individuals make a big collective impact through mindful beauty choices every day.</p>
 
 <p>In 2026, sustainable beauty isn't a passing trend—it's a global standard. Whether you're switching to refillable skincare or exploring carbon-neutral makeup brands, your choices matter. Let's look at 10 top sustainable brands leading this eco-friendly revolution and transforming how we define beauty, responsibility, and self-care this year.</p>`,
-      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762858786/blogb-3_bq9zlh.png',
+      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,v1762858786,q_auto:good/blogb-3_bq9zlh.png',
     },
     {
       id: 'custom-beauty-004',
@@ -181,7 +181,7 @@ const BeautyCategoryClient = () => {
 
 <h2>Final Thoughts</h2>
 <p>K-beauty trends in 2026 reflect a mature understanding of skincare science and consumer needs. With innovations in fermentation, microbiome care, and sustainable practices, Korean beauty brands continue to set industry standards. Embracing these trends can lead to healthier, more radiant skin while supporting ethical beauty practices.</p>`,
-      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762859782/blogb-4_rytecg.png',
+      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,v1762859782,q_auto:good/blogb-4_rytecg.png',
     },
     {
       id: 'custom-beauty-005',
@@ -233,7 +233,7 @@ const BeautyCategoryClient = () => {
 
 <h2>Final Thoughts</h2>
 <p>Beyond retinol, 2026 offers exciting anti-aging alternatives that deliver real results without irritation. By incorporating peptides, bakuchiol, niacinamide, and other innovative ingredients, you can achieve youthful, radiant skin while maintaining comfort. The key is consistency and finding the right combination for your unique skin needs.</p>`,
-      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762860104/blogb-5_pmytov.png',
+      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,v1762860104,q_auto:good/blogb-5_pmytov.png',
     },
     {
       id: 'custom-beauty-006',
@@ -280,7 +280,7 @@ const BeautyCategoryClient = () => {
 
 <h2>Final Thoughts</h2>
 <p>Makeup for mature skin in 2026 focuses on enhancement rather than transformation. By using the right techniques, products, and color choices, you can create beautiful, flattering looks that celebrate maturity. The key is understanding how skin changes with age and adapting your approach accordingly for stunning, age-appropriate results.</p>`,
-      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762860508/blogb-6_sz2n1w.png',
+      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,v1762860508,q_auto:good/blogb-6_sz2n1w.png',
     }
   ];
 

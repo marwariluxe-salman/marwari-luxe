@@ -208,6 +208,7 @@ With thousands of satisfied customers worldwide, this product has established it
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               className="my-6 h-32 flex items-center justify-center bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg"
+              style={{ minHeight: '250px' }} // Reserve space to prevent CLS
             >
               <div className="text-gray-500 text-center">
                 <div>Advertisement</div>

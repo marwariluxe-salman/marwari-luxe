@@ -181,7 +181,7 @@ const UnitConverter = () => {
     const convertedValue = baseValue / factors[toUnit];
     
     setResult(convertedValue.toFixed(6).replace(/\.?0+$/, ''));
-  }, [category, fromUnit, toUnit, inputValue]);
+  }, [category, fromUnit, toUnit, inputValue, conversionData]);
 
   const swapUnits = useCallback(() => {
     setFromUnit(toUnit);

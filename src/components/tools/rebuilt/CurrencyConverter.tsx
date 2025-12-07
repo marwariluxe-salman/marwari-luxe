@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 
 const CurrencyConverter = () => {
@@ -41,7 +41,7 @@ const CurrencyConverter = () => {
   };
 
   // Mock exchange rates (in a real app, this would come from an API)
-  const mockExchangeRates: Record<string, number> = {
+  const mockExchangeRates = useMemo(() => ({
     'USD': 1,
     'EUR': 0.85,
     'GBP': 0.73,
@@ -66,7 +66,7 @@ const CurrencyConverter = () => {
     'THB': 33.25,
     'PLN': 3.95,
     'ILS': 3.25
-  };
+  }), []);
 
   const fetchExchangeRates = useCallback(async () => {
     setIsLoading(true);
@@ -101,7 +101,7 @@ const CurrencyConverter = () => {
   const swapCurrencies = useCallback(() => {
     setFromCurrency(toCurrency);
     setToCurrency(fromCurrency);
-  }, [fromCurrency, toCurrency, currencies]);
+  }, [fromCurrency, toCurrency]);
 
   // Fetch exchange rates on component mount
   useEffect(() => {
@@ -241,8 +241,8 @@ const CurrencyConverter = () => {
           <h3 className="font-semibold text-blue-800 mb-2">How to Use</h3>
           <ul className="text-blue-700 list-disc pl-5 space-y-1 text-sm">
             <li>Enter the amount you want to convert</li>
-            <li>Select the currency you're converting from</li>
-            <li>Select the currency you're converting to</li>
+            <li>Select the currency you&apos;re converting from</li>
+            <li>Select the currency you&apos;re converting to</li>
             <li>See the converted amount instantly</li>
             <li>Refresh rates to get the latest exchange rates</li>
           </ul>

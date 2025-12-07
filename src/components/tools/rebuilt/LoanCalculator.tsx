@@ -227,7 +227,7 @@ const LoanCalculator = () => {
         <div className="mt-6 p-4 bg-blue-50 rounded-md">
           <h3 className="font-semibold text-blue-800 mb-2">How to Use</h3>
           <ul className="text-blue-700 list-disc pl-5 space-y-1 text-sm">
-            <li>Enter the loan amount you're considering</li>
+            <li>Enter the loan amount you&apos;re considering</li>
             <li>Input the annual interest rate offered by the lender</li>
             <li>Specify the loan term in years or months</li>
             <li>Review the monthly payment and total interest costs</li>

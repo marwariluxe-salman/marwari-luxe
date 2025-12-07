@@ -27,7 +27,7 @@ const QRCodeGenerator = () => {
         }
       });
       setQrCode(qrCodeDataUrl);
-    } catch (_err) {
+    } catch (error) {
       // Error generating QR code - handled silently
     }
   }, [text, size, errorCorrection, foregroundColor, backgroundColor]);

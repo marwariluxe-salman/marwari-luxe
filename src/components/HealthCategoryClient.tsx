@@ -50,7 +50,7 @@ const HealthCategoryClient = () => {
 
 <h2>When to Seek Professional Help</h2>
 <p>Persistent digestive issues may indicate an underlying condition that requires medical attention. Don't hesitate to consult a healthcare provider if symptoms persist.</p>`,
-      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762805385/blog-1_uwxwim.png',
+      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,v1762805385,q_auto:good/blog-1_uwxwim.png',
     },
     {
       id: 'custom-health-002',
@@ -79,7 +79,7 @@ const HealthCategoryClient = () => {
 
 <h2>When to Consider Medical Intervention</h2>
 <p>While lifestyle changes are powerful, some people may need medication to manage blood pressure or cholesterol. Work with your healthcare provider to determine the best approach for your situation.</p>`,
-      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762812134/blog-2_lviexx.png',
+      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,v1762812134,q_auto:good/blog-2_lviexx.png',
     },
     {
       id: 'custom-health-003',
@@ -108,7 +108,7 @@ const HealthCategoryClient = () => {
 
 <h2>When to Seek Professional Sleep Help</h2>
 <p>If sleep problems persist despite lifestyle changes, it may be time to consult a sleep specialist. Sleep studies and professional evaluation can identify underlying conditions and guide treatment.</p>`,
-      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762814682/blog-3_xmvsmn.png',
+      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,v1762814682,q_auto:good/blog-3_xmvsmn.png',
     },
     {
       id: 'custom-health-004',
@@ -137,7 +137,7 @@ const HealthCategoryClient = () => {
 
 <h2>When to Seek Medical Evaluation</h2>
 <p>Persistent symptoms may indicate underlying conditions like thyroid disorders, PCOS, or menopause. Blood tests and professional evaluation can identify specific imbalances and guide treatment.</p>`,
-      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762816421/blog-4_gjtcpo.png',
+      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,v1762816421,q_auto:good/blog-4_gjtcpo.png',
     },
     {
       id: 'custom-health-005',
@@ -166,7 +166,7 @@ const HealthCategoryClient = () => {
 
 <h2>When Professional Help is Needed</h2>
 <p>While self-care strategies are valuable, some situations require professional intervention. Therapists, counselors, and psychiatrists can provide additional tools and support for managing mental health.`,
-      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762817815/blog-5_e7i150.png'
+      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,v1762817815,q_auto:good/blog-5_e7i150.png'
     },
     {
       id: 'custom-health-006',
@@ -198,7 +198,7 @@ const HealthCategoryClient = () => {
 
 <h2>Final Thoughts</h2>
 <p>Boosting immunity naturally requires consistent daily effort. Eating nutrient-rich foods, exercising, sleeping well, managing stress, staying hydrated, and avoiding harmful habits work together to strengthen your body's defenses. Over time, these habits reduce illness frequency, enhance energy, and promote long-term physical and mental well-being effectively.</p>`,
-      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/v1762818516/blog-6_sataw7.png',
+      heroImage: 'https://res.cloudinary.com/dxg5ldzkv/image/upload/f_auto,v1762818516,q_auto:good/blog-6_sataw7.png',
     }
   ];
 

@@ -301,7 +301,7 @@ const MacroCalculator = () => {
                 Daily Calories Recommended
               </div>
               <p className="text-gray-600">
-                Based on your inputs, here's your optimal macronutrient distribution:
+                Based on your inputs, here&apos;s your optimal macronutrient distribution:
               </p>
             </div>
             

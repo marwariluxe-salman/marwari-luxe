@@ -280,7 +280,8 @@ const BlogPostClient = ({ blog, relatedBlogs }: { blog: Blog | null; relatedBlog
             {/* Additional Content Sections */}
             <div className="space-y-8 mt-12">
               {/* Ad Space - Placeholder for Google AdSense */}
-              <div className="h-48 flex items-center justify-center bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg">
+              <div className="h-48 flex items-center justify-center bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg"
+                   style={{ minHeight: '250px' }}> {/* Reserve space to prevent CLS */}
                 <div className="text-gray-500 text-center">
                   <div>Advertisement</div>
                   <div className="text-sm">Google AdSense will place ads here</div>

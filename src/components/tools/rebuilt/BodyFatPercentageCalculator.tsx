@@ -25,14 +25,12 @@ const BodyFatPercentageCalculator = () => {
     let neckCm = parseFloat(neck);
     let hipCm = parseFloat(hip || '0');
     let heightCm = parseFloat(height);
-    let weightValue = parseFloat(weight);
 
     if (unit === 'imperial') {
       waistCm = parseFloat(waist) * 2.54; // inches to cm
       neckCm = parseFloat(neck) * 2.54; // inches to cm
       hipCm = parseFloat(hip || '0') * 2.54; // inches to cm
       heightCm = parseFloat(height) * 2.54; // inches to cm
-      weightValue = parseFloat(weight) * 0.453592; // lbs to kg
     }
 
     // Calculate body fat percentage using US Navy method

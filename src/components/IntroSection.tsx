@@ -73,6 +73,9 @@ const IntroSection = () => {
                   quality={75}
                   loading="lazy"
                   style={{ objectFit: 'cover' }}
+                  // Add dimensions to prevent CLS
+                  width={800}
+                  height={600}
                 />
                 <div className="absolute inset-0 bg-orange-600/20 rounded-lg"></div>
               </div>
@@ -86,6 +89,9 @@ const IntroSection = () => {
                   quality={75}
                   loading="lazy"
                   style={{ objectFit: 'cover' }}
+                  // Add dimensions to prevent CLS
+                  width={800}
+                  height={600}
                 />
                 <div className="absolute inset-0 bg-blue-600/20 rounded-lg"></div>
               </div>

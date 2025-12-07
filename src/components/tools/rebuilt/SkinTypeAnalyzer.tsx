@@ -397,7 +397,7 @@ const SkinTypeAnalyzer = () => {
           <p className="mobile-text-sm text-yellow-800 leading-relaxed">
             <strong>Disclaimer:</strong> This analysis provides general guidance based on your responses. 
             Individual skin types can be complex and may require professional evaluation by a dermatologist. 
-            Results may vary, and it's important to patch test new products before full application.
+            Results may vary, and it&apos;s important to patch test new products before full application.
           </p>
         </div>
       </motion.div>

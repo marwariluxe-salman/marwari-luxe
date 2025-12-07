@@ -6,6 +6,7 @@ import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 export const metadata: Metadata = {
   title: 'Terms & Conditions - Marwari Luxe Health & Beauty',
   description: 'Read our terms and conditions for using Marwari Luxe website and services. Understand our affiliate marketing relationship, product information, and user responsibilities.',
+  robots: "index, follow, max-image-preview:large",
   alternates: {
     canonical: 'https://marwariluxe.com/legal/terms'
   },

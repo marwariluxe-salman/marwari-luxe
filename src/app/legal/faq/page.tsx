@@ -6,6 +6,7 @@ import { ArrowLeftIcon, ChevronDownIcon, QuestionMarkCircleIcon } from '@heroico
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions - Marwari Luxe Health & Beauty',
   description: 'Find answers to common questions about Marwari Luxe products, services, shipping, returns, and wellness advice. Get help with your health and beauty journey.',
+  robots: "index, follow, max-image-preview:large",
   alternates: {
     canonical: 'https://marwariluxe.com/legal/faq'
   },

@@ -6,6 +6,7 @@ import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 export const metadata: Metadata = {
   title: 'Refund, Resend and Returns Policy - Marwari Luxe',
   description: 'Learn about our refund, resend, and returns policy for products purchased through our affiliate links. Understand how we handle disputes and returns through our partner CJ Dropshipping.',
+  robots: "index, follow, max-image-preview:large",
   alternates: {
     canonical: 'https://marwariluxe.com/legal/refund-policy'
   },

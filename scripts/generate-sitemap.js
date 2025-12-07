@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// Script to generate sitemap.xml dynamically based on tools data
+// Script to generate sitemap.xml with only real pages that exist
 const fs = require('fs').promises;
 const path = require('path');
 
@@ -23,7 +23,8 @@ async function readToolsData() {
     toolsIds.push(match[1]);
   }
   
-  return toolsIds;
+  // Limit to 30 tools as specified
+  return toolsIds.slice(0, 30);
 }
 
 // Read blog data directly from file
@@ -41,7 +42,7 @@ async function readBlogData() {
   }
   
   // Also match evergreen blogs
-  const evergreenMatches = blogsContent.matchAll(/^\s*id:\s*'(evergreen-(?:health|beauty)-[\d\w-]+)'/gm);
+  const evergreenMatches = blogsContent.matchAll(/^\s*id:\s*'((?:evergreen-(?:health|beauty)-[\d\w-]+))'/gm);
   for (const match of evergreenMatches) {
     blogIds.push(match[1]);
   }
@@ -55,7 +56,8 @@ async function readBlogData() {
     }
   }
   
-  return blogIds;
+  // Limit to 30 blogs as specified
+  return blogIds.slice(0, 30);
 }
 
 // Read product data directly from file
@@ -70,13 +72,16 @@ async function readProductData() {
     productIds.push(match[1]);
   }
   
-  return productIds;
+  // Limit products to approximately 16 to meet the target URL count
+  // Final total should be around 80-90 URLs maximum
+  return productIds.slice(0, 16);
 }
 
 // Base URLs
 const BASE_URL = 'https://marwariluxe.com';
 
 // Static pages that should always be included
+// Limited to only real pages that exist and removing duplicates
 const STATIC_PAGES = [
   '/',
   '/about',
@@ -91,10 +96,7 @@ const STATIC_PAGES = [
   '/legal/refund-policy',
   '/legal/disclaimer',
   '/legal/faq',
-  '/checkout',
-  '/tools/general',
-  '/tools/health',
-  '/tools/beauty'
+  '/checkout'
 ];
 
 // Function to generate sitemap XML
@@ -186,7 +188,18 @@ async function generateSitemap() {
     const outputPath = path.join(__dirname, '..', 'public', 'sitemap.xml');
     await fs.writeFile(outputPath, sitemapXML);
     
-    console.log(`✅ Sitemap generated successfully with ${STATIC_PAGES.length + blogIds.length + productIds.length + toolsIds.length} URLs`);
+    // Calculate total URLs and log
+      const totalUrls = STATIC_PAGES.length + blogIds.length + productIds.length + toolsIds.length;
+      console.log(`✅ Sitemap generated successfully with ${totalUrls} URLs`);
+      
+      // Check if we're within the expected range (80-90 URLs)
+      if (totalUrls > 90) {
+        console.warn(`⚠️  Warning: Sitemap has ${totalUrls} URLs, which exceeds the target range of 80-90 URLs`);
+      } else if (totalUrls < 80) {
+        console.warn(`⚠️  Warning: Sitemap has ${totalUrls} URLs, which is below the target range of 80-90 URLs`);
+      } else {
+        console.log(`✅ Sitemap URL count (${totalUrls}) is within the target range of 80-90 URLs`);
+      }
     console.log(`📁 Saved to: ${outputPath}`);
   } catch (error) {
     console.error('❌ Error generating sitemap:', error);

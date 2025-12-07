@@ -6,6 +6,7 @@ import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 export const metadata: Metadata = {
   title: 'Privacy Policy - Marwari Luxe',
   description: 'Learn how Marwari Luxe protects your personal information, collects data, and ensures your privacy when shopping for premium health supplements and beauty products.',
+  robots: "index, follow, max-image-preview:large",
   alternates: {
     canonical: 'https://marwariluxe.com/legal/privacy-policy'
   },

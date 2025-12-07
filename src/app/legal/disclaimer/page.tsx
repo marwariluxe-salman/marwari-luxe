@@ -6,6 +6,7 @@ import { ArrowLeftIcon, ExclamationTriangleIcon, InformationCircleIcon } from '@
 export const metadata: Metadata = {
   title: 'Disclaimer - Marwari Luxe Health & Beauty Products',
   description: 'Important disclaimer regarding the use of Marwari Luxe website, products, and services. Read our affiliate marketing disclosure and medical information limitations.',
+  robots: "index, follow, max-image-preview:large",
   alternates: {
     canonical: 'https://marwariluxe.com/legal/disclaimer'
   },
